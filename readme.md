@@ -20,4 +20,5 @@
  · Cuevana:https://cuevana3.cc (DIEGO)
  . Repelis: https://repelis24.co/ (AGUSTINA)
  . GooglePelicula: https://play.google.com/store/movies (EDGAR)
+ . MovistarPlay: https://www.play.movistar.com.ar/catalog/peliculas-618
 >>>>>>> 23a92dcb2673ff62007e07d9bb570112d8822696
