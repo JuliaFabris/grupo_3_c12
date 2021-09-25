@@ -1,24 +1,37 @@
-# NOMBRE DE PROYECTO PENDIENTE
+# ___TREE MOVIE___
+![logo](/diseño/logos/logo.png)
+## *Primer sprint 01/10*
+___
+### *alejandro*
+- edad
+- ocupacion
+### *Julia*
+- edad
+- ocupacion
+### *Lautaro*
+- edad
+- ocupacion
+### *Agustina*
+- edad
+- ocupacion
+### *Edgar*
+- edad
+- ocupacion
 
-***alejandro***
 
-***Julia***
+## **Tematica y audiencia objetivo**
+_ _ _ 
+NOS OFRECE UN VARIADO GRUPO DE CATEGORIAS DENTRO DEL MUNDO DEL CINE, LAS MEJORES SERIES Y PELICULAS
+PARA COMPARTIR EN FAMILIA AL PRECIO MAS ACCESIBLE CON LA MAXIMA CALIDAD,LOS MEJORES CONTENIDOS Y MUCHO MAS...
 
-***Lautaro***
+## **Paginas de referencia**
+_ _ _ 
 
-***Agustina***
+- [Naldo](https://www.naldo.com.ar)
+- [Cuevana](https://cuevana3.cc)
+- [Repelis](https://repelis24.co)
+- [GooglePelicula]( https://play.google.com/store/movies)
+- [MovistarPlay](https://www.play.movistar.com.ar/catalog/peliculas-618)
 
-***Edgar***
 
-
- Elección de 5 sitios de inspiración:
-
-<<<<<<< HEAD
- ·Naldo: https://www.naldo.com.ar . El diseño visual del sitio. La ubicación y las fotos de los productos, lo  que lo hace atractivo a la hora de buscar y comprar.
-=======
- · Naldo:https://www.naldo.com.ar (JULIA)
- · Cuevana:https://cuevana3.cc (DIEGO)
- . Repelis: https://repelis24.co/ (AGUSTINA)
- . GooglePelicula: https://play.google.com/store/movies (EDGAR)
- . MovistarPlay: https://www.play.movistar.com.ar/catalog/peliculas-618
->>>>>>> 23a92dcb2673ff62007e07d9bb570112d8822696
+El diseño visual del sitio. La ubicación y las fotos de los productos, lo  que lo hace atractivo a la hora de buscar y comprar.
