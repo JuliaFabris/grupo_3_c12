@@ -1,0 +1,22 @@
+{
+  "name": "grupo_3_c12",
+  "version": "1.0.0",
+  "description": "![logo](/diseño/logos/logo.png)\r ___\r ## ***Primer sprint 01/10***\r _ _ _ \r ## **Integrantes**\r ### *Diego Alejandro Rodal*\r - 29 años\r - Profesor de kick boxing, Estudiante de programación\r ### *Julia Fabris*\r - Me gusta mirar series, charlar y compartir.  Un trabajo que me gustó fue el de secretaria, me manejo bien con la tecnología y atendiendo gente.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edgar-Rios/grupo_3_c12.git"
+  },
+  "author": "grupo 3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edgar-Rios/grupo_3_c12/issues"
+  },
+  "homepage": "https://github.com/Edgar-Rios/grupo_3_c12#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

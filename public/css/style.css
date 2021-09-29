@@ -1,0 +1,29 @@
+header{
+    background-color: aqua;
+}
+.header div{
+    display: inline;
+}
+.categorias{
+    display: none;
+}
+body{
+    background-color: cadetblue;
+}
+.abecedario li{
+    display: inline;
+}
+.letras li{
+    background-color: blue;
+    stroke: azure;
+    stroke-opacity: inherit;
+}
+article{
+    display: inline;
+    background-color: bisque;
+    padding: 10px;
+    border-color: black;
+}
+section{
+    background-color: aliceblue;
+}
