@@ -1,5 +1,5 @@
 # ___TREE MOVIE___
-![logo](/public/diseño/imagenes/logo.png
+![logo](/public/diseño/imagenes/logo.png)
 ___
 ## ***Primer sprint 01/10***
 _ _ _ 
