@@ -18,7 +18,7 @@ _ _ _
 - Estudiante de programación
 
 ### Eduardo Adrian Lopez 
-- 26 años
+- 27 años
 - Estudiante de Programación Web
 _ _ _ 
 ## **Tematica y audiencia objetivo**
