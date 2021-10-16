@@ -11,8 +11,8 @@ _ _ _
 - Me gusta mirar series, charlar y compartir.  Un trabajo que me gustó fue el de secretaria, me manejo bien con la tecnología y atendiendo gente.
 
 ### *Agustina Gimenez*
-- edad
-- ocupacion
+- 23 años
+- Estudiante de programación
 ### *Edgar Rios Espechi*
 - 25 años
 - Estudiante de programación
