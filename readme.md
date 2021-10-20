@@ -47,10 +47,10 @@ _ _ _
 - [Federo](https://www.cssfontstack.com/Federo)
 
 
-
+_ _ _
 ### **Colores que usaremos (Paleta de colores)**
-- [#5A667B] Gris azulado
-- [#71AAFF] Azul
-- [#CD2222] Rojo
-- [#000000] Negro
+- #5A667B (Gris azulado)
+- #71AAFF (Azul)
+- #CD2222 (Rojo)
+- #000000 (Negro)
 
