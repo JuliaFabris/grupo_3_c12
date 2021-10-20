@@ -13,6 +13,7 @@ _ _ _
 ### *Agustina Gimenez*
 - 23 años
 - Estudiante de programación
+
 ### *Edgar Rios Espechi*
 - 25 años
 - Estudiante de programación
@@ -35,6 +36,10 @@ _ _ _
 - [Google Pelicula](https://play.google.com/store/movies)
 - [Movistar Play](https://www.play.movistar.com.ar/catalog/peliculas-618)
 
+El diseño visual del sitio. La ubicación y las fotos de los productos, lo  que lo hace atractivo a la hora de buscar y comprar.
+
+
+
 _ _ _ 
 ## **Fuentes**
 - [Fénix](https://fonts.google.com/specimen/Fenix)
@@ -43,4 +48,9 @@ _ _ _
 
 
 
-El diseño visual del sitio. La ubicación y las fotos de los productos, lo  que lo hace atractivo a la hora de buscar y comprar.
+### **Colores que usaremos (Paleta de colores)**
+- [#5A667B] Gris azulado
+- [#71AAFF] Azul
+- [#CD2222] Rojo
+- [#000000] Negro
+
