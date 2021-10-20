@@ -1,4 +1,4 @@
-# ___TREE MOVIE___
+# ___TRI MOVI___
 ![logo](/public/diseño/imagenes/logo.png)
 ___
 ## ***Primer sprint 01/10***
@@ -8,7 +8,7 @@ _ _ _
 - 29 años
 - Profesor de kick boxing, Estudiante de programación
 ### *Julia Fabris*
-- Me gusta mirar series, charlar y compartir.  Un trabajo que me gustó fue el de secretaria, me manejo bien con la tecnología y atendiendo gente.
+- Ama de casa. Estudiante de Programación.
 
 ### *Agustina Gimenez*
 - 23 años
@@ -34,6 +34,13 @@ _ _ _
 - [Repelis](https://repelis24.co)
 - [Google Pelicula](https://play.google.com/store/movies)
 - [Movistar Play](https://www.play.movistar.com.ar/catalog/peliculas-618)
+
+_ _ _ 
+## **Fuentes**
+- [Fénix](https://fonts.google.com/specimen/Fenix)
+- [Roboto](https://fonts.google.com/specimen/Roboto#standard-styles)
+- [Federo](https://www.cssfontstack.com/Federo)
+
 
 
 El diseño visual del sitio. La ubicación y las fotos de los productos, lo  que lo hace atractivo a la hora de buscar y comprar.
