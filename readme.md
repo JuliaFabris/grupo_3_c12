@@ -37,7 +37,8 @@ _ _ _
 - [Movistar Play](https://www.play.movistar.com.ar/catalog/peliculas-618)
 
 
-Retrospectiva:(retro.md)
+### Retrospectiva:[retro.md](https://github.com/Edgar-Rios/grupo_3_c12/blob/master/retro.md)
+
 
 
 El diseño visual del sitio. La ubicación y las fotos de los productos, lo  que lo hace atractivo a la hora de buscar y comprar.
