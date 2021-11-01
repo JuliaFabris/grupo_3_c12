@@ -32,39 +32,11 @@ body {
 
 }
 /*le ponemos flexbox al header para que se acomoden los items en linea*/
-header{    
-    display: flex;
-    justify-content:space-between;
-    width: 100%;
-    background-color: var(--negro);
+
     
-}
+
 /*al logo le ponemos ancho, margen a la izquierda y relleno hacia arriba*/
-header .logo {
-    width: 130px;
-    margin-left: 25px;
-    padding-top: 25px;    
-    margin-bottom: 10px;
-    }
 
-header .busqueda{
-       
-    width: 70px;
-    margin-left: 15px;
-    }   
-
-header .carrito{
-       
-        width: 70px;
-        margin-left: 15px;
-        }  
-
-header .login{
-
-    width: 70px;
-        margin-left: 15px;
-        } 
-        
  .categorias{
             display: none;
         }
