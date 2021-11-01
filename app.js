@@ -21,3 +21,6 @@ app.get('/register.html', (req, res) =>{
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
 
+app.get('/product-detail.html', (req, res) =>{
+    res.sendFile(pathAbsolute('./views/product-detail.html'))
+});
