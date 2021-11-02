@@ -73,14 +73,10 @@ a:hover{
     font-size: 18px; 
 }
 
-h2, h1,h3{
-    font-family: var(--fenix);
-    
-}
  
 
 section article .product{
-    width:80%;
+    width:90%;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -91,10 +87,10 @@ section article .product{
     font-size:14px;
     color:var(--azul);
     
-    /*width: 170px;
+    width: 170px;
     height: 340px;
     padding: 5px;
-    margin: 10px;*/
+    margin: 10px;
     
 }
 
@@ -106,8 +102,8 @@ section article .product:hover{
 }
 
 .product img {
-    
     padding: 5px;
+    align-self:center;
     object-fit:cover;
     
 }
@@ -159,6 +155,7 @@ section article .product .info-detail{
 
 .product .comprar {
     border:solid 2px var(--grisazulado);
+    overflow: auto;
 }
 .product .comprar:hover  {
     
