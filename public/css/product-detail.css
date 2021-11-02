@@ -78,53 +78,9 @@ h2, h1,h3{
     
 }
  
- section article .product{
+
+section article .product{
     width:80%;
-    background-color: var(--azul);
-
-}
-
-
-section article .product:hover{
-
-    box-shadow:5px 3px 2px var(--grisazulado);
-  
-}
-
-.product img {
-    
-    padding: 5px;
-    object-fit:cover;
-    
-}
-
-section article .product h3 {
-    font-family: var(--fenix);
-    text-align: left ;
-    color: var(--azul);
-    margin: 15px 0;
-}
-section article .product h4{
-
-    text-align: left;
-    font-family: var(--fenix) ;
-    text-transform: capitalize;
-}
-
-section article .product p {
-    color: var(--azul);
-    font-family: var(--federo);
-    text-align: justify;
-}
-
-section article .product a {
-    margin-top: 13px;
-    padding: 7px 10px;
-    text-decoration: none;
-}
-
-
-.product{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -143,18 +99,59 @@ section article .product a {
 }
 
 
+section article .product:hover{
+
+    box-shadow:5px 3px 2px var(--grisazulado);
+    border: double 2px var(--grisazulado);
+}
+
+.product img {
+    
+    padding: 5px;
+    object-fit:cover;
+    
+}
+
+section article .product h3 {
+    font-family: var(--fenix);
+    text-align: left ;
+    color: var(--azul);
+    
+}
+section article .product h4{
+
+    text-align: left;
+    font-family: var(--fenix) ;
+    text-transform: capitalize;
+}
+
+section article .product p {
+    color: var(--azul);
+    font-family: var(--roboto);
+    text-align: justify;
+    font-size: 14px;
+}
+
+
+section article .product a {
+    margin-top: 13px;
+    padding: 7px 10px;
+    text-decoration: none;
+}
+
+article{
+    /*background-color: var(--azul);*/
+    padding: 10px;
+    border-color: var(--negro);
+}
+
 .product h4{
  font-family: var(--roboto);
  text-align: center;
  color:var(--azul);
 
 }
-.product p{
-    color:var(--azul);
-    font-size: 14px;
-    font-family: var(--roboto);
 
-}
 section article .product .info-detail{
     display:none;
 }
@@ -164,15 +161,15 @@ section article .product .info-detail{
     border:solid 2px var(--grisazulado);
 }
 .product .comprar:hover  {
-    flex-grow:.4;
-    background-color:var(--azul);
-}
-article{
-    /*background-color: var(--azul);*/
-    padding: 10px;
-    border-color: var(--negro);
     
+    background-color:var(--azul);
+    box-shadow:5px 3px 2px var(--grisazulado);
+    border: double 2px var(--grisazulado);
 }
+ ul li{
+     list-style: none;
+ }
+
 section.extras-flex article{
     display:flex;
     flex-wrap: wrap;
@@ -187,7 +184,8 @@ section.extras-flex article .extras {
 
 section.extras-flex article .extras:hover{
     box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
-    flex-grow: 0.3;
+    border:dotted 2px var(--grisazulado);
+    background-color: var(--azul);
 }
 
 ul li { /*etiqueta ul li*/
