@@ -79,12 +79,12 @@ section article .productpd:hover{
     border: double 2px var(--grisazulado);
 }
 
-/*.product img {
+.productpd img {
     padding: 5px;
     align-self:center;
     object-fit:cover;
     
-}*/
+}
 
 .container-articulos .flex .productpd h3, .container-articulos .flex .productpd h4 {
     font-family: var(--fenix);
@@ -94,7 +94,7 @@ section article .productpd:hover{
 }
 
 
-section article .product p.pd {
+section article .productpd p.pd {
     color: var(--azul);
     font-family: var(--roboto);
     text-align: justify;
@@ -125,13 +125,13 @@ section article .info-detail{
 }
 
 
-.product .comprar {
+/*.product .comprar {
     border:solid 2px var(--grisazulado);
     overflow: auto;
     width: 100%;
     margin: 0 auto;
 }
-
+*/
  
 section.extras-flex {
     display:flex;
@@ -149,6 +149,23 @@ section.extras-flexpd article .extraspd {
     align-items: stretch;
     background-color: var(--negro);
 
+}
+
+article.pd{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.extraspd div{
+    width: 80%;
+    background-color: var(--azul);
+}
+
+.extraspd div img{
+    object-fit: cover;
+    margin:0 auto;
 }
 
 section.extras-flexpd article .extraspd:hover{
@@ -218,7 +235,7 @@ footer div.redes-sociales ul li{
     } 
     
     
-    section .product{
+    section .productpd{
 
         display: flex;
         flex-direction:row;
@@ -239,7 +256,11 @@ footer div.redes-sociales ul li{
       flex-direction:row;
 
     }
-    
+    section article .info-detail{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
     
     footer div.info-personal{
         margin: 15px 0 0;
