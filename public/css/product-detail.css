@@ -142,7 +142,7 @@ section.extras-flex {
     background-color: var(--negro);
 }
 
-section.extras-flex article .extras {
+section.extras-flex article .extraspd {
     
     border:dotted 2px var(--grisazulado);
     width: 20%;
