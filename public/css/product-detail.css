@@ -109,17 +109,16 @@ section article .product p.pd {
 }
 
 
-section article .product a.pd {
+section article  a.pd {
     margin-top: 13px;
     padding: 7px 10px;
     text-decoration: none;
 }
 
-article{
-    /*background-color: var(--azul);*/
-    padding: 10px;
-    border-color: var(--negro);
+.info-detail ul li:hover{
+    list-style: none;
 }
+
 
 .product h4{
  font-family: var(--roboto);
@@ -128,7 +127,7 @@ article{
 
 }
 
-section article .product .info-detail{
+section article .info-detail{
     display:none;
 }
 
@@ -137,15 +136,8 @@ section article .product .info-detail{
     border:solid 2px var(--grisazulado);
     overflow: auto;
 }
-.product .comprar:hover  {
-    
-    background-color:var(--azul);
-    box-shadow:5px 3px 2px var(--grisazulado);
-    border: double 2px var(--grisazulado);
-}
- ul li{
-     list-style: none;
- }
+
+ 
 
 section.extras-flex article{
     display:flex;
@@ -170,21 +162,6 @@ list-style: none;
 
 }
 
-
-
-
-
-
-
-/* PRODUCT */
-
-
-
-
-
- 
-
- 
 
 /* footer */
 
@@ -244,7 +221,7 @@ footer div.redes-sociales ul li{
     section .product{
 
         display: flex;
-        flex-direction:column;
+        flex-direction:row;
         flex-wrap:wrap;
         max-width:371px;
         text-align:left;
@@ -256,9 +233,10 @@ footer div.redes-sociales ul li{
         display:flex;
         flex-direction: row;
     }
-    .info-detail {
+    .info-detail ul li {
         
       display:flex;
+      flex-direction:row;
 
     }
     
