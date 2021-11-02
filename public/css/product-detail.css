@@ -77,18 +77,18 @@ h2, h1,h3{
     font-family: var(--fenix);
     
 }
-
+ 
  section article .product{
-    width:70%;
+    width:80%;
     background-color: var(--azul);
+
 }
 
 
 section article .product:hover{
 
     box-shadow:5px 3px 2px var(--grisazulado);
-    flex-grow:.4;
-
+  
 }
 
 .product img {
@@ -97,7 +97,6 @@ section article .product:hover{
     object-fit:cover;
     
 }
-
 
 section article .product h3 {
     font-family: var(--fenix);
@@ -128,13 +127,19 @@ section article .product a {
 .product{
     display:flex;
     flex-direction: column;
-    align-items: stretch;
-    max-width: 75%;
-    padding-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    padding-bottom: 10px;
     background-color: var(--azul);
-    font-family: 'Fenix', serif;
     font-size:14px;
-    color:var(--azul)
+    color:var(--azul);
+    
+    /*width: 170px;
+    height: 340px;
+    padding: 5px;
+    margin: 10px;*/
+    
 }
 
 
@@ -271,14 +276,17 @@ footer div.redes-sociales ul li{
 
     }
     
-    section article .product .img, h1, .comprar{
-        object-fit:cover;
-        float:left;
-    }
-    section article .product h4, p, .info-detail {
+     .comprar{
         
-      width:50%;
+        display:flex;
+        flex-direction: row;
     }
+    .info-detail {
+        
+      display:flex;
+
+    }
+    
     
     footer div.info-personal{
         margin: 15px 0 0;
@@ -350,9 +358,7 @@ footer ul li:last-child{
     body{
         max-width:1180px;
     } 
-    section article .product .info-detail{
-        display:inline-block;
-    }
+ 
     footer.flex{
         display:flex;
         flex-direction: row;
