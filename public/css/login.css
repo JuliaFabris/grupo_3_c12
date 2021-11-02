@@ -16,16 +16,31 @@ background-size:2078px 1410px;
     transform: scale(0.7);  
 }
 
+
 .email {
-    padding: 0 870px; 
-    height: 12%;
+    padding: 0 845px; 
+    height: 5%;
+    margin: 25px;
     transform: scale(2);
+
+}
+
+.email .input-style {
+    background-color: rgba(100, 100, 100, .6);
+    border: none;
 }
 
 .password {
-    padding: 0 870px; 
+    padding: 0 796px; 
     height: 10%;
+    margin: 75px;
     transform: scale(2);
+
+}
+
+.password .form-control {
+    background-color: rgba(100, 100, 100, .6);
+    border: none;
 }
 
 .recordarpassword {
@@ -125,4 +140,33 @@ background-size:2078px 1410px;
     max-width: 100px;
     border: 12px solid green;
 }
+
+@media (min-width: 475px) {
+
+    .input-container,
+    .button-container,
+    .input-file-container {
+        width: 90%;
+    }
+
+    .form-container {
+        width: 75%;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .input-container,
+    .button-container,
+    .input-file-container {
+        width: 80%;
+    }
+
+    .form-container {
+        width: 75%;
+    }
+
+}
+
 
