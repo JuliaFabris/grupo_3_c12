@@ -18,7 +18,7 @@ app.get('/login.html', (req, res) =>{
     res.sendFile(pathAbsolute('./views/login.html'))
 });
 
-app.get('/register.html', (req, res) =>{
+app.get('/register', (req, res) =>{
     res.sendFile(pathAbsolute('./views/register.html'))
 });
 
