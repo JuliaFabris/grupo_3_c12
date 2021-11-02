@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('home.css');
 @import url('home.css');
+@import url('product-detail.css');
 
 *{
     box-sizing: border-box;
@@ -15,7 +16,7 @@
 }
 h1,h2,h3{
 
-    font-size: ;
+    font-size: var(--fenix);
 }
 
 .flex{

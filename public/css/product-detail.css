@@ -33,13 +33,9 @@ body {
         align-items: center;
     background-color:var(--negro);
     padding: 15px 10px 0;
-
-}
-/*le ponemos flexbox al header para que se acomoden los items en linea*/
-
     
 
-/*al logo le ponemos ancho, margen a la izquierda y relleno hacia arriba*/
+}
 
  .categorias{
             display: none;
@@ -72,8 +68,6 @@ a:hover{
     box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
     font-size: 18px; 
 }
-
- 
 
 section article .product{
     width:90%;
