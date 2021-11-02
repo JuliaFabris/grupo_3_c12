@@ -30,7 +30,7 @@ body {
     display:flex;
     flex-direction:column;
     justify-content: center;
-        align-items: center;
+    align-items: center;
     background-color:var(--negro);
     padding: 15px 10px 0;
     
@@ -48,23 +48,14 @@ body {
 
 
 
-/*.icon-carrito, .icon-busqueda, .icon-menu{
-    color:var(--rojo);
-    width: 50px;
-    height: 50px;
-}
-*/
-nav ul li:hover { 
-    /*el hover cuando apunto sobre el elemento cambia de color*/
-    background-color: var(--grisazulado);
-}  
 
-a {
+
+a.pd {
     color: var(--grisazulado);
     text-decoration: none;
 }
 
-a:hover{
+a.pd:hover{
     box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
     font-size: 18px; 
 }
@@ -95,27 +86,22 @@ section article .product:hover{
     border: double 2px var(--grisazulado);
 }
 
-.product img {
+/*.product img {
     padding: 5px;
     align-self:center;
     object-fit:cover;
     
-}
+}*/
 
-section article .product h3 {
+section article .product h3, section article .product h4 {
     font-family: var(--fenix);
     text-align: left ;
     color: var(--azul);
     
 }
-section article .product h4{
 
-    text-align: left;
-    font-family: var(--fenix) ;
-    text-transform: capitalize;
-}
 
-section article .product p {
+section article .product p.pd {
     color: var(--azul);
     font-family: var(--roboto);
     text-align: justify;
@@ -123,7 +109,7 @@ section article .product p {
 }
 
 
-section article .product a {
+section article .product a.pd {
     margin-top: 13px;
     padding: 7px 10px;
     text-decoration: none;
