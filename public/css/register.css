@@ -1,206 +1,232 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background: url(../diseño/imagenes/logo.png);
-    background-repeat: no-repeat;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    height: 800px;
-    width: 500px;
-    background-size:1370px 890px;
+    margin: auto;
+    text-align: center;
+    background-color: black;
+    min-width: 315px;
+}
+
+.capa-fondo{
+    background-attachment: fixed;
+    background-repeat: space;
+    width: 100%;
     height: 100%;
-    padding: 2rem 1rem;
-    } 
-    
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-   
-    
-    a {
-        color: darkblue;
-        font-size: 0.8rem;
-        text-decoration: none;
-    }
-    
-    h2 {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    
-    hr {
-        height: 2px;
-        margin-bottom: 3rem;
-        width: 100%;
-        background: linear-gradient(90deg, #71AAFF, red);
-        border: none;
-    }
-    
-    .form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    /* Form inputs */
-    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.capa-fondo img{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+a {
+    color: blue;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+hr {
+    height: 2px;
+    margin-bottom: 3rem;
+    width: 100%;
+    background: linear-gradient(90deg, #71AAFF, red);
+    border: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    /*background: linear-gradient(#71aaff, white);*/
+    background-color: rgba(100, 100, 100, .3);
+    border-radius: 10px;
+    margin: 30px auto;
+    height: fit-content;
+    height: -moz-fit-content;
+    width: 75%;
+    padding: 1rem;
+}
+/* Form inputs */
+
+.input-container,
+.button-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    width: 100%;
+}
+
+.button-container {
+    align-items: center;
+}
+
+span.error-message {
+    color: red;
+    font-size: 10px;
+    margin: 5px auto;
+    display: none;
+}
+
+input.input-style {
+    border: none;
+    border-radius: 1rem;
+    height: 2.5rem;
+    padding: .5rem;
+    background-color: rgba(100, 100, 100, .6);
+}
+
+input.input-style::placeholder {
+    color: lightgray;
+}
+
+label {
+    font-size: 12px;
+}
+
+.input-file-container {
+    background-color: white;
+    border-radius: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+select.input-select {
+    border: none;
+    border-radius: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+}
+
+input.input-style:focus,
+.input-file-container,
+select.input-select:focus {
+    box-shadow: 0 0 6px rgb(255, 255, 255);
+    outline: none;
+}
+
+
+
+.check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.check label {
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+
+
+/* BUTTONS */
+
+.btn {
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    height: 2.5rem;
+    text-transform: uppercase;
+    width: 8rem;
+    font-weight: bold;
+}
+
+.btn-submit {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(243, 6, 17, 0.719) 50%);
+    color: rgb(75, 75, 75);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+    color: rgb(172, 172, 172);
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, .7);
+    background: linear-gradient(285deg, rgba(255, 255, 255, 0.5) 0%, rgba(39, 255, 232, 0.5) 50%);
+}
+
+.btn-reset {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(39, 151, 255, 0.5) 50%);
+    color: rgb(75, 75, 75);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-reset:hover {
+    color: rgb(172, 172, 172);
+    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+    background: linear-gradient(285deg, rgba(255, 255, 255, 0.5) 0%, rgba(39, 151, 255, 0.5) 50%);
+}
+
+.btn-edit {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(43, 236, 124, 0.5) 50%);
+    color: rgb(75, 75, 75);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-edit:hover {
+    color: rgb(172, 172, 172);
+    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+    background: linear-gradient(285deg, rgba(255, 255, 255, 0.5) 0%, rgba(43, 236, 124, 0.5) 50%);
+}
+
+/* Media queries*/
+/* Tablet */
+
+@media screen and (min-width: 475px) {
+
     .input-container,
-    .button-container {
-        display: flex;
-        flex-direction: column;
-        margin: 1rem;
-        width: 100%;
-    }
-    
-    .button-container {
-        align-items: center;
-    }
-    
-    span.error-message {
-        color: red;
-        font-size: 10px;
-        margin: 5px auto;
-        display: none;
-    }
-    
-    input.input-style {
-        border: none;
-        border-radius: 1rem;
-        height: 2.5rem;
-        padding: .5rem;
-    }
-    
-    input.input-style::placeholder {
-        color: lightgray;
-    }
-    
-    label {
-        font-size: 12px;
-    }
-    
+    .button-container,
     .input-file-container {
-        background-color: white;
-        border-radius: 1rem;
-        height: 2.5rem;
-        padding: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
-        width: 100%;
-    }
-    
-    select.input-select {
-        border: none;
-        border-radius: 1rem;
-        height: 2.5rem;
-        padding: 0.5rem;
-    }
-    
-    input.input-style:focus,
-    .input-file-container,
-    select.input-select:focus {
-        box-shadow: 0 0 6px rgb(255, 255, 255);
-        outline: none;
-    }
-    
-    .form-container {
-        background: linear-gradient(#71aaff, white);
-        border-radius: 10px;
-        margin: 0 auto;
-        height: fit-content;
-        height: -moz-fit-content;
-        width: 100%;
-        padding: 1rem;
-    }
-    
-    .check {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-        width: 80%;
-    }
-    
-    .check label {
-        margin-right: 10px;
-        position: relative;
-        top: -1px;
-    } 
-    
-    
-    /* BUTTONS */
-    
-    .btn {
-        border: none;
-        border-radius: 1rem;
-        cursor: pointer;
-        height: 2.5rem;
-        text-transform: uppercase;
-        width: 8rem;
-        font-weight: bold;
-    }
-    
-    .btn-submit {
-        background: linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(243, 6, 17, 0.719) 50%);
-        color: rgb(75, 75, 75);
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .btn-submit:hover {
-        color: rgb(172, 172, 172);
-        box-shadow: -5px -5px 10px rgba(255, 255, 255, .7);
-        background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39,255,232,0.5) 50%);
-    }
-    
-    .btn-reset {
-        background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(39, 151, 255, 0.5) 50%);
-        color: rgb(75, 75, 75);
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .btn-reset:hover {
-        color: rgb(172, 172, 172);
-        box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-        background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39, 151, 255, 0.5) 50%);
-    }
-    
-    .btn-edit {
-        background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(43, 236, 124, 0.5) 50%);
-        color: rgb(75, 75, 75);
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .btn-edit:hover {
-        color: rgb(172, 172, 172);
-        box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-        background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(43, 236, 124, 0.5) 50%);
-    }
-    
-    /* Media queries*/
-    /* Tablet */
-    
-    @media screen and (min-width: 475px) {
-        .input-container,
-        .button-container,
-        .input-file-container {
         width: 90%;
-        }
-        .form-container {
-            width: 75%;
-        }
-    
     }
-    
-    
-    @media screen and (min-width: 768px) {
-        .input-container,
-        .button-container,
-        .input-file-container {
+
+    .form-container {
+        width: 75%;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .input-container,
+    .button-container,
+    .input-file-container {
         width: 80%;
-        }
-        .form-container {
-            width: 50%;
-        }
-    
     }
+
+    .form-container {
+        width: 75%;
+    }
+
+}

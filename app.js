@@ -14,6 +14,10 @@ app.get('/', (req, res) =>{
     res.sendFile(pathAbsolute('./views/home.html'))
 });
 
+app.get('/login.html', (req, res) =>{
+    res.sendFile(pathAbsolute('./views/login.html'))
+});
+
 app.get('/register.html', (req, res) =>{
     res.sendFile(pathAbsolute('./views/register.html'))
 });
