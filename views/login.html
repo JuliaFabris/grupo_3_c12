@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,58 +10,66 @@
     <!--Validacion para utilizar iconos-->
     <script src="https://kit.fontawesome.com/1c59b4a01b.js" crossorigin="anonymous"></script>
     <!--logo-->
-    <div class="avatar"><img src="/public/diseño/imagenes/Logo-Iconos/logodeloginusuario.png" alt=""></div> 
+    <div class="avatar"><img src="/public/diseño/imagenes/Logo-Iconos/logodeloginusuario.png" alt=""></div>
 </head>
+
 <body>
     <!--<div class="img-container"><img src="/public/diseño/imagenes/logo.png">-->
-    
     <!--CAMPOS DE DATOS-->
-
-  
-
     <!--EMAIL-->
-        <div class="email">
-        <form action="register" method="post">  
-        <label for="email">EMAIL</label>
-        <input type="email" placeholder="enter email" ></form></div>
-   
-        <!--CONTRASEÑA-->    
-        <div class="password"><form action="register" method="post">
-        <label for="pass">CONTRASEÑA</label>
-        <input type="text" placeholder="enter password" id="password" ></form></div>
-    
-        <!--RECORDAR CONTRASEÑA-->
-    <div class="recordarpassword"<label for="RECORDAR CONTRASEÑA"><input id="RECORDAR CONTRASEÑA" type="checkbox" name="RECORDAR CONTRASEÑA" value="RECORDAR CONTRASEÑA">RECORDAR CONTRASEÑA</label><br></div>
-   
+    <div class="email">
+        <form action="register" method="post">
+            <label for="email"></label>
+            <input class="input-style" type="email" placeholder="ENTER E-MAIL">
+        </form>
+    </div>
+    <!--CONTRASEÑA-->
+    <div class="password"><input class="form-control" type="password" name="password" id="password"
+            placeholder="ENTER PASSWORD">
+    </div>
+    <!--RECORDAR CONTRASEÑA-->
+    <div class="recordarpassword" <label for="RECORDAR CONTRASEÑA"><input id="RECORDAR CONTRASEÑA" type="checkbox"
+            name="RECORDAR CONTRASEÑA" value="RECORDAR CONTRASEÑA">RECORDAR CONTRASEÑA</label><br></div>
+
     <!--INICIAR SESION-->
-        <div class="iniciarsesion"><button type="submit">INICIAR SESION</button></div>
-    
-        <!--REGISTRARSE-->    
-        <div class="registrarse"><button type="submit">REGISTRARSE</button></div>
-   
-        <!--ICONOS-->
-        <i class="fa-solid fa-envelope"></i>  <!--MAIL-->
-        <i class="fa-solid fa-user-crown"></i>  <!--USUARIO-->
-        <i class="fa-solid fa-lock-keyhole"></i> <!--CANDADO CERRADO-->
-        <i class="fa-solid fa-unlock-keyhole"></i> <!--CANDADO SEMI ABIERTO-->
-        <i class="fa-solid fa-star-sharp"></i> <!--ESTRELLA-->
-   
-        <!--REGISTRO POR HIPERVINCULOS Y REDES-->
-    <nav id="container">      
-    <!--HIPERVINCULO CON LOGO FACEBOOK-->
-    <div class="box">
-        <a href="https://www.facebook.com"><img class="img" src="/public/diseño/imagenes/Logo-Iconos/logofacebook.png"></a>
-    </div> 
-    <!--HIPERVINCULO CON LOGO INSTAGRAM-->
-    <div class="box">
-        <a href="https://www.instagram.com"><img class="img" src="/public/diseño/imagenes/Logo-Iconos/logoinstagram.png"></a>
-    </div> 
-    <!--HIPERVINCULO CON LOGO GOOGLE-->
-    <div class="box">
-        <a href="https://www.google.com"><img class="img" src="/public/diseño/imagenes/Logo-Iconos/logogoogle.png"></a>
-    </div> 
-    </nav> 
-    </form> 
-</div>  
+    <div class="button-container">
+        <button type="submit" class="btn btn-submit">INICIAR SESION</button>
+    </div>
+    <!--REGISTRARSE-->
+    <div class="button-container">
+        <a href="/views/register.html"><button type="submit" class="btn btn-submit">REGISTRARSE</button></a>
+    </div>
+
+    <!--REGISTRO POR HIPERVINCULOS Y REDES-->
+    <nav id="container">
+        <!--HIPERVINCULO CON LOGO FACEBOOK-->
+        <div class="box">
+            <a href="https://www.facebook.com"><img class="img"
+                    src="/public/diseño/imagenes/Logo-Iconos/logofacebook.png"></a>
+        </div>
+        <!--HIPERVINCULO CON LOGO INSTAGRAM-->
+        <div class="box">
+            <a href="https://www.instagram.com"><img class="img"
+                    src="/public/diseño/imagenes/Logo-Iconos/logoinstagram.png"></a>
+        </div>
+        <!--HIPERVINCULO CON LOGO GOOGLE-->
+        <div class="box">
+            <a href="https://www.google.com"><img class="img"
+                    src="/public/diseño/imagenes/Logo-Iconos/logogoogle.png"></a>
+        </div>
+    </nav>
+    </form>
 </body>
 </html>
+
+<!--ICONOS-->
+<i class="fa-solid fa-envelope"></i>
+<!--MAIL-->
+<i class="fa-solid fa-user-crown"></i>
+<!--USUARIO-->
+<i class="fa-solid fa-lock-keyhole"></i>
+<!--CANDADO CERRADO-->
+<i class="fa-solid fa-unlock-keyhole"></i>
+<!--CANDADO SEMI ABIERTO-->
+<i class="fa-solid fa-star-sharp"></i>
+<!--ESTRELLA-->

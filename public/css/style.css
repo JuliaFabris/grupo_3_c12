@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-@import url('header.css');
-@import url('footer.css');
+@import url('home.css');
+@import url('home.css');
+@import url('product-detail.css');
 
 *{
     box-sizing: border-box;
@@ -9,14 +10,15 @@
     font-family: 'Roboto', sans-serif;
     user-select: none;
 }
-h2{
-    margin: 5px 0;
-    text-transform: uppercase;
-    text-decoration: double;
-}
+
 .sustantivo{
     text-transform: capitalize;
 }
+h1,h2,h3{
+
+    font-size: var(--fenix);
+}
+
 .flex{
     display: flex;
     justify-content: center;
@@ -26,127 +28,5 @@ h2{
 body{
     background-color: black;
     text-align: center;
-}
-.home-container{
-    margin: 0 auto;
-    padding: 0 5px;
-    max-width: 420px;
-}
-/* /////////////////////////////////////////////////////header*/
-/*////////////////////////////////////////////^header*/
-
-/*////////////////////////////////////////////main*/
-.home-container main{
-    width: 100%;
-    padding: 0 10px;
-}
-.home-container main div.banner,
-.home-container main .main-section div.container-nav-bar{
-    display: none;
-}
-.home-container main div.banner img{
-    width: 100%;
-}
-
-.home-container main div.container-nav-bar nav.nav-bar{
-    flex-direction: column;
-    justify-content: space-between;
-}
-.home-container main div.container-nav-bar nav.nav-bar div{
-    border-radius: 10px;
-    margin: 20px 0;
-    background-color: #5A667B;
-    width: 100%;
-    height: 200px;
-    padding: 5px;
-}
-.home-container main div.container-nav-bar nav.nav-bar div ul{
-    list-style: none;
-}
-.home-container main div section.container-articulos{
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.home-container main .main-section .container-articulos .articulo{
-    flex-direction: column;
-    width: 170px;
-    height: 340px;
-    padding: 5px;
-    margin: 10px;
-    background-color: #0C9FCD;
-}
-.home-container main .main-section .container-articulos .articulo .img-container{
-    position: relative;
-    width: 100%;
-    height: 230px;
-}
-.home-container main .main-section .container-articulos .articulo .img-container img{
-    width: 100%;
-    height: 100%;
-}
-.home-container main .main-section .container-articulos .articulo div.data-articulo{
-    width: 100%;
-    height: 100px;
-    justify-content: space-around;
-    flex-direction: column;
-}
-.home-container main .main-section .container-articulos .articulo .data-articulo h4.titulo{
-    margin: 3px auto;
-}
-.home-container main div .container-articulos .articulo .data-articulo h6.precio{
-}
-/*////////////////////////////////////////////main*/
-
-/*fondo osuro desvanewcido
-box-shadow: 0px 0px 5px rgb(64 16 16);
-    background-color: rgb(22 6 6);
-    */
-
-/*////////////////////////////////////////////////////////FOOTER */
-/*////////////////////////////////////////////////////////FOOTER^*/
-
-
-/*///////////////////////   MEDIA QUERIES*/
-@media(min-width: 768px){
-    .home-container{
-        margin: 0 auto;
-        padding: 0 5px;
-        max-width: 850px;
-    }
-    /*header*/
-  
-    /*footer*/
-   
-}
-
-@media(min-width: 1024px){
-
-    .home-container{
-        max-width: 1280px;
-    }
-
-    
-    .home-container main.flex{
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .home-container main div.main-section{
-        flex-direction: row;
-        width: 100%;
-    }
-    .home-container main .main-section div.container-articulos{
-        width: 80%  ;
-    }
-    .home-container main .main-section div.container-nav-bar{
-        display: inline-block;
-        width: 20%;
-        align-self: flex-start;
-    }
-    .home-container main div.banner{
-        display: block;
-        margin: 20px 0;
-        width: 100%;
-    }
-    /*footer*/
-
+    min-width: 315px;
 }

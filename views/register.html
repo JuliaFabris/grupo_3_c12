@@ -1,55 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tree Movie - register</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="/css/register.css">
-    </head>
-<body>
 
-    <!--CAMPOS DE DATOS-->
-    <!--Nombre de usuario-->
-    <div class="NombreDeUsuario">
-        <form action="idnombre" method="post">  
-        <label for="Nombre">Nombre</label>
-        <input type="Nombre" placeholder="enter Nombre" ></form></div>
-    <!--Apellido de usuario-->
-    <div class="ApellidoDeUsuario">
-        <form action="idApellido" method="post">  
-        <label for="Apellido">Apellido</label>
-        <input type="Apellido" placeholder="enter Apellido" ></form></div>
-         <!--Apellido de usuario-->
-    <div class="NombreDeFantasia">
-        <form action="idNombreDeFantasia" method="post">  
-        <label for="NombreDeFantasia">NombreDeUsuario</label>
-        <input type="NombreDeFantasia" placeholder="enter Nombre de usuario"></form></div>
-    <!--EMAIL-->
-        <div class="email">
-        <form action="register" method="post">  
-        <label for="email">EMAIL</label>
-        <input type="email" placeholder="enter email" ></form></div>
-   
-        <!--CONTRASEÑA-->    
-        <div class="password"><form action="register" method="post">
-        <label for="pass">CONTRASEÑA</label>
-        <input type="text" placeholder="enter password" id="password" ></form></div>
-        
-        <!--CONFIRMAR CONTRASEÑA-->    
-        <div class="passwordconfirm"><form action="register" method="post">
-            <label for="pass">CONFIRMAR CONTRASEÑA</label>
-            <input type="text" placeholder="enter password" id="password" ></form></div>
-    <!--REGISTRARSE-->    
-    <div class="Continuar"><button type="submit">Continuar</button></div>
-    
-             <!--ICONOS-->
-        <i class="fa-solid fa-envelope"></i>  <!--MAIL-->
-        <i class="fa-solid fa-user-crown"></i>  <!--USUARIO-->
-        <i class="fa-solid fa-lock-keyhole"></i> <!--CANDADO CERRADO-->
-        <i class="fa-solid fa-unlock-keyhole"></i> <!--CANDADO SEMI ABIERTO-->
-        <i class="fa-solid fa-star-sharp"></i> <!--ESTRELLA-->
-    </form>   
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Movie - register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <div class="capa-fondo">
+        <img src="./diseño/imagenes/logo.png " alt="">
+        <div class="form-container">
+            <h2>Registro</h2>
+            <hr>
+            <form action="">
+                <div class="form">
+                    <div class="input-container">
+                        <input class="input-style" type="name" name="name" placeholder="Ingrese su nombre">
+                        <span class="error-message">Debes ingresar tu nombre</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="surname" name="surname" placeholder="Ingrese su apellido">
+                        <span class="error-message">Debes ingresar tu apellido</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="username" name="username" placeholder="Nombre de usuario">
+                        <span class="error-message">Nombre de usuario</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                        <span class="error-message">Debes ingresar tu email</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
+                        <span class="error-message">Debes ingresar una contraseña</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese la contraseña">
+                        <span class="error-message">Debes re-ingresar tu contraseña</span>
+                    </div>
+                    <div class="check">
+                        <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                        <input type="checkbox" name="terms" id="terms">
+                        <span class="error-message">Debes aceptar los términos y condiciones</span>
+                    </div>
+                    <div class="button-container">
+                        <span class="error-message">Hubo errores en el envío</span>
+                        <button type="submit" class="btn btn-submit">Registrarme</button>
+                    </div>
+                    <span><a href="login.html">Ya tengo cuenta</a></span>
+                </div>
+                <footer class="flex">
+                    <div class="info-personal">
+                        <ul class="flex">
+                            <li><a href="#">privacidad</li>
+                            <li><a href="#">terminos y condiciones</li>
+                            <li><a href="#">sobre nosotros</a></li>
+                        </ul>
+                    </div>
+                    <div class="redes-sociales flex">
+                        <span>siguenos</span>
+                        <ul class="flex">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
