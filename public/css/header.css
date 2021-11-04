@@ -1,10 +1,4 @@
-header.flex{
-    position: relative;
-    height: 80px;
-    justify-content: space-between;
-    padding: 0 10px 10px;
-    border-bottom: 2px ridge rgba(139, 0, 0, 0.692);
-}
+
 header .container-izquierda-header .search-bar-container .buscador{
     display: none;
     box-shadow: 0px 0px 5px rgba(230, 20, 20, 0.5);
