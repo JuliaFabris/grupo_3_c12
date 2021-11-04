@@ -1,5 +1,5 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
@@ -22,9 +22,9 @@ app.get('/register', (req, res) =>{
     res.sendFile(pathAbsolute('./views/register.html'))
 });
 
-app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
-http://localhost:${PORT}`));
-
 app.get('/product-detail.html', (req, res) =>{
     res.sendFile(pathAbsolute('./views/product-detail.html'))
 });
+app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
+http://localhost:${PORT}`));
+
