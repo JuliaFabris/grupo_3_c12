@@ -21,8 +21,6 @@ header {
   position: absolute;
 }
 
-.header_navigation {
-}
 
 .header_logo {
   width: 20%;
@@ -267,36 +265,40 @@ footer.flex-container-footer{
     width: 100%;
     height: auto;
     background-color: #5A667B;
-    flex-direction: column;
+    text-decoration: none;
+   
+   
+}
+.flexitem{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  text-decoration: none;
+  
 }
 
 
-
-.flex{
+.redes{
  
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content:space-evenly;
-  font-family: 'Fenix', serif;
-  font-size: 18px;
-  
-  
-  
-  
+  font-size: 25px;
+ 
 }
 
 .info{
+  display: flex;
   box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     user-select: none;
+    justify-content: center;
+    
+    
 }
 
-footer div.info ul {
-  flex-direction: column;
-}
 
 footer div ul {
   list-style: none;
@@ -306,6 +308,10 @@ footer div ul {
  footer div.redes-flex ul{
   margin-top: 5px;
 }
+
+
 footer div.redes-flex ul li{
   margin: 0 10px;
+  
 }
+ 
