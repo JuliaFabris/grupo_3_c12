@@ -103,7 +103,7 @@ section article  a.pd {
     margin-top: 13px;
     padding: 7px 10px;
     text-decoration: none;
-    border:2px solid var(--negro);
+    
 }
 
 
@@ -127,10 +127,18 @@ section article .info-detail{
 
 div.data-articulopd.flexpd{
  width: 30%;
- border:2px solid var(--negro);
+ background-color: var(--azul);
  align-self: center;
+ border-radius: 5%;
+ border-color: var(--grisazulado);
 }
 
+div.data-articulopd.flexpd:hover{
+
+    box-shadow:5px 3px 2px var(--grisazulado);
+    border:dotted 2px var(--azul);
+    background-color: var(--grisazulado);;
+}
 
 section.extras-flexpd {
     padding-top: 10%;
@@ -144,6 +152,7 @@ section.extras-flexpd {
     background-color: var(--negro);
 }
 h2.pd{
+    
     color:var(--azul);
     text-align: center;
 }
@@ -152,8 +161,10 @@ section.extras-flexpd article.pd{
     padding: 5px;
     width: 35%;
     background-color: var(--azul);
+    width: 30%;
+    display:flex;
+    flex-direction: column;
 }
-
 
 section.extras-flexpd article.pd .extraspd:hover{
     box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
@@ -162,12 +173,7 @@ section.extras-flexpd article.pd .extraspd:hover{
 
 }
 
-section.extras-flexpd article.pd{
-    width: 30%;
-    display:flex;
-    flex-direction: column;
-    
-}
+
 section.extras-flexpd article.pd div.extraspd a.pd{
   border:none;
 
@@ -243,26 +249,75 @@ footer div.redes-sociales ul li{
     
     main.flexpd-row{
         display:flex;
+        width: 80%;
         flex-direction: row;
+        margin-right: 0 auto;
+        float:left;
+        margin-right: -7%;
     }
 
     main.flexpd-row section.extras-flexpd{
-        max-width: 35%;
+        display: flex;
+        flex-direction:column;
+        padding:5px;
+        margin-right: -7%;
+        max-width: 400px;
     }
+
     main.flexpd-row section.pd-container.flexpd{
 
         display: flex;
         flex-direction:row;
         max-width:60%;;
         text-align:left;
+        margin:0 auto;
+        padding-bottom: 5%;
+    }
+
+   
+    div.data-articulopd.flexpd{
+        width: 30%;
+        height: 18%;
+        border:2px solid var(--negro);
+        align-self: center;
+        text-align: center;
+        margin-bottom:200px;
+        margin: 0 auto;
+           
+       }
+   article.pd article div.data-articulopd.flexpd a.pd{
+        color: var(--grisazulado);
+        text-decoration: none;
+    
+       }
+
+       div.data-articulopd.flexpd a.pd:hover  {
+        box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
+        }
+
+    div.data-articulopd.flexpd:hover{
+
+        box-shadow:5px 3px 2px var(--azul);
+        border:dotted 2px var(--grisazulado);
+        background-color: var(--azul);;
+    }
+
+
+    div.data-articulopd.flexpdimg .imgpd{
+
+        margin:0 auto;
 
     }
     
+    section.pd-container.flexpd  article.pd div.flexpd h4{
+
+        color:var(--negro)
+    }
         
-    section article .info-detail{
-        display:flex;
-        flex-direction: column;
-        align-items: left;
+    section.pd-container.flexpd  article.pd div.flexpd .info-detail{
+        
+        display: block;
+        position:absolute;
     }
 
     .info-detail ul li{
@@ -270,10 +325,7 @@ footer div.redes-sociales ul li{
         list-style: none;
     }
     
-    div.data-articulopd.flexpd{
-        position:absolute;
-        float:right;
-    }
+ 
    
     footer div.info-personal{
         margin: 15px 0 0;
@@ -314,12 +366,7 @@ header nav ul li{
 
 /*product*/
 
-.productpd {
 
-        max-width:90%;
-        margin-right: 5px;
-        padding-bottom: 30px;
-     }
 
  section.extras-flexpd {
     width:100%;
