@@ -26,10 +26,7 @@
 
 
 body.pd {
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
+    
     background-color:var(--negro);
     padding: 15px 10px 0;
   
@@ -40,9 +37,6 @@ body.pd {
     display:flex;
     flex-direction: row;
 }
-
-
-
 
 a.pd {
     color: var(--grisazulado);
@@ -56,11 +50,15 @@ a.pd:hover{
 .flexpd{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; 
     max-width: 420px;
     
 }
- .flexpd-row{
+
+main.flexpd-row{
+    padding-top:30px;
+}
+main.flexpd-row section.extras-flexpd{
      display:none;
     
  }
@@ -69,8 +67,8 @@ a.pd:hover{
     display:flex;
     flex-direction: column;
     margin: 15 auto;
-    max-width: 420px;
     width: 100%;
+    max-width: 420px;
     padding:  10px;
     background-color: var(--azul);
 }
@@ -79,7 +77,7 @@ a.pd:hover{
 section article .pd-container:hover{
 
     box-shadow:5px 3px 2px var(--grisazulado);
-    border: double 2px var(--grisazulado);
+    border: double 2px var(--rojo);
 }
 
 .imgpd{
@@ -116,7 +114,7 @@ section article  a.pd {
 }
 
 
-.product h4{
+.pd-container h4{
  font-family: var(--roboto);
  text-align: center;
  color:var(--azul);
@@ -127,61 +125,63 @@ section article .info-detail{
     display:none;
 }
 
-div.data-articulopd.flexpd {
-    border:2px solid var(--grisazulado);
+div.data-articulopd.flexpd{
+ width: 30%;
+ border:2px solid var(--negro);
+ align-self: center;
 }
 
-div.data-articulopd{
-    display:inline-block;
-    width: 100%;
-    height: 100px;
-    justify-content: space-around;
-    flex-direction: column;
-}
 
- 
 section.extras-flexpd {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:space-between ;
-    border-color: var(--azul);
+    padding-top: 10%;
     width: 100%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items:center;
+    border-color: var(--azul);
     background-color: var(--negro);
 }
-
-section.extras-flexpd article.pd .extraspd {
-    
-    border:dotted 2px var(--grisazulado);
-    width: 20%;
-    align-items: stretch;
-    background-color: var(--azul);
-
+h2.pd{
+    color:var(--azul);
+    text-align: center;
 }
 
-section.extras-flexpd article .extraspd:hover{
+section.extras-flexpd article.pd{
+    padding: 5px;
+    width: 35%;
+    background-color: var(--azul);
+}
+
+
+section.extras-flexpd article.pd .extraspd:hover{
     box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
     border:dotted 2px var(--grisazulado);
     background-color: var(--azul);
+
 }
 
-
-article.pd{
-    width: 100%;
+section.extras-flexpd article.pd{
+    width: 30%;
     display:flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    
+}
+section.extras-flexpd article.pd div.extraspd a.pd{
+  border:none;
 
 }
-.extraspd div{
-    width: 80%;
-    background-color: var(--azul);
-    color:var(--negro)
+
+section.extras-flexpd article.pd img.imgpd{ 
+        
+        padding-bottom: 7px;
+        
+        object-fit: cover;
+        overflow: hidden;
+
 }
 
-.extraspd div img{
-    object-fit: cover;
-   
-}
 
 
 
