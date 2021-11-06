@@ -113,39 +113,40 @@ section article  a.pd {
     
 }
 
-
-.info-detail ul li{
-    margin-bottom: 20px;
-    list-style: none;
-    display:none;
-}
-
-
-.pd-container h4{
- font-family: var(--roboto);
- text-align: center;
- color:var(--azul);
-
-}
-
 section article .info-detail{
     display:none;
+    /*margin-bottom: 20px;
+    list-style: none;*/
 }
 
+
+.pd-container h3{
+ font-family: var(--roboto);
+ text-align: center;
+ color:var(--negro);
+
+}
+
+
+
 div.data-articulopd.flexpd{
+    
  width: 30%;
- background-color: var(--azul);
  align-self: center;
- border-radius: 5%;
+ border-radius: 20%;
  border-color: var(--grisazulado);
+ border:double 2px var(--grisazulado);
+ background-color: var(--azul);
+
+    
 }
 
 div.data-articulopd.flexpd:hover{
 
-    box-shadow:5px 3px 2px var(--grisazulado);
-    border:dotted 2px var(--azul);
-    background-color: var(--grisazulado);;
+    box-shadow: 0px 0px 5px rgba(20, 59, 230, 0.39);
+        
 }
+
 
 section.extras-flexpd {
     padding-top: 10%;
@@ -161,7 +162,7 @@ section.extras-flexpd {
 
 h3.pd, h4.pd{
     
-    color:var(--azul);
+    color:green;
     text-align: center;
 }
 
@@ -190,7 +191,6 @@ section.extras-flexpd article.pd div.extraspd a.pd{
 section.extras-flexpd article.pd img.imgpd{ 
         
         padding-bottom: 7px;
-        
         object-fit: cover;
         overflow: hidden;
 
@@ -291,23 +291,31 @@ footer div.redes-sociales ul li{
     }
 
   
-
     main.flexpd-row section.pd-container.flexpd{
 
         display: flex;
         flex-direction:row;
         max-width:60%;
-        text-align:left;
+        height: 40%;
         margin:0 auto;
         padding-bottom: 5%;
+        margin-right: 1%;
+        
+        
     }
     main.flexpd-row section.pd-container.flexpd:hover{
         box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
     
     }
+
+ 
     
-    
-   
+    section article .info-detail{
+        align-self: flex-start;
+        margin-bottom: 20px;
+        list-style: none;
+    }  
+
     div.data-articulopd.flexpd{
         width: 30%;
         height: 18%;
@@ -325,7 +333,7 @@ footer div.redes-sociales ul li{
     
        }
      
-       div.data-articulopd.flexpd a.pd:hover  {
+    div.data-articulopd.flexpd a.pd:hover  {
         box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
         }
 
@@ -348,12 +356,8 @@ footer div.redes-sociales ul li{
         color:var(--negro)
     }
         
-    section.pd-container.flexpd  article.pd div.flexpd .info-detail{
-        
-        position:relative;
-
-        list-style: none;
-    }
+ 
+    
 
     
     
