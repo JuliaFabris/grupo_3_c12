@@ -147,7 +147,9 @@ div.data-articulopd.flexpd:hover{
         
 }
 
-
+main .flexpd-row h2{
+    color:var(--azul)
+}
 section.extras-flexpd {
     padding-top: 10%;
     width: 100%;
@@ -160,17 +162,13 @@ section.extras-flexpd {
     background-color: var(--negro);
 }
 
-h3.pd, h4.pd{
-    
-    color:green;
-    text-align: center;
-}
+
 
 section.extras-flexpd article.pd{
     padding: 5px;
     margin-left: 2px;
     background-color: var(--azul);
-    width: 15%;
+    width: 20%;
     display:flex;
     flex-direction: column;
 }
@@ -372,7 +370,6 @@ footer div.redes-sociales ul li{
 /*product*/
 
 
-
  section.extras-flexpd {
     width:100%;
      }
@@ -381,23 +378,12 @@ footer div.redes-sociales ul li{
     }
 
 
-    
-
-
-    
+      
 @media(min-width: 1024px){
     body{
         max-width:1180px;
     } 
- 
-   
+    
 
 }
-
-
- 
-
-
-
-
-     
+}
