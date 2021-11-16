@@ -359,27 +359,6 @@ footer div.redes-sociales ul li{
  
     
 
-    
-    
- 
-   
-    footer div.info-personal{
-        margin: 15px 0 0;
-    }
-    footer div.info-personal ul{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    footer div.info-personal ul li{
-        padding: 0 5px;
-        border-right: 1px double black;
-    }
-    footer div.info-personal ul li:last-child{
-        padding-right: unset;
-        border-right: unset;
-    }
-}
-
 
 
 @media (min-width:1180px) {
@@ -388,16 +367,6 @@ footer div.redes-sociales ul li{
         max-width:1180px;
     } 
 
-}
-header nav{
-    margin:30px 0px 20px;
-}
-header nav ul li{
-
-    font-size:16px;
-    margin-right:11px;
-    padding:7px 15px;
-    width:180px ;
 }
 
 /*product*/
@@ -413,21 +382,7 @@ header nav ul li{
 
 
     
-footer ul {
-      text-align:center;
 
-}
-footer ul li{
-   border-right: 1px solid white;
-   display:inline-block;
-   margin-top: 68px;
-   padding: 0 10px;
-   text-transform: capitalize;
-
-}
-footer ul li:last-child{
-    border-right: none;
-}
 
     
 @media(min-width: 1024px){
@@ -435,18 +390,7 @@ footer ul li:last-child{
         max-width:1180px;
     } 
  
-    footer.flex{
-        display:flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    footer div.info-personal{
-        margin: 10px auto;
-    }
-    footer div.redes-sociales{
-        display:flex;
-        flex-direction: row;
-    }
+   
 
 }
 
