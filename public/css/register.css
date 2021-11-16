@@ -213,6 +213,7 @@ select.input-select:focus {
 
     .form-container {
         width: 75%;
+        max-width:1000px;
     }
 
 }
