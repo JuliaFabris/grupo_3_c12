@@ -55,15 +55,15 @@ a.pd:hover{
     
 }
 
-main.flexpd-row{
+section.flexpd-row{
     padding-top:30px;
 }
-main.flexpd-row section.extras-flexpd{
+section.flexpd-row section.extras-flexpd{
      display:none;
     
  }
 
- main.flexpd-row section.pd-container.flexpd div.flexpd-row{
+ section.flexpd-row section.pd-container.flexpd div.flexpd-row{
     display:flex;
     flex-direction: column;
 }
@@ -197,7 +197,7 @@ section.extras-flexpd article.pd img.imgpd{
    
     section.flexpd-row{
         display:flex;
-        width: 80%;
+        width: 100%;
         flex-direction: row;
         margin-right: 0 auto;
         float:left;
@@ -208,13 +208,13 @@ section.extras-flexpd article.pd img.imgpd{
         display: flex;
         flex-direction:column;
         padding:5px;
-        max-width: 400px;
+        
     }
 
-    /*main.flexpd-row section.extras-flexpd article.pd{
-        width: fit-content;
+    section.flexpd-row section.extras-flexpd article.pd{
+        padding: 1%;
         margin:3px;
-    }*/
+    }
 
     section.flexpd-row section.extras-flexpd article.pd:hover{
         margin-top: 13px;
@@ -230,7 +230,7 @@ section.extras-flexpd article.pd img.imgpd{
         flex-direction: row;
     }
 
-  
+
     section.flexpd-row section.pd-container.flexpd{
 
         display: flex;
@@ -240,6 +240,7 @@ section.extras-flexpd article.pd img.imgpd{
         margin:0 auto;
         padding-bottom: 5%;
         margin-right: 1%;
+        position:relative
         
         
     }
@@ -247,7 +248,21 @@ section.extras-flexpd article.pd img.imgpd{
         box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
     
     }
-
+    
+    div.data-articulopd.flexpd
+    
+    div.data-articulopd.flexpd ul.info {
+        border-style: none;
+        display:flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 90%;
+        
+    }
+    div.data-articulopd.flexpd ul.info li{
+        
+        list-style:none;
+    }
     section article .info-detail{
         align-self: flex-start;
         margin-bottom: 20px;
