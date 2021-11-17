@@ -119,8 +119,13 @@ section article .info-detail{
     list-style: none;*/
 }
 
-
 .pd-container h3{
+    font-family: var(--roboto);
+    text-align: center;
+    color:var(--negro);
+   
+   }
+.pd-container h2,.pd-container h3{
  font-family: var(--roboto);
  text-align: center;
  color:var(--negro);
@@ -147,7 +152,10 @@ div.data-articulopd.flexpd:hover{
         
 }
 
-main .flexpd-row h2{
+h2{
+    color:var(--grisazulado);
+}
+main section.flexpd-row h2{
     color:var(--azul)
 }
 section.extras-flexpd {
@@ -250,7 +258,7 @@ section.extras-flexpd article.pd img.imgpd{
     }
     
     div.data-articulopd.flexpd
-    
+
     div.data-articulopd.flexpd ul.info {
         border-style: none;
         display:flex;
