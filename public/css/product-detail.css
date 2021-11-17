@@ -162,8 +162,6 @@ section.extras-flexpd {
     background-color: var(--negro);
 }
 
-
-
 section.extras-flexpd article.pd{
     padding: 5px;
     margin-left: 2px;
@@ -188,24 +186,16 @@ section.extras-flexpd article.pd div.extraspd a.pd{
 
 section.extras-flexpd article.pd img.imgpd{ 
         
-        padding-bottom: 7px;
-        object-fit: cover;
-        overflow: hidden;
+    padding-bottom: 7px;
+    object-fit: cover;
+    overflow: hidden;
 
 }
 
 
-
-
-
-
-/* footer */
-
-
-
 @media(min-width: 768px){
    
-    main.flexpd-row{
+    section.flexpd-row{
         display:flex;
         width: 80%;
         flex-direction: row;
@@ -214,7 +204,7 @@ section.extras-flexpd article.pd img.imgpd{
         margin-right: -7%;
     }
 
-    main.flexpd-row section.extras-flexpd {
+    section.flexpd-row section.extras-flexpd {
         display: flex;
         flex-direction:column;
         padding:5px;
@@ -226,7 +216,7 @@ section.extras-flexpd article.pd img.imgpd{
         margin:3px;
     }*/
 
-    main.flexpd-row section.extras-flexpd article.pd:hover{
+    section.flexpd-row section.extras-flexpd article.pd:hover{
         margin-top: 13px;
         padding: 7px 10px;
         box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
@@ -235,13 +225,13 @@ section.extras-flexpd article.pd img.imgpd{
         
     }
 
-    main.flexpd-row section.pd-container.flexpd div.flexpd-row{
+    section.flexpd-row section.pd-container.flexpd div.flexpd-row{
         display:flex;
         flex-direction: row;
     }
 
   
-    main.flexpd-row section.pd-container.flexpd{
+    section.flexpd-row section.pd-container.flexpd{
 
         display: flex;
         flex-direction:row;
@@ -253,13 +243,11 @@ section.extras-flexpd article.pd img.imgpd{
         
         
     }
-    main.flexpd-row section.pd-container.flexpd:hover{
+    section.flexpd-row section.pd-container.flexpd:hover{
         box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
     
     }
 
- 
-    
     section article .info-detail{
         align-self: flex-start;
         margin-bottom: 20px;
