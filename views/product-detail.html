@@ -109,7 +109,7 @@
                     <h4>Spiderman, de regreso a casa</h4>
                     
                         <a href="#"><img class="imgpd"src="./diseño/imagenes/productos/spiderman de regreso a casa.jpg"
-                        alt="Spiderman, de regreso a casa" width="150px"></a>
+                         width="150px"></a>
                     
                
             </article>
@@ -147,40 +147,52 @@
                    
                  
             </article>
+            
         </section>
-        <!--<div class="slide">
-			<div class="slide-inner">
-				<input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
-				<div class="slide-item">
-					<img src="https://www.migueltroyano.com/wp-content/uploads/2020/10/embeddingApi_7.jpg">
-				</div>
-				<input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-				<div class="slide-item">
-					<img src="https://www.migueltroyano.com/wp-content/uploads/2020/09/postgres_copy.png">
-				</div>
-				<input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-				<div class="slide-item">
-					<img src="https://www.migueltroyano.com/wp-content/uploads/2020/09/excel_guardar_como_csv.jpg">
-				</div>
-				<label for="slide-3" class="slide-control prev control-1">‹</label>
-				<label for="slide-2" class="slide-control next control-1">›</label>
-				<label for="slide-1" class="slide-control prev control-2">‹</label>
-				<label for="slide-3" class="slide-control next control-2">›</label>
-				<label for="slide-2" class="slide-control prev control-3">‹</label>
-				<label for="slide-1" class="slide-control next control-3">›</label>
-				<ol class="slide-indicador">
-					<li>
-						<label for="slide-1" class="slide-circulo">•</label>
-					</li>
-					<li>
-						<label for="slide-2" class="slide-circulo">•</label>
-					</li>
-					<li>
-						<label for="slide-3" class="slide-circulo">•</label>
-					</li>
-				</ol>
-			</div>
-		</div>-->
+        <section>
+            <div id="carrusel">
+                <a href="#" class="left-arrow"><img src="images/left-arrow.png" /></a>
+                <a href="#" class="right-arrow"><img src="images/right-arrow.png" /></a>
+                <div class="carrusel">
+                    <div class="product" id="product_0">
+                        <img src="./diseño/imagenes/productos/Chihiro.png" width="195" height="100" />
+                        <h5>El Viaje de Chichiro</h5>
+                        <p>165.00 €</p>
+                    </div>
+                    <div class="product" id="product_1">
+                        <img src="./diseño/imagenes/productos/spiderman un nuevo universo.jpg" width="195" height="100" />
+                        <h5>Spiderman:</h5>
+                        <h5>Un nuevo universo</h5>
+                        <p>100.00 €</p>
+                    </div>
+                    <div class="product" id="product_2">
+                        <img src="./diseño/imagenes/productos/guardianes de la galaxia.jpg" width="195" height="100" />
+                        <h5>Guardianes de la Galaxia</h5>
+                        <p>250.00 €</p>
+                    </div>
+                    <div class="product" id="product_3">
+                        <img src="./diseño/imagenes/productos/los jovenes titanes el contrato de judas.jpg" width="195" height="100" />
+                        <h5>Los jóvenes Titanes:</h5>
+                        <h5>El contraro de Judas</h5>
+                        <p>75.00 €</p>
+                    </div>
+                    <div class="product" id="product_4">
+                        <img src="./diseño/imagenes/productos/spiderman de regreso a casa.jpg" width="195" height="100" />
+                        <h5>Spiderman:</h5><br>
+                        <h5>De regreso a casa</h5><br>
+    
+                        <p>65.00 €</p>
+                    </div>
+                    <div class="product" id="product_5">
+                        <img src="./diseño/imagenes/productos/capitana marvel.jpg" width="195" height="100" />
+                        <h5>Capitana marvel</h5>
+                        <p>40.00 €</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
 
     </main>
         <footer class="flex">
@@ -203,7 +215,55 @@
         </footer>
 
 
-
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>
+        var current = 0;
+        var imagenes = new Array();
+         
+        $(document).ready(function() {
+            var numImages = 6;
+            if (numImages <= 3) {
+                $('.right-arrow').css('display', 'none');
+                $('.left-arrow').css('display', 'none');
+            }
+         
+            $('.left-arrow').on('click',function() {
+                if (current > 0) {
+                    current = current - 1;
+                } else {
+                    current = numImages - 3;
+                }
+         
+                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+         
+                return false;
+            });
+         
+            $('.left-arrow').on('hover', function() {
+                $(this).css('opacity','0.5');
+            }, function() {
+                $(this).css('opacity','1');
+            });
+         
+            $('.right-arrow').on('hover', function() {
+                $(this).css('opacity','0.5');
+            }, function() {
+                $(this).css('opacity','1');
+            });
+         
+            $('.right-arrow').on('click', function() {
+                if (numImages > current + 3) {
+                    current = current+1;
+                } else {
+                    current = 0;
+                }
+         
+                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+         
+                return false;
+            }); 
+         });
+        </script>
 </body>
 
 </html>
