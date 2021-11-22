@@ -97,6 +97,11 @@ section.pd-container.flexpd article.pd-container:hover{
     
 }
 */
+section.pd-container.flexpd div.flexpd-row /*div.flexpd-item-pd-container*/ {
+    width:100%;
+    background-image: url("../diseño/imagenes/productos/escuadron\ suicida.jpg");
+    background-size: cover;
+   }
 section.pd-container.flexpd div.flexpd-row div.flexpd-item-pd-container {
     width:100%;
     background-image: url("../diseño/imagenes/productos/escuadron\ suicida.jpg");
@@ -184,12 +189,15 @@ section.extras-flexpd article.pd{
 }
 
 section.extras-flexpd article.pd:hover{
-    box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
+    
     border:solid 2px var(--rojo);
     
 
 }
 
+section.extras-flexpd article.pd.no-show{
+display:none;
+}
 
 section.extras-flexpd article.pd a.pd{
   border:none;
@@ -399,7 +407,7 @@ section.extras-flexpd article.pd img.imgpd{
  
     
     .product#product-3, .product#product-4, .product#product-5{
-        display:inline-flex;
+        display:block;
     }
 
 
