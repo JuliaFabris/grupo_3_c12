@@ -4,27 +4,27 @@
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
 
   <body>
+    <main class="login-container">
     <div class="contenedor">
       <header>
-        <h1 class="title">TRIMOVI</h1>
-        <a href="">REGISTRARSE</a>
+        <h1><a href="home.html">PAGINA DE INICIO</a>
+        <a href="register.html">REGISTRARSE</a></h1>
       </header>
 
       <div class="login">
-        <article class="fondo">
           <img src="/diseño/imagenes/Logo-Iconos/logodeloginusuario.png" alt="User">
-          <h3>Inicio de Sesión</h3>
-          <form class="" action="index.html" method="post">
+          <form class="login-form" action="index.html" method="post">
             <span class="icon-user"></span><input class="inp" type="text" name="user" value=""><br>
             <span class="icon-key"></span><input class="inp" type="password" name="pass" value=""><br>
-            <a href="" class="he">He olvidado mi contraseña</a>
+            <h4><a href="" class="menssage-text">He olvidado mi contraseña</a></h4>
             <input class="boton" type="submit" name="inicio" value="Iniciar Sesión">
           </form>
-        </article>
+   
         <nav id="redes-container">
     
           <div class="box">
@@ -41,7 +41,7 @@
               <a href="https://www.google.com"><img class="img"
                       src="/diseño/imagenes/Logo-Iconos/logogoogle.png"></a>
           </div>
-      </div>
+        </main>
       <footer class="flex">
         <div class="info-personal">
             <ul class="flex">
@@ -62,4 +62,5 @@
     </footer>
     </div>
   </body>
+
 </html>
