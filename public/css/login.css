@@ -4,8 +4,9 @@
     margin: 0;
     padding: 0;
   }
+
   .contenedor{
-    background-image: url(/diseño/imagenes/logo.png);
+    background-image: url(/design/images/icons/logo.png);
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -15,7 +16,7 @@
     height: 100%;
   }
   
-  /*MAIN*/
+  /*HIPERVINCULOS PAGINA DE INICIO Y PAGINA DE REGISTRO*/
 
   main .login-container{
     width: 100%;
@@ -27,14 +28,14 @@
     justify-content: space-between;
     background-color: rgba(0, 0, 0,.3)
   }
-  header h1{
+  .Hipervinculos-vistasContainer h1{
     margin-left: 650px;
     margin-top: auto;
     font-family: montez;
     font-size: 30px;
   }
 
-  header a{
+  .Hipervinculos-vistasContainer a{
     margin-right: 30px;
     text-align: center;
     text-decoration: none;
@@ -45,7 +46,7 @@
     color: rgb(white,yellow);
     transition: all 0.3s ease-in-out;
   }
-  header a:hover{
+  .Hipervinculos-vistasContainer a:hover{
     color: white;
     box-shadow: 0px 0px 10px yellowgreen;
   }
@@ -132,6 +133,7 @@
     border: solid 2px rgba(255,255,255,.01);
     color: #000;
   }
+  /*iniciar sesion boton*/
   .boton{
     width: 100%;
     height: 30px;
@@ -160,16 +162,8 @@
     border: 0;
     border-radius: 5px;
   }
-  .he{
-    text-decoration: none;
-    text-align: right;
-    color: #fff;
-    font-size: 18px;
-    transition: all 300ms ease;
-  }
-  .he:hover{
-    color: rgb(184, 203, 214);
-  }
+
+
   .boton:hover{
     border: 120%;
   }
