@@ -3,24 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
 
   <body>
     <main class="login-container">
-        <a href="">REGRESAR PAGINA INICIO</a>
-        <a href="">REGISTRARSE</a>
-
+      
 
       <div class="login">
+        <div class="login-bottom-page">
+          <button  class="btn btn-submit"><a href="/">REGRESAR PAGINA INICIO</a></button>
+          <button  class="btn btn-submit"><a href="/register">REGISTRARSE</a></button>
+        </div>
         <article class="fondo">
-          <img src="/design/images/icons/icon-user-profile.png" alt="User">
+          <div class="aux">
+            <img src="/design/images/icons/icon-user-profile.png" alt="User">
+          </div>
           
           <form class="" action="index.html" method="post">
             <span class="icon-user"></span><input class="inp" type="text" name="user" value=""><br>
             <span class="icon-key"></span><input class="inp" type="password" name="pass" value=""><br>
-            <a href="" class="he">He olvidado mi contraseña</a>
+            <h2><a href="" class="he">He olvidado mi contraseña</a></h2>
             <input class="boton" type="submit" name="inicio" value="Iniciar Sesión">
           </form>
         </article>
@@ -41,26 +45,9 @@
                       src="/design/images/icons/logogoogle.png"></a>
           </div>
       </div>
-      <footer class="flex">
-        <div class="info-personal">
-            <ul class="flex">
-                <li><a href="#">privacidad</li>
-                <li><a href="#">terminos y condiciones</li>
-                <li><a href="#">sobre nosotros</a></li>
-            </ul>
-        </div>
-        <div class="redes-sociales flex">
-            <span>siguenos</span>
-            <ul class="flex">
-                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube-square"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-            </ul>
-        </div>
-    </footer>
+   
   </main>
-  
+
   </body>
 
 </html>
