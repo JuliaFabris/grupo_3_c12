@@ -13,7 +13,6 @@ _ _ _
 ### *Agustina Gimenez*
 - 23 años
 - Estudiante de programación
-- Empleada Data entry y madre de Lihué
 
 ### *Edgar Rios Espechi*
 - 25 años

@@ -1,12 +1,9 @@
-/*HTML*/
-
 *{
     margin: 0;
     padding: 0;
   }
-
   .contenedor{
-    background-image: url(/design/images/icons/logo.png);
+    background-image: url(/public/diseño/imagenes/logo.png);
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -15,10 +12,7 @@
     width: 100%;
     height: 100%;
   }
-  
-  /*HIPERVINCULOS PAGINA DE INICIO Y PAGINA DE REGISTRO*/
-
-  main .login-container{
+  header{
     width: 100%;
     color: #fff;
     display: flex;
@@ -28,14 +22,12 @@
     justify-content: space-between;
     background-color: rgba(0, 0, 0,.3)
   }
-  .Hipervinculos-vistasContainer h1{
-    margin-left: 650px;
-    margin-top: auto;
+  header h1{
+    margin-left: 30px;
     font-family: montez;
     font-size: 30px;
   }
-
-  .Hipervinculos-vistasContainer a{
+  header a{
     margin-right: 30px;
     text-align: center;
     text-decoration: none;
@@ -46,30 +38,19 @@
     color: rgb(white,yellow);
     transition: all 0.3s ease-in-out;
   }
-  .Hipervinculos-vistasContainer a:hover{
+  header a:hover{
     color: white;
     box-shadow: 0px 0px 10px yellowgreen;
   }
-
-
   .login{
     margin-top: 130px;
-    margin-bottom: 20px;
+    margin-bottom: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 40%;
     height: 100%;
   }
-
-  
-
-.login-form {
-  background-color: rgba(116, 108, 108, 0.9);
-  margin-top: -100px;
-  width: 100%;
-  height: 35%;
-}
   .fondo{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
@@ -133,7 +114,6 @@
     border: solid 2px rgba(255,255,255,.01);
     color: #000;
   }
-  /*iniciar sesion boton*/
   .boton{
     width: 100%;
     height: 30px;
@@ -162,8 +142,16 @@
     border: 0;
     border-radius: 5px;
   }
-
-
+  .he{
+    text-decoration: none;
+    text-align: right;
+    color: #fff;
+    font-size: 18px;
+    transition: all 300ms ease;
+  }
+  .he:hover{
+    color: rgb(184, 203, 214);
+  }
   .boton:hover{
     border: 120%;
   }
@@ -176,7 +164,6 @@
     width: auto;
   }
   
-  /*FOOTER*/
 
   @import url('footer.css');
   
