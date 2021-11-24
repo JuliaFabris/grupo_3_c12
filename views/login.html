@@ -1,55 +1,65 @@
 <!DOCTYPE html>
 <html>
-  
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
 
   <body>
-    <main class="login-container">
     <div class="contenedor">
-      
-      <div class="Hipervinculos-vistasContainer">
-        <h1><a href="http://localhost:3000/">PAGINA DE INICIO</a>
-        <a href="http://localhost:3000/register">REGISTRARSE</a></h1>
-      </div>
+      <header>
+        <h1 class="title">TRIMOVI</h1>
+        <a href="">REGISTRARSE</a>
+      </header>
 
       <div class="login">
-
-          <img src="/design/images/icons/icon-user-profile.png" alt="User">
-          <form class="login-form" action="index.html" method="post">
+        <article class="fondo">
+          <img src="/diseño/imagenes/Logo-Iconos/logodeloginusuario.png" alt="User">
+          <h3>Inicio de Sesión</h3>
+          <form class="" action="index.html" method="post">
             <span class="icon-user"></span><input class="inp" type="text" name="user" value=""><br>
             <span class="icon-key"></span><input class="inp" type="password" name="pass" value=""><br>
-            <h4><a href="" class="menssage-text">He olvidado mi contraseña</a></h4>
+            <a href="" class="he">He olvidado mi contraseña</a>
             <input class="boton" type="submit" name="inicio" value="Iniciar Sesión">
           </form>
-   
+        </article>
         <nav id="redes-container">
-    <div class="box">
+    
+          <div class="box">
               <a href="https://www.facebook.com"><img class="img"
-                      src="/design/images/icons/logofacebook.png"></a>
+                      src="/diseño/imagenes/Logo-Iconos/logofacebook.png"></a>
           </div>
       
           <div class="box">
               <a href="https://www.instagram.com"><img class="img"
-                      src="/design/images/icons/logoinstagram.png"></a>
+                      src="/diseño/imagenes/Logo-Iconos/logoinstagram.png"></a>
           </div>
       
           <div class="box">
               <a href="https://www.google.com"><img class="img"
-                      src="/design/images/icons/logogoogle.png"></a>
+                      src="/diseño/imagenes/Logo-Iconos/logogoogle.png"></a>
           </div>
-        
-        </main>
-      
-       
       </div>
-  
+      <footer class="flex">
+        <div class="info-personal">
+            <ul class="flex">
+                <li><a href="#">privacidad</li>
+                <li><a href="#">terminos y condiciones</li>
+                <li><a href="#">sobre nosotros</a></li>
+            </ul>
+        </div>
+        <div class="redes-sociales flex">
+            <span>siguenos</span>
+            <ul class="flex">
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+            </ul>
+        </div>
+    </footer>
     </div>
   </body>
-
 </html>

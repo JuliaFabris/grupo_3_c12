@@ -6,7 +6,8 @@
 @import url('login.css');
 @import url('carrito.css');
 @import url('register.css');
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -14,21 +15,25 @@
     user-select: none;
 }
 
-.sustantivo{
+.sustantivo {
     text-transform: capitalize;
 }
-h1,h2,h3{
+
+h1,
+h2,
+h3 {
 
     font-size: var(--fenix);
 }
 
-.flex{
+.flex {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-body{
+
+body {
     background-color: black;
     text-align: center;
     min-width: 315px;

@@ -1,0 +1,254 @@
+[
+    {
+        "id": 1,
+        "nombre": "Ant-man & Wasp",
+        "descripcion": "Scott Lang vuelve a enfundarse el traje de Ant-Man para pelear codo a codo junto con la Avispa. La misión revela a los dos superhéroes un secreto terrible y los enfrenta a su enemigo más poderoso.",
+        "precio": 270,
+        "genero": [
+            "accion", "fantasia", "superheroes"
+        ],
+        "imagen": "antman-and-wasp.webp",
+        "anio": 2018
+    }
+    ,
+    {
+        "id": 2,
+        "nombre": "Pantera Negra",
+        "descripcion": "Situada después de los eventos de Capitán América: Civil War, T'Challa, hijo del fallecido rey T'Chaka, asciende al trono de Wakanda y se convierte en Pantera Negra, pero descubre que reinar su nación será un desafío para él, ya que no solo debe gobernar y proteger su país, sino también derrotar a un viejo enemigo del pasado, que amenaza a todo el mundo.",
+        "precio": 270,
+        "genero": [
+            "accion", "fantasia", "superheroes"
+        ],
+        "imagen": "black-phanter.webp",
+        "anio": 2018
+    }
+    ,
+    {
+        "id": 3,
+        "nombre": "Capitana Marvel",
+        "descripcion": "La guerrera Vers no recuerda su pasado, el cual vuelve a ella en sueños. A pesar de sus problemas para controlar sus emociones y, con ellas, sus poderes, la Inteligencia Suprema le permite participar en una misión.",
+        "precio": 300,
+        "genero": [
+            "accion", "fantasia", "superheroes"
+        ],
+        "imagen": "capitana-marvel.webp",
+        "anio": 2019
+    }
+    ,
+    {
+        "id": 4,
+        "nombre": "El viaje de Chihiro",
+        "descripcion": "Cuenta la historia de una niña de doce años llamada Chihiro, quien durante una mudanza se ve atrapada en un mundo mágico y sobrenatural, teniendo como misión buscar su libertad y la de sus padres, y así poder regresar a su mundo.",
+        "precio": 190,
+        "genero": [
+            "animada", "fantasia", "aventura", "drama"
+        ],
+        "imagen": "Chihiro.png",
+        "anio": 2003
+    }
+    ,
+    {
+        "id": 5,
+        "nombre": "Doctor Strange",
+        "descripcion": "La vida del famoso neurocirujano Dr. Stephen Strange cambia para siempre cuando un terrible accidente de coche le arrebata el uso de sus manos.",
+        "precio": 300,
+        "genero": [
+            "accion", "aventura", "ciencia ficción", "fantasia", "superheroes"
+        ],
+        "imagen": "doctor-stranger.jpg",
+        "anio": 2016
+    }
+    ,
+    {
+        "id": 6,
+        "nombre": "Guardianes de la galaxia Vol. 1",
+        "descripcion": "El temerario aventurero Peter Quill, tras robar una misteriosa esfera codiciada por Ronan, un poderoso villano cuyas ambiciones amenazan a todo el universo, se convierte en la presa más codiciada por todos los cazarrecompensas de la galaxia.",
+        "precio": 300,
+        "genero": [
+            "accion", "aventura", "ciencia ficción", "superheroes", "comedia"
+        ],
+        "imagen": "guardians-of-galaxy.jpg",
+        "anio": 2014
+
+    }
+    ,
+    {
+        "id": 7,
+        "nombre": "Liga de la justicia oscura: Guerra Apokolips",
+        "descripcion": "Luego de un ataque fallido a Apokolips que dejó muertos a muchos héroes, los miembros restantes de la Liga de la Justicia, la Liga de la Justicia Oscura, los Jóvenes Titanes y el Escuadrón Suicida unen fuerzas contra Darkseid en una batalla final épica para salvar la Tierra.",
+        "precio": 250,
+        "genero": [
+            "accion", "fantasia", "superheroes", "animada"
+        ],
+        "imagen": "justice-league-apokolips-war.jpg",
+        "anio": 2020
+    }
+    ,
+    {
+        "id": 8,
+        "nombre": "Liga de la justicia oscura",
+        "descripcion": "Batman forma la Liga de la Justicia Oscura, un nuevo equipo de especialistas en artes oscuras que es encabezado por John Constantine. El equipo debe revelar el misterio de una plaga sobrenatural y enfrentar a los poderosos villanos detrás del asedio.",
+        "precio": 230,
+        "genero": [
+            "accion", "ciencia ficción", "superheroes", "animada"
+        ],
+        "imagen": "justice-league-dark.jpg",
+        "anio": 2017
+    }
+    ,
+    {
+        "id": 9,
+        "nombre": "Liga de la justicia vs Los cinco fatales",
+        "descripcion": "El destino de la Tierra está en peligro cuando la Liga de la Justicia se enfrenta a un nuevo y poderoso amenaza: los Cinco Fatales.",
+        "precio": 270,
+        "genero": [
+            "accion", "fantasia", "superheroes"
+        ],
+        "imagen": "justice-league-fatal-five.webp",
+        "anio": 2019
+    }
+    ,
+    {
+        "id": 10,
+        "nombre": "Spiderman: Lejos de casa",
+        "descripcion": "Peter Parker decide pasar unas merecidas vacaciones en Europa junto a MJ, Ned y el resto de sus amigos. Sin embargo, Peter debe volver a ponerse el traje de Spider-Man cuando Nick Fury le encomienda una nueva misión: frenar el ataque de unas criaturas que están causando el caos en el continente.",
+        "precio": 350,
+        "genero": [
+            "accion", "fantasia", "superheroes", "aventura"
+        ],
+        "imagen": "spiderman-far-from-home.jpg",
+        "anio": 2019
+    }
+    ,
+    {
+        "id": 11,
+        "nombre": "Spiderman: de regreso a casa",
+        "descripcion": "Peter Parker asume su nueva identidad como Spider-Man y regresa a vivir con su tía después de su aventura con los Vengadores. Al volver, mientras sigue bajo la tutela de Tony Stark, descubre que ha surgido un nuevo y despiadado enemigo que pretende destruir todo lo que ama: el Buitre.",
+        "precio": 320,
+        "genero": [
+            "accion", "fantasia", "superheroes", "aventura"
+        ],
+        "imagen": "spiderman-homecoming.jpg",
+        "anio": 2017
+    }
+    ,
+    {
+        "id": 12,
+        "nombre": "Spiderman: un nuevo universo",
+        "descripcion": "",
+        "precio": 300,
+        "genero": [
+            "accion", "fantasia", "superheroes", "animada"
+        ],
+        "imagen": "spiderman-new-universe.jpg",
+        "anio":2019
+    }
+    ,
+    {
+        "id": 13,
+        "nombre": "Escuadron suicida: Deuda infernal",
+        "descripcion": "Amanda Waller forma el Escuadrón Suicida con Deadshot, Harley Quinn, Tigre de Bronce, Capitán Boomerang, Killer Frost, y Copperhead. Están enviados para recuperar un potencial objeto místico que está en la mira de otros villanos. Tiene relación directo con la película animada Flash Point.",
+        "precio": 290,
+        "genero": [
+            "accion", "fantasia", "superheroes"
+        ],
+        "imagen": "antman-and-wasp.webp",
+        "anio": 2018
+    }
+    ,
+    {
+        "id": 14,
+        "nombre": "El escuadron suicida",
+        "descripcion": "La oficial del departamento de inteligencia de los EE.UU., Amanda Waller, ha convocado a un grupo de individuos dispares y viles que no tienen nada que perder.",
+        "precio": 310,
+        "genero": [
+            "accion", "superheroes", "aventura", "crimen", "fantasia", "ciencia ficción"
+        ],
+        "imagen": "suicide-squad.jpg",
+        "anio": 2016
+    }
+    ,
+    {
+        "id": 15,
+        "nombre": "Superman: el hilo rojo",
+        "descripcion": "Una vez que Krypton es destruido, el navío de Kal-El aterriza en la Unión Soviética, donde fue criado para combatir la ideología marxista como el mayor protector de Rusia: Superman. Mas conforme el héroe de Rusia empieza a crear caos en el mundo entero representando a los soviéticos, las fuerzas internacionales deben intervenir para salvar al planeta.",
+        "precio": 350,
+        "genero": [
+            "accion", "fantasia", "superheroes", "animada"
+        ],
+        "imagen": "superman-red-son.jpg",
+        "anio": 2020
+    }
+    ,
+    {
+        "id": 16,
+        "nombre": "Jovenes titanes: el contrato de Judas",
+        "descripcion": "Liderados por Starfire, los Teen Titans (Beast Boy, Raven, Blue Beetle, Robin y el recientemente regresado Nightwing) han construido un equipo cohesionado en su batalla sin fin contra el mal; pero el nuevo miembro del equipo, la misteriosa y poderosa Terra, quizás esté alterando su dinámica. Mientras tanto un antiguo mal, Brother Blood, ha despertado y el conocido villano Deathstroke está acechando en las sombras por lo que ambos están esperando para atacar de forma inesperada. Al final, los Teen Titans necesitarán enfrentarse a sus enemigos y a sus propias dudas y sobreponerse a las fuerzas malvadas que los rodean en este inesperado relato de intriga, aventura y decepción.",
+        "precio": 350,
+        "genero": [
+            "accion", "fantasia", "superheroes", "animada"
+        ],
+        "imagen": "teen-titans-judas.jpg",
+        "anio": 2017
+    }
+    ,
+    {
+        "id": 17,
+        "nombre": "Los vengadores: End game",
+        "descripcion": "El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito, que le confiere un poder incalculable. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia, que deberán estar dispuestos a sacrificarlo todo por un bien mayor. Capitán América e Ironman deberán limar sus diferencias, Black Panther apoyará con sus tropas desde Wakanda, Thor y los Guardianes de la Galaxia e incluso Spider-Man se unirán antes de que los planes de devastación y ruina pongan fin al universo. ¿Serán capaces de frenar el avance del titán del caos? Siempre es bueno conocer mas de una historia tan original, con una gran dosis de acción a cada momento y escenas no mostradas en la película, te divertirás muchísimo!!!!! Disfruta de los extras, escenas eliminadas y entrevistas exclusivas.",
+        "precio": 290,
+        "genero": [
+            "accion", "fantasia", "superheroes", "ciencia ficción", "aventura"
+        ],
+        "imagen": "vengadores-end-game.jpg",
+        "anio": 2019
+    }
+    ,
+    {
+        "id": 18,
+        "nombre": "Los vengadores: Infitity war",
+        "descripcion": "Los superhéroes se alían para vencer al poderoso Thanos, el peor enemigo al que se han enfrentado. Si Thanos logra reunir las seis gemas del infinito: poder, tiempo, alma, realidad, mente y espacio, nadie podrá detenerlo.",
+        "precio": 310,
+        "genero": [
+            "accion", "fantasia", "superheroes", "ciencia ficción", "aventura"
+        ],
+        "imagen": "vengadores-infinity-war.jpg",
+        "anio": 2018
+    }
+    ,
+    {
+        "id": 19,
+        "nombre": "Venom",
+        "descripcion": "Como periodista, Eddie Brock (Tom Hardy) lleva tiempo intentando desenmascarar al creador de la Fundación Vida, el famoso genio científico Carlton Drake (Riz Ahmed), una obsesión que ha arruinado su carrera y su relación con su novia, Anne (Michelle Williams). Al investigar uno de los experimentos de Drake, el ente alienígena Venom se fusiona con el cuerpo de Eddie, y el reportero adquiere de pronto nuevos e increíbles superpoderes, así como la oportunidad de hacer prácticamente lo que se le antoje. Retorcido, oscuro, impredecible e impulsado por la cólera, Venom obliga a Eddie a luchar por controlar unas habilidades sumamente peligrosas que, al mismo tiempo, también resultan embriagadoras y le hacen sentir poderoso. Dado que Eddie y Venom se necesitan mutuamente para conseguir lo que quieren, se van entremezclando cada vez más...",
+        "precio": 320,
+        "genero": [
+            "accion", "ciencia ficción", "superheroes", "comedia negra", "terror"
+        ],
+        "imagen": "venom-1.jpg",
+        "anio": 2018 
+    }
+    ,
+    {
+        "id": 20,
+        "nombre": "Venom: Carnage liberado",
+        "descripcion": "Después de encontrar un cuerpo anfitrión en el periodista de investigación Eddie Brock, el simbionte alienígena debe enfrentarse a un nuevo enemigo, Carnage, el alter ego del asesino en serie Cletus Kasady.",
+        "precio": 400,
+        "genero": [
+            "accion", "ciencia ficción", "superheroes", "comedia negra", "terror"
+        ],
+        "imagen": "venom-2.jpg",
+        "anio": 2021
+    }
+    ,
+    {
+        "id": 21,
+        "nombre": "X-men: Dark Phoenix",
+        "descripcion": "Los X-Men se enfrentan a su enemigo más poderoso: uno de sus miembros, Jean Grey. Durante una misión de rescate en el espacio, Jean casi muere al ser alcanzada por una misteriosa fuerza cósmica. Cuando regresa a casa, esa radiación la ha hecho más poderosa, pero mucho más inestable.",
+        "precio": 200,
+        "genero": [
+            "accion", "fantasia", "superheroes"
+        ],
+        "imagen": "x-men-dar-fenix.webp",
+        "anio": 2019
+    }
+]
