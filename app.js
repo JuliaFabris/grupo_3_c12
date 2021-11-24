@@ -14,7 +14,7 @@ app.get('/', (req, res) =>{
     res.sendFile(pathAbsolute('./views/home.html'))
 });
 
-app.get('/login.html', (req, res) =>{
+app.get('/login', (req, res) =>{
     res.sendFile(pathAbsolute('./views/login.html'))
 });
 
@@ -25,6 +25,10 @@ app.get('/register', (req, res) =>{
 app.get('/product-detail', (req, res) =>{
     res.sendFile(pathAbsolute('./views/product-detail.html'))
 });
+
+app.get('/carrito', (req, res) =>{
+    res.sendFile(pathAbsolute('./views/carrito.html'))
+});
+
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
-

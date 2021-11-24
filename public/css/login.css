@@ -1,119 +1,155 @@
+@import url('footer.css');
+
+/*HTML*/
 *{
-    margin: 0;
-    padding: 0;
-  }
-  .contenedor{
-    background-image: url(/public/diseño/imagenes/logo.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-  header{
-    width: 100%;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0,.3)
-  }
-  header h1{
-    margin-left: 30px;
-    font-family: montez;
-    font-size: 30px;
-  }
-  header a{
-    margin-right: 30px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 25px;
-    transition: all ease 300ms;
-    background: linear-gradient(45deg, blue 0%,  rgba(243, 6, 17, 0.719) 50%);
-    color: rgb(white,yellow);
-    transition: all 0.3s ease-in-out;
-  }
-  header a:hover{
-    color: white;
-    box-shadow: 0px 0px 10px yellowgreen;
-  }
-  .login{
-    margin-top: 130px;
-    margin-bottom: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-    height: 100%;
-  }
-  .fondo{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    margin:-200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    border-radius: 5px;
-  }
-  
-  
-  img {
-    transform: scale(0.4);
-  }
-  
-  .fondo img{
-    margin-top: 75px;
-    margin-bottom: 40px;
-    width: 100%;
-    border-radius: 50%;
-    border: solid #fff 5px;
-  }
-  .fondo h3{
-    color: #fff;
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-  .fondo form{
-    width: 70%;
-  }
-  .fondo form span{
-    margin-right:0px;
-    background-color: rgba(255, 255, 255,.6);
-    color: #000;
-    border:solid 7px rgba(255, 255, 255,.01);
-    border-bottom: solid 9.5px rgba(255, 255, 255,.01);
-    border-top: solid 9px rgba(255, 255, 255,.01);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  .inp{
-    box-shadow: 0;
-    border: 0;
-    background-color: rgba(255, 255, 255, .1);
-    width: 90%;
-    margin-bottom: 35px;
-    height: 30px;
-    border: solid 2px rgba(255,255,255,.5);
-    font-size: 20px;
-    color: #fff;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    text-align: right;
-    transition: all 250ms ease;
-  }
-  .fondo form .inp:focus{
-    outline:0px;
-    background-color: rgba(255, 255, 255, .6);
-    border: solid 2px rgba(255,255,255,.01);
-    color: #000;
-  }
+  margin: 0;
+  padding: 0;
+}
+.login-container{
+  background-image: url(/design/images/icons/logo.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+ 
+}
+
+/*HIPERVINCULOS PAGINA DE INICIO Y PAGINA DE REGISTRO*/
+
+main.login-container{
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0,.3)
+}
+.Hipervinculos-vistasContainer h1{
+  margin-left: 650px;
+  margin-top: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+}
+.Hipervinculos-vistasContainer a{
+  margin-right: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: all ease 300ms;
+  background: linear-gradient(45deg, blue 0%,  rgba(243, 6, 17, 0.719) 50%);
+  color: rgb(white,yellow);
+  transition: all 0.3s ease-in-out;
+}
+.Hipervinculos-vistasContainer a:hover{
+  color: white;
+  box-shadow: 0px 0px 10px yellowgreen;
+}
+
+/*AVATAR*/
+
+.login{
+  margin-top: 130px;
+  width: 60%;
+  height: 100%;
+}
+
+
+
+.login-form {
+background-color: rgba(116, 108, 108, 0.9);
+margin-top: -100px;
+width: 100%;
+height: 35%;
+}
+.fondo{
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border-radius: 5px;
+}
+
+
+.login-container img  {
+  transform: scale(0.4);
+  border-radius: 50%;
+  border: solid #fff 5px;
+}
+
+.fondo h3{
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+.fondo form{
+  width: 70%;
+}
+.fondo form span{
+  margin-right:0px;
+  background-color: rgba(255, 255, 255,.6);
+  color: #000;
+  border:solid 7px rgba(255, 255, 255,.01);
+  border-bottom: solid 9.5px rgba(255, 255, 255,.01);
+  border-top: solid 9px rgba(255, 255, 255,.01);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.inp{
+  box-shadow: 0;
+  border: 0;
+  background-color: rgba(255, 255, 255, .1);
+  width: 90%;
+  margin-bottom: 35px;
+  height: 30px;
+  border: solid 2px rgba(255,255,255,.5);
+  font-size: 20px;
+  color: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: right;
+  transition: all 250ms ease;
+}
+.fondo form .inp:focus{
+  outline:0px;
+  background-color: rgba(255, 255, 255, .6);
+  border: solid 2px rgba(255,255,255,.01);
+  color: #000;
+}
+
+/*FORMULARIO*/ 
+
+.login-form {
+  background-color: rgba(121, 112, 122, 0.9);
+  margin-top: -100px;
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border-radius: 5px;
+
+}
+
+/*he olvidado mi contraseña*/
+
+.login-formtext {
+display: flex;
+flex-direction: column;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+  /*iniciar sesion boton*/
+
   .boton{
     width: 100%;
     height: 30px;
@@ -142,16 +178,6 @@
     border: 0;
     border-radius: 5px;
   }
-  .he{
-    text-decoration: none;
-    text-align: right;
-    color: #fff;
-    font-size: 18px;
-    transition: all 300ms ease;
-  }
-  .he:hover{
-    color: rgb(184, 203, 214);
-  }
   .boton:hover{
     border: 120%;
   }
@@ -162,8 +188,31 @@
     transform: scale(0.3);
     height: auto;
     width: auto;
-  }
-  
 
-  @import url('footer.css');
-  
+  }
+
+  /* Media queries*/
+/* Tablet */
+
+@media(min-width: 475px){
+  main {
+      width: 90%;
+  }
+  .form-container {
+      width: 75%;
+      max-width:1000px;
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+  main {
+      width: 80%;
+  }
+  .form-container {
+      width: 75%;
+  }
+
+}
