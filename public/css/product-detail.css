@@ -42,7 +42,7 @@ div.logo-container a.pd{
 .flexpd-row{
     
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 body.pd header.flex a.pd {
@@ -64,13 +64,14 @@ a.pd:hover{
 
 section.flexpd-row{
     padding-top:30px;
+
 }
 section.flexpd-row section.extras-flexpd{
      display:none;
     
  }
 
- section.flexpd-row section.pd-container.flexpd div.flexpd-row{
+ section.pd-container.flexpd {
     display:flex;
     flex-direction: column;
 }
@@ -97,18 +98,17 @@ section.pd-container.flexpd article.pd-container:hover{
     
 }
 */
-section.pd-container.flexpd div.flexpd-row /*div.flexpd-item-pd-container*/ {
+
+section.pd-container.flexpd div.flexpd-row {
     width:100%;
-    background-image: url("../diseño/imagenes/productos/escuadron\ suicida.jpg");
-    background-size: cover;
+    background-image: url("../diseño/imagenes/productos/escuadron suicida.jpg");
+    background-size: cover; 
    }
-section.pd-container.flexpd div.flexpd-row div.flexpd-item-pd-container {
-    width:100%;
-    background-image: url("../diseño/imagenes/productos/escuadron\ suicida.jpg");
-    background-size: cover;
-   }
-   section.pd-container.flexpd div.flexpd-row div.flexpd-item-pd-container img{
-       opacity:0;
+section.pd-container.flexpd div.flexpd-row img {
+      width:100%;
+
+      
+      
    }
 div.flexpd-item-pd-container article.pd h3{
     margin-top: 3%;
@@ -151,10 +151,11 @@ section article .info-detail, div.infoprod,  section.flexpd-row section.detalle-
 div.data-articulopd.flexpd{
     
  width: 30%;
- align-self: center;
+ margin-left:30%;
  border-color: var(--grisazulado);
  border:double 2px var(--grisazulado);
  background-color: var(--grisazulado);
+ 
 
     
 }
@@ -169,25 +170,34 @@ main .flexpd-row h2{
     color:var(--azul)
 }
 section.extras-flexpd {
-    padding-top: 5%;
+    padding: 1%;
     width: 100%;
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content:space-around;
     border-color: var(--azul);
     background-color: var(--negro);
 }
 
 section.extras-flexpd article.pd{
-    padding: 5px;
-    margin-left: 2px;
+   
+    
     background-color: var(--azul);
-    width: 15%;
+    width: 40%;
+    height:200px;
     display:flex;
     flex-direction: column;
 }
-
+section.extras-flexpd article.pd h4{
+    padding: bottom -30px;
+}
+section.extras-flexpd article.pd img{
+ margin:0 auto;
+ width:90%;
+ margin-top:25px;
+       
+}
 section.extras-flexpd article.pd:hover{
     
     border:solid 2px var(--rojo);
@@ -206,12 +216,20 @@ section.extras-flexpd article.pd a.pd{
 }
 
 section.extras-flexpd article.pd img.imgpd{ 
-        width:150px;
+        
+       
         
 }
+section h3{
+    padding-top:2%;
+    color:white;
+}
 
-#carrusel {
-    float:left;
+section article#carrusel {
+    
+    display:flex;
+    /*flex-direction: row;
+    justify-content: center;*/
     width:80%;
     overflow:hidden;
     height:203px;
@@ -245,10 +263,11 @@ section.extras-flexpd article.pd img.imgpd{
  
 .carrusel>div {
     float: left;
-    height: 203px;
+   height: 203px;
     margin-right: 5px;
     width: 195px;
     text-align:center;
+    color:var(--negro);
 }
  
 .carrusel img {
@@ -256,11 +275,17 @@ section.extras-flexpd article.pd img.imgpd{
 }
  
 .product {
-    border:#CCCCCC 1px solid;
+    background-color: var(--azul);
+    color:black;
+    
 }
-.product#product-3, .product#product-4, .product#product-5{
+.product:hover {
+ background-color: var(--grisazulado) ;
+}
+div.product #product_2,#product_3,#product_4 {
     display:none;
 }
+
 
 @media(min-width: 768px){
    
@@ -306,20 +331,6 @@ section.extras-flexpd article.pd img.imgpd{
         
     }
     
-    section.flexpd-row section.extras-flexpd article.pd{
-        padding: 1%;
-        margin:3px;
-       
-    }
-
-   /* section.flexpd-row section.extras-flexpd article.pd:hover{
-        margin-top: 13px;
-        padding: 7px 10px;
-        box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
-        border:dotted 2px var(--grisazulado);
-        padding:2px;  
-        
-    }*/
 
     
 
@@ -403,12 +414,40 @@ section.extras-flexpd article.pd img.imgpd{
 
         color:var(--negro)
     }
-        
- 
     
-    .product#product-3, .product#product-4, .product#product-5{
-        display:block;
+
+        section.extras-flexpd {
+            margin:0 auto;
+            width: 70%;
+            max-width: 800px;
+            }
+          section.extras-flexpd article.pd{
+                padding: 1%;
+                margin:3px;
+                width:20%;
+            }
+        section.extras-flexpd article.pd:hover{
+               
+                box-shadow: 0px 0px 5px rgba(101, 20, 230, 0.39);
+                border:dotted 2px var(--grisazulado);
+                padding:2px;  
+                
+            }
+
+     section.extras-flexpd article.pd a img.imgpd{
+         object-fit: fill;
+        margin:0 auto;
+     }  
+    section article#carrusel{
+         width:100%;
+     }
+     article#carrusel div.product #product_2,article#carrusel div.product #product_3,article#carrusel div.product #product_4 {
+        display:inline-block;
     }
+    
+    
+
+}
 
 
 @media (min-width:1180px) {
@@ -437,5 +476,4 @@ section.extras-flexpd article.pd img.imgpd{
     } 
     
 
-}
 }
