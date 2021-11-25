@@ -1,46 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
-    </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
-    </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
-    </style>
-
-    <title>TriMovi - Escuadrón Suicida</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<%-include('/partials/head')%>
 
 <body class="pd">
-  
-        <header class="flex">
-            <div class="container-izquierda-header flex items-container">
-                <div class="icono-container flex "><button class="btn flex" id="menu"><i
-                            class="fa fa-bars fa-size"></i></button>
-                </div>
-                <div class="search-bar-container flex">
-                    <input class="buscador" type="text" placeholder="Buscar..." name="buscador">
-                    <div class="icono-container flex"><button class="btn flex" id="buscar"><i
-                                class="fa fa-search fa-size"></i></button></div>
-                </div>
-            </div>
-            <div class="logo-container"><a class="pd" href="http://localhost:3000/"><img src="/design/images/icons/logo.png" alt="TRIMOVI"></a></div>
-            <div class="container-derecha-header flex items-container">
-                <div class="icono-container"><a class="pd" href="http://localhost:3000/carrito"><i class="fas fa-shopping-cart" style="width: 30%;height: 30%;"></i></a></div>
-                <div class="icono-container"><a class="pd" href="#"><img src="/design/images/icons/icon-favorites.png"
-                            alt="icono favoritos"></a></div>
-                <div class="icono-container"><a class="pd"href="login.html"><img src="design/images/icons/icon-user-profile.png" alt="avatar usuario"></a></div>
-            </div>
-        </header>
+<%- include('/partials/header')%>
         <main >
             <section class="flexpd-row">
                 <section class="detalle-izq">
@@ -187,7 +151,9 @@
             </article>
    
     </main>
-        <footer class="flex">
+    <%- include ("partials/footer")
+        <!--
+            <footer class="flex">
             <div class="info-personal">
                 <ul class="flex">
                     <li><a href="#">privacidad</li>
@@ -204,10 +170,12 @@
                     <li><a href="http://www.twitter.com"><i class="fab fa-twitter-square"></i></a></li>
                 </ul>
             </div>
-        </footer>
+        </footer> -->
+
+      
 
 
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+       <!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
         <script>
         var current = 0;
         var imagenes = new Array();
@@ -250,12 +218,12 @@
                     current = 0;
                 }
          
-                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 400);
          
                 return false;
             }); 
          });
-        </script>
+        </script>-->
 </body>
 
 </html>
