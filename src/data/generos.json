@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "nombre": "accion"
+    },
+    {
+        "id": 2,
+        "nombre": "fantasia"
+    },
+    {
+        "id": 3,
+        "nombre": "superheroes"
+    },
+    {
+        "id": 4,
+        "nombre": "animada"
+    },
+    {
+        "id": 5,
+        "nombre": "aventura"
+    },
+    {
+        "id": 6,
+        "nombre": "drama"
+    },
+    {
+        "id": 7,
+        "nombre": "ciencia ficción"
+    },
+    {
+        "id": 8,
+        "nombre": "comedia"
+    },
+    {
+        "id": 9,
+        "nombre": "crimen"
+    },
+    {
+        "id": 10,
+        "nombre": "comedia negra"
+    },
+    {
+        "id": 11,
+        "nombre": "terror"
+    }
+]

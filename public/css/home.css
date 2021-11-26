@@ -1,89 +1,139 @@
-@import url('header.css');
-@import url('product-detail.css');
-
-
-
-.home-container{
+.home-container {
     margin: 0 auto;
     padding: 0 5px;
     max-width: 420px;
+    width: 100%;
+
 }
-.home-container a{
+
+.home-container a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
+
+.home-container .contain-category .list-category {
+    font-family: var(--fenix);
+}
+
 /* /////////////////////////////////////////////////////header*/
 /*////////////////////////////////////////////^header*/
 
 /*////////////////////////////////////////////main*/
-.home-container main{
-    width: 100%;
-    padding: 0 10px;
-}
-.home-container main div.banner,
-.home-container main .main-section div.container-nav-bar{
+
+
+
+.home-container .banner,
+.home-container .main-section .container-nav {
     display: none;
 }
-.home-container main div.banner img{
+
+.home-container .banner img {
     width: 100%;
 }
 
-.home-container main div.container-nav-bar nav.nav-bar{
-    flex-direction: column;
-    justify-content: space-between;
-}
-.home-container main div.container-nav-bar nav.nav-bar div.contain-category{
+
+.home-container .container-nav .nav-bar .contain-category {
     border-radius: 10px;
-    margin: 20px 5px;
     /*background: linear-gradient(0.5turn, #5A667B, #5A667B,#5A667B, #5A667B,#5A667B, rgb(253, 134, 134));
-  
+    arcoiris
     background: linear-gradient(0,  #5A667B, #5A667B, #5A667B );
 */
-    background-color: #5A667B;
+    background-color: #0e1546;
     width: 100%;
     height: 250px;
+    overflow: hidden;
 }
-.home-container main div.container-nav-bar nav.nav-bar div .title-category{
-    background: linear-gradient(to top, #5A667B, rgba(139,0,0,.85));
+
+.home-container .container-nav .nav-bar .contain-category .title {
+    background: linear-gradient(to top, #0e1546, rgba(94, 2, 2, 0.85));
     border-radius: 10px 10px 0 0;
-    margin: 0 0 5px;
     text-transform: uppercase;
     text-decoration: double;
     padding: 7px 1px;
 }
-.home-container main div.container-nav-bar nav.nav-bar div ul{
+
+.home-container .container-nav .nav-bar .contain-category .list {
     list-style: none;
 }
-.home-container main div.container-nav-bar nav.nav-bar div ul li{
-    margin: 4px auto 0;
+
+.home-container .container-nav .nav-bar .contain-category .list li {
+    padding-bottom: 2px;
+    color: rgb(167, 163, 163);
+    font-size: 1.1rem;
+
 }
-.home-container main div section.container-articulos{
+
+.home-container .container-nav .nav-bar .contain-category .list li:hover {
+    background-color: rgba(9, 10, 12, .5);
+    color: #8d0000;
+}
+
+.home-container .main-section .contain-category .list-category button {
+    background-color: unset;
+    border: none;
+
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+
+
+}
+
+/* articulos */
+.home-container .main-section section.container-articles {
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    gap: 10px;
+    /*     justify-content: space-evenly; */
 }
-.home-container main .main-section .container-articulos .articulo{
+
+.home-container section.container-articles .article {
     flex-direction: column;
     width: 170px;
     height: 340px;
-    padding: 5px;
-    margin: 10px;
+/*     padding: 5px;
+ */    margin: 10px;
     background-color: #0C9FCD;
 }
-.home-container main .main-section .container-articulos .articulo .img-container{
+
+.home-container section.container-articles .article:hover {
+    box-shadow: 0 0 10px rgb(75, 15, 15); 
+}
+
+.home-container .main-section .container-articles .article .img-container {
     position: relative;
     width: 100%;
-    height: 230px;
+    height: 240px;
 }
-.home-container main .main-section .container-articulos .articulo .img-container img{
+
+.home-container .main-section .container-articles .article .img-container img {
     width: 100%;
     height: 100%;
 }
-.home-container main .main-section .container-articulos .articulo div.data-articulo{
+
+.home-container .main-section .container-articles .article .data-article {
     width: 100%;
     height: 100px;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: column;
 }
+
+.home-container .main-section .container-articles .article .data-article .titulo{
+    margin-top: 5px;
+}
+.home-container section.container-articles .article .footer-article {
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.home-container section.container-articles .article .precio {
+    color: rgb(6, 61, 6);
+}
+
+/*  */
+
 
 
 
@@ -99,46 +149,72 @@ box-shadow: 0px 0px 5px rgb(64 16 16);
 
 
 /*///////////////////////   MEDIA QUERIES*/
-@media(min-width: 768px){
-    .home-container{
-        margin: 0 auto;
-        padding: 0 5px;
+@media(min-width: 768px) {
+    .home-container {
+        /*    margin: 0 auto;
+        padding: 0 5px; */
         max-width: 850px;
     }
+
     /*header*/
-  
+
     /*footer*/
-   
+
 }
 
-@media(min-width: 1024px){
+@media(min-width: 1024px) {
 
-    .home-container{
+    .home-container {
         max-width: 1280px;
+        padding: 0  10px;
     }
 
-    
-    .home-container main.flex{
+
+    .home-container.flex {
         flex-direction: column;
         justify-content: space-between;
     }
-    .home-container main div.main-section{
+
+    .home-container .main-section {
         flex-direction: row;
         width: 100%;
+        gap: 15px;
     }
-    .home-container main .main-section div.container-articulos{
-        width: 80%  ;
+
+    .home-container .main-section section.container-articles {
+        width: 80%;
+        order: 1;
     }
-    .home-container main .main-section div.container-nav-bar{
+
+    .home-container .main-section .container-nav,
+    .home-container .main-section section.container-articles {
+        border-radius: 10px;
+        padding: 8px;
+        box-shadow: 0 0 5px white; 
+        justify-content: space-around;
+    }
+
+    .home-container .main-section .container-nav {
         display: inline-block;
         width: 20%;
         align-self: flex-start;
+        order: 0;
+
+
     }
-    .home-container main div.banner{
+
+    .home-container .container-nav .nav-bar {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .home-container .banner {
         display: block;
         margin: 20px 0;
         width: 100%;
     }
+
     /*footer*/
 
 }

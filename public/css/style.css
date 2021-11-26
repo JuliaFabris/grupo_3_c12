@@ -1,32 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-@import url('home.css');
+@import url('variables.css');
+@import url('botones.css');
 @import url('home.css');
 @import url('product-detail.css');
+@import url('footer.css');
+@import url('header.css');
+@import url('login.css');
+@import url('carrito.css');
+@import url('register.css');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
     user-select: none;
 }
 
-.sustantivo{
+.noun {
     text-transform: capitalize;
 }
-h1,h2,h3{
+
+h1,
+h2,
+h3 {
 
     font-size: var(--fenix);
 }
 
-.flex{
+.flex {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-body{
+
+body {
     background-color: black;
     text-align: center;
     min-width: 315px;
+}
+
+img {
+    width: 100%;
 }
