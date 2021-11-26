@@ -6,6 +6,7 @@ const PORT = 3000;
 
 /* rutas */
 let homeRouter = require('./routes/home')
+let peliculasRouter = require('./routes/peliculas')
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
@@ -28,6 +29,9 @@ app.use(express.urlencoded({ extended: false }));
 
 /*  */
 app.use('/', homeRouter);
+
+/* peliculas */
+app.use('/peliculas', peliculasRouter)
 
 app.get('/login', (req, res) =>{
     res.render('login')

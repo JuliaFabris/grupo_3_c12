@@ -12,7 +12,7 @@
     <main class="home-container flex">
         <!-- banner -->
         <div class="banner">
-            <img src="./design/images/banner-carrousel.png" alt="banner">
+            <img src="./design/images/products/banner-carrousel.png" alt="banner">
         </div>
 
         <!-- seccion principal -->
@@ -20,124 +20,21 @@
             <!-- peliculas -->
             <section class="container-articles flex">
 
+                <% peliculas.forEach(pelicula => { %>
                 <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/antman y avispa.webp"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun"> Ant-man & wasp</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/black phanter.webp" alt="articulo">
+                    <div class="img-container">
+                        <img src="./design/images/products/<%= pelicula.imagen %> " alt="articulo">
                     </div>
                     <div class="data-article flex">
-                        <h4 class="titulo noun"> Pantera negra</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
+                        <h4 class="titulo noun"><%= pelicula.nombre %></h4>
+                        <div class="footer-article flex">
+                            <i class="far fa-heart"></i>
+                            <h6 class="precio">$ <%= pelicula.precio %> </h6>
+                        </div>
                     </div>
                 </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/capitana marvel.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun">capitana marvel</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/doctor stranger.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun"> doctor strange</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img
-                            src="./diseño/imagenes/productos/escuadro suicida deuda infernal.webp" alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun"> escuadron suicida: deuda infernal</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/escuadron suicida.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun">escuadro suicida</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/guardianes de la galaxia.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun">guardianes de la galaxia</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/justice league apokolips war.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun">justice league: apokolips war</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/justice league fatal fight.webp"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun">justice league: fatal fight</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/liga de la justicia oscura.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun">liga de la justicia oscura</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img
-                            src="./diseño/imagenes/productos/los jovenes titanes el contrato de judas.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun"> los jovenes titanes: el contrato de judas</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/spiderman de regreso a casa.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun"> spiderman: de regreso a casa</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
-                <article class="article flex">
-                    <div class="img-container"><img src="./diseño/imagenes/productos/spiderman lejos de casa.jpg"
-                            alt="articulo"></div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun">spiderman: lejos de casa</h4>
-                        <h6 class="precio">precio $$$</h6>
-                        <div><button class="btn">agregar al carrito</button></div>
-                    </div>
-                </article>
+                <% }) %>
+
             </section>
 
             <!-- navbar -->
@@ -145,29 +42,28 @@
                 <nav class="nav-bar flex">
                     <div class="contain-category">
                         <div class="title">
-                            <h2>categorias</h2>
+                            <h2>CATEGORIAS</h2>
                         </div>
                         <ul class="list">
-                            <li><a href="#"><span>Marvel</span></a></li>
+                            <% generos.forEach(genero => { %>
+                             <li><a href="peliculas/:<%= genero.nombre %>"></a><%= genero.nombre %></li>
+                            <% }) %>
+                            <!-- <li><a href="#"><span>Marvel</span></a></li>
                             <li><a href="#"><span>DC</span></a></li>
                             <li><a href="#"><span>Estrenos</span></a></li>
                             <li><a href="#"><span>Proximamente</span></a></li>
-                            <li><a href="#"><span>Animadas</span></a></li>
+                            <li><a href="#"><span>Animadas</span></a></li> -->
                         </ul>
                     </div>
 
                     <div class="contain-category">
-                        <div class="title-category">
+                        <div class="title">
                             <h2>año</h2>
                         </div>
-                        <ul class="list-category">
-                            <li><a href="#">2021</a></li>
-                            <li><a href="#">2020</a></li>
-                            <li><a href="#">2019</a></li>
-                            <li><a href="#">2018</a></li>
-                            <li><a href="#">2017</a></li>
-                            <li><a href="#">2016</a></li>
-                            <li><a href="#">2015</a></li>
+                        <ul class="list">
+                            <% anios(peliculas).forEach(anio => { %>
+                                <li><a href="#"><%= anio %> </a></li>
+                            <% }) %>
                         </ul>
                     </div>
                 </nav>

@@ -31,7 +31,7 @@
         "genero": [
             "accion", "fantasia", "superheroes"
         ],
-        "imagen": "capitana-marvel.webp",
+        "imagen": "capitana-marvel.jpg",
         "anio": 2019
     }
     ,
@@ -248,7 +248,7 @@
         "genero": [
             "accion", "fantasia", "superheroes"
         ],
-        "imagen": "x-men-dar-fenix.webp",
+        "imagen": "x-men-dark-fenix.webp",
         "anio": 2019
     }
 ]
