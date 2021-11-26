@@ -1,11 +1,10 @@
-
-
-let controller= {
-    vista: function(req, res) {
-    res.render('/product-detail')
-},
-    
+let controller = {
+    product: (req, res) => {
+        res.render('product-detail')
+    }
 }
-module.exports = detail
+
+module.exports = controller
+
 
     
