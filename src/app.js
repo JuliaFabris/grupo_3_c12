@@ -1,21 +1,36 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
+
 const PORT = 3000;
 
-let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
+/* rutas */
+let homeRouter = require('./routes/home')
 
+//este metodo se va a borrar
+ let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
+/*
 const publicPath = pathAbsolute("./public"); 
-app.use(express.static(publicPath));
+app.use(express.static(publicPath)) */
+
+/* configuracion del motor de vistas */
+app.set('view engine', 'ejs');
+app.set('views', __dirname+'/views');
 
 
-app.get('/', (req, res) =>{
-    res.sendFile(pathAbsolute('./views/home.html'))
-});
+app.use(express.static(path.join(__dirname, '../public')));
+
+
+/* configuracion de lectura por js de elementos del require */
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+/*  */
+app.use('/', homeRouter);
 
 app.get('/login', (req, res) =>{
-    res.sendFile(pathAbsolute('./views/login.html'))
+    res.render('login')
 });
 
 app.get('/register', (req, res) =>{
