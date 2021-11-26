@@ -18,7 +18,7 @@ header {
   height: 12vh;
   width: 100%;
   background-color: black;
-  position: absolute;
+  position: relative;
 }
 
 .header_logo {

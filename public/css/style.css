@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('variables.css');
 @import url('botones.css');
 @import url('home.css');
 @import url('product-detail.css');
@@ -12,11 +13,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
     user-select: none;
 }
 
-.sustantivo {
+.noun {
     text-transform: capitalize;
 }
 
@@ -31,11 +31,14 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 body {
     background-color: black;
     text-align: center;
     min-width: 315px;
+}
+
+img {
+    width: 100%;
 }

@@ -110,9 +110,9 @@ main .login-container {
   }
 
 
-  img {
+ /*  img {
     transform: scale(0.4);
-  }
+  } */
 
   .fondo img {
     width: 100%;
