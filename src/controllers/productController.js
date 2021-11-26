@@ -1,8 +1,11 @@
-let detail= require('../data/database')
 
-module.exports = {
-    detail: (req, res) => {
-        res.render('/product-detail')
-    }
+
+let controller= {
+    vista: function(req, res) {
+    res.render('/product-detail')
+},
+    
 }
+module.exports = detail
+
     

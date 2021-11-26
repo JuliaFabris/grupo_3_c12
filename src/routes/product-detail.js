@@ -1,9 +1,10 @@
-let router = require('express').Router()
-let controller = require('../controllers/homeController')
+let express = require('express')
+let router = express.Router()
+let controller = require('../controllers/productController')
 
-/* Get - pagina de inicio */
-router.get('/product-detail', controller.inicio)
-router.get('/product-detail/:id', controller.inicio)
+/* GET - Home page */
+router.get('/product-detail', controller.product)
+
 
 
 module.exports = router
