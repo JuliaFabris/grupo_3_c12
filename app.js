@@ -8,7 +8,7 @@ let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
 
 const publicPath = pathAbsolute("./public"); 
 app.use(express.static(publicPath));
-
+app.use('/product-detail',productController)
 
 app.get('/', (req, res) =>{
     res.sendFile(pathAbsolute('./views/home.html'))
