@@ -15,17 +15,14 @@ img{
     
     
   }
-  
-  .container-izquierda {
-    display: flex;
-    
-    justify-content: center;
-    
+   
+  .table{
+      margin: 25px;
+      padding: auto;
+      position: relative;
+      left: 15px;
+
   }
-
- 
-
-  
   
   
  
