@@ -33,6 +33,8 @@ app.use('/', homeRouter);
 /* peliculas */
 app.use('/peliculas', peliculasRouter)
 
+app.use('/product-detail',productController)
+
 app.get('/login', (req, res) =>{
     res.render('login')
 });
@@ -41,9 +43,11 @@ app.get('/register', (req, res) =>{
     res.sendFile(pathAbsolute('./views/register.html'))
 });
 
-app.get('/product-detail', (req, res) =>{
-    res.sendFile(pathAbsolute('./views/product-detail.html'))
-});
+
+
+// app.get('/product-detail', (req, res) =>{
+    //res.sendFile(pathAbsolute('./views/product-detail'))
+//});
 
 app.get('/carrito', (req, res) =>{
     res.sendFile(pathAbsolute('./views/carrito.html'))
