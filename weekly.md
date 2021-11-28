@@ -21,6 +21,8 @@ _ _ _
 ### *Julia Fabris*
 
 - LOS IMPEDIMENTOS ENCONTRADOS:
+-Me cuesta encontrar la forma de implementar MVC;
+-Tengo que vislumbrar què variables necesita Product-detail para implementar ejs y hacer dinámica la vista
 
 - Y LAS SOLUCIONES PROPUESTAS PROPIAS:
 
