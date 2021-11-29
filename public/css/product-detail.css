@@ -206,7 +206,10 @@ section.extras-flexpd article.pd a.pd {
 
 }
 
-section.extras-flexpd article.pd img.imgpd {}
+/*section.extras-flexpd article.pd img.imgpd {
+
+    
+}*/
 
 section h3 {
     padding-top: 2%;
@@ -384,7 +387,7 @@ div.product #product_2,
     }
 
     article.pd article div.data-articulopd.flexpd a.pd {
-        color: var(--grisazulado);
+        color: var(--negro);
         text-decoration: none;
 
     }
