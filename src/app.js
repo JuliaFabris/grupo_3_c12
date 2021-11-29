@@ -34,10 +34,13 @@ app.use('/', homeRouter);
 app.use('/peliculas', peliculasRouter)
 
 app.use('/product-detail',productController)
+app.use('/login',loginController
 
-app.get('/login', (req, res) =>{
-    res.render('login')
-});
+)
+
+//app.get('/login', (req, res) =>{
+//    res.render('login')
+//});
 
 app.get('/register', (req, res) =>{
     res.sendFile(pathAbsolute('./views/register.html'))
