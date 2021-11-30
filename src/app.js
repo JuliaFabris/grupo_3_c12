@@ -34,9 +34,8 @@ app.use('/', homeRouter);
 app.use('/peliculas', peliculasRouter)
 
 app.use('/product-detail',productController)
-app.use('/login',loginController
-
-)
+app.use('/login',loginController)
+app.use('/carrito',carritoController)
 
 //app.get('/login', (req, res) =>{
 //    res.render('login')
