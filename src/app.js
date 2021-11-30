@@ -43,6 +43,8 @@ app.get('/register', (req, res) =>{
     res.sendFile(pathAbsolute('./views/register.html'))
 });
 
+app.use("/carrito", carritoController)
+
 
 
 // app.get('/product-detail', (req, res) =>{
