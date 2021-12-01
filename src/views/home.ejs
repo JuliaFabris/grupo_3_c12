@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head')  %>
+<%- include('./partials/head', {titulo})  %>
 
 <body>
 
     <!-- header -->
-    <%- include('../partials/header2')  %>
+    <%- include('./partials/header2')  %>
     <!--  -->
 
     <main class="home-container flex">
@@ -21,18 +21,22 @@
             <section class="container-articles flex">
 
                 <% peliculas.forEach(pelicula => { %>
-                <article class="article flex">
-                    <div class="img-container">
-                        <img src="./design/images/products/<%= pelicula.imagen %> " alt="articulo">
-                    </div>
-                    <div class="data-article flex">
-                        <h4 class="titulo noun"><%= pelicula.nombre %></h4>
-                        <div class="footer-article flex">
-                            <i class="far fa-heart"></i>
-                            <h6 class="precio">$ <%= pelicula.precio %> </h6>
+                    <a href="/products/detail/<%= pelicula.id %>">
+                        <article class="article flex">
+
+                        <div class="img-container">
+                            <img src="./design/images/products/<%= pelicula.imagen %> " alt="articulo">
                         </div>
-                    </div>
-                </article>
+                        <div class="data-article flex">
+                            <h4 class="titulo noun"><%= pelicula.nombre %></h4>
+                            <div class="footer-article flex">
+                                <i class="far fa-heart"></i>
+                                <h6 class="precio">$ <%= pelicula.precio %> </h6>
+                            </div>
+                        </div>
+                    </article>
+                    </a>
+                
                 <% }) %>
 
             </section>
@@ -46,7 +50,7 @@
                         </div>
                         <ul class="list">
                             <% generos.forEach(genero => { %>
-                             <li><a href="peliculas/:<%= genero.nombre %>"></a><%= genero.nombre %></li>
+                            <li><a href="peliculas/:<%= genero.nombre %>"></a><%= genero.nombre %></li>
                             <% }) %>
                             <!-- <li><a href="#"><span>Marvel</span></a></li>
                             <li><a href="#"><span>DC</span></a></li>
@@ -62,7 +66,7 @@
                         </div>
                         <ul class="list">
                             <% anios(peliculas).forEach(anio => { %>
-                                <li><a href="#"><%= anio %> </a></li>
+                            <li><a href="#"><%= anio %> </a></li>
                             <% }) %>
                         </ul>
                     </div>

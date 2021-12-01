@@ -17,7 +17,7 @@
 
                 <div class="input-container">
                     
-                    <input id="iname"class="input-style"  type="text" name="text" placeholder="Nombre de pelicula">
+                    <input id="iname"class="input-style"  type="text" name="text" placeholder="Nombre de pelicula" value="<%= producto.nombre %>">
                     <span class="error-message">Debes ingresar una pelicula</span>
                 </div>
                 <div class="input-container">
@@ -27,17 +27,17 @@
                 </div>
                 <div class="input-container">
                     
-                    <input id="number"class="input-style" type="year" name="date" placeholder="Año">
+                    <input id="number"class="input-style" type="year" name="date" placeholder="Año" value="<%= producto.anio %>">
                     <span class="error-message">Debes ingresar un año</span>
                 </div>
                 <div class="input-container">
                    
-                    <input id="precio"class="input-style" type="number" name="email" placeholder="Precio">
+                    <input id="precio"class="input-style" type="number" name="email" placeholder="Precio" value="<%= producto.precio %>">
                     <span class="error-message">Debes ingresar un precio</span>
 
                     <div class="input-container">
                         
-                        <input class="input-style" type="text" name="text" style="position: relative; right: 1rem ; top: 1rem;"; placeholder="Descripción">
+                        <input class="input-style" type="text" name="text" style="position: relative; right: 1rem ; top: 1rem;" placeholder="Descripción" value="<%= producto.descripcion %>" >
                         <span class="error-message">Debes ingresar una descripción</span>
                     </div>
 

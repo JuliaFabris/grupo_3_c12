@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%-include('../partials/head')%>
+<%-include('./partials/head', {titulo: product.nombre})%>
 
 <body class="pd">
-<%- include('../partials/header2')%>
+<%- include('./partials/header2')%>
         <main >
             <section class="flexpd-row">
                 <section class="detalle-izq">
@@ -30,19 +30,17 @@
             <section class="pd-container flexpd ">
                 
                 <div class="flexpd-row">
-                    <img class="imgpd" src="design/images/products/suicide-squad.jpg"  > 
+                    <img class="imgpd" src="/design/images/products/<%= product.imagen %> "  > 
                 </div> 
                    
             </section>
             <section class="pd-container flexpd">
                     <div class="flexpd-item-pd-container">
                         <article class="pd">
-                            <h3>Escuadrón suicida</h3>
+                            <h3><%= product.nombre %> </h3>
                             <hr>
                             <h3>Sinopsis</h3>
-                            <p class="pd">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam minus sintillo, velit quia ipsam eos facere odio ab quis, saepe magni praesentium, excepturi nulla iusto hic officiis. Libero amet quis cum aut fugit? Dolorum atque animi
-                                    officiis vel impedit deleniti .<p>
+                            <p class="pd"><%= product.descripcion %> <p>
                                         
                             <div class="infoprod">
                                <ul>
@@ -53,7 +51,7 @@
 
                             </div>
                             <div class="data-articulopd flexpd">
-                                <span><h3>Precio</h3></span>
+                                <span><h3>$ <%= product.precio %> </h3></span>
                                   
                                 <a href="carrito.ejs"><i class="fas fa-shopping-cart" style="width: 30%;height: 30%;"></i></a>                     
                             </div>

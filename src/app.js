@@ -1,13 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+
 
 const PORT = 3000;
 
 /* rutas */
 let homeRouter = require('./routes/home')
-let peliculasRouter = require('./routes/peliculas')
-
+let productsRouter = require('./routes/products')
+let adminRouter = require('./routes/admin')
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
 /*
@@ -18,8 +20,11 @@ app.use(express.static(publicPath)) */
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 
-
+/* configuracion de ruta publica */
 app.use(express.static(path.join(__dirname, '../public')));
+
+/* configuracion de metodos http */
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 
 /* configuracion de lectura por js de elementos del require */
@@ -30,12 +35,14 @@ app.use(express.urlencoded({ extended: false }));
 /*  */
 app.use('/', homeRouter);
 
-/* peliculas */
-app.use('/peliculas', peliculasRouter)
+/* products */
+app.use('/products', productsRouter)
 
-app.use('/product-detail',productController)
-app.use('/login',loginController)
-app.use('/carrito',carritoController)
+/* admin profile */
+app.use('/admin', adminRouter)
+//app.use('/product-detail',productController)
+//app.use('/login',login)
+//app.use('/carrito',carritoController)
 
 //app.get('/login', (req, res) =>{
 //    res.render('login')
@@ -45,7 +52,6 @@ app.get('/register', (req, res) =>{
     res.sendFile(pathAbsolute('./views/register.html'))
 });
 
-app.use("/carrito", carritoController)
 
 
 

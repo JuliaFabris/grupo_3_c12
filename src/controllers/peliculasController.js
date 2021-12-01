@@ -1,12 +1,18 @@
-let { getPeliculas, getGeneros, aniosEnLista} = require('../data/database')
+let { peliculas, generos, aniosEnLista} = require('../database')
 
 module.exports = {
-    peliculasPorGenero: (req, res) => {
+    "peliculasPorGenero": (req, res) => {
         let genero = req.params.genero
         let lista = getPeliculas.filter(pelicula => pelicula.genero.includes(genero))
         res.render('user/home', {
             peliculas: lista,
             generos: getGeneros,
             anios: aniosEnLista})
+    },
+
+    // detalle de pelicula
+    "detail": (req, res) => {
+        let id = +req.params.id
+        res.render('product-detail', {product: peliculas.get(id)})
     }
 }

@@ -1,19 +1,37 @@
-<div class="home-container">
-    <header class="flex">
-        <div class="container-izquierda-header flex items-container">
-            <div class="icono-container flex "><button class="btn flex" id="menu"><i class="fas fa-bars fa-size"></i></button>
-            </div>
-            <div class="search-bar-container flex">
-                <input class="buscador" type="text" placeholder="Buscar..." name="buscador">
-                <div class="icono-container flex"><button class="btn flex" id="buscar"><i class="fa fa-search fa-size"></i></button></div>
-            </div>
+<header class="flex posicioned">
+
+    <!--  -->
+    <div class="left-container flex">
+        <div class="container-icon flex ">
+            <button class="flex" id="">
+                <i class="fas fa-bars fa-size"></i>
+            </button>
         </div>
-        <div class="logo-container"><img src="./design/images/icons/logo.png" alt="TRIMOVI"></div>
-        <div class="container-derecha-header flex items-container">
-            <div class="icono-container"><a href="#"><i class="fas fa-shopping-cart"></i></div>
-            <div class="icono-container"><a href="#"><img src="./design/images/icons/icon-favorites.png"
-                        alt="icono favoritos"></a></div>
-            <div class="icono-container"><img src="./design/images/icons/icon-user-profile.png"
-                    alt="avatar usuario"></div>
+
+        <form action="">
+            <div class="container-search flex">
+                <label class="container-icon flex" for="buscador"><i class="fa fa-search fa-size"></i></label>
+                <input id="buscador" type="text" placeholder="Buscar..." name="buscador">
+                <div class="container-button flex">
+                    <button type="submit" class="btn flex" id="buscar"><i class="fa fa-search fa-size"></i></button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="container-logo"><img src="./design/images/icons/logo.webp" alt="TRIMOVI"></div>
+
+    <div class="right-container flex">
+        <div class="container-icon flex" id="car">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
         </div>
-    </header>
+        <div class="container-icon flex" id="fav">
+            <a href="#"><img src="./design/images/icons/icon-favorites.png" alt="icono favoritos"></a>
+        </div>
+
+        <div class="container-icon flex">
+            <button><img src="./design/images/icons/icon-user-profile.png" alt="avatar usuario"></button>
+        </div>
+    </div>
+</header>
