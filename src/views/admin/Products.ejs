@@ -35,18 +35,21 @@
       </thead>
       <tbody>
         <% peliculas.forEach(peli => { %>
-          <tr class="table-active">
-            <th scope="row"><%= peli.id %> </th>
-            <td><%= peli.nombre %> </td>
-            <td><%= peli.genero %> </td>
-            <td>$ <%= peli.precio %> </td>
-            <td>
-              <a href="/admin/products/edit/<%= peli.id %> "><button type="button" class="btn btn-success"><i
-                    class="fas fa-pencil-alt"></i></button></a>
-              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a></td>
-          </tr>
+        <tr class="table-active">
+          <th scope="row"><%= peli.id %> </th>
+          <td><%= peli.nombre %> </td>
+          <td><%= peli.genero %> </td>
+          <td>$ <%= peli.precio %> </td>
+          <td>
+            <a href="/admin/products/edit/<%= peli.id %>"><button type="button" class="btn btn-success"><i
+                  class="fas fa-pencil-alt"></i></button></a>
+            <form action="/admin/products/<%= peli.id %> /dlt?_method=DELETE" method="post"> <button type="submit"
+                class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
+            </form>
+          </td>
+        </tr>
         <% }) %>
-      
+
       </tbody>
     </table>
 

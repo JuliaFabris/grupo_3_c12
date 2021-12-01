@@ -11,13 +11,17 @@ module.exports = {
     },
 
     /* formulario de edicion de producto*/
-    "modificar": (req, res) => {
+    "editar": (req, res) => {
         let id = +req.params.id
         res.render('./admin/editProduct', {producto: peliculas.get(id)})
     },
 
+    "actualizar": (req, res) => {
+
+    },
+
     /* formulario de nuevo producto */
-    "formAgregar": (req, res) => {
+    "crear": (req, res) => {
         res.render('./admin/addProduct')
     },
 
@@ -26,6 +30,13 @@ module.exports = {
         //res.send(producto)
         peliculas.add(producto)
 
+        res.redirect('/admin/products')
+    },
+
+    "eliminar": (req, res) => {
+        let id = +req.params.id
+        let product = peliculas.get(id)
+        peliculas.dlt(product)
         res.redirect('/admin/products')
     }
 }

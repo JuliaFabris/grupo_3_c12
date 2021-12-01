@@ -10,6 +10,8 @@ const PORT = 3000;
 let homeRouter = require('./routes/home')
 let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
+let userController = require('./routes/user')
+
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
 /*
@@ -40,6 +42,10 @@ app.use('/products', productsRouter)
 
 /* admin profile */
 app.use('/admin', adminRouter)
+
+/* user */
+app.use('/user', userController)
+
 //app.use('/product-detail',productController)
 //app.use('/login',login)
 //app.use('/carrito',carritoController)
@@ -48,9 +54,6 @@ app.use('/admin', adminRouter)
 //    res.render('login')
 //});
 
-app.get('/register', (req, res) =>{
-    res.sendFile(pathAbsolute('./views/register.html'))
-});
 
 
 

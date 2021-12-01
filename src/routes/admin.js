@@ -12,12 +12,15 @@ router.get('/', controller.inicio)
 router.get('/products', controller.productos)
 
 // get - formulario de edicion de producto
-router.get('/products/edit/:id', controller.modificar)
-
+router.get('/products/edit/:id', controller.editar)
+router.put('/products/edit/:id', controller.actualizar)
 // get - formulario de nuevo producto
-router.get('/products/new', controller.formAgregar)
-// validacion de nuevo producto
+router.get('/products/new', controller.crear)
 router.post('/products/new', controller.agregar)
+
+//
+router.delete('/products/:id/dlt', controller.eliminar)
+
 
 
 
