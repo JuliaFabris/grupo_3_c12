@@ -1,11 +1,11 @@
-let {getPeliculas, getGeneros, aniosEnLista} = require('../data/database')
+let {peliculas, generos, aniosEnLista} = require('../database')
 
 module.exports = {
     inicio: (req, res) => {
-        res.render('user/home', {
+        res.render('home', {
             titulo: "Inicio",
-            peliculas: getPeliculas,
-            generos: getGeneros,
+            peliculas: peliculas.data,
+            generos: generos.data,
             anios: aniosEnLista    
         })
     }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   
-    <%- include ('../partials/head')%>
+    <%- include ('./partials/head', {titulo})%>
     <!--<head>
     <meta charset="utf-8">
     <title>Login</title>
@@ -18,7 +18,7 @@
       <div class="login">
         <div class="login-bottom-page">
           <button  class="btn btn-submit"><a href="/">REGRESAR PAGINA INICIO</a></button>
-          <button  class="btn btn-submit"><a href="/register">REGISTRARSE</a></button>
+          <button  class="btn btn-submit"><a href="/user/register">REGISTRARSE</a></button>
         </div>
         <article class="fondo">
           <div class="aux">
@@ -50,7 +50,7 @@
           </div>
       </div>
 
-      <%-include('../partials/footer2')%> 
+      <%-include('./partials/footer2')%> 
    
   </main>
 

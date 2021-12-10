@@ -1,5 +1,5 @@
 let peliculas=require('../data/peliculas.json')
-let peliculasString= Json.stringify(peliculas);
+
 
 let controller = {
     product: (req, res) => {

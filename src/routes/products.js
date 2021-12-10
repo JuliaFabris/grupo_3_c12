@@ -5,4 +5,6 @@ let controller = require('../controllers/peliculasController')
 router.get('/:genero', controller.peliculasPorGenero)
 
 
+router.get('/detail/:id', controller.detail)
+
 module.exports = router
