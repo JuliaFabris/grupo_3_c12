@@ -1,10 +1,5 @@
 /*HTML*/
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .login-container {
   margin: 150px auto 0;
   background-image: url('design/images/icons/logo.webp');

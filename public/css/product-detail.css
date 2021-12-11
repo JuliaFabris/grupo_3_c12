@@ -456,14 +456,6 @@ div.product #product_2,
 }
 
 
-@media (min-width:1180px) {
-
-    body {
-        max-width: 1180px;
-    }
-
-}
-
 /*product*/
 
 
@@ -477,10 +469,3 @@ section.extras-flexpd {
 
 
 
-@media(min-width: 1024px) {
-    body {
-        max-width: 1180px;
-    }
-
-
-}

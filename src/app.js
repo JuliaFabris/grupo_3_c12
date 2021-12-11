@@ -40,9 +40,6 @@ app.use('/', homeRouter);
 /* products */
 app.use('/products', productsRouter)
 
-<<<<<<< HEAD
-app.use('/product-detail',productController)
-=======
 /* admin profile */
 app.use('/admin', adminRouter)
 
@@ -52,17 +49,12 @@ app.use('/user', userController)
 //app.use('/product-detail',productController)
 //app.use('/login',login)
 //app.use('/carrito',carritoController)
->>>>>>> 0b08b5127c3acc4e88e76e7bc5a5a8d8b00381b9
 
 app.get('/login', (req, res) =>{
     res.render('login')
 });
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0b08b5127c3acc4e88e76e7bc5a5a8d8b00381b9
 
 
 // app.get('/product-detail', (req, res) =>{
