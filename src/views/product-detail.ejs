@@ -61,8 +61,10 @@
         </section>
        
     <section class="extras-flexpd">
-        
-        <article class="pd ">
+        <section>
+            <h3>RELACIONADOS</h3>
+            <%- include ("./partials/slider")%>    
+        <!--<article class="pd ">
                  <h4>Spiderman, de regreso a casa</h4>
                     <a href="#"><img class="imgpd"src="design/images/products/spiderman-homecoming.jpg">
                          </a>
@@ -105,8 +107,7 @@
             </article>
         </div>   
         </section>
-        <section>
-            <h3>RELACIONADOS</h3>
+        
             <div class="gallery productSlider js-flickity"
             data-flickity-options='{ "wrapAround": true }' >
                 <div class="carousel-cell  productSlide">
@@ -209,82 +210,13 @@
                         <p>40.00 €</p>
                     </div>
                 </div>
-            </article>
+            </article>-->
    
     </main>
     <%- include ("./partials/footer2")%>
-        <!--
-            <footer class="flex">
-            <div class="info-personal">
-                <ul class="flex">
-                    <li><a href="#">privacidad</li>
-                    <li><a href="#">terminos y condiciones</li>
-                    <li><a href="#">sobre nosotros</a></li>
-                </ul>
-            </div>
-            <div class="redes-sociales flex">
-                <span>siguenos</span>
-                <ul class="flex">
-                    <li><a href="http://www.facebook.com"><i class="fab fa-facebook-square"></i></a></li>
-                    <li><a href="http://www.youtube.com"><i class="fab fa-youtube-square"></i></a></li>
-                    <li><a href="http://www.instagram.com"><i class="fab fa-instagram-square"></i></a></li>
-                    <li><a href="http://www.twitter.com"><i class="fab fa-twitter-square"></i></a></li>
-                </ul>
-            </div>
-        </footer> -->
+        
 
       
-
-
-       <!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script>
-        var current = 0;
-        var imagenes = new Array();
-         
-        $(document).ready(function() {
-            var numImages = 6;
-            if (numImages <= 3) {
-                $('.right-arrow').css('display', 'none');
-                $('.left-arrow').css('display', 'none');
-            }
-         
-            $('.left-arrow').on('click',function() {
-                if (current > 0) {
-                    current = current - 1;
-                } else {
-                    current = numImages - 3;
-                }
-         
-                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
-         
-                return false;
-            });
-         
-            $('.left-arrow').on('hover', function() {
-                $(this).css('opacity','0.5');
-            }, function() {
-                $(this).css('opacity','1');
-            });
-         
-            $('.right-arrow').on('hover', function() {
-                $(this).css('opacity','0.5');
-            }, function() {
-                $(this).css('opacity','1');
-            });
-         
-            $('.right-arrow').on('click', function() {
-                if (numImages > current + 3) {
-                    current = current+1;
-                } else {
-                    current = 0;
-                }
-         
-                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 400);
-         
-                return false;
-            }); 
-         });
-        </script>-->
 </body>
 
 </html>

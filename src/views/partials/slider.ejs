@@ -4,18 +4,18 @@
 
     <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }' >
         <% sliderProducts.forEach(product => { %>
-            <a href="/products/detail/<%- product.id %>">
+            <a href="/products/detail/<%- pelicula.id %>">
                 <div class="carousel-cell  productSlide">
-                    <div class="productDiscount"><%- product.discount %>% OFF</div>
-                    <img src="/images/productos/<%- product.image[0] %>" alt="<%- product.name %>">
+                    <!--<div class="productDiscount"><%- product.discount %>% OFF</div>-->
+                    <img src="/design/images/products/<%= product.imagen %> " alt="<%- pelicula.nombre %>">
                     <p class="productName"> 
-                        <% if (product.name.length > 30) { %>
-                            <%- `${product.name.slice(0,30)}...` %>
+                        <% if (product.nombre.length > 30) { %>
+                            <%- `${product.nombre.slice(0,30)}...` %>
                         <% } else { %>
-                            <%= product.name %>
+                            <%= product.nombre %>
                         <% } %>
                     </p>
-                    <h4 class="productPrice">$<%- product.price - product.price * product.discount / 100 %></h4>
+                    <h4 class="productPrice">$<%- product.precio <!-- - product.price * product.discount / 100--> %></h4>
                 </div>
             </a>
         <% }) %>
