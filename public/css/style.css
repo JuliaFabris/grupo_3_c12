@@ -8,6 +8,7 @@
 @import url('login.css');
 @import url('carrito.css');
 @import url('register.css');
+@import url('product-slider.css');
 
 * {
     box-sizing: border-box;
