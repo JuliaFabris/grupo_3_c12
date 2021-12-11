@@ -37,9 +37,13 @@ h3 {
 body {
     background-color: black;
     text-align: center;
-    min-width: 315px;
+    min-width: 310px;
 }
 
 img {
     width: 100%;
+}
+
+main {
+    min-width: 100vh;
 }
