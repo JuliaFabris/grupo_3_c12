@@ -1,8 +1,8 @@
 let fs = require('fs')
 
-let data = JSON.parse(fs.readFileSync('./src/database/peliculas.json', 'utf-8'))
+let data = JSON.parse(fs.readFileSync('./src/database/products/peliculas.json', 'utf-8'))
 
-let dataSave = newData => fs.writeFileSync('src/database/peliculas.json', JSON.stringify(newData), 'utf-8')
+let dataSave = newData => fs.writeFileSync('./src/database/peliculas.json', JSON.stringify(newData), 'utf-8')
 
 /* funcion para obtener id */
 let lastIndex = (planilla) => {

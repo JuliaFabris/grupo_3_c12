@@ -16,18 +16,18 @@
         <div class="form-container">
             <h2>Registro</h2>
             <hr>
-            <form action="">
+            <form action="/user/register" method="POST">
                 <div class="form">
                     <div class="input-container">
-                        <input class="input-style" type="name" name="name" placeholder="Ingrese su nombre">
+                        <input class="input-style" type="name" name="nombre" placeholder="Ingrese su nombre">
                         <span class="error-message">Debes ingresar tu nombre</span>
                     </div>
                     <div class="input-container">
-                        <input class="input-style" type="surname" name="surname" placeholder="Ingrese su apellido">
+                        <input class="input-style" type="surname" name="apellido" placeholder="Ingrese su apellido">
                         <span class="error-message">Debes ingresar tu apellido</span>
                     </div>
                     <div class="input-container">
-                        <input class="input-style" type="username" name="username" placeholder="Nombre de usuario">
+                        <input class="input-style" type="username" name="user" placeholder="Nombre de usuario">
                         <span class="error-message">Nombre de usuario</span>
                     </div>
                     <div class="input-container">
@@ -51,7 +51,7 @@
                         <span class="error-message">Hubo errores en el envío</span>
                         <button type="submit" class="btn btn-submit">Registrarme</button>
                     </div>
-                    <span><a href="login.html">Ya tengo cuenta</a></span>
+                    <span><a href="/user/login">Ya tengo cuenta</a></span>
                     <span><a href="/">Inicio</a></span>
                 </div>
                 <footer class="flex">
