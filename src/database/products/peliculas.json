@@ -2,15 +2,10 @@
     {
         "id": 1,
         "nombre": "Ant-man & Wasp",
+        "precio": "27022",
         "descripcion": "Scott Lang vuelve a enfundarse el traje de Ant-Man para pelear codo a codo junto con la Avispa. La misión revela a los dos superhéroes un secreto terrible y los enfrenta a su enemigo más poderoso.",
-        "precio": 270,
-        "genero": [
-            "accion",
-            "fantasia",
-            "superheroes"
-        ],
         "imagen": "antman-and-wasp.webp",
-        "anio": 2018
+        "anio": "2018"
     },
     {
         "id": 2,

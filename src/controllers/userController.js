@@ -10,9 +10,10 @@ module.exports = {
         let user = req.body.user
         let pass = req.body.pass
         if(login(user, pass)){
-            res.redirect('home')
+            res.redirect('home', {login})
+        }else{
+            res.send("datos malos")
         }
-
 
     },
 
@@ -29,8 +30,8 @@ module.exports = {
             email: email
         }
         if(register(user, pass, usuario)){
-            res.redirect('home')
-        }
+            res.redirect('/home')
+        }else res.send("algo paso en el registro")
     },
 
     "carrito": (req, res) => {

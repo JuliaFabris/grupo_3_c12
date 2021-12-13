@@ -9,7 +9,7 @@ module.exports = {
     "generos": generos,
     "getGeneros": generos.data,
     "login": usuarios.login, 
-
+    "register": usuarios.register,
     "aniosEnLista": lista => {
         let mySet = new Set()
         lista.forEach(pelicula => {

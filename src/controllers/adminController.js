@@ -17,7 +17,19 @@ module.exports = {
     },
 
     "actualizar": (req, res) => {
+        let id = req.params.id;
+        let modifies = {
+            id: +req.body.id,
+            nombre: req.body.nombre.trim(),
+            genero: req.body.genero,
+            anio: +req.body.anio,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+        }
 
+        tablePeliculas.upd(id, modifies)
+        // res.redirect('admin/products')
+        res.send("actualizado   ")
     },
 
     /* formulario de nuevo producto */
@@ -26,9 +38,9 @@ module.exports = {
     },
 
     "agregar": (req, res) => {
-        let producto = req.body
+        let pelicula = req.body
         //res.send(producto)
-        tablePeliculas.add(producto)
+        tablePeliculas.add(pelicula)
 
         res.redirect('/admin/products')
     },
@@ -36,7 +48,9 @@ module.exports = {
     "eliminar": (req, res) => {
         let id = +req.params.id
         let product = tablePeliculas.get(id)
-        tablePeliculas.dlt(product)
-        res.redirect('/admin')
+        if(product != undefined){
+            tablePeliculas.dlt(product)
+            res.redirect('/admin/products')
+        }else res.send("no borre nada toga")
     }
 }

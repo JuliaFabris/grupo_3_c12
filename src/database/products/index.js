@@ -1,22 +1,20 @@
-let fs = require('fs')
+let fs = require('fs'),
+path = require('path');
 
-let data = JSON.parse(fs.readFileSync('./src/database/products/peliculas.json', 'utf-8'))
+const pathAbsolute = adress => path.join(__dirname, adress);
 
-let dataSave = newData => fs.writeFileSync('./src/database/peliculas.json', JSON.stringify(newData), 'utf-8')
+
+let data = JSON.parse(fs.readFileSync(pathAbsolute('./peliculas.json'), 'utf-8'))
+
+let dataSave = (newData) => fs.writeFileSync(pathAbsolute('./peliculas.json'), JSON.stringify(newData), 'utf-8');
 
 /* funcion para obtener id */
 let newID = () => {
-    // let maxAux = planilla[planilla.length - 1].id
-    // let maxms = planilla.filter(registro => registro.id >= maxAux)
-    // if (maxms.lenght > 1) {
-    //     return lastIndex(maxms + 1)
-    // }
-    // return maxms[0].id
     let aux = 0
     if(!data.length>0) return 1;
 
-    data.forEach(e => {
-        aux = e.id>aux? e.id : aux;
+    data.forEach(pelicula => {
+        aux = pelicula.id>aux? pelicula.id : aux;
     })
 
     return aux+1
@@ -34,8 +32,23 @@ module.exports = {
     },
 
     "dlt": producto => {
-        let index = data.indexOf(producto)
+        let index = data.indexOf(producto);
         data.splice(index,1)
-        dataSave(data)
+        dataSave([...data])
     },
+
+    "upd": (id, modifies) => {
+        data.forEach(e => {
+            if(e.id == id){
+                e.id = +id,
+                e.nombre = modifies.nombre,
+                e.descripcion = modifies.descripcion,
+                e.anio = modifies.anio,
+                e.genero = modifies.genero,
+                e.precio = modifies.precio,
+                e.imagen = modifies.image? modifies.imagen : e.imagen
+            }
+        })
+        dataSave(data);
+    }
 }

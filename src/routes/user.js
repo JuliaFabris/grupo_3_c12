@@ -6,7 +6,8 @@ let controller = require('../controllers/userController')
 router.get('/login', controller.loginPage)
 router.post('/login', controller.login)
 /* POST */
-router.get('/register', controller.registerPage)
+router.get('/register', controller.registerPage);
+router.post('/register', controller.register);
 /* GET */
 router.get('/carrito', controller.carrito)
 

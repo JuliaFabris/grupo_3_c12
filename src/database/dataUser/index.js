@@ -1,16 +1,20 @@
+const res = require('express/lib/response')
 let fs = require('fs')
 
 let dataUser = JSON.parse(fs.readFileSync('./src/database/dataUser/usuarios.json', 'utf-8'))
 let backUser = JSON.parse(fs.readFileSync('./src/database/dataUser/backUsuario.json', 'utf-8'))
 
-let lastIndex = (planilla) => {
-    let maxAux = planilla[planilla.length - 1].id
-    let maxms = planilla.filter(registro => registro.id >= maxAux)
-    if (maxms.lenght > 1) {
-        return lastIndex(maxms + 1)
-    }
-    return maxms[0].id
+let newID = () => {
+    let aux = 0
+    if(!dataUser.length>0) return 1;
+
+    dataUser.forEach(pelicula => {
+        aux = pelicula.id>aux? pelicula.id : aux;
+    })
+
+    return aux+1
 }
+
 
 let datosUnicos = (user, pass) => {
     backUser.forEach(backData => {
@@ -38,14 +42,13 @@ module.exports = {
     },
 
     "register": (user, pass, usuario) => {
-
         if(datosUnicos(user, pass)){
-            let id = lastIndex(dataUser)+1
-            usuario.id = id
-            backUser.push({"user": user, "pass": pass, "id": id})
-            dataUser.push(usuario)
+            usuario.id = newID();
+            backUser.push({"user": user, "pass": pass, "id": usuario.id});
+            dataUser.push(usuario);
             fs.writeFileSync('./src/database/dataUser/usuarios.json', JSON.stringify(dataUser), 'utf-8')
             fs.writeFileSync('./src/database/dataUser/backUsuario.json', JSON.stringify(backUser), 'utf-8')
-        }
+            res.redirect('/user/login')
+        }else res.send("error en la creacion")
     }
 }
