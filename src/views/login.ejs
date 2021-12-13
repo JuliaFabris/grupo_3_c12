@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html>
-  
-    <%- include ('./partials/head', {titulo})%>
-  
 
-  <body>
-    <main class="login-container">
-      
+<%- include ('./partials/head', {titulo: "TREMOVI - LOGIN"})%>
 
-      <div class="login">
-        <div class="login-bottom-page">
-          <button  class="btn btn-submit"><a href="/">REGRESAR PAGINA INICIO</a></button>
-          <button  class="btn btn-submit"><a href="/user/register">REGISTRARSE</a></button>
-        </div>
-        <article class="fondo">
-          <div class="aux">
-            <img src="/design/images/icons/icon-user-profile.png" alt="User">
-          </div>
-          
-          <form class="" action="index.html" method="post">
-            <span class="icon-user"></span><input class="inp" type="text" name="user" value="" placeholder="Ingrese su Nombre de usuario"><br>
-            <span class="icon-key"></span><input class="inp" type="password" name="pass" value="" placeholder="Ingrese su Contraseña"><br>
-            <a href="/user/recuperarcuenta" class="he"><h2>He olvidado mi contraseña</h2></a>
-            <input class="boton" type="submit" name="inicio" value="Iniciar Sesión">
-          </form>
-        </article>
-        <nav id="redes-container">
-    
-          <div class="box">
-              <a href="https://www.facebook.com"><img class="img"
-                      src="/design/images/icons/logofacebook.png"></a>
-          </div>
-      
-          <div class="box">
-              <a href="https://www.instagram.com"><img class="img"
-                      src="/design/images/icons/logoinstagram.png"></a>
-          </div>
-      
-          <div class="box">
-              <a href="https://www.google.com"><img class="img"
-                      src="/design/images/icons/logogoogle.png"></a>
-          </div>
+
+<body>
+  <main class="login-container">
+
+
+    <div class="login">
+      <div class="login-bottom-page">
+        <button class="btn btn-submit"><a href="/">REGRESAR PAGINA INICIO</a></button>
+        <button class="btn btn-submit"><a href="/user/register">REGISTRARSE</a></button>
       </div>
+      <article class="fondo">
+        <div class="aux">
+          <img src="/design/images/icons/icon-user-profile.png" alt="User">
+        </div>
 
-      <%-include('./partials/footer1')%> 
-   
+        <form class="" action="/user/login" method="POST">
+          <span class="icon-user"></span><input class="inp" type="text" name="user" value=""><br>
+          <span class="icon-key"></span><input class="inp" type="password" name="pass" value=""><br>
+          <h2><a href="" class="he">He olvidado mi contraseña</a></h2>
+          <input class="boton" type="submit" name="inicio" value="Iniciar Sesión">
+        </form>
+      </article>
+      <nav id="redes-container">
+
+        <div class="box">
+          <a href="https://www.facebook.com"><img class="img" src="/design/images/icons/logofacebook.png"></a>
+        </div>
+
+        <div class="box">
+          <a href="https://www.instagram.com"><img class="img" src="/design/images/icons/logoinstagram.png"></a>
+        </div>
+
+        <div class="box">
+          <a href="https://www.google.com"><img class="img" src="/design/images/icons/logogoogle.png"></a>
+        </div>
+    </div>
+
+    <%-include('./partials/footer1')%>
+
   </main>
 
-  </body>
+</body>
 
 </html>

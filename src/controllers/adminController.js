@@ -1,4 +1,4 @@
-let {peliculas, generos} = require('../database')
+let {tablePeliculas, generos} = require('../database')
 
 
 module.exports = {
@@ -7,17 +7,29 @@ module.exports = {
     },
 
     "productos": (req, res) => {
-        res.render('./admin/products', {peliculas: peliculas.data})
+        res.render('./admin/products', {peliculas: tablePeliculas.data})
     },
 
     /* formulario de edicion de producto*/
     "editar": (req, res) => {
         let id = +req.params.id
-        res.render('./admin/editProduct', {producto: peliculas.get(id)})
+        res.render('./admin/editProduct', {producto: tablePeliculas.get(id)})
     },
 
     "actualizar": (req, res) => {
+        let id = req.params.id;
+        let modifies = {
+            id: +req.body.id,
+            nombre: req.body.nombre.trim(),
+            genero: req.body.genero,
+            anio: +req.body.anio,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+        }
 
+        tablePeliculas.upd(id, modifies)
+        // res.redirect('admin/products')
+        res.send("actualizado   ")
     },
 
     /* formulario de nuevo producto */
@@ -26,17 +38,19 @@ module.exports = {
     },
 
     "agregar": (req, res) => {
-        let producto = req.body
+        let pelicula = req.body
         //res.send(producto)
-        peliculas.add(producto)
+        tablePeliculas.add(pelicula)
 
         res.redirect('/admin/products')
     },
 
     "eliminar": (req, res) => {
         let id = +req.params.id
-        let product = peliculas.get(id)
-        peliculas.dlt(product)
-        res.redirect('/admin/products')
+        let product = tablePeliculas.get(id)
+        if(product != undefined){
+            tablePeliculas.dlt(product)
+            res.redirect('/admin/products')
+        }else res.send("no borre nada toga")
     }
 }

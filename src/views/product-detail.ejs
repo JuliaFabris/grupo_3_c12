@@ -4,218 +4,73 @@
 <%-include('./partials/head', {titulo: product.nombre})%>
 
 <body class="pd">
-<%- include('./partials/header2')%>
-        <main >
-            <section class="flexpd-row">
-                <section class="detalle-izq">
-                    <article class="pd">
-                            
-                    
-                        <h4>Elenco</h4>
-                    
-                        <div>
-                          <p><%= product.elenco %></p>  
-                        </div>
-                     </article>
-                    <article class="pd">
-                      <h4>Direccion</h4>
-                    
-                        <div>
-                            <p><%= product.elenco %></p>
-                             
-                        </div>
+    <%- include('./partials/header1')%>
+    <main>
+        <section class="flexpd-row">
+            <section class="detalle-izq">
+                <article class="pd">
+
+
+                    <h4>Elenco</h4>
+
+                    <div>
+                        <p><%= product.elenco %></p>
+                    </div>
+                </article>
+                <article class="pd">
+                    <h4>Direccion</h4>
+
+                    <div>
+                        <p><%= product.elenco %></p>
+
+                    </div>
                 </article>
             </section>
             <section class="pd-container flexpd ">
-                
+
                 <div class="flexpd-row">
-                    <img class="imgpd" src="/design/images/products/<%= product.imagen %> "  > 
-                </div> 
-                   
+                    <img class="imgpd" src="/design/images/products/<%= product.imagen %> ">
+                </div>
+
             </section>
             <section class="pd-container flexpd">
-                    <div class="flexpd-item-pd-container">
-                        <article class="pd">
-                            <h3><%= product.nombre %> </h3>
-                            <hr>
-                            <h3>Sinopsis</h3>
-                            <p class="pd"><%= product.descripcion %> <p>
-                                        
-                            <div class="infoprod">
-                               <ul>
-                                  <li>Categoria: Acción</li>
-                                  <li>Reparto:</li>
-                                  <li>Duración:120 min.</li>
-                               </ul>
+                <div class="flexpd-item-pd-container">
+                    <article class="pd">
+                        <h3><%= product.nombre %> </h3>
+                        <hr>
+                        <h3>Sinopsis</h3>
+                        <p class="pd"><%= product.descripcion %> <p>
 
-                            </div>
-                            <div class="data-articulopd flexpd">
-                                <span><h3>$ <%= product.precio %> </h3></span>
-                                  
-                                <a href="carrito.ejs"><i class="fas fa-shopping-cart" style="width: 30%;height: 30%;"></i></a>                     
-                            </div>
-                        </article>    
-                 </div>
+                                <div class="infoprod">
+                                    <ul>
+                                        <li>Categoria: Acción</li>
+                                        <li>Reparto:</li>
+                                        <li>Duración:120 min.</li>
+                                    </ul>
+
+                                </div>
+                                <div class="data-articulopd flexpd">
+                                    <span>
+                                        <h3>$ <%= product.precio %> </h3>
+                                    </span>
+
+                                    <a href="carrito.ejs"><i class="fas fa-shopping-cart"
+                                            style="width: 30%;height: 30%;"></i></a>
+                                </div>
+                    </article>
+                </div>
             </section>
         </section>
-       
-    <section class="extras-flexpd">
-        <section>
-            <h3>RELACIONADOS</h3>
-            <%- include ("./partials/slider")%>    
-        <!--<article class="pd ">
-                 <h4>Spiderman, de regreso a casa</h4>
-                    <a href="#"><img class="imgpd"src="design/images/products/spiderman-homecoming.jpg">
-                         </a>
-                    
-               
-            </article>
-            <article class="pd">
-                
-                    <h4>Los Jovenes Titanes: El contrato de Judas</h4>
-                    
-                        <a href="#"><img class="imgpd" src="design/images/products/teen-titans-judas.jpg"></a>
-                   
-               
-            </article>
-            <article class="pd ">
-               
-                    <h4>Spiderman: lejos de casa</h4>
-                    
-                        <a href="#"><img class="imgpd" src="design/images/products/spiderman-far-from-home.jpg"></a>
-                    
-                
-            </article>
-            <article class="pd no-show">
-                
-                    <h4>Spiderman: un nuevo universo</h4>
-                    
-                        <a href="#"><img class="imgpd" src="design/images/products/spiderman-far-from-home.jpg">
-                        </a>
-                    
-                    
-            </article>
-            <article class="pd no-show">
-                
-                    <h4>El viaje de Chihiro</h4>
-                   
-                        <a href="#"><img class="imgpd" src="design/images/products/Chihiro.png">
-                        </a>
-                   
-                 
-            </article>
-        </div>   
-        </section>
-        
-            <div class="gallery productSlider js-flickity"
-            data-flickity-options='{ "wrapAround": true }' >
-                <div class="carousel-cell  productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-                <div class="carousel-cell productSlide">
-                    <div class="productDiscount">15% OFF</div>
-                    <img src="/images/productos/cinta.jpg" alt="">
-                    <p class="productName">Nombre del producto</p>
-                    <h4 class="productPrice">$1530</h4>
-                </div>
-            </div>
-            <article id="carrusel">
-                <a href="#" class="left-arrow"><i class="fas fa-arrow-left"></i></a>
-                <a href="#" class="right-arrow"><i class="fas fa-arrow-right"></i></a>
-                <div class="carrusel">
-                    <div class="product" id="product_0">
-                        <img src="design/images/products/Chihiro.png"  >
-                        <h5>El Viaje de Chichiro</h5>
-                        <p>165.00 €</p>
-                    </div>
-                    <div class="product" id="product_1">
-                        <img src="design/images/products/spiderman-new-universe.jpg" >
-                        <h5>Spiderman:</h5>
-                        <h5>Un nuevo universo</h5>
-                        <p>100.00 €</p>
-                    </div>
-                    <div class="product" id="product_2">
-                        <img src="design/images/products/guardians-of-galaxy.jpg" width="195" height="100" >
-                        <h5>Guardianes de la Galaxia</h5>
-                        <p>250.00 €</p>
-                    </div>
-                    <div class="product" id="product_3">
-                        <img src="design/images/products/teen-titans-judas.jpg" width="195" height="100" >
-                        <h5>Los jóvenes Titanes:</h5><br>
-                        <h5>El contraro de Judas</h5>
-                        <p>75.00 €</p>
-                    </div>
-                    <div class="product" id="product_4">
-                        <img src="design/images/products/spiderman-homecoming.jpg" width="195" height="100" >
-                        <h5>Spiderman:</h5><br><br>
-                        <h5>De regreso a casa</h5>
-    
-                        <p>65.00 €</p>
-                    </div>
-                    <div class="product" id="product_5">
-                        <img src="design/images/products/capitana-marvel.jpg" width="195" height="100" />
-                        <h3>Capitana marvel</h3>
-                        <p>40.00 €</p>
-                    </div>
-                </div>
-            </article>-->
-   
+
+        <section class="extras-flexpd">
+            <section>
+                <h3>RELACIONADOS</h3>
+
     </main>
     <%- include ("./partials/footer2")%>
-        
 
-      
+
+
 </body>
 
 </html>

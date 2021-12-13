@@ -1,13 +1,40 @@
-
+let {login, register} = require('../database')
 
 module.exports = {
-    loginPage: (req, res) => {
+    "loginPage": (req, res) => {
         res.render('login',{
             titulo:"Log In"})
     },
 
-    registerPage: (req, res) => {
+    "login": (req, res) => {
+        let user = req.body.user
+        let pass = req.body.pass
+        if(login(user, pass)){
+            res.redirect('home', {login})
+        }else{
+            res.send("datos malos")
+        }
+
+    },
+
+    "registerPage": (req, res) => {
         res.render('register',{
             titulo:"Registro"})
+    },
+
+    "register": (req, res) => {
+        let {user, pass, nombre, apellido, email} = req.body
+        let usuario = {
+            nombre: nombre,
+            apellido: apellido,
+            email: email
+        }
+        if(register(user, pass, usuario)){
+            res.redirect('/home')
+        }else res.send("algo paso en el registro")
+    },
+
+    "carrito": (req, res) => {
+        res.send("soy el carrito")
     }
 }

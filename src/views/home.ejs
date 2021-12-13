@@ -6,7 +6,7 @@
 <body>
 
     <!-- header -->
-    <%- include('./partials/header2')  %>
+    <%- include('./partials/header1')  %>
     <!--  -->
 
     <main class="home-container flex">
@@ -21,22 +21,23 @@
             <section class="container-articles flex">
 
                 <% peliculas.forEach(pelicula => { %>
-                    <a href="/products/detail/<%= pelicula.id %>">
-                        <article class="article flex">
-
-                        <div class="img-container">
-                            <img src="./design/images/products/<%= pelicula.imagen %> " alt="articulo">
-                        </div>
-                        <div class="data-article flex">
+                <article class="article flex">
+                    <div class="img-container flex">
+                        <button class="btn-play" id="<%= pelicula.id %> ">
+                            <img src="./design/images/icons/play-circle-regular.png" alt="">
+                        </button>
+                        <img src="./design/images/products/<%= pelicula.imagen %> " alt="articulo">
+                    </div>
+                    <div class="data-article flex">
+                        <a href="/products/detail/<%= pelicula.id %>">
                             <h4 class="titulo noun"><%= pelicula.nombre %></h4>
                             <div class="footer-article flex">
                                 <i class="far fa-heart"></i>
                                 <h6 class="precio">$ <%= pelicula.precio %> </h6>
                             </div>
-                        </div>
-                    </article>
-                    </a>
-                
+                        </a>
+                    </div>
+                </article>
                 <% }) %>
 
             </section>
@@ -52,17 +53,12 @@
                             <% generos.forEach(genero => { %>
                             <li><a href="peliculas/:<%= genero.nombre %>"></a><%= genero.nombre %></li>
                             <% }) %>
-                            <!-- <li><a href="#"><span>Marvel</span></a></li>
-                            <li><a href="#"><span>DC</span></a></li>
-                            <li><a href="#"><span>Estrenos</span></a></li>
-                            <li><a href="#"><span>Proximamente</span></a></li>
-                            <li><a href="#"><span>Animadas</span></a></li> -->
                         </ul>
                     </div>
 
                     <div class="contain-category">
                         <div class="title">
-                            <h2>año</h2>
+                            <h2>AÑO</h2>
                         </div>
                         <ul class="list">
                             <% anios(peliculas).forEach(anio => { %>
@@ -75,6 +71,7 @@
         </div>
 
     </main>
+    <%- include('partials/footer1')  %>
 
 </body>
 

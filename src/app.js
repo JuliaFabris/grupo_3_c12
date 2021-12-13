@@ -4,7 +4,7 @@ const app = express();
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 
 
-const PORT = 3000;
+const PORT = 3333;
 
 /* rutas */
 let homeRouter = require('./routes/home')
