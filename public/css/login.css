@@ -43,14 +43,10 @@ main .login-container {
 
 
 .login-container .aux {
-  width: 500px;
-  height: 500px;
+  width: 320px;
+  height: auto;
 }
 
-.login-container .aux img {
-  width: 100%;
-}
-  /*  */
   .Hipervinculos-vistasContainer h1 {
     margin-left: 650px;
     margin-top: auto;
@@ -115,15 +111,8 @@ main .login-container {
     border: solid #fff 5px;
   }
 
-  .fondo h3 {
-    color: #fff;
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-
   .fondo form {
-    width: 70%;
+    width: 30%;
   }
 
   .fondo form span {
