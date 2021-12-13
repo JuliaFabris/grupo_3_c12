@@ -7,6 +7,9 @@ router.get('/login', controller.loginPage)
 router.post('/login', controller.login)
 /* POST */
 router.get('/register', controller.registerPage)
+/* GET */
+router.get('/carrito', controller.carrito)
+
 
 
 

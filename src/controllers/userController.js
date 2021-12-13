@@ -31,5 +31,9 @@ module.exports = {
         if(register(user, pass, usuario)){
             res.redirect('home')
         }
+    },
+
+    "carrito": (req, res) => {
+        res.send("soy el carrito")
     }
 }

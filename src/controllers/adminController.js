@@ -1,4 +1,4 @@
-let {peliculas, generos} = require('../database')
+let {tablePeliculas, generos} = require('../database')
 
 
 module.exports = {
@@ -7,13 +7,13 @@ module.exports = {
     },
 
     "productos": (req, res) => {
-        res.render('./admin/products', {peliculas: peliculas.data})
+        res.render('./admin/products', {peliculas: tablePeliculas.data})
     },
 
     /* formulario de edicion de producto*/
     "editar": (req, res) => {
         let id = +req.params.id
-        res.render('./admin/editProduct', {producto: peliculas.get(id)})
+        res.render('./admin/editProduct', {producto: tablePeliculas.get(id)})
     },
 
     "actualizar": (req, res) => {
@@ -28,15 +28,15 @@ module.exports = {
     "agregar": (req, res) => {
         let producto = req.body
         //res.send(producto)
-        peliculas.add(producto)
+        tablePeliculas.add(producto)
 
         res.redirect('/admin/products')
     },
 
     "eliminar": (req, res) => {
         let id = +req.params.id
-        let product = peliculas.get(id)
-        peliculas.dlt(product)
-        res.redirect('/admin/products')
+        let product = tablePeliculas.get(id)
+        tablePeliculas.dlt(product)
+        res.redirect('/admin')
     }
 }
