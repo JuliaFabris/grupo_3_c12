@@ -1,127 +1,58 @@
 header.flex{
     position: relative;
+    width: 100%;
     height: 80px;
     justify-content: space-between;
     padding: 0 10px 10px;
     border-bottom: 2px ridge rgba(139, 0, 0, 0.692);
 }
-header .container-izquierda-header .search-bar-container{
-    height: 100%
-}
-header .container-izquierda-header .search-bar-container .buscador{
-    display: none;
-    box-shadow: 0px 0px 5px rgba(230, 20, 20, 0.5);
-    height: 100%;
-    border-radius: 3px 0 0 3px;
-}
-header .btn{
-    background-color: black;
-    border: unset;
-    width: 100%;
-    height: 100%;
-}
-header .btn#menu ,
-header .btn#buscar{
-    color: red;
-    width: 100%;
-    box-shadow: 0px 0px 5px rgba(230, 20, 20, 0.5);
-
-}
-header .btn#buscar{
-    border-radius: 0 3px 3px 0;
-}
-header .logo-container{
-    position: absolute;
-    width: 80px;
-    height: 70px;
-    margin: auto;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-}
-header .icono-container{
-    height: 100%;
-    width: 25px;
-}
-header .container-derecha-header .icono-container{
-    margin-left: 7px;
-}
-header .container-izquierda-header .icono-container{
-    margin-right: 7px;
-}
-header .items-container{
-    height: 25px;
-}
-header .icono-container img,
-header .logo-container img{
-    width: 100%;
-    height: 100%;
-}
-header .container-derecha-header,
-header .container-izquierda-header{
+header .left-container,
+header .right-container  {
+    gap: 5px;
     align-self: flex-end;
 }
-header div.container-derecha-header{
-    justify-content: flex-end;
-}
-header div.container-izquierda-header{
-    justify-content: flex-start;
-}
-
-
-@media(min-width: 768px){
-    header .container-izquierda-header .search-bar-container .buscador{
-        display: inline-block;
-    }
-
-    header.flex{
-        height: 115px;
-    }
-
-    header .logo-container{
-        width: 175px;
-        height: 110px;
-    }
-
-    header .items-container{
-        height: 32px;
-    }
-    header .icono-container{
-        width: 32px;
-    }
-    header .fa-size{
-        font-size: 16px;
-    }
+header .left-container .container-icon button,
+header .right-container .container-icon#fav {
+    position: relative;
+    top: 1px;
 }
 
-@media(min-width: 1024px){
-    /* header */
-    header.flex{
-        height: 150px;
-    }
-    header .logo-container{
-        width: 250px;
-        height: 145px;
-    }
-    header .icono-container{
-        width: 45px;
-    }
-    header .items-container{
-        height: 45px;
-    }
-    header .container-izquierda-header .search-bar-container .buscador{
-        height: 100%;
-        width: 225px;
-        font-size: 1.2rem;
-    }
-    header .container-derecha-header .icono-container{
-        margin-left: 15px;
-    }
-    header .container-izquierda-header .icono-container{
-        margin-right: 10px;
-    }
-    header .fa-size{
-        font-size: 23px;
-    }
+header .right-container .container-icon#car {
+    position: relative;
+    bottom: 1px;
 }
+
+
+header  .left-container .container-search input,
+header  .left-container .container-search .container-button {
+    display: none;
+}
+
+/* logo*/
+header .container-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 95%;
+    width: 85px;
+    order: 1;
+}
+
+header button {
+    background-color: unset;
+    border: none;
+}
+
+header .container-icon {
+    width: 25px;
+    height: 25px;
+    border: none;
+}
+
+header .container-icon i {
+    color: #CD2222;
+}
+
