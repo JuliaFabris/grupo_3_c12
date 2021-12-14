@@ -53,6 +53,10 @@ header .container-icon {
     border: none;
 }
 
+header .container-icon:active {
+    scale: .9;
+}
+
 header .container-icon i {
     color: #CD2222;
 }

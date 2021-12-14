@@ -32,8 +32,8 @@
                         <a href="/products/detail/<%= pelicula.id %>">
                             <h4 class="titulo noun"><%= pelicula.nombre %></h4>
                             <div class="footer-article flex">
-                                <i class="far fa-heart"></i>
-                                <h6 class="precio">$ <%= pelicula.precio %> </h6>
+                                <i class="<%= false? 'fas' : 'far' %>  fa-heart"></i>
+                                <span class="precio">$ <%= pelicula.precio %> </span>
                             </div>
                         </a>
                     </div>
