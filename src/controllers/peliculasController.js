@@ -1,4 +1,4 @@
-let { peliculas, generos, aniosEnLista} = require('../database')
+let { tablePeliculas, generos, aniosEnLista} = require('../database')
 
 module.exports = {
     "peliculasPorGenero": (req, res) => {
@@ -13,6 +13,6 @@ module.exports = {
     // detalle de pelicula
     "detail": (req, res) => {
         let id = +req.params.id
-        res.render('product-detail', {product: peliculas.get(id)})
+        res.render('product-detail', {product: tablePeliculas.get(id)})
     }
 }

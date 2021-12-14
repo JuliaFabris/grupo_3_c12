@@ -11,8 +11,9 @@
 </head>
 
 <body>
+    <main class="register-form">
     <div class="capa-fondo">
-        <img src="./design/images/icons/logo.png " alt="">
+        <img src="/design/images/icons/logo.png " alt="">
         <div class="form-container">
             <h2>Registro</h2>
             <hr>
@@ -51,28 +52,14 @@
                         <span class="error-message">Hubo errores en el envío</span>
                         <button type="submit" class="btn btn-submit">Registrarme</button>
                     </div>
-                    <span><a href="/user/login">Ya tengo cuenta</a></span>
-                    <span><a href="/">Inicio</a></span>
+                    <a class="he" href="/user/login">Ya tengo cuenta</a>
+                
                 </div>
-                <footer class="flex">
-                    <div class="info-personal">
-                        <ul class="flex">
-                            <li><a href="#">privacidad</li>
-                            <li><a href="#">terminos y condiciones</li>
-                            <li><a href="#">sobre nosotros</a></li>
-                        </ul>
-                    </div>
-                    <div class="redes-sociales flex">
-                        <span>siguenos</span>
-                        <ul class="flex">
-                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube-square"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-                        </ul>
-                    </div>
-                </footer>
-            </form>
+            </main>
+
+           <%- include('partials/footer1') %>  
+           
+        </form>
         </div>
     </div>
 </body>

@@ -1,7 +1,6 @@
 /*HTML*/
 
 .login-container {
-  margin: 150px auto 0;
   background-image: url('design/images/icons/logo.webp');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -27,6 +26,7 @@ main .login-container {
 
 
 .login-container .login-bottom-page {
+  margin: 20px;
   border: none;
   border-radius: 1rem;
   cursor: pointer;
@@ -43,7 +43,7 @@ main .login-container {
 
 
 .login-container .aux {
-  width: 320px;
+  width: 210px;
   height: auto;
 }
 
@@ -77,7 +77,7 @@ main .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 90%;
     height: 100%;
   }
 
@@ -91,6 +91,7 @@ main .login-container {
   }
 
   .fondo {
+    padding: 10px 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
@@ -112,7 +113,8 @@ main .login-container {
   }
 
   .fondo form {
-    width: 30%;
+    padding: 10px 0;
+    width: 90%;
   }
 
   .fondo form span {
@@ -149,6 +151,9 @@ main .login-container {
     color: #000;
   }
 
+  .fondo form button h2 a {
+
+  }
   /*iniciar sesion boton*/
   .login-container .btn a{
     color: white;
@@ -204,8 +209,20 @@ main .login-container {
 
   .login-container .he {
     color: white;
+    background-color: red;
     font-size: 1rem;
+    padding: 3px;
   }
+
+  .login-container .he:active {
+  border-radius: 5px;
+  transform: scale(0.9);
+  }
+
+  .login-container .he:hover {
+    background-color: blue;
+  }
+
   /*FOOTER*/
 
   @import url('footer.css');
