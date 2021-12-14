@@ -1,24 +1,24 @@
 <section class="special-offers">
-    <h3 class="section__title"><%= sliderTitle %></h3> 
+   <!-- <h3 class="section__title"><%= sliderTitle %></h3> -->
     <!-- Product Slider -->
 
     <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }' >
-        <% sliderProducts.forEach(product => { %>
-            <a href="/products/detail/<%- pelicula.id %>">
+      <!--  <% sliderProducts.forEach(product => { %>-->
+            <a href="" ><!-- "/products/detail/<%- pelicula.id %>"> -->
                 <div class="carousel-cell  productSlide">
                     <!--<div class="productDiscount"><%- product.discount %>% OFF</div>-->
                     <img src="/design/images/products/<%= product.imagen %> " alt="<%- pelicula.nombre %>">
-                    <p class="productName"> 
-                        <% if (product.nombre.length > 30) { %>
+                    <p class="productName"> Nombre de producto
+                       <!-- <% if (product.nombre.length > 30) { %>
                             <%- `${product.nombre.slice(0,30)}...` %>
                         <% } else { %>
                             <%= product.nombre %>
-                        <% } %>
+                        <% } %>-->
                     </p>
-                    <h4 class="productPrice">$<%- product.precio ( product.price * product.discount / 100) %></h4>
+                    <h4 class="productPrice"><!--$<%- product.precio ( product.price * product.discount / 100) %>-->$$$$</h4>
                 </div>
             </a>
-        <% }) %>
+       <!-- <% }) %>-->
     </div>
 
 </section> 
