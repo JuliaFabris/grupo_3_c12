@@ -46,7 +46,7 @@ app.use('/admin', adminRouter)
 /* user */
 app.use('/user', userController)
 
-app.use('/product-detail',productController)
+//app.use('/product-detail',productController)
 //app.use('/login',login)
 //app.use('/carrito',carritoController)
 
