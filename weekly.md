@@ -42,6 +42,6 @@ _ _ _
 
 ### Eduardo Adrian Lopez
 
-- LOS IMPEDIMENTOS ENCONTRADOS:
+- LOS IMPEDIMENTOS ENCONTRADOS: no entiendo nada desde la implementacion de ".ejes".
 
-- Y LAS SOLUCIONES PROPUESTAS PROPIAS:
+- Y LAS SOLUCIONES PROPUESTAS PROPIAS: reunirme con el equipo y que me cuente que como es que lo hicieron.
