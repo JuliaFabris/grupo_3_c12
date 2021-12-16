@@ -35,7 +35,10 @@ module.exports = {
     },
 
     "carrito": (req, res) => {
-        res.send("soy el carrito")
+        res.render('carrito'),{
+            titulo:("soy el carrito")
+        }
+
     },
    
 }
