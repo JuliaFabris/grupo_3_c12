@@ -11,6 +11,7 @@ let homeRouter = require('./routes/home')
 let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
 let userController = require('./routes/user')
+let faqRouter = require('./routes/faq')
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
@@ -46,6 +47,9 @@ app.use('/admin', adminRouter)
 /* user */
 app.use('/user', userController)
 
+/* faq */
+app.use('/faq', faqRouter)
+
 //app.use('/product-detail',productController)
 //app.use('/login',login)
 //app.use('/carrito',carritoController)
@@ -67,3 +71,6 @@ app.get('/carrito', (req, res) =>{
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
+
+let test = require('../test')
+app.use('/test', test);

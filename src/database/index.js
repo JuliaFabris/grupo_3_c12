@@ -1,14 +1,12 @@
-let fs = require("fs");
-
-let peliculas = require('./products')
-let generos = require('./generos')
-let usuarios = require('./dataUser')
+let peliculas = require('./products'),
+    generos = require('./generos'),
+    usuarios = require('./dataUser');
 
 module.exports = {
     "tablePeliculas": peliculas,
-    "generos": generos,
+    "tableGeneros": generos,
     "getGeneros": generos.data,
-    "login": usuarios.login, 
+    "login": usuarios.login,
     "register": usuarios.register,
     "aniosEnLista": lista => {
         let mySet = new Set()

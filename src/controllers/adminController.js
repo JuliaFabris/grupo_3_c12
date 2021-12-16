@@ -52,5 +52,9 @@ module.exports = {
             tablePeliculas.dlt(product)
             res.redirect('/admin/products')
         }else res.send("no borre nada toga")
+    },
+
+    "testAddGener": (req, res) => {
+        
     }
 }

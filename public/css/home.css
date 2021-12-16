@@ -33,10 +33,12 @@
     arcoiris
     background: linear-gradient(0,  #5A667B, #5A667B, #5A667B );
 */
+    /* overflow-y: scroll; */
+    overflow: hidden;
+    position: relative;
     background-color: #0e1546;
     width: 100%;
     height: 250px;
-    overflow: hidden;
 }
 
 .home-container .container-nav .nav-bar .contain-category .title {
@@ -45,10 +47,16 @@
     text-transform: uppercase;
     text-decoration: double;
     padding: 7px 1px;
+    position: sticky;
+    top: 0;
 }
 
 .home-container .container-nav .nav-bar .contain-category .list {
     list-style: none;
+    overflow: auto;
+    max-height: 100%;
+    margin: 7px 0;
+
 }
 
 .home-container .container-nav .nav-bar .contain-category .list li {
@@ -58,8 +66,12 @@
 
 }
 
-.home-container .container-nav .nav-bar .contain-category .list li:hover {
+.home-container .container-nav .nav-bar .contain-category li:hover a {
     background-color: rgba(9, 10, 12, .5);
+    color: #8d0000;
+}
+
+.home-container .container-nav .nav-bar .contain-category li#anios:hover {
     color: #8d0000;
 }
 
@@ -115,6 +127,7 @@
     bottom: 0;
     z-index: 1;
 }
+
 .home-container .main-section .container-articles .article .img-container:hover::before {
     position: absolute;
     display: flex;
@@ -130,6 +143,7 @@
     transform: scale(.15);
     opacity: .5;
 }
+
 .home-container .main-section .container-articles .article .img-container .btn-play {
     position: relative;
     background-color: unset;
@@ -146,6 +160,7 @@
     cursor: pointer;
 
 }
+
 .home-container .main-section .container-articles .article .img-container .btn-play:hover {
     opacity: 1;
 }
@@ -158,7 +173,7 @@
     padding: 5px 10px;
 }
 
-.home-container .main-section .container-articles .article .data-article a{
+.home-container .main-section .container-articles .article .data-article a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -240,10 +255,11 @@ box-shadow: 0px 0px 5px rgb(64 16 16);
         justify-content: space-around;
         margin-bottom: 20px;
     }
+
     .home-container .main-section section.container-articles {
         border-radius: 10px 10px 0 0;
     }
-    
+
 
     .home-container .main-section .container-nav {
         display: inline-block;
@@ -256,6 +272,18 @@ box-shadow: 0px 0px 5px rgb(64 16 16);
         flex-direction: column;
         justify-content: space-between;
         gap: 20px;
+    }
+
+    .home-container .container-nav .nav-bar .contain-category #anios {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 30%;
+        gap: 5px;
+    }
+
+    .home-container .container-nav .nav-bar .contain-category #anios li {
+        border: .5px black ridge;
+        padding: 0 3px;
     }
 
     .home-container .banner {

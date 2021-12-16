@@ -52,3 +52,10 @@ module.exports = {
         }else res.send("error en la creacion")
     }
 }
+
+/* 
+
+registro logMiddleware
+autorizacion authMiddleware -> tipo de usuario
+db middleware
+*/

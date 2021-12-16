@@ -1,10 +1,17 @@
+let idGenerated = require('../../middlewares/idGenerated'),
+    {JsonToObject, writeJson} = require('../../middlewares/ourLib');
+
+
 let fs = require('fs'),
 path = require('path');
 
 const pathAbsolute = adress => path.join(__dirname, adress);
 
 
-let data = JSON.parse(fs.readFileSync(pathAbsolute('./peliculas.json'), 'utf-8'))
+let data = JsonToObject(__dirname, './peliculas.json'); 
+// JSON.parse(fs.readFileSync(pathAbsolute('./peliculas.json'), 'utf-8'))
+
+idGenerated.useData(data)
 
 let dataSave = (newData) => fs.writeFileSync(pathAbsolute('./peliculas.json'), JSON.stringify(newData), 'utf-8');
 
