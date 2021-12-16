@@ -72,5 +72,3 @@ app.get('/carrito', (req, res) =>{
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
 
-let test = require('../test')
-app.use('/test', test);
