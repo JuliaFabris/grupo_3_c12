@@ -24,16 +24,16 @@
                 <article class="article flex">
                     <div class="img-container flex">
                         <button class="btn-play" id="<%= pelicula.id %> ">
-                            <img src="./design/images/icons/play-circle-regular.png" alt="" onclick="alert('mirate este trailer de <%= pelicula.nombre %>')">
+                            <img src="./design/images/icons/play-circle-regular.png" alt="" onclick="alert('mirate este trailer de <%= pelicula.name %>')">
                         </button>
-                        <img src="./design/images/products/<%= pelicula.imagen %> " alt="articulo">
+                        <img src="./design/images/products/<%= pelicula.image %> " alt="articulo">
                     </div>
                     <div class="data-article flex">
                         <a href="/products/detail/<%= pelicula.id %>">
-                            <h4 class="titulo noun"><%= pelicula.nombre %></h4>
+                            <h4 class="titulo noun"><%= pelicula.name %></h4>
                             <div class="footer-article flex">
                                 <i class="<%= false? 'fas' : 'far' %>  fa-heart"></i>
-                                <span class="precio">$ <%= pelicula.precio %> </span>
+                                <span class="precio">$ <%= pelicula.price %> </span>
                             </div>
                         </a>
                     </div>

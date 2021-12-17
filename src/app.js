@@ -54,10 +54,6 @@ app.use('/faq', faqRouter)
 //app.use('/login',login)
 //app.use('/carrito',carritoController)
 
-app.get('/login', (req, res) =>{
-    res.render('login')
-});
-
 
 
 

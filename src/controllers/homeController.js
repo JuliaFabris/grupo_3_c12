@@ -7,7 +7,7 @@ module.exports = {
             titulo: "Inicio",
             peliculas: tablePeliculas.data,
             generos: tableGeneros.all,
-            anios: getListAllUniqueAtributes(tablePeliculas.data, 'anio')    
+            anios: getListAllUniqueAtributes(tablePeliculas.data, 'age')    
         })
     }
 }

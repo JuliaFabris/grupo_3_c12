@@ -18,16 +18,16 @@ module.exports = {
 
     "actualizar": (req, res) => {
         let id = req.params.id;
-        let modifies = {
+       /*  let modifies = {
             id: +req.body.id,
-            nombre: req.body.nombre.trim(),
-            genero: req.body.genero,
-            anio: +req.body.anio,
-            precio: req.body.precio,
-            descripcion: req.body.descripcion,
-        }
+            name: req.body.name.trim(),
+            age: +req.body.age,
+            price: +req.body.price,
+            category: req.body.category,
+            description: req.body.description.trim(),
+        } */
 
-        tablePeliculas.upd(id, modifies)
+        tablePeliculas.upd(id, res.body)
         // res.redirect('admin/products')
         res.send("actualizado   ")
     },

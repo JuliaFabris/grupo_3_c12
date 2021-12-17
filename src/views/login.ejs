@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ('./partials/head', {titulo: "TREMOVI - LOGIN"})%>
+<%- include ('./partials/head', {titulo: "TRIMOVI - LOGIN"})%>
 
 
 <body>
@@ -19,9 +19,9 @@
         </div>
 
         <form class="" action="/user/login" method="POST">
-          <span class="icon-user"></span><input class="inp" type="text" name="user" value=""><br>
-          <span class="icon-key"></span><input class="inp" type="password" name="pass" value=""><br>
-        <h2><a href="/user/olvidepassword" class="he">He olvidado mi contraseña</a></h2>
+          <span class="icon-user"></span><input class="inp" type="text" name="username" value=""><br>
+          <span class="icon-key"></span><input class="inp" type="password" name="password" value=""><br>
+         <h2><a href="/user/olvidepassword" class="he">He olvidado mi contraseña</a></h2>
           <input class="boton" type="submit" name="inicio" value="Iniciar Sesión">
         </form>
       </article>
