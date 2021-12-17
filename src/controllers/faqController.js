@@ -4,5 +4,9 @@ module.exports = {
     },
     "privacidad": (req, res) => {
         res.render('FAQ/privacidad')
+    },
+    "sobreNosotros": (req, res) => {
+        res.render('FAQ/sobreNosotros')
     }
 }
+
