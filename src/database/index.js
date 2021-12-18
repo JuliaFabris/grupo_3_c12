@@ -1,3 +1,4 @@
+const { array } = require('../middlewares/uploadProductFile');
 let peliculas = require('./products'),
     generos = require('./generos'),
     usuarios = require('./dataUser');

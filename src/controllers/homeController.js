@@ -5,9 +5,9 @@ module.exports = {
     inicio: (req, res) => {
         res.render('home', {
             titulo: "Inicio",
-            peliculas: tablePeliculas.data,
+            peliculas: tablePeliculas.all,
             generos: tableGeneros.all,
-            anios: getListAllUniqueAtributes(tablePeliculas.data, 'age')    
+            anios: getListAllUniqueAtributes(tablePeliculas.all, 'age')    
         })
     }
 }

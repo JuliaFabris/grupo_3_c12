@@ -1,46 +1,46 @@
 [
     {
         "id": 1,
-        "nombre": "accion"
+        "name": "accion"
     },
     {
         "id": 2,
-        "nombre": "fantasia"
+        "name": "fantasia"
     },
     {
         "id": 3,
-        "nombre": "superheroes"
+        "name": "superheroes"
     },
     {
         "id": 4,
-        "nombre": "animada"
+        "name": "animada"
     },
     {
         "id": 5,
-        "nombre": "aventura"
+        "name": "aventura"
     },
     {
         "id": 6,
-        "nombre": "drama"
+        "name": "drama"
     },
     {
         "id": 7,
-        "nombre": "ciencia ficción"
+        "name": "ciencia ficción"
     },
     {
         "id": 8,
-        "nombre": "comedia"
+        "name": "comedia"
     },
     {
         "id": 9,
-        "nombre": "crimen"
+        "name": "crimen"
     },
     {
         "id": 10,
-        "nombre": "comedia negra"
+        "name": "comedia negra"
     },
     {
         "id": 11,
-        "nombre": "terror"
+        "name": "terror"
     }
 ]

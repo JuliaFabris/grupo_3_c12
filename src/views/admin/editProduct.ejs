@@ -20,16 +20,22 @@
 
                 <div class="input-container">
                     <input id="iname" class="input-style" type="text" name="name" placeholder="Nombre de pelicula"
-                        value="<%= producto.nombre %>">
+                        value="<%= producto.name %>">
                     <span class="error-message">Debes ingresar una pelicula</span>
                 </div>
                 <div class="input-container">
-                    <input id="categori" class="input-style" type="text" name="category" placeholder="Género">
                     <span class="error-message">Debes ingresar un género</span>
+                    <% generos.forEach(category => { %>
+                        <label>
+                            <input type="checkbox" name="category" id="category" class="input-style"  placeholder="Género" value="<%= category.id %>">     
+                            <%= category.name %> 
+                        </label>
+                        <% }) %>
+                        <option value=""></option>
                 </div>
                 <div class="input-container">
 
-                    <input id="number" class="input-style" type="year" name="age" placeholder="Año" value="<%= producto.anio %>">
+                    <input id="number" class="input-style" type="year" name="age" placeholder="Año" value="<%= producto.age %>">
                     <span class="error-message">Debes ingresar un año</span>
                 </div>
                 <div class="input-container">
@@ -48,7 +54,7 @@
                     <div class="input-container">
                         <input class="input-style" type="file" name="file" placeholder="Archivo">
                         <figure>
-                            <img src="/design/images/products/<%= producto.imagen %>" alt="">
+                            <img src="/design/images/products/<%= producto.image %>" alt="">
                         </figure>
                     </div>
 

@@ -29,7 +29,7 @@ let newID = () => {
 
   
 module.exports = {
-    "data": data,
+    "all": Array.from(data),
 
     "get": id => data.find(pelicula => pelicula.id === id),
 

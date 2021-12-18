@@ -51,7 +51,7 @@
                         </div>
                         <ul class="list">
                             <% generos.forEach(genero => { %>
-                            <li><a href="peliculas/:<%= genero.nombre %>"><%= genero.nombre %></a></li>
+                            <li><a href="peliculas/<%= genero.id %>"><%= genero.name %></a></li>
                             <% }) %>
                         </ul>
                     </div>

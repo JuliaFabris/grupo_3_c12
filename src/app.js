@@ -61,9 +61,9 @@ app.use('/faq', faqRouter)
     //res.sendFile(pathAbsolute('./views/product-detail'))
 //});
 
-app.get('/carrito', (req, res) =>{
+/* app.get('/carrito', (req, res) =>{
     res.sendFile(pathAbsolute('./views/carrito.html'))
-});
+}); */
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
