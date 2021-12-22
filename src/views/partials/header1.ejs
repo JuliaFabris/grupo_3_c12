@@ -8,16 +8,22 @@
             </button>
         </div>
 
-        <form action="">
-            <div class="container-search flex">
-                <label class="container-icon flex" for="buscador"><i class="fa fa-search fa-size"></i></label>
-                <input id="buscador" type="text" placeholder="Buscar..." name="buscador">
-                <div class="container-button flex">
-                    <button type="submit" class="btn flex" id="buscar"><i class="fa fa-search fa-size"></i></button>
+        <div class="searcher-bar">
+            <form action="">
+                <div class="container-search flex">
+                    <label class="container-icon flex" for="buscador"><i class="fa fa-search fa-size"></i></label>
+                    <input id="buscador" type="text" placeholder="Buscar..." name="buscador" onfocus="showPreSearch()" onblur="hidePreSearch()">
+                    <div class="container-button flex">
+                        <button type="submit" class="btn flex" id="buscar"><i class="fa fa-search fa-size"></i></button>
+                    </div>
                 </div>
+            </form>
+            <div class="pre-searcher">
+
             </div>
 
-        </form>
+        </div>
+
     </div>
 
     <div class="container-logo"><a href="/"><img src="/design/images/icons/logo.png" alt="TRIMOVI"></a></div>

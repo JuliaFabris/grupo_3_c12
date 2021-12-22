@@ -29,6 +29,20 @@ header  .left-container .container-search .container-button {
     display: none;
 }
 
+header .left-container .searcher-bar {
+    position: relative;
+}
+
+header .left-container .searcher-bar.active .pre-searcher {
+    min-height: 90px;
+    width: 100%;
+    position: absolute;
+    background: white;
+    z-index: 10;
+    top: 24px;
+    left: 0;
+}
+
 /* logo*/
 header .container-logo {
     position: absolute;
@@ -54,10 +68,21 @@ header .container-icon {
 }
 
 header .container-icon:active {
-    scale: .9;
+    transform: scale(.9);
 }
 
 header .container-icon i {
     color: #CD2222;
+}
+
+@media(min-width: 1024px) {
+    header .left-container div.container-icon {
+        display: none;
+    }
+
+    header .left-container .container-search input {
+        display: inline-block;
+        width: 250px;
+    }
 }
 
