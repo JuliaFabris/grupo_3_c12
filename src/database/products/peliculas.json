@@ -5,7 +5,12 @@
         "price": "300",
         "description": "Scott Lang vuelve a enfundarse el traje de Ant-Man para pelear codo a codo junto con la Avispa. La misión revela a los dos superhéroes un secreto terrible y los enfrenta a su enemigo más poderoso.",
         "image": "antman-and-wasp.webp",
-        "age": 2018
+        "age": 2018,
+        "category": [
+            "accion",
+            "fantasia",
+            "superheroes"
+        ]
     },
     {
         "id": 2,
