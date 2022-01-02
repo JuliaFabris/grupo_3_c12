@@ -15,39 +15,43 @@
 <body>
     <div class="form-container">
         <h1>Crear producto</h1>
-        <form action="/admin/products/new" method="POST">
+        <form action="/admin/products/new" method="POST" enctype="multipart/form-data">
             <div class="form-1">
 
                 <div class="input-container">
 
-                    <input id="iname" class="input-style" type="text" name="nombre" placeholder="Nombre de pelicula">
+                    <input id="iname" class="input-style" type="text" name="name" placeholder="Nombre de pelicula">
                     <span class="error-message">Debes ingresar una pelicula</span>
                 </div>
                 <div class="input-container">
-
-                    <input id="categori" class="input-style" type="text" name="genero" placeholder="Género">
+                    <% generos.forEach(category => { %>
+                        <label>
+                            <input type="checkbox" name="category" id="category" class="input-style"  placeholder="Género" value="<%= category.id %>">     
+                            <%= category.name %> 
+                        </label>
+                        <% }) %>
                     <span class="error-message">Debes ingresar un género</span>
                 </div>
                 <div class="input-container">
 
-                    <input id="number" class="input-style" type="year" name="anio" placeholder="Año">
+                    <input id="number" class="input-style" type="number" name="age" placeholder="Año">
                     <span class="error-message">Debes ingresar un año</span>
                 </div>
                 <div class="input-container">
 
-                    <input id="precio" class="input-style" type="number" name="precio" placeholder="Precio">
+                    <input id="precio" class="input-style" type="number" name="price" placeholder="Precio">
                     <span class="error-message">Debes ingresar un precio</span>
 
                     <div class="input-container">
 
-                        <input class="input-style" type="text" name="descripcion"
+                        <input class="input-style" type="text" name="description"
                             style="position: relative; right: 1rem ; top: 1rem;" ; placeholder="Descripción">
                         <span class="error-message">Debes ingresar una descripción</span>
                     </div>
 
                     <div class="input-container">
 
-                        <input class="input-style" type="file" name="imagen" placeholder="Archivo">
+                        <input class="input-style" type="file" name="file" placeholder="Archivo">
 
                     </div>
 

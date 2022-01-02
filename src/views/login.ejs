@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ('./partials/head', {titulo: "TREMOVI - LOGIN"})%>
+<%- include ('./partials/head', {titulo: "TRIMOVI - LOGIN"})%>
 
 
 <body>
@@ -10,36 +10,36 @@
 
     <div class="login">
       <div class="login-bottom-page">
-        <button class="btn btn-submit"><a href="/">REGRESAR PAGINA INICIO</a></button>
-        <button class="btn btn-submit"><a href="/user/register">REGISTRARSE</a></button>
+
       </div>
       <article class="fondo">
         <div class="aux">
-          <img src="/design/images/icons/icon-user-profile.png" alt="User">
+          <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
         </div>
 
         <form class="" action="/user/login" method="POST">
-          <span class="icon-user"></span><input class="inp" type="text" name="user" value=""><br>
-          <span class="icon-key"></span><input class="inp" type="password" name="pass" value=""><br>
-        <h2><a href="/user/olvidepassword" class="he">He olvidado mi contraseña</a></h2>
-          <input class="boton" type="submit" name="inicio" value="Iniciar Sesión">
-        </form>
-      </article>
-      <nav id="redes-container">
+          <span class="icon-user"></span><input class="inp" type="text" name="username" value="" placeholder="USUARIO"><br>
+          <span class="icon-key"></span><input class="inp" type="password" name="password" value="" placeholder="CONTRASEÑA"><br>
+         <h3 id="login-txt">¿haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
+         <h3 id="login-txt">¿no tienes cuenta aun?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
+         <a href="" id="login-isesionboton">
+          <span id="i-sesion"></span>
+          <span id="i-sesion"></span>
+          <span id="i-sesion"></span>
+          <span id="i-sesion"></span>
+          INICIAR SESION
+      </a>
+     
+      <div id="redes-container">
 
-        <div class="box">
-          <a href="https://www.facebook.com"><img class="img" src="/design/images/icons/logofacebook.png"></a>
-        </div>
+          <a href="https://www.facebook.com" id="loginboxredes"><img src="/design/images/icons/logofacebook.png"></a>
+          <a href="https://www.instagram.com" id="loginboxredes"><img src="/design/images/icons/logoinstagram.png"></a>
+          <a href="https://www.google.com" id="loginboxredes"><img src="/design/images/icons/logogoogle.png"></a>
+      </div>
 
-        <div class="box">
-          <a href="https://www.instagram.com"><img class="img" src="/design/images/icons/logoinstagram.png"></a>
-        </div>
-
-        <div class="box">
-          <a href="https://www.google.com"><img class="img" src="/design/images/icons/logogoogle.png"></a>
-        </div>
     </div>
-
+  </article>
+  
     <%-include('./partials/footer1')%>
 
   </main>

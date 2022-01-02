@@ -29,13 +29,23 @@ let newID = () => {
 
   
 module.exports = {
-    "data": data,
+    "all": Array.from(data),
 
     "get": id => data.find(pelicula => pelicula.id === id),
 
     "add": pelicula => {
-        pelicula.id = newID();
-        dataSave([...data, pelicula])
+        let object = {
+            id : newID(),
+            ...pelicula
+         }
+           /*  movie.id = +id,
+            movie.name = pelicula.name,
+            movie.description = pelicula.description,
+            movie.age = pelicula.age,
+            movie.category = pelicula.category,
+            movie.price = pelicula.price,
+            movie.image = pelicula.file? pelicula.file : movie.image */
+        dataSave([...data, object])
     },
 
     "dlt": producto => {
@@ -45,15 +55,15 @@ module.exports = {
     },
 
     "upd": (id, modifies) => {
-        data.forEach(e => {
-            if(e.id == id){
-                e.id = +id,
-                e.nombre = modifies.nombre,
-                e.descripcion = modifies.descripcion,
-                e.anio = modifies.anio,
-                e.genero = modifies.genero,
-                e.precio = modifies.precio,
-                e.imagen = modifies.image? modifies.imagen : e.imagen
+        data.forEach(movie => {
+            if(movie.id == id){
+                movie.id = +id,
+                movie.name = modifies.name,
+                movie.description = modifies.description,
+                movie.age = modifies.age,
+                movie.category = modifies.category,
+                movie.price = modifies.price,
+                movie.image = modifies.file? modifies.file : movie.image
             }
         })
         dataSave(data);

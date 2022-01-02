@@ -7,14 +7,7 @@ module.exports = {
     },
 
     "login": (req, res) => {
-        let user = req.body.user
-        let pass = req.body.pass
-        if(login(user, pass)){
-            res.redirect('home', {login})
-        }else{
-            res.send("datos malos")
-        }
-
+            res.redirect('/')
     },
 
     "registerPage": (req, res) => {

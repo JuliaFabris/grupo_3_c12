@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%-include('./partials/head', {titulo: product.nombre})%>
+<%-include('./partials/head', {titulo: product.name})%>
 
 <body class="pd">
     <%- include('./partials/header1')%>
@@ -29,17 +29,17 @@
             <section class="pd-container flexpd ">
 
                 <div class="flexpd-row">
-                    <img class="imgpd" src="/design/images/products/<%= product.imagen %> ">
+                    <img class="imgpd" src="/design/images/products/<%= product.image %> ">
                 </div>
 
             </section>
             <section class="pd-container flexpd">
                 <div class="flexpd-item-pd-container">
                     <article class="pd">
-                        <h3><%= product.nombre %> </h3>
+                        <h3><%= product.name %> </h3>
                         <hr>
                         <h3>Sinopsis</h3>
-                        <p class="pd"><%= product.descripcion %> <p>
+                        <p class="pd"><%= product.description %> <p>
 
                                 <div class="infoprod">
                                     <ul>
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="data-articulopd flexpd">
                                     <span>
-                                        <h3>$ <%= product.precio %> </h3>
+                                        <h3>$ <%= product.price %> </h3>
                                     </span>
 
                                     <a href="carrito.ejs"><i class="fas fa-shopping-cart"

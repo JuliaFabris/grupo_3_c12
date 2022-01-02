@@ -6,19 +6,19 @@ module.exports = {
 
     "getListAllUniqueAtributes": (lista=[], propiedad="") => {
         // if (!lista.hasOwnProperty(`${propiedad}`)) return undefined;
-        console.log(`propiedad: ${propiedad}`)
-        console.log(lista)
+        /*console.log(`propiedad: ${propiedad}`)*/
+       /* console.log(lista)*/
         if (!(lista[0][propiedad] != undefined)) return undefined;
     
         let myset = new Set();
     
         lista.forEach(obj => {
             let property = obj[propiedad].toString()
-            console.log(`propiedad: ${property}`)
+            /*console.log(`propiedad: ${property}`)*/
             myset.add(property);
         });
     
-        console.log(myset.size)
+        /*console.log(myset.size)*/
         return Array.from(myset); //lista filtrada
     },
 

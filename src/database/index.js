@@ -1,10 +1,13 @@
+const { array } = require('../middlewares/uploadProductFile');
 let peliculas = require('./products'),
     generos = require('./generos'),
-    usuarios = require('./dataUser');
+    usuarios = require('./dataUser'),
+    favoritos = require('./favorites');
 
 module.exports = {
     "tablePeliculas": peliculas,
     "tableGeneros": generos,
+    "tableFavorites": favoritos,
     "getGeneros": generos.data,
     "login": usuarios.login,
     "register": usuarios.register,

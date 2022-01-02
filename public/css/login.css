@@ -27,20 +27,9 @@ main .login-container {
 
 .login-container .login-bottom-page {
   margin: 20px;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
   height: 2.5rem;
-  text-transform: uppercase;
-  width: 8rem;
-  font-weight: bold;
-
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   margin-top: 50px;
 }
-
 
 .login-container .aux {
   width: 210px;
@@ -92,7 +81,7 @@ main .login-container {
 
   .fondo {
     padding: 10px 0;
-    width: 100%;
+    margin: 50px;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
@@ -101,15 +90,11 @@ main .login-container {
     border-radius: 5px;
   }
 
-
- /*  img {
-    transform: scale(0.4);
-  } */
-
   .fondo img {
     width: 100%;
     border-radius: 50%;
     border: solid #fff 5px;
+    transform: translate(0px, -110px);
   }
 
   .fondo form {
@@ -129,18 +114,16 @@ main .login-container {
   }
 
   .inp {
-    box-shadow: 0;
-    border: 0;
     background-color: rgba(255, 255, 255, .1);
     width: 90%;
-    margin-bottom: 35px;
+    margin-bottom: 65px;
     height: 30px;
     border: solid 2px rgba(255, 255, 255, .5);
     font-size: 20px;
     color: #fff;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    text-align: right;
+    text-align: center;
     transition: all 250ms ease;
   }
 
@@ -151,76 +134,124 @@ main .login-container {
     color: #000;
   }
 
-  .fondo form button h2 a {
-
+  /*BOTON DE INICIAR SESION*/
+  form a#login-isesionboton {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #03e9f4;
+      font-size: 30px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: 0.5s;
+      margin-top: 40px;
+      letter-spacing: 4px;
   }
-  /*iniciar sesion boton*/
-  .login-container .btn a{
-    color: white;
-    font-weight: lighter;
-  }
-
-  .boton {
-    width: 100%;
-    height: 30px;
-    font-size: 22px;
-    border: 0;
-    text-align: center;
-    background: rgba(255, 0, 0, 0.0);
-    border-bottom: solid 1px #fff;
+   a#login-isesionboton:hover{
+    background: #f40303;
     color: #fff;
-    margin-top: 50px;
-    transition: all 200ms ease;
+    box-shadow: 0 0 5px #03e9f4,
+    0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+  }
+  
+ span#i-sesion {
+    position: absolute;
+    display: block;
+  }
+ 
+  span#i-sesion:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
   }
 
-  .boton:hover {
-    width: 120%;
-    margin-left: -10%;
+  span#i-sesion:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
   }
 
-  .boton:active {
-    background-color: rgba(255, 255, 255, 0.2);
-    outline: 0;
-    border: 0;
+  span#i-sesion:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+
+  span#i-sesion:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+
+  /*BOTONES RECUPERAR CONTRASEÑA Y REGISTRARSE*/
+
+  .login-container .he {
+    color: white;
+    min-height: 100vh;    
+    background: linear-gradient(to left, #F11712, #0099F7) !important;  
+    font-size: 1rem;
+    padding: 2px;
     border-radius: 5px;
   }
 
-  .boton:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    outline: 0;
-    border: 0;
-    border-radius: 5px;
-  }
+  h3#login-txt {
+    margin: 5px;
+  } 
 
-
-  .boton:hover {
-    border: 120%;
-  }
+  /*REDES SOCIALES*/
 
   #redes-container {
     display: flex;
     flex-direction: row;
-    transform: scale(0.3);
-    height: auto;
-    width: auto;
-  }
-
-
-
-  .login-container .he {
-    color: white;
-    background-color: red;
-    font-size: 1rem;
-    padding: 3px;
-  }
-
-  .login-container .he:active {
-  border-radius: 5px;
-  transform: scale(0.9);
-  }
-
-  .login-container .he:hover {
-    background-color: blue;
+    transform: scale(0.2);
   }
 
   /*FOOTER*/

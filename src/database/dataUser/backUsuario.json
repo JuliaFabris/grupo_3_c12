@@ -1,1 +1,22 @@
-[{"user":"kick","pass":"12345","id":11},{"user":"kick","pass":"123456","id":12},{"user":"kick","pass":"123456","id":13},{"user":"armandoCañete","pass":"456123","id":14}]
+[
+    {
+        "user": "kick",
+        "pass": "12345",
+        "id": 11
+    },
+    {
+        "user": "kick",
+        "pass": "123456",
+        "id": 12
+    },
+    {
+        "user": "kick",
+        "pass": "123456",
+        "id": 13
+    },
+    {
+        "user": "armandoCañete",
+        "pass": "456123",
+        "id": 14
+    }
+]

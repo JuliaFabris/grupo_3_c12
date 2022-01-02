@@ -1,78 +1,207 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include ('partials/head', {titulo})  %>
+<%- include ('partials/head', {titulo}) %>
 
-<body>
+    <body>
 
-    <!-- header -->
-    <%- include('./partials/header1')  %>
-    <!--  -->
+        <!-- header -->
+        <%- include('./partials/header1') %>
+            <!--  -->
 
-    <main class="home-container flex">
-        <!-- banner -->
-        <div class="banner">
-            <img src="./design/images/products/banner-carrousel.png" alt="banner">
-        </div>
+            <main class="home-container flex">
+                <!-- banner -->
+                <div class="banner">
+                    <img src="./design/images/products/banner-carrousel.png" alt="banner">
+                </div>
 
-        <!-- seccion principal -->
-        <div class="main-section flex">
-            <!-- peliculas -->
-            <section class="container-articles flex">
+                <!-- seccion principal -->
+                <div class="main-section flex">
+                    <!-- peliculas -->
+                    <section class="container-articles flex">
 
-                <% peliculas.forEach(pelicula => { %>
-                <article class="article flex">
-                    <div class="img-container flex">
-                        <button class="btn-play" id="<%= pelicula.id %> ">
-                            <img src="./design/images/icons/play-circle-regular.png" alt="" onclick="alert('mirate este trailer de <%= pelicula.nombre %>')">
-                        </button>
-                        <img src="./design/images/products/<%= pelicula.imagen %> " alt="articulo">
-                    </div>
-                    <div class="data-article flex">
-                        <a href="/products/detail/<%= pelicula.id %>">
-                            <h4 class="titulo noun"><%= pelicula.nombre %></h4>
-                            <div class="footer-article flex">
-                                <i class="<%= false? 'fas' : 'far' %>  fa-heart"></i>
-                                <span class="precio">$ <%= pelicula.precio %> </span>
+                        <% peliculas.forEach(pelicula=> { %>
+                            <article class="article flex">
+                                <div class="img-container flex">
+                                    <button class="btn-play" id="<%= pelicula.id %> ">
+                                        <img src="./design/images/icons/play-circle-regular.png" alt=""
+                                            onclick="alert('mirate este trailer de <%= pelicula.name %>')">
+                                    </button>
+                                    <img src="./design/images/products/<%= pelicula.image %> " alt="articulo">
+                                </div>
+                                <div class="data-article flex">
+                                    <a href="/products/detail/<%= pelicula.id %>">
+                                        <h4 class="titulo noun">
+                                            <%= pelicula.name %>
+                                        </h4>
+                                        <div class="footer-article flex">
+                                            <i
+                                                class="<%= favorites.includes(pelicula.id) ? 'fas' : 'far' %>  fa-heart"></i>
+                                            <span class="precio">$ <%= pelicula.price %> </span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                            <% }) %>
+
+                    </section>
+
+                    <!-- navbar -->
+                    <div class="container-nav in">
+                        <nav class="nav-bar flex">
+                            <div class="contain-category">
+                                <div class="title">
+                                    <h2>CATEGORIAS</h2>
+                                </div>
+                                <ul class="list">
+                                    <% generos.forEach(genero=> { %>
+                                        <li><button id="<%= genero.id %>">
+                                                <%= genero.name %>
+                                            </button></li>
+                                        <% }) %>
+                                </ul>
                             </div>
-                        </a>
+
+                            <div class="contain-category">
+                                <div class="title">
+                                    <h2>AÑO</h2>
+                                </div>
+                                <ul id="anios" class="list">
+                                    <% anios.forEach(anio=> { %>
+                                        <li><a href="#">
+                                                <%= anio %>
+                                            </a></li>
+                                        <% }) %>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
-                </article>
-                <% }) %>
+                </div>
 
-            </section>
-
-            <!-- navbar -->
-            <div class="container-nav">
-                <nav class="nav-bar flex">
-                    <div class="contain-category">
-                        <div class="title">
-                            <h2>CATEGORIAS</h2>
+            </main>
+            <!-- FOOTER -->
+            <%- include('partials/footer1') %>
+            
+                <template id="model-card">
+                    <article class="article flex">
+                        <div class="img-container flex">
+                            <button class="btn-play">
+                                <img src="./design/images/icons/play-circle-regular.png" alt=""
+                                    onclick="alert('mirate este trailer de')">
+                            </button>
+                            <img id="template-img" alt="articulo">
                         </div>
-                        <ul class="list">
-                            <% generos.forEach(genero => { %>
-                            <li><a href="peliculas/:<%= genero.nombre %>"><%= genero.nombre %></a></li>
-                            <% }) %>
-                        </ul>
-                    </div>
-
-                    <div class="contain-category">
-                        <div class="title">
-                            <h2>AÑO</h2>
+                        <div class="data-article flex">
+                            <a>
+                                <h4 class="titulo noun"></h4>
+                                <div class="footer-article flex">
+                                    <i class="far fa-heart"></i>
+                                    <span class="precio" </span>
+                                </div>
+                            </a>
                         </div>
-                        <ul id="anios" class="list">
-                            <% anios.forEach(anio => { %>
-                            <li><a href="#"><%= anio %></a></li>
-                            <% }) %>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+                    </article>
+                </template>
+                <!-- funcion que filtra
+                            por las peliculas segun el genero indicado y  utiliza la funcion fetch para hacer peticiones http asincronas
+                        les dejo un link para que lo vean-->
+                        <!-- https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch -->
+                <script>
+                    function filterMovies(event) {
+                        const $containerMovies = document.querySelector('section.container-articles');
+                        let id = event.target.getAttribute('id');
 
-    </main>
-    <%- include('partials/footer1')  %>
+                        $containerMovies.classList.add('loading')
+                        // primero hacer esto
+                        /* realiza la peticion aplicando tres parametros. El primero es la ruta que se va a solicitar(tiene que existir en el routes) */
+                        fetch(`/peliculas/${id}`, {
+                            /* el segundo parametro es el tipo de peticion que se va a realizar(todavia no lo probe con put y delete) */
+                            method: 'GET',
+                            /* y el tercero entendi maso que son como configuraciones a la peticion. En este caso dice 
+                            que el tipo de respuesta es un json (no entiendo xq application pero asi estaba ) */
+                            headers: {
+                                'Content-type': 'application/json'
+                            }
+                        })//esta solicitud que se hace va a dar una respuesta. A esta respuesta se la trata dentro de el metodo then(entonces)
+                        /* creo que se peuden poner todos los then que uno quiera */
+                            .then(res => res.json())//la respuesta que viene de la solicitud se parsea a json
+                             .then(data => {//la respuesta ya parseada es ahora una lista de array con contenido iterable
+                                /* variables */
+                                const $template = document.querySelector('#model-card').content,
+                                    $fragment = document.createDocumentFragment();
 
-</body>
+                                data.forEach(register => {
+                                    $template.querySelector('#template-img').setAttribute('src',
+                                        `./design/images/products/${register.image}`);
+                                    $template.querySelector('.data-article a').setAttribute(
+                                        'href', `/products/detail/${register.id}`);
+                                    $template.querySelector('.data-article a .titulo')
+                                        .textContent = register.name;
+                                    $template.querySelector('.data-article a .precio')
+                                        .textContent = `$ ${register.price}`
+                                    let $clon = document.importNode($template, true);
+                                    $fragment.appendChild($clon)
+                                });
+                                $containerMovies.innerHTML = "";
+                                $containerMovies.appendChild($fragment);
+                                $containerMovies.classList.remove('loading')
+                            })
+                            //si hay error lo atrapo
+                            .catch(err => {
+                                console.log(err)
+                            })
+
+                        let $navBar = document.querySelector('main .container-nav');
+                        if ($navBar.classList.contains('active')) {
+                            $navBar.classList.remove('active');
+                        }
+
+                    }
+
+                    let $allCategories = document.querySelectorAll('.container-nav .list li');
+                    $allCategories.forEach(a => {
+                        a.addEventListener('click', filterMovies)
+                    })
+                </script>
+
+                <!-- funcion que maneja el menu desplegable del navBar -->
+                <script>
+                    let $btnMenu = document.querySelector('header .sub-menu'),
+                        $navBar = document.querySelector('.container-nav.in')
+
+                    function togle() {
+                        $navBar.classList.toggle('active');
+                    }
+
+                    $btnMenu.addEventListener('click', togle);
+                </script>
+
+
+                <script>
+                    let $inputSearcher = document.querySelector('header .searcher-bar #buscador'),
+                    $searcherBar = document.querySelector('header .searcher-bar');
+
+                    function showPreSearch() {
+                        $searcherBar.classList.add('active')
+                    }
+                    
+                    // $inputSearcher.addEventListener('focus', showPreSearch)
+
+                </script>
+
+                <script>
+                    function showPreSearch() {
+                        let $searchBar = document.querySelector('header .searcher-bar');
+                        $searchBar.classList.add('active')
+                    }
+                    function hidePreSearch() {
+                        let $searchBar = document.querySelector('header .searcher-bar');
+                        $searchBar.classList.remove('active')
+                    }
+                    // $inputSearch.addEventListener('focusout', hidePreSearch)
+                    // $inputSearch.addEventListener('onchange', showPreSearch)
+
+                </script>
+    </body>
 
 </html>
