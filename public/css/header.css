@@ -4,18 +4,19 @@ header.flex{
     width: 100%;
     height: 80px;
     justify-content: space-between;
-    padding: 0 10px 10px;
+    padding: 0 10px 0;
     border-bottom: 2px ridge rgba(139, 0, 0, 0.692);
 }
-header .left-container,
-header .right-container  {
-    gap: 5px;
-    align-self: flex-end;
+
+.header-box {
+    width: 33.3%;
 }
+
 header .left-container .container-icon button,
 header .right-container .container-icon#fav {
     position: relative;
     top: 1px;
+    
 }
 
 header .right-container .container-icon#car {
@@ -27,10 +28,34 @@ header .right-container .container-icon#car {
 header  .left-container .container-search input,
 header  .left-container .container-search .container-button {
     display: none;
+    
+}
+
+header .left-container .searcher-bar {
+    position: relative;
+}
+
+header .left-container .searcher-bar.active .pre-searcher {
+    min-height: 90px;
+    width: 100%;
+    position: absolute;
+    background: white;
+    z-index: 10;
+    top: 24px;
+    left: 0;
 }
 
 /* logo*/
-header .container-logo {
+/* header .container-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 95%;
+/* logo*/
+/* header .container-logo {
     position: absolute;
     top: 0;
     left: 0;
@@ -40,6 +65,17 @@ header .container-logo {
     height: 95%;
     width: 85px;
     order: 1;
+} */
+
+header .container-logo {
+    width: 90px;
+    height: 100%;
+    position: relative;
+    right: 6rem;
+}
+
+header .container-logo img {
+    width: 100%;
 }
 
 header button {
@@ -48,16 +84,26 @@ header button {
 }
 
 header .container-icon {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border: none;
 }
 
 header .container-icon:active {
-    scale: .9;
+    transform: scale(.9);
 }
 
 header .container-icon i {
     color: #CD2222;
 }
 
+@media(min-width: 1024px) {
+    header .left-container div.container-icon {
+        display: none;
+    }
+
+    header .left-container .container-search input {
+        display: inline-block;
+        width: 250px;
+    }
+}

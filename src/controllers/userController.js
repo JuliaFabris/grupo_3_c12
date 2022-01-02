@@ -35,10 +35,11 @@ module.exports = {
     },
 
     "carrito": (req, res) => {
-        res.render('carrito'),{
-            titulo:("soy el carrito")
-        }
+        res.render('carrito',{
+            titulo:"soy el carrito"
+        })
 
     },
    
 }
+

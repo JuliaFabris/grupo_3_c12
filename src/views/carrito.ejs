@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include ('../partials/head')%>
+    <%- include ('partials/head',{titulo:"carrito"})%>
    
     <!--
         <head>
@@ -9,13 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
+    <link rel="shortcut icon" href="/design/images/icons/logo.png">
     <link rel="stylesheet" href="/public/css/carrito.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <title>Carrito de compras</title>
-</head>-->
+</head> -->
    
 <body>
-    <%- include ('../partials/header2')%>
+    <%- include ('partials/header1')%>
    <!-- <header>
 
 <div class="container-izquierda">
@@ -54,16 +55,17 @@
         </div>
 
     </header> -->
-    <br>
+    
     
 
 <body class="container-caja">
+    <h1 class="text-center">Carrito</h1>
     <div class="container-flex">
 
         <section class="shopping-cart">
             <div class="container">
-                <h1 class="text-center">Carrito</h1>
-                <br>
+                
+                
 
                 <div class="row">
                     <div class="col-6">
@@ -87,35 +89,78 @@
                     </div>
                 </div>
                 <hr class="gradient">
+               
+               
+
 
         <div class="box-shopping">
-                    <img class="img-movie"src='/public/design/images/products/Chihiro.png' alt="imagen Chihiro">
-               
+            <div class="imgcontainer">
+                <section class="portafolio-item">
+                    <img src="/design/images/products/Chihiro.jpg" alt="" class="portafolio-img1" style="position:relative; margin-top: 2rem;">
+                    <section class="portafolio-text">
+                        <h2>El viaje de Chihiro</h2>
+                        <p>Aventura</p>
+                    </section>
+                </section> 
+
+
+
+
+
+
+
+
+                
+                  
                 </div>
-                <div class="pre-cant">
-                    <p class="item1">400$</p>
-                    </div>
-
-
-                    
-                    <input class="input-CartItem" type="number"
-                        value="1">
+                
+</div>
+                
+<p class="number" style= "font-weight: bold;">400$</p>  
+                
+                        <input class="imp" type="number" name="edad" value="1">
+                        
                     <button class="btn-delete" type="button"><i class="fas fa-trash"></i></button>
                     <i class="bi bi-archive-fill"></i>
+                
+
+                    <div class="imgcontainer">
+                        <section class="portafolio-item">
+                            <img src="/design/images/products/justice-league-dark.jpg" alt="" class="portafolio-img2">
+                            <section class="portafolio-text">
+                                <h2>Liga de la justicia oscura</h2>
+                                <p>Acción, aventura</p>
+                            </section>
+                        </section>
+
+
+                        <div class="imgcontainer">
+                            <section class="portafolio-item">
+                                <img src="/design/images/products/Chihiro.png" alt="" class="portafolio-img">
+                                <section class="portafolio-text">
+                                    <h2>El viaje de Chihiro</h2>
+                                    <p>Aventura</p>
+                                </section>
+                            </section>
+    
+
+
+
+
+
+
+                    
                 </div>
-                <div class="box-shopping">
-                    <img class="img-movie"src='/public/design/images/products/justice-league-dark.jpg' alt="Liga de la justicia">
-               
-                </div>
+                
+                
                 <div class="pre-cant">
-                    <p class="item1">380$</p>
+                    <p class="item1" style= "font-weight: bold;">380$</p>
                     </div>
 
 
                     
-                    <input class="input-CartItem" type="number"
-                        value="1">
-                    <button class="btn-delete" type="button"><i class="fas fa-trash"></i></button>
+                    <input class="imp1" type="number" name="edad" value="1">
+                    <button class="btn-delete1" type="button"><i class="fas fa-trash"></i></button>
                     
                     <hr class="gradient2">
 
@@ -169,7 +214,7 @@
 
     
 
-<%-include('../partials/footer2')%>
+<%-include('partials/footer1')%>
 
 </body>
 </html>
