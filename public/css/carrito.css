@@ -53,7 +53,7 @@ header .icono1,
 }
 
 /*boody*/
-boody{
+boody {
   min-height: 100vh;
 }
 
@@ -62,10 +62,6 @@ boody{
   margin: 0 auto;
   padding: 0 auto;
   min-height: 80vh;
-
-
-  
-  
 }
 .container-flex {
   box-shadow: 0 0 2px rgb(255, 255, 255);
@@ -81,7 +77,7 @@ boody{
   width: 500px;
   border-radius: 10px;
   position: relative;
-  
+
   margin-bottom: 25%;
 }
 
@@ -99,13 +95,12 @@ h1 {
   margin: 20px;
   width: 95%;
   position: relative;
- 
+
   background-image: linear-gradient(to left, #f11712, #0099f7) !important;
   height: 1px;
 }
 
 .gradient2 {
-
   position: relative;
   bottom: 12rem;
   border: 0;
@@ -127,86 +122,73 @@ h1 {
   height: 120px;
   position: relative;
   left: 2rem;
-  
-  
 }
-
-
 
 .shopping-cart-header {
   width: 160px;
   position: relative;
   bottom: 35px;
-  color:rgb(245, 245, 245)
+  color: rgb(245, 245, 245);
 }
- /*efecto*/
+/*efecto*/
 
- .imgcontainer{
-position: relative;
-margin-top: 1rem;
-
- }
- .portafolio-item{
-	width: 20%;
-	position: relative;
-  bottom:11rem;
-  left: 2rem;
-	overflow: hidden;
-}
-.portafolioimg1{
+.imgcontainer {
   position: relative;
-  bottom:4rem;
+  margin-top: 1rem;
+}
+.portafolio-item {
+  width: 20%;
+  position: relative;
+  bottom: 11rem;
+  left: 2rem;
+  overflow: hidden;
+}
+.portafolioimg1 {
+  position: relative;
+  bottom: 4rem;
 }
 
-
-.portafolio-img{
- 
+.portafolio-img {
   width: 50px;
   height: 70px;
-	-webkit-transition: all 0.5s;
-	transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.portafolio-text{
-	position: absolute;
-	bottom: 0;
-	padding: 20px;
+.portafolio-text {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
 
-	background: rgba(0,0,0,0.7);
-	color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
 
-	-webkit-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
 
-	-ms-transform: translateY(100%);
+  -ms-transform: translateY(100%);
 
-	transform: translateY(100%);
+  transform: translateY(100%);
 
-	-webkit-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
 
-	transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
-.portafolio-text p{
-	text-align: justify;
+.portafolio-text p {
+  text-align: justify;
 }
 
-.portafolio-item:hover .portafolio-text{
-	-webkit-transform: translateY(0%);
-	-ms-transform: translateY(0%);
-	transform: translateY(0%);
+.portafolio-item:hover .portafolio-text {
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
 }
 
-.portafolio-item:hover .portafolio-img{
-	-webkit-transform: scale(1.15);
-	-ms-transform: scale(1.15);
-	transform: scale(1.15);
+.portafolio-item:hover .portafolio-img {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
 }
-
-
-
-
-
-
 
 .pre-cant {
   display: inline-block;
@@ -215,9 +197,8 @@ margin-top: 1rem;
   bottom: 27rem;
 }
 .number {
- position: relative;
- top: 5rem;
-
+  position: relative;
+  top: 5rem;
 }
 
 .imp {
@@ -230,25 +211,24 @@ margin-top: 1rem;
   bottom: 5rem;
   border: none;
 }
- .imp1{
-   position: relative;
-   bottom: 18rem;
-   left: 8rem;
-   border-radius: 5px;
-   width: 40px;
+.imp1 {
+  position: relative;
+  bottom: 18rem;
+  left: 8rem;
+  border-radius: 5px;
+  width: 40px;
   height: 20px;
   font-size: 15px;
-  border:none;
- }
+  border: none;
+}
 
- .btn-delete1{
-   position: relative;
-   bottom: 18rem;
-   left: 4rem;
-   background-color: none;
-   cursor: pointer;
-   
- }
+.btn-delete1 {
+  position: relative;
+  bottom: 18rem;
+  left: 4rem;
+  background-color: none;
+  cursor: pointer;
+}
 
 .btn-delete {
   position: relative;
@@ -256,28 +236,22 @@ margin-top: 1rem;
   bottom: 5rem;
   border: 1px solid rgb(231, 231, 231);
   cursor: pointer;
- 
 }
 
 /*Resumen de compra*/
 
-  
 .valor {
   position: relative;
- bottom: 14rem;
+  bottom: 14rem;
   right: 8rem;
   color: rgb(12, 112, 12);
   font-weight: bold;
-  
-  
 }
 .container-row-flex {
   position: relative;
-  bottom:14rem;
+  bottom: 14rem;
   right: 8rem;
-  
 }
-
 
 .container-verde {
   display: flex;
@@ -329,7 +303,7 @@ buttom.btn-verde {
   position: relative;
   top: 15%;
 }
- 
+
 /*Footer*/
 
 footer.flex-container-footer {
