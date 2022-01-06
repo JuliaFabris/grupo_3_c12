@@ -147,6 +147,10 @@ div.data-articulopd.flexpd {
 
 }
 
+div.data-articulopd.flexpd i{
+    font-size: 1.5em;
+}
+
 div.data-articulopd.flexpd:hover {
 
     box-shadow: 0px 0px 5px rgba(20, 59, 230, 0.39);
@@ -206,10 +210,7 @@ section.extras-flexpd article.pd a.pd {
 
 }
 
-/*section.extras-flexpd article.pd img.imgpd {
 
-    
-}*/
 
 section h3 {
     padding-top: 2%;
@@ -219,50 +220,8 @@ section h3 {
     
 }
 
-section article#carrusel {
 
-    display: flex;
-    /*flex-direction: row;
-    justify-content: center;*/
-    width: 80%;
-    overflow: hidden;
-    height: 203px;
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 
-#carrusel .left-arrow {
-    position: absolute;
-    left: 10px;
-    z-index: 1;
-    top: 50%;
-    margin-top: -9px;
-}
-
-#carrusel .right-arrow {
-    position: absolute;
-    right: 10px;
-    z-index: 1;
-    top: 50%;
-    margin-top: -9px;
-}
-
-.carrusel {
-    width: 4000px;
-    left: 0px;
-    position: absolute;
-    z-index: 0;
-}
-
-.carrusel>div {
-    float: left;
-    height: 203px;
-    margin-right: 5px;
-    width: 195px;
-    text-align: center;
-    color: var(--negro);
-}
 
 .carrusel img {
     cursor: pointer;
@@ -278,11 +237,6 @@ section article#carrusel {
     background-color: var(--grisazulado);
 }
 
-div.product #product_2,
-#product_3,
-#product_4 {
-    display: none;
-}
 
 
 @media(min-width: 768px) {

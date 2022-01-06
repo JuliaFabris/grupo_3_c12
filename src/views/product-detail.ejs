@@ -9,6 +9,7 @@
         <section class="flexpd-row">
             <section class="detalle-izq">
                 <article class="pd">
+                    <%- include('./partials/categories')%>
 
 
                    
@@ -17,7 +18,11 @@
             <section class="pd-container flexpd ">
 
                 <div class="flexpd-row">
-                    <img class="imgpd" src="/design/images/products/<%= product.image %> ">
+                    <iframe class="imgpd" src="<%= product.trailer %> "> >
+                    </iframe>
+                    
+                                    
+                     <!-- <img class="imgpd" src="/design/images/products/<%= product.image %> ">-->
                 </div>
 
             </section>
@@ -29,7 +34,7 @@
                         <h3>Sinopsis</h3>
                         <p class="pd"><%= product.description %> <p>
 
-                        <div class="infoprod">
+                       <!-- <div class="infoprod">-->
                             <h4>Reparto</h4>
                             <p><%= product.reparto %></p>
                              <h4>Direccion</h4>
@@ -37,7 +42,7 @@
 
                         </div>
                         <div class="data-articulopd flexpd">
-                        <span><h3>Agregar al carrito</h3></span>
+                        <span><h5>Agregar al carrito</h5></span>
                         <a href="carrito.ejs"><i class="fas fa-shopping-cart"                                            style="width: 30%;height: 30%;"></i></a>
                         </div>
                     </article>
@@ -48,7 +53,7 @@
         <section class="extras-flexpd">
             <section>
                 <h3>RELACIONADOS</h3>
-                <%- include ("./partials/product-slider")%>
+               <!-- <%- include ("./partials/slider")%>-->
 
             </section>
     </main>
