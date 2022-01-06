@@ -5,7 +5,10 @@ let controller = {
     product: (req, res) => {
         
         res.render("product-detail",{
-            titulo:"Detalle"})
+            titulo: req.body.name
+            
+
+        })
    
 
 }
