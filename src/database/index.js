@@ -1,4 +1,31 @@
-const { array } = require('../middlewares/uploadProductFile');
+const { json } = require("express/lib/response");
+const fs = require("fs");
+const path = require("path")
+
+module.exports = {
+    generos: JSON.parse(fs.readFileSync(path.join(__dirname, "generos.json"), "utf-8")),
+    products: JSON.parse(fs.readFileSync(path.join(__dirname, "peliculas.json"), "utf-8")),
+ /*Lee el archivo Json y lo parsea*/
+
+ writePeliculasJson : (data) => {
+      fs.writeFileSync(path.join(__dirname, "peliculas.json"),JSON.stringify(data), "utf-8")
+    /*Nos permite guardar o actualizar nuestra información (sobreescribir nuestro JSON*/
+
+ }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*const { array } = require('../middlewares/uploadProductFile');
 let peliculas = require('./products'),
     generos = require('./generos'),
     usuarios = require('./dataUser'),

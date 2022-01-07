@@ -1,7 +1,80 @@
-let {tablePeliculas, generos, tableGeneros} = require('../database')
+/*let {tablePeliculas, generos, tableGeneros} = require('../database')*/
+
+/*Obtenemos dentro de nuestro controlador nuestra base de datos y el método para actualizar información de la base de datos*/
+const {products, writePeliculasJson, generos} = require("../database/index");
+
+let controller = {
+
+inicio : (req, res) => {
+
+},
+productos: (req, res) => {
+
+},
+editar: (req, res) => {
+let prdouct = products.find(product => product.id === +req.params.id);
+
+console.log(product);
+res.render("admin/editProduct", {
+    generos,
+    producto: producto
+})
+},
+actualizar: (req, res) => {
+
+},
+crear: (req, res) => {
+ res.render("admin/addProducts", {
+     generos
+ })
+ generos
+},
+eliminar: (req, res) => {
+
+},
+agregar: (req, res) => {
+ const {name, category, age, price, description} = req.body
+
+ let lastId = 1;
+
+ products.forEach(product => {
+if(product.id > lasId) {
+    lasId = products.id
+}
+ });
+
+ let newProducts = {
+     id: lasId + 1,
+     name: name.trim(),
+     price: price,
+     description: description.trim(),
+     image: req.file ? req.file.filename: "default-image.png",
+     age: age,
+     category: category
+ }
+ products.push(newProducts);
+ writePeliculasJson(products);
+
+ res.redirect("/admin/products")
+},
+
+}
+
+module.exports = controller;
 
 
-module.exports = {
+
+
+
+
+
+
+
+
+
+
+
+/*module.exports = {
     "inicio": (req, res) => {
         res.render('./admin/dashboard')
     },
@@ -10,7 +83,7 @@ module.exports = {
         res.render('./admin/products', {peliculas: tablePeliculas.all})
     },
 
-    /* formulario de edicion de producto*/
+     formulario de edicion de producto
     "editar": (req, res) => {
         let id = +req.params.id
         res.render('./admin/editProduct', {producto: tablePeliculas.get(id), generos: tableGeneros.all})
@@ -25,14 +98,14 @@ module.exports = {
             price: +req.body.price,
             category: req.body.category,
             description: req.body.description.trim(),
-        } */
+        } 
 
         tablePeliculas.upd(id, res.body)
         // res.redirect('admin/products')
         res.send("actualizado   ")
     },
 
-    /* formulario de nuevo producto */
+    /* formulario de nuevo producto 
     "crear": (req, res) => {
         res.render('./admin/addProduct', { generos: tableGeneros.all})
     },
@@ -61,4 +134,4 @@ module.exports = {
     "testAddGener": (req, res) => {
         
     }
-}
+} */
