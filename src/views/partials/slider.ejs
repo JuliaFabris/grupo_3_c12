@@ -3,7 +3,7 @@
     <!-- Product Slider -->
 
     <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }' >
-        <% sliderProducts.forEach(product => { %>
+        <% products.forEach(product => { %>
             <a href="/products/detail/<%- product.id %>">
                 <div class="carousel-cell  productSlide">
                     <div class="productDiscount"><%- product.discount %>% OFF</div>

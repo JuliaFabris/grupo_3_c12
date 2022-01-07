@@ -47,15 +47,48 @@
 
                         <textarea class="input-style" type="text" name="description"
                             style="position: relative; right: 1rem ; top: 1rem;"
-                            placeholder="Descripción"><%= producto.descripcion %></textarea>
+                            placeholder="Descripción"><%= producto.description %></textarea>
                         <span class="error-message">Debes ingresar una descripción</span>
                     </div>
+
+                    
 
                     <div class="input-container">
                         <input class="input-style" type="file" name="file" placeholder="Archivo">
                         <figure>
                             <img src="/design/images/products/<%= producto.image %>" alt="">
                         </figure>
+                    </div>
+
+                    <div class="input-container">
+
+                        <textarea class="input-style" type="text" name="reparto"
+                            style="position: relative; right: 1rem ; top: 1rem;"
+                            placeholder="Ingresar el reparto"><%= producto.reparto %></textarea>
+                        <span class="error-message">Debes ingresar el reparto</span>
+                    </div>
+
+                    <div class="input-container">
+
+                        <textarea class="input-style" type="text" name="trailer"
+                            style="position: relative; right: 1rem ; top: 1rem;"
+                            placeholder="Url del trailer"><%= producto.trailer %></textarea>
+                        <span class="error-message">Debes ingresar una dirección</span>
+                    </div>
+
+                    <div class="input-container">
+
+                        <textarea class="input-style" type="text" name="direction"
+                            style="position: relative; right: 1rem ; top: 1rem;"
+                            placeholder="Direccion"><%= producto.direccion %></textarea>
+                        <span class="error-message">Debes ingresar el nombre de quien dirige</span>
+                    </div>
+                    <div class="input-container">
+
+                        <textarea class="input-style" type="text" name="duration"
+                            style="position: relative; right: 1rem ; top: 1rem;"
+                            placeholder="Duración en minutos"><%= producto.duration %></textarea>
+                        <span class="error-message">Debes ingresar un nùmero entero menor a 300</span>
                     </div>
 
                     <span class="error-message">Hubo errores en el formulario</span>
