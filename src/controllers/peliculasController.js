@@ -11,7 +11,10 @@ module.exports = {
     },
 
     // detalle de pelicula
+
     "detail": (req, res) => {
+        let genero = req.params.genero
+        let lista = getPeliculas.filter(pelicula => pelicula.genero.includes(genero))
         let id = +req.params.id
         res.render('product-detail', {product: tablePeliculas.get(id)})
     }
