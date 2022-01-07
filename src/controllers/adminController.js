@@ -1,5 +1,5 @@
 /*let {tablePeliculas, generos, tableGeneros} = require('../database')*/
-
+const fs = require("fs")
 /*Obtenemos dentro de nuestro controlador nuestra base de datos y el método para actualizar información de la base de datos*/
 const {products, writePeliculasJson, generos} = require("../database/index");
 
@@ -21,6 +21,26 @@ res.render("admin/editProduct", {
 })
 },
 actualizar: (req, res) => {
+const {name, category, age, price, description} = req.body
+
+products.forEach(product => {
+    if(product.id === +req.params.id,
+        product.name = name.trim(),
+        prduct.price = price,
+        product.description = description.trim(),
+        if(req.file){
+         if(fs.existsSync("./public/desing/image/products/", product.image)){
+             fs.unlink(`./public/desing/images/products/${product.image}`)
+         /*Si llegara una nueva imagen buscaremos la imagen almacenada anteriormente y si extiste la eliminamos*/
+         }
+        } /*consultamos si la imagen que está almcenada en nuestra base de datos existe en 
+        product.age= age,
+        product.category= category
+})
+
+
+
+
 
 },
 crear: (req, res) => {
