@@ -10,7 +10,12 @@
             "accion",
             "fantasia",
             "superheroes"
-        ]
+        ],
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
+
     },
     {
         "id": 2,
@@ -23,7 +28,11 @@
             "superheroes"
         ],
         "image": "black-phanter.webp",
-        "age": 2018
+        "age": 2018,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 3,
@@ -36,7 +45,11 @@
             "superheroes"
         ],
         "image": "capitana-marvel.jpg",
-        "age": 2019
+        "age": 2019,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 4,
@@ -50,7 +63,11 @@
             "drama"
         ],
         "image": "Chihiro.png",
-        "age": 2003
+        "age": 2003,
+        "reparto":"",
+        "trailer":"https://www.youtube.com/watch?v=5Fgq4Osh6XQ",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 5,
@@ -65,7 +82,11 @@
             "superheroes"
         ],
         "image": "doctor-stranger.jpg",
-        "age": 2016
+        "age": 2016,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 6,
@@ -80,7 +101,11 @@
             "comedia"
         ],
         "image": "guardians-of-galaxy.jpg",
-        "age": 2014
+        "age": 2014,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 7,
@@ -94,7 +119,11 @@
             "animada"
         ],
         "image": "justice-league-apokolips-war.jpg",
-        "age": 2020
+        "age": 2020,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 8,
@@ -108,7 +137,11 @@
             "animada"
         ],
         "image": "justice-league-dark.jpg",
-        "age": 2017
+        "age": 2017,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 9,
@@ -121,7 +154,11 @@
             "superheroes"
         ],
         "image": "justice-league-fatal-five.webp",
-        "age": 2019
+        "age": 2019,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 10,
@@ -135,7 +172,11 @@
             "aventura"
         ],
         "image": "spiderman-far-from-home.jpg",
-        "age": 2019
+        "age": 2019,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 11,
@@ -149,7 +190,11 @@
             "aventura"
         ],
         "image": "spiderman-homecoming.jpg",
-        "age": 2017
+        "age": 2017,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 12,
@@ -163,7 +208,11 @@
             "animada"
         ],
         "image": "spiderman-new-universe.jpg",
-        "age": 2019
+        "age": 2019,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 13,
@@ -176,7 +225,11 @@
             "superheroes"
         ],
         "image": "antman-and-wasp.webp",
-        "age": 2018
+        "age": 2018,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 14,
@@ -192,7 +245,11 @@
             "ciencia ficción"
         ],
         "image": "suicide-squad.jpg",
-        "age": 2016
+        "age": 2016,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 15,
@@ -206,7 +263,11 @@
             "animada"
         ],
         "image": "superman-red-son.jpg",
-        "age": 2020
+        "age": 2020,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 16,
@@ -220,7 +281,11 @@
             "animada"
         ],
         "image": "teen-titans-judas.jpg",
-        "age": 2017
+        "age": 2017,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 17,
@@ -235,7 +300,11 @@
             "aventura"
         ],
         "image": "vengadores-end-game.jpg",
-        "age": 2019
+        "age": 2019,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 18,
@@ -250,7 +319,11 @@
             "aventura"
         ],
         "image": "vengadores-infinity-war.jpg",
-        "age": 2018
+        "age": 2018,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 19,
@@ -265,7 +338,11 @@
             "terror"
         ],
         "image": "venom-1.jpg",
-        "age": 2018
+        "age": 2018,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 20,
@@ -280,7 +357,11 @@
             "terror"
         ],
         "image": "venom-2.jpg",
-        "age": 2021
+        "age": 2021,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     },
     {
         "id": 21,
@@ -293,6 +374,10 @@
             "superheroes"
         ],
         "image": "x-men-dark-fenix.webp",
-        "age": 2019
+        "age": 2019,
+        "reparto":"",
+        "trailer":"",
+        "direction":"",
+        "duration":120
     }
 ]

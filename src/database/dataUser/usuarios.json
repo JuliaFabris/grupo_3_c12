@@ -3,57 +3,70 @@
    "avatar":"../design/images/avatar/AvatarChichiro.png",
    "email": "nombre@user.com",
    "address":"calle city 2035",
-   "PC":56372
+   "city":"City",
+   "zipCode":56372
 
 },
 { "name": "kick",
-    "last-name":"perez",
-    "avatar":"../design/images/avatar/AvatarChichiro.png",
-    "email": "nombre@user.com",
-    "address":"calle city 2035",
-    "PC":56372
+   "last-name":"perez",
+   "avatar":"../design/images/avatar/AvatarChichiro.png",
+   "email": "nombre@user.com",
+   "address":"calle city 2035",
+   "city":"City",
+   "zipCode":56372
  
- },{ "name": "kick",
-    "last-name":"perez",
-    "avatar":"../design/images/avatar/AvatarChichiro.png",
-    "email": "nombre@user.com",
-    "address":"calle city 2035",
-    "PC":56372
+ },
+ { "name": "kick",
+   "last-name":"perez",
+   "avatar":"../design/images/avatar/AvatarChichiro.png",
+   "email": "nombre@user.com",
+   "address":"calle city 2035",
+   "city":"City",
+   "zipCode":56372
  
- },{ "name": "kick",
-    "last-name":"perez",
-    "avatar":"../design/images/avatar/AvatarChichiro.png",
-    "email": "nombre@user.com",
-    "address":"calle city 2035",
-    "PC":56372
+ },
+ { "name": "kick",
+   "last-name":"perez",
+   "avatar":"../design/images/avatar/AvatarChichiro.png",
+   "email": "nombre@user.com",
+   "address":"calle city 2035",
+   "city":"City",
+   "zipCode":56372
  
- },{ "name": "kick",
-    "last-name":"perez",
-    "avatar":"../design/images/avatar/AvatarChichiro.png",
-    "email": "nombre@user.com",
-    "address":"calle city 2035",
-    "PC":56372
+ },
+ { "name": "kick",
+   "last-name":"perez",
+   "avatar":"../design/images/avatar/AvatarChichiro.png",
+   "email": "nombre@user.com",
+   "address":"calle city 2035",
+   "city":"City",
+   "zipCode":56372
  
- },{ "name": "kick",
-    "last-name":"perez",
-    "avatar":"../design/images/avatar/AvatarChichiro.png",
-    "email": "nombre@user.com",
-    "address":"calle city 2035",
-    "PC":56372
+ },
+ { "name": "kick",
+   "last-name":"perez",
+   "avatar":"../design/images/avatar/AvatarChichiro.png",
+   "email": "nombre@user.com",
+   "address":"calle city 2035",
+   "city":"City",
+   "zipCode":56372
  
- },{ "name": "kick",
-    "last-name":"perez",
-    "avatar":"../design/images/avatar/AvatarChichiro.png",
-    "email": "nombre@user.com",
-    "address":"calle city 2035",
-    "PC":56372
+ },
+ { "name": "kick",
+   "last-name":"perez",
+   "avatar":"../design/images/avatar/AvatarChichiro.png",
+   "email": "nombre@user.com",
+   "address":"calle city 2035",
+   "city":"City",
+   "zipCode":56372
  
- },{ "name": "kick",
-    "last-name":"perez",
-    "avatar":"../design/images/avatar/AvatarChichiro.png",
-    "email": "nombre@user.com",
-    "address":"calle city 2035",
-    "PC":56372
- 
+ },
+ { "name": "kick",
+   "last-name":"perez",
+   "avatar":"../design/images/avatar/AvatarChichiro.png",
+   "email": "nombre@user.com",
+   "address":"calle city 2035",
+   "city":"City",
+   "zipCode":56372
  }
 ]
