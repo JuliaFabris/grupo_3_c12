@@ -35,8 +35,7 @@
                                             <%= pelicula.name %>
                                         </h4>
                                         <div class="footer-article flex">
-                                            <i
-                                                class="<%= favorites.includes(pelicula.id) ? 'fas' : 'far' %>  fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
                                             <span class="precio">$ <%= pelicula.price %> </span>
                                         </div>
                                     </a>
@@ -81,7 +80,7 @@
             </main>
             <!-- FOOTER -->
             <%- include('partials/footer1') %>
-            
+
                 <template id="model-card">
                     <article class="article flex">
                         <div class="img-container flex">
@@ -105,7 +104,7 @@
                 <!-- funcion que filtra
                             por las peliculas segun el genero indicado y  utiliza la funcion fetch para hacer peticiones http asincronas
                         les dejo un link para que lo vean-->
-                        <!-- https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch -->
+                <!-- https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch -->
                 <script>
                     function filterMovies(event) {
                         const $containerMovies = document.querySelector('section.container-articles');
@@ -123,9 +122,9 @@
                                 'Content-type': 'application/json'
                             }
                         })//esta solicitud que se hace va a dar una respuesta. A esta respuesta se la trata dentro de el metodo then(entonces)
-                        /* creo que se peuden poner todos los then que uno quiera */
+                            /* creo que se peuden poner todos los then que uno quiera */
                             .then(res => res.json())//la respuesta que viene de la solicitud se parsea a json
-                             .then(data => {//la respuesta ya parseada es ahora una lista de array con contenido iterable
+                            .then(data => {//la respuesta ya parseada es ahora una lista de array con contenido iterable
                                 /* variables */
                                 const $template = document.querySelector('#model-card').content,
                                     $fragment = document.createDocumentFragment();
@@ -179,12 +178,12 @@
 
                 <script>
                     let $inputSearcher = document.querySelector('header .searcher-bar #buscador'),
-                    $searcherBar = document.querySelector('header .searcher-bar');
+                        $searcherBar = document.querySelector('header .searcher-bar');
 
                     function showPreSearch() {
                         $searcherBar.classList.add('active')
                     }
-                    
+
                     // $inputSearcher.addEventListener('focus', showPreSearch)
 
                 </script>
