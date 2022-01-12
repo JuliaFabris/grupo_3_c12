@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link rel="stylesheet" href="/public/css/products.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
@@ -53,7 +53,6 @@
                 <li>
                   <a
                     class="dropdown-item"
-                    target="_blanck"
                     href="/admin/products"
                     >Productos</a
                   >
@@ -61,17 +60,8 @@
                 <li>
                   <a
                     class="dropdown-item"
-                    target="_blanck"
                     href="/admin/products/new"
                     >Agregar</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    target="_blanck"
-                    href="./editProduct.html"
-                    >Editar</a
                   >
                 </li>
               </ul>
@@ -80,15 +70,38 @@
         </div>
       </div>
     </nav>
-    <center>
-      <img
-        class="img-dash"
-        style="opacity: 0.5; width: 60%"
-        src="/design/images/icons/logo.webp"
-        alt="logo"
-      />
-    </center>
-
+    <main>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% peliculas.forEach(peli => { %>
+          <tr class="table-active">
+            <th scope="row"><%= peli.id %> </th>
+            <td><%= peli.name %> </td>
+            <td><%= peli.category %> </td>
+            <td>$ <%= peli.price %> </td>
+            <td>
+              <a href="/admin/products/edit/<%= peli.id %>"><button type="button" class="btn btn-success"><i
+                    class="fas fa-pencil-alt"></i></button></a>
+              <form action="/admin/products/<%= peli.id %>/dlt?_method=DELETE" method="post"> <button type="submit"
+                  class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+  
+        </tbody>
+      </table>
+  
+    </main>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

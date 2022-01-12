@@ -6,8 +6,10 @@ const { products, writePeliculasJson, generos } = require("../database/index");
 let controller = {   
      inicio: (req, res) => {
         res.render('admin/dashboard', {
-            session: req.session
+            session: req.session,
+            peliculas: products, 
         })
+        
     },
     productos: (req, res) => {
         res.render('admin/Products', {
@@ -42,10 +44,9 @@ let controller = {
            })
     },
     crear: (req, res) => {
-        res.render("admin/addProducts", {
+        res.render("admin/addProduct", {
             generos
         })
-        generos
     },
     eliminar: (req, res) => {
         let productId = +req.params.id;        
