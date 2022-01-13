@@ -1,0 +1,45 @@
+<!-- cambiar -->
+<!DOCTYPE html>
+<html>
+
+<%- include ('./partials/head', {titulo: "TRIMOVI - Recuperar contraseña?"})%>
+
+
+<body>
+  <main class="login-container">
+
+
+    <div class="login">
+      <div class="login-bottom-page">
+
+      </div>
+      <article class="fondo">
+        <div class="aux">
+          <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
+        </div>
+
+        <form  action="login.ejs" method="POST">
+          <span class="icon-user"></span><input class="inp" type="text" name="username" value="" placeholder="USUARIO"><br>
+          <label for="lostPass">Ingrese su email</label>
+          
+          <span class="icon-user"><textarea id="lostPass" name="lostPass"></span>
+        <p>Le enviaremos instrucciones para recuperar su usuario</p>
+          <span id="i-sesion"></span>
+          <span id="i-sesion"></span>
+          <span id="i-sesion"></span>
+          <span id="i-sesion"></span>
+          
+      </a>
+     
+      
+
+    </div>
+  </article>
+  
+    <%-include('./partials/footer1')%>
+
+  </main>
+
+</body>
+
+</html>

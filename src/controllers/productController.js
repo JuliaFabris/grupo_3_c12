@@ -1,4 +1,4 @@
-let { products, categories }=require('../data/products/peliculas.json')
+let { products, category }=require('../data/products/peliculas.json')
 
 
 let controller = {
