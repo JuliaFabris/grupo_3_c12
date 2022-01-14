@@ -1,7 +1,7 @@
 const res = require('express/lib/response')
 let fs = require('fs')
 
-let dataUser = JSON.parse(fs.readFileSync('./src/database/dataUser/usuarios.json', 'utf-8'))
+let dataUser = JSON.parse(fs.readFileSync('./src/database/dataUser/users.json', 'utf-8'))
 let backUser = JSON.parse(fs.readFileSync('./src/database/dataUser/backUsuario.json', 'utf-8'))
 
 let newID = () => {
@@ -46,7 +46,7 @@ module.exports = {
             usuario.id = newID();
             backUser.push({"user": user, "pass": pass, "id": usuario.id});
             dataUser.push(usuario);
-            fs.writeFileSync('./src/database/dataUser/usuarios.json', JSON.stringify(dataUser), 'utf-8')
+            fs.writeFileSync('./src/database/dataUser/users.json', JSON.stringify(dataUser), 'utf-8')
             fs.writeFileSync('./src/database/dataUser/backUsuario.json', JSON.stringify(backUser), 'utf-8')
             res.redirect('/user/login')
         }else res.send("error en la creacion")
