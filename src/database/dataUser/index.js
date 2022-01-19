@@ -1,8 +1,9 @@
 const res = require('express/lib/response')
 let fs = require('fs')
 
-let dataUser = JSON.parse(fs.readFileSync('./src/database/dataUser/usuarios.json', 'utf-8'))
+
 let backUser = JSON.parse(fs.readFileSync('./src/database/dataUser/backUsuario.json', 'utf-8'))
+let dataUser = JSON.parse(fs.readFileSync('./src/database/dataUser/users.json', 'utf-8'))
 
 let newID = () => {
     let aux = 0
@@ -24,10 +25,6 @@ let datosUnicos = (user, pass) => {
     })
     return true
 }
-
-
-
-
 module.exports = {
     "login": (user, pass) => {
         let backData = backUser.find(data => data.user==user && data.pass==pass)
@@ -50,12 +47,16 @@ module.exports = {
             fs.writeFileSync('./src/database/dataUser/backUsuario.json', JSON.stringify(backUser), 'utf-8')
             res.redirect('/user/login')
         }else res.send("error en la creacion")
-    }
+    },
+"users": JSON.parse(fs.readFileSync(path.join(__dirname, "/users.json"), "utf-8")),
+    "writeUsersJSON": (data) => {
+        fs.writeFileSync(path.join(__dirname, "../database/dataUser/users.json"), JSON.stringify(data), "utf-8")
+    },
 }
-
 /* 
 
 registro logMiddleware
 autorizacion authMiddleware -> tipo de usuario
 db middleware
 */
+

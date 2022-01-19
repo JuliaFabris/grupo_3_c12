@@ -1,7 +1,11 @@
 let {login, register} = require('../database')
+const { users, writeUsersJson } = require('../database/index');
+const { validationResult } = require('express-validator')
+const bcrypt = require("bcryptjs");
+const fs = require("fs")
 
-module.exports = {
-    "loginPage": (req, res) => {
+let controller = {
+    loginPage: (req, res) => {
         res.render('login',{
             titulo:"Log In"})
     },
@@ -15,7 +19,52 @@ module.exports = {
             titulo:"Registro"})
     },
 
-    "register": (req, res) => {
+
+    register: (req, res) => {
+        res.render("register",{
+            title:"Register Trimovie"
+        });
+    },
+    processRegister: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+
+            const {name, lastname, email, password} = req.body;
+
+            let lastId = 1;
+            users.forEach(user => {
+                if(user.id > lastId) {
+                    lastId = user.id
+                }
+            });
+
+            let user = {
+                id: lastId + 1,
+                name: name.trim(),
+                lastname: lastname.trim(),
+                email: email.trim(),
+                password: bcrypt.hashSync(pass, 12) , 
+                rol: "ROL_USER",
+                city:"",
+                phone: "",
+                address: "",
+                zipCode: "",
+                avatar: req.file ? req.file.filename : "AvatarChichiro.png",
+            }
+            users.push(user);
+
+            writeUsersJson(users);
+            res.redirect("/users/login")
+        } else {
+            console.log(errors)
+            res.render("users/register", {
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
+    },
+   /* "register": (req, res) => {
         let {user, pass, nombre, apellido, email} = req.body
         let usuario = {
             nombre: nombre,
@@ -25,7 +74,7 @@ module.exports = {
         if(register(user, pass, usuario)){
             res.redirect('/home')
         }else res.send("algo paso en el registro")
-    },
+    },*/
 
     "carrito": (req, res) => {
         res.render('carrito',{
@@ -36,3 +85,4 @@ module.exports = {
    
 }
 
+module.exports = controller;

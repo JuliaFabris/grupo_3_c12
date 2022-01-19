@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ('./partials/head', {titulo: "TRIMOVI - LOGIN"})%>
+<%- include ('./partials/head', {titulo: "Trimovie - LOGIN"})%>
 
 
 <body>
@@ -20,8 +20,8 @@
         <form class="" action="/user/login" method="POST">
           <span class="icon-user"></span><input class="inp" type="text" name="username" value="" placeholder="USUARIO"><br>
           <span class="icon-key"></span><input class="inp" type="password" name="password" value="" placeholder="CONTRASEÑA"><br>
-         <h3 id="login-txt">¿haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
-         <h3 id="login-txt">¿no tienes cuenta aun?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
+         <h3 id="login-txt">¿Haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
+         <h3 id="login-txt">¿No tienes cuenta aún?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
          <a href="" id="login-isesionboton">
           <span id="i-sesion"></span>
           <span id="i-sesion"></span>
@@ -29,7 +29,13 @@
           <span id="i-sesion"></span>
           INICIAR SESION
       </a>
-     
+      <a href="/user/register" id="login-isesionboton">
+        <span id="i-sesion"></span>
+        <span id="i-sesion"></span>
+        <span id="i-sesion"></span>
+        <span id="i-sesion"></span>
+        REGISTRARSE
+    </a>
       <div id="redes-container">
 
           <a href="https://www.facebook.com" id="loginboxredes"><img src="/design/images/icons/logofacebook.png"></a>
