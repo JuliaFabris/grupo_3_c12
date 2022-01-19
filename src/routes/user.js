@@ -1,18 +1,22 @@
 let router = require('express').Router()
 let controller = require('../controllers/userController')
 let checkLogin = require('../middlewares/userCheckLogin')
+let uploadFile = require('../middlewares/uploadAvatar')
+let registerValidator = require('../validations/registerValidator')
+let loginValidator = require('../validations/loginValidator')
 
 /* GET - formulario de inicio de sesion */
 router.get('/login', controller.loginPage)
-router.post('/login',checkLogin, controller.login)
+router.get('/register', controller.register)
 
 /* POST */
-router.get('/register', controller.registerPage);
-router.post('/register', controller.register);
+/*router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
+/*router.post("/register", registerValidator, processRegister)*/
+router.post('/login',checkLogin, controller.login)
+
+
 /* GET */
 router.get('/carrito', controller.carrito)
-
-
 
 
 module.exports = router

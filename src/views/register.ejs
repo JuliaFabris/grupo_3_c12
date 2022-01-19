@@ -17,7 +17,7 @@
         <div class="form-container">
             <h2>Registro</h2>
             <hr>
-            <form action="/user/register" method="POST">
+            <form action="/register" method="POST" enctype="multipart/form-data" class="form-ad" >
                 <div class="form">
                     <div class="input-container">
                         <input class="input-style" type="name" name="nombre" placeholder="Ingrese su nombre">
@@ -30,6 +30,7 @@
                     <div class="input-container">
                         <input class="input-style" type="username" name="user" placeholder="Nombre de usuario">
                         <span class="error-message">Nombre de usuario</span>
+                       
                     </div>
                     <div class="input-container">
                         <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
@@ -39,9 +40,12 @@
                         <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
                         <span class="error-message">Debes ingresar una contraseña</span>
                     </div>
-                    <div class="input-container">
-                        <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese la contraseña">
-                        <span class="error-message">Debes re-ingresar tu contraseña</span>
+    
+                    </div>
+                    <div class="input-file">
+                        <p>Agregar Avatar</p>
+                        <input type="file" name="avatarimage">
+                       
                     </div>
                     <div class="check">
                         <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
@@ -52,7 +56,7 @@
                         <span class="error-message">Hubo errores en el envío</span>
                         <button type="submit" class="btn btn-submit">Registrarme</button>
                     </div>
-                    <a class="he" href="/user/login">Ya tengo cuenta</a>
+                    <a class="he" href="login">Ya tengo cuenta</a>
                 
                 </div>
             </main>

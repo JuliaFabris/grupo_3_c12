@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
-const app = express();
-const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const app = express(); //Para utilizar express
+const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
+const cookieSession = require('./middlewares/cookieSession')
 
 
-const PORT = 3000;
+const PORT = 3000; //Este es elpuerto que usamos para levantar el servidor
+
 
 /* rutas */
 let homeRouter = require('./routes/home')
@@ -12,6 +16,17 @@ let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
 let userController = require('./routes/user')
 let faqRouter = require('./routes/faq')
+
+
+/*Middlewares*/
+app.use(session({
+    secret: "Trimovie",
+    resave: false,
+    saveUninitialized: true
+}))
+app.use(methodOverride('_method')) /* Nos permite recibir información por los metodos PUT Y DELETE */
+app.use(cookieParser())
+app.use(cookieSession)
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
