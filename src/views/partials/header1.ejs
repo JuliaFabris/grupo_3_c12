@@ -30,14 +30,26 @@
 
     <div class="right-container flex">
         <div class="container-icon flex" id="car">
-            <a href="/user/carrito"><i class="fas fa-shopping-cart"></i></a>
+            <a href="carrito"><i class="fas fa-shopping-cart"></i></a>
         </div>
         <div class="container-icon flex" id="fav">
             <a href="#"><i class="fas fa-heart"></i></a>
         </div>
-
+        <% if (typeof session.user != "undefined") { %>
+            <i class="fas fa-user"></i><span class="session"></span>
+            <div class="menu-user">
+                <a href="logout">Cerrar sesión</a>
+                <% if (session.user.rol === "ROL_ADMIN") { %>
+                    <a href="/admin/index">ADMIN</a>
+                <% } %>
+            </div>
+        <% } else {%>
+            <a href="/login"><i class="fas fa-user"></i></a>
+        <% } %>
         <div class="container-icon flex">
-            <a href="/user/login"><i class="fas fa-user"></i></a>
+            <a href="/login"><i class="fas fa-user"></i></a>
         </div>
+
+
     </div>
 </header>
