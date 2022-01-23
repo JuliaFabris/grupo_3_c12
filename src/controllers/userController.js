@@ -1,17 +1,48 @@
 let {login, register} = require('../database')
 const { users, writeUsersJson } = require('../data/index');
 const { validationResult } = require('express-validator')
-const bcrypt = require("bcryptjs");
-const fs = require("fs")
 
-let controller = {
-    loginPage: (req, res) => {
+module.exports = {
+    "loginPage": (req, res) => {
         res.render('login',{
+            session: req.session,
             titulo:"Log In"})
     },
 
     "login": (req, res) => {
+        let errors = validationResult(req);
+       
+        if(errors.isEmpty()){
+            let user = users.find(user => user.email === req.body.email);
+           
+            req.session.user = {
+                id: user.id,
+                name: user.name,
+                last_name: user.last_name,
+                email: user.email,
+                avatar: user.avatar,
+                rol: user.rol
+            }
+
+           if(req.body.remember){
+               const TIME_IN_MILISECONDS = 60000
+               res.cookie("userTrimovie", req.session.user, {
+                   expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                   httpOnly: true,
+                   secure: true
+               })
+           }
+
+            res.locals.user = req.session.user;
+
             res.redirect('/')
+
+        }else{
+            res.render('login', {
+                errors: errors.mapped(),
+                session: req.session
+            })
+        }
     },
 
     "registerPage": (req, res) => {
@@ -74,7 +105,7 @@ let controller = {
         if(register(user, pass, usuario)){
             res.redirect('/home')
         }else res.send("algo paso en el registro")
-    },*/
+    },
 
     "carrito": (req, res) => {
         res.render('carrito',{
@@ -85,4 +116,3 @@ let controller = {
    
 }
 
-module.exports = controller;

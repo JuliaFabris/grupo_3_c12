@@ -1,38 +1,28 @@
+const { json } = require("express/lib/response");
 const fs = require("fs");
-const path = require("path");
+const path = require("path")
 
 module.exports = {
-  generos: JSON.parse(
-    fs.readFileSync(path.join(__dirname, "/generos.json"), "utf-8")
-  ),
-  products: JSON.parse(
-    fs.readFileSync(path.join(__dirname, "/peliculas.json"), "utf-8")
-  ),
-  /*Lee el archivo Json y lo parsea*/
+    generos: JSON.parse(fs.readFileSync(path.join(__dirname, "generos.json"), "utf-8")),
+    products: JSON.parse(fs.readFileSync(path.join(__dirname, "peliculas.json"), "utf-8")),
+ /*Lee el archivo Json y lo parsea*/
 
-  writePeliculasJson: (data) => {
-    fs.writeFileSync(
-      path.join(__dirname, "../database/peliculas.json"),
-      JSON.stringify(data),
-      "utf-8"
-    );
+ writePeliculasJson : (data) => {
+      fs.writeFileSync(path.join(__dirname, "peliculas.json"),JSON.stringify(data), "utf-8")
+    /*Nos permite guardar o actualizar nuestra información (sobreescribir nuestro JSON*/
 
-    /*Nos permite guardar o actualizar nuestra información sobreescribir nuestro JSON*/
-  },
-  users: JSON.parse(
-    fs.readFileSync(path.join(__dirname, "/users.json"), "utf-8")
-  ),
+ }
 
-  writeUsersJson: (data) => {
-    fs.writeFileSync(
-      path.join(__dirname, "../database/users.json"),
-      JSON.stringify(data),
-      "utf-8"
+}
 
-    );
-  }
 
-};
+
+
+
+
+
+
+
 
 
 /*const { array } = require('../middlewares/uploadProductFile');

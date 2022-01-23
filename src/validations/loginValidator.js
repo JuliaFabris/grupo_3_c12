@@ -1,6 +1,6 @@
 let { check, body } = require('express-validator');
 const res = require('express/lib/response');
-const { users } = require('../database/users.json')
+const { users } = require('../database/dataBase')
 
 module.exports = [
     check('email')
@@ -10,7 +10,7 @@ module.exports = [
     .withMessage('Debes ingresar un email válido'),
 
     
-    check('password')
+    check('pass')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña'),
 
