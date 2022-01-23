@@ -148,6 +148,10 @@ main .login-container {
       margin-top: 40px;
       letter-spacing: 4px;
   }
+
+  small.text-danger{
+    color:red;
+  }
    a#login-isesionboton:hover{
     background: #f40303;
     color: #fff;
