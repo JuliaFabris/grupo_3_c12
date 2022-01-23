@@ -101,6 +101,7 @@ header .container-icon {
     width: 30px;
     height: 30px;
     border: none;
+    
 }
 
 header .container-icon:active {
@@ -120,9 +121,4 @@ header .container-icon i {
         display: inline-block;
         width: 250px;
     }
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> 226f49af538c09bbd902e1c7b69a01fb36d6ce46

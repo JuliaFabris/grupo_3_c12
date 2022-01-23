@@ -1,5 +1,5 @@
 let {login, register} = require('../database')
-const { users, writeUsersJson } = require('../database/index');
+const { users, writeUsersJson } = require('../data/index');
 const { validationResult } = require('express-validator')
 const bcrypt = require("bcryptjs");
 const fs = require("fs")
@@ -30,7 +30,7 @@ let controller = {
 
         if(errors.isEmpty()) {
 
-            const {name, lastname, email, password} = req.body;
+            const {name, lastname, email, pass} = req.body;
 
             let lastId = 1;
             users.forEach(user => {
@@ -44,7 +44,7 @@ let controller = {
                 name: name.trim(),
                 lastname: lastname.trim(),
                 email: email.trim(),
-                password: bcrypt.hashSync(pass, 12) , 
+                pass: bcrypt.hashSync(pass, 12) , 
                 rol: "ROL_USER",
                 city:"",
                 phone: "",
@@ -55,10 +55,10 @@ let controller = {
             users.push(user);
 
             writeUsersJson(users);
-            res.redirect("/users/login")
+            res.redirect("/user/login")
         } else {
             console.log(errors)
-            res.render("users/register", {
+            res.render("register", {
                 errors: errors.mapped(),
                 old: req.body
             })

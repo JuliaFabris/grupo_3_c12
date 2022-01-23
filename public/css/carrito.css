@@ -195,15 +195,17 @@ h1 {
   position: relative;
   left: 2rem;
   bottom: 27rem;
+  color: #fff;
 }
 .number {
   position: relative;
   top: 5rem;
+  color: #fff;
 }
 
 .imp {
   width: 40px;
-  height: 20px;
+  height: 25px;
   font-size: 15px;
   border-radius: 5px;
   position: relative;
@@ -217,7 +219,7 @@ h1 {
   left: 8rem;
   border-radius: 5px;
   width: 40px;
-  height: 20px;
+  height: 25px;
   font-size: 15px;
   border: none;
 }
@@ -281,7 +283,7 @@ h1 {
   content: "";
   width: 90px;
   height: 35px;
-  background-color: rgb(83, 204, 109);
+  background-color: rgb(39, 247, 84);
   position: absolute;
   z-index: 1;
   top: -80px;
@@ -293,15 +295,17 @@ h1 {
   top: 0;
 }
 
-buttom.btn-verde {
+.btn-verde {
   font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bolder;
   font-size: 18px;
-  color: white;
+  color: rgb(255, 255, 255);
   display: flex;
   position: relative;
-  top: 15%;
+  bottom: 15rem;
+  right: 7px;
+  background-color: rgb(126, 185, 233);
 }
 
 /*Footer*/

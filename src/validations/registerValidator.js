@@ -1,27 +1,22 @@
 const { check, body } = require('express-validator');
-/*const { users } = require('../dataUser/user')*/
-const { users } = require('../database/users.json')
+const {getUsers} require('../data')
 const bcrypt = require("bcryptjs");
 
 module.exports = [
-    check('nombre')
+    check('name')
     .notEmpty()
     .withMessage('El nombre es necesario'),
 
-    check('apellido')
+    check('lastname')
     .notEmpty()
     .withMessage('El apellido es necesario'),
-
-    check('username')
-    .notEmpty()
-    .withMessage('El usuario es necesario'),
 
     check('email')
     .isEmail()
     .withMessage('Debes ingresar un email válido'),
 
     body('email').custom((value) => { /*Comparamos las contraseñas*/
-       let user = users.find(user=>{ 
+       let user = getUsers.find(user=>{ 
             return user.email == value 
         })
 
