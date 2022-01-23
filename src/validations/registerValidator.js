@@ -4,13 +4,17 @@ const { users } = require('../database/users.json')
 const bcrypt = require("bcryptjs");
 
 module.exports = [
-    check('name')
+    check('nombre')
     .notEmpty()
     .withMessage('El nombre es necesario'),
 
-    check('last_name')
+    check('apellido')
     .notEmpty()
     .withMessage('El apellido es necesario'),
+
+    check('username')
+    .notEmpty()
+    .withMessage('El usuario es necesario'),
 
     check('email')
     .isEmail()
@@ -28,7 +32,7 @@ module.exports = [
         }
     }).withMessage('Email registrado'),
 
-    check('pass1')
+    check('pass')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
     .isLength({
