@@ -18,18 +18,22 @@
             <h1>Registro</h1>
             <hr>
 <<<<<<< HEAD
+            <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-ad" >
+=======
+<<<<<<< HEAD
             <form action="/register" method="POST" enctype="multipart/form-data" class="form-ad" >
 =======
             <form action="/views/register" method="POST" enctype="multipart/form-data" class="form-ad" >
 >>>>>>> 6cedff207e0759a5031935b2940b63a9de46d6b3
+>>>>>>> cbcb770e525bffaf6b16fc5c02b89bd104a245a0
                 <div class="form">
 
         
 
                     <div class="input-container">
-                        <input class="input-style" type="name" name="nombre" placeholder="Ingrese su nombre" value="<%= locals.old && old.name %>">
-                        <% if (typeof errors != "undefined" && errors.nombre) { %>
-                            <span class="text-danger"><%= errors.nombre.msg %> </span>
+                        <input class="input-style" type="name" name="name" placeholder="Ingrese su nombre" value="<%= locals.old && old.name %>">
+                        <% if (typeof errors != "undefined" && errors.name) { %>
+                            <span class="text-danger"><%= errors.name.msg %> </span>
                         <% } %>
 
                       
@@ -38,9 +42,9 @@
 
 
                     <div class="input-container">
-                        <input class="input-style" type="surname" name="apellido" placeholder="Ingrese su apellido" value="<%= locals.old && old.last_name %>">
-                        <% if (typeof errors != "undefined" && errors.apellido) { %>
-                            <span class="text-danger"><%= errors.apellido.msg %> </span>
+                        <input class="input-style" type="surname" name="lastname" placeholder="Ingrese su apellido" value="<%= locals.old && old.lastname %>">
+                        <% if (typeof errors != "undefined" && errors.lastname) { %>
+                            <span class="text-danger"><%= errors.lasname.msg %> </span>
                         <% } %>
 
 
@@ -78,7 +82,7 @@
                     </div>
                     <div class="button-container">
                         <span class="error-message">Hubo errores en el envío</span>
-                        <button type="submit" href="/view/home"class="btn btn-submit">Registrarme</button>
+                        <button type="submit" class="btn btn-submit">Registrarme</button>
                     </div>
 <<<<<<< HEAD
                     <a class="he" href="login">Ya tengo cuenta</a>
