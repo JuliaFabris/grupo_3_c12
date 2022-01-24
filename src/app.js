@@ -15,9 +15,7 @@ let faqRouter = require('./routes/faq')
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
-/*
-const publicPath = pathAbsolute("./public"); 
-app.use(express.static(publicPath)) */
+
 
 /* configuracion del motor de vistas */
 app.set('view engine', 'ejs');

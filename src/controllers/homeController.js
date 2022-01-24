@@ -1,8 +1,7 @@
 let {
-    tablePeliculas,
-    tableFavorites,
-    tableGeneros,
-    aniosEnLista
+    getMovies,
+    getGenres,
+    getFavorites
 } = require('../database'), {
     getListAllUniqueAtributes
 } = require('../middlewares/ourLib')
@@ -11,10 +10,10 @@ module.exports = {
     inicio: (req, res) => {
         res.render('home', {
             titulo: "Inicio",
-            peliculas: tablePeliculas.all,
-            generos: tableGeneros.all,
-            anios: getListAllUniqueAtributes(tablePeliculas.all, 'age'),
-            favorites: tableFavorites.getFavoritesByUser(1)
+            peliculas: getMovies,
+            generos: getGenres,
+            anios: getListAllUniqueAtributes(getMovies, 'age'),
+            favorites: getFavorites.getFavoritesByUser(1)
         })
     },
 

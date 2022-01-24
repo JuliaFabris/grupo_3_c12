@@ -19,12 +19,12 @@
           <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
         </div>
 
-        <form class="" action="/carrito" method="POST">
+        <form class="" action="/user/login" method="POST">
           <span class="icon-user"></span><input class="inp" type="email" name="email" placeholder="USUARIO"><br>
           <% if (locals.errors && errors.email) { %>
             <small class="text-danger"> <%= errors.email.msg %>  </small>
         <% } %>
-          <span class="icon-key"></span><input class="inp" type="pass" name="pass" value="" placeholder="CONTRASEÑA"><br>
+          <span class="icon-key"></span><input class="inp" type="password" name="pass" value="" placeholder="CONTRASEÑA"><br>
           <% if (locals.errors && errors.pass) { %>
             <small class="text-danger"> <%= errors.pass.msg %>  </small>
         <% } %>

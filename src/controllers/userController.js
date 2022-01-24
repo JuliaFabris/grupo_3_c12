@@ -1,5 +1,5 @@
 let {login, register} = require('../database')
-const { users, writeUsersJson } = require('../data/index');
+const { users, writeUsersJson } = require('../database/index');
 const { validationResult } = require('express-validator')
 
 module.exports = {
@@ -51,12 +51,12 @@ module.exports = {
     },
 
 
-    register: (req, res) => {
+    "register": (req, res) => {
         res.render("register",{
             title:"Register Trimovie"
         });
     },
-    processRegister: (req, res) => {
+    "processRegister": (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
@@ -94,5 +94,11 @@ module.exports = {
                 old: req.body
             })
         }
-    }
+    },
+    "carrito": (req, res) => {
+        res.render("carrito",{
+            title:"carrito"
+        });
+    },
+
 }

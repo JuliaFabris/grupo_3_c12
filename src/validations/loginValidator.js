@@ -1,6 +1,6 @@
 let { check, body } = require('express-validator');
 const res = require('express/lib/response');
-const { users } = require('../database/dataBase')
+const { users } = require('../database')
 
 module.exports = [
     check('email')

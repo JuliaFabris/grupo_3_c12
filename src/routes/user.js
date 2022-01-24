@@ -10,7 +10,7 @@ let loginValidator = require ('../validations/loginValidator')
 router.get('/login', controller.loginPage)
 router.get('/register', controller.register)
 
- POST 
+ /*POST */
 router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
 router.post('/login',checkLogin, controller.login)
 
