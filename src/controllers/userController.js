@@ -94,25 +94,5 @@ module.exports = {
                 old: req.body
             })
         }
-    },
-   /* "register": (req, res) => {
-        let {user, pass, nombre, apellido, email} = req.body
-        let usuario = {
-            nombre: nombre,
-            apellido: apellido,
-            email: email
-        }
-        if(register(user, pass, usuario)){
-            res.redirect('/home')
-        }else res.send("algo paso en el registro")
-    },
-
-    "carrito": (req, res) => {
-        res.render('carrito',{
-            titulo:"soy el carrito"
-        })
-
-    },
-   
+    }
 }
-

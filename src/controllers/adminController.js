@@ -36,19 +36,21 @@ actualizar: (req, res) => {
 const {name, category, age, price, description, reparto, direction, duration} = req.body
 
 products.forEach(product => {
-    if(product.id === +req.params.id,
+    if(product.id === +req.params.id){
         product.name = name.trim(),
-        prduct.price = price,
+        product.price = price,
         product.description = description.trim(),
         product.direction=direction,
         product.duration=duration,
-        product.reparto= reparto,
-        if (req.file){
-         if(fs.existsSync("./public/desing/image/products/", product.image)){
-             fs.unlink(`./public/desing/images/products/${product.image}`)
+        product.reparto= reparto
+         if (req.file){ 
+             if(fs.existsSync('/public/desing/image/products/', product.image)){
+             fs.unlinkSync(`./public/desing/images/products/${product.image}`)
+            } 
+        } }
          /*Si llegara una nueva imagen buscaremos la imagen almacenada anteriormente y si extiste la eliminamos*/
-         }
-        } /*consultamos si la imagen que está almcenada en nuestra base de datos existe en 
+         
+        /*consultamos si la imagen que está almcenada en nuestra base de datos existe en 
         product.age= age,
         product.category= category*/
 })
@@ -84,23 +86,25 @@ eliminar: (req, res) => {
 		res.redirect('admin/Products')
     }
 },
-function agregar (req, res) {
- const {name, category, age, price, description, reparto, duration, direction} = req.body
+
+
+agregar: (req, res) => {
+ let {name, category, age, price, description, reparto, duration, direction} = req.body
 
  let lastId = 1;
 
  products.forEach(product => {
-if(product.id > lasId) {
-    lasId = products.id
-}
- });
+if(product.id > lastId) {
+    lastId = products.id
+    }});
+
 
  let newProducts = {
      id: lasId + 1,
      name: name.trim(),
      price: price,
      description: description.trim(),
-     image: req.file ? req.file.filename: "default-image.png",
+     image: req.file ? [req.file.filename] : ["default-image.png"],
      age: age,
      category: category,
      reparto: reparto,
@@ -110,8 +114,8 @@ if(product.id > lasId) {
  products.push(newProducts);
  writePeliculasJson(products);
  res.redirect("/admin/products")
- 
-}
+
+};
 
 
 

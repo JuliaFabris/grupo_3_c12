@@ -1,6 +1,10 @@
 let router = require('express').Router()
 let controller = require('../controllers/userController')
 let checkLogin = require('../middlewares/userCheckLogin')
+let uploadFile = require ('../middlewares/uploadAvatar')
+let registerValidator = require('../validations/registerValidator')
+let loginValidator = require ('../validations/loginValidator')
+
 
 /* GET - formulario de inicio de sesion */
 router.get('/login', controller.loginPage)

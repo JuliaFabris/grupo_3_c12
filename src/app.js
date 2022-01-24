@@ -50,20 +50,6 @@ app.use('/user', userRouter)
 /* faq */
 app.use('/faq', faqRouter)
 
-//app.use('/product-detail',productController)
-//app.use('/login',login)
-//app.use('/carrito',carritoController)
-
-
-
-
-// app.get('/product-detail', (req, res) =>{
-    //res.sendFile(pathAbsolute('./views/product-detail'))
-//});
-
-/* app.get('/carrito', (req, res) =>{
-    res.sendFile(pathAbsolute('./views/carrito.html'))
-}); */
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
