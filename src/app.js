@@ -10,7 +10,7 @@ const PORT = 3000;
 let homeRouter = require('./routes/home')
 let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
-let userRouter = require('./routes/user')
+let userController = require('./routes/user')
 let faqRouter = require('./routes/faq')
 
 //este metodo se va a borrar
@@ -45,7 +45,7 @@ app.use('/products', productsRouter)
 app.use('/admin', adminRouter)
 
 /* user */
-app.use('/user', userRouter)
+app.use('/user', userController)
 
 /* faq */
 app.use('/faq', faqRouter)
