@@ -2,7 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-
+const session = require('express-session');
+let cookieParser = require('cookie-parser');
+let cookieSession = require('./middlewares/cookieSession');
 
 const PORT = 3000;
 
@@ -15,9 +17,7 @@ let faqRouter = require('./routes/faq')
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
-/*
-const publicPath = pathAbsolute("./public"); 
-app.use(express.static(publicPath)) */
+
 
 /* configuracion del motor de vistas */
 app.set('view engine', 'ejs');
@@ -34,6 +34,16 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+/* session */
+app.use(session({
+    secret: 'GrupoTresTriMovie',
+    resave: false,
+    saveUninitialized: true,
+}))
+
+/* configuracion de cookies */
+app.use(cookieParser())
+app.use(cookieSession)
 
 /*  */
 app.use('/', homeRouter);
@@ -50,20 +60,6 @@ app.use('/user', userController)
 /* faq */
 app.use('/faq', faqRouter)
 
-//app.use('/product-detail',productController)
-//app.use('/login',login)
-//app.use('/carrito',carritoController)
-
-
-
-
-// app.get('/product-detail', (req, res) =>{
-    //res.sendFile(pathAbsolute('./views/product-detail'))
-//});
-
-/* app.get('/carrito', (req, res) =>{
-    res.sendFile(pathAbsolute('./views/carrito.html'))
-}); */
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
