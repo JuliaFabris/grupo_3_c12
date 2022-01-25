@@ -1,6 +1,5 @@
 const { check, body } = require('express-validator');
 const {getUsers} = require('../database')
-const bcrypt = require("bcryptjs");
 
 module.exports = [
     check('name')
@@ -16,24 +15,21 @@ module.exports = [
     .withMessage('Debes ingresar un email válido'),
 
     body('email').custom((value) => { /*Comparamos las contraseñas*/
-       let user = getUsers.find(user=>{ 
-            return user.email == value 
-        })
+       let user = getUsers.find(user => user.email == value);
 
-        if(user){
-            return false
-        }else{
-            return true
-        }
+        return (user!=undefined? false : true);
     }).withMessage('Email registrado'),
 
-    check('pass')
+    check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
     .isLength({
         min: 6,
         max: 12
     })
+    .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+    
+    check('pass2').custom((value, {req}) => value !== req.body.pass1? false : true)
     .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
 
     check('terms')

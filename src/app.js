@@ -2,7 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-
+const session = require('express-session');
+let cookieParser = require('cookie-parser');
+let cookieSession = require('./middlewares/cookieSession');
 
 const PORT = 3000;
 
@@ -32,6 +34,16 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+/* session */
+app.use(session({
+    secret: 'GrupoTresTriMovie',
+    resave: false,
+    saveUninitialized: true,
+}))
+
+/* configuracion de cookies */
+app.use(cookieParser())
+app.use(cookieSession)
 
 /*  */
 app.use('/', homeRouter);

@@ -8,19 +8,14 @@ let loginValidator = require ('../validations/loginValidator')
 
 /* GET - formulario de inicio de sesion */
 router.get('/login', controller.loginPage)
-router.get('/register', controller.register)
+router.get('/register', controller.registerPage)
 
  /*POST */
 router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
-router.post('/login',checkLogin, controller.login)
+router.post('/login', loginValidator, controller.login)
 
-/* POST */
-router.get('/register', controller.registerPage);
-router.post('/register', controller.register);
 /* GET */
 router.get('/carrito', controller.carrito)
-
-
 
 
 module.exports = router

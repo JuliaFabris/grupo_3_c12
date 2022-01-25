@@ -18,7 +18,7 @@
             <h1>Registro</h1>
             <hr>
 
-            <form action="user/register" method="POST" enctype="multipart/form-data" class="form-ad" >
+            <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-ad" >
                 <div class="form">
 
                     <div class="input-container">
@@ -26,19 +26,13 @@
                         <% if (typeof errors != "undefined" && errors.name) { %>
                             <span class="text-danger"><%= errors.name.msg %> </span>
                         <% } %>
-
-                      
                     </div>
-
-
 
                     <div class="input-container">
                         <input class="input-style" type="surname" name="lastname" placeholder="Ingrese su apellido" value="<%= locals.old && old.lastname %>">
                         <% if (typeof errors != "undefined" && errors.lastname) { %>
-                            <span class="text-danger"><%= errors.lasname.msg %> </span>
+                            <span class="text-danger"><%= errors.lastname.msg %> </span>
                         <% } %>
-
-
                     </div>
                     
                     <div class="input-container">
@@ -47,22 +41,29 @@
                             <span class="text-danger"><%= errors.email.msg %> </span>
                         <% } %>
                     </div>
+                    
                     <div class="input-container">
-                        <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
+                        <input class="input-style" type="password" name="pass1" placeholder="Ingrese su contraseña">
+                        <% if (typeof errors != "undefined" && errors.pass) { %>
+                            <span class="text-danger"><%= errors.pass.msg %> </span>
+                        <% } %>
+                    </div>
+                    
+                    <div class="input-container">
+                        <input class="input-style" type="password" name="pass2" placeholder="Vuelve a ingresar tu contraseña">
                         <% if (typeof errors != "undefined" && errors.pass) { %>
                             <span class="text-danger"><%= errors.pass.msg %> </span>
                         <% } %>
                     </div>
     
-                    </div>
                     <div class="input-file">
                         <h1>Agregar Avatar</h1>
                         <input type="file" name="avatarimage">
                         <% if (locals.errors && errors.image) { %>
                             <small class="text-danger"><%= errors.avatarimage.msg %> </small>
-                        <% } %>
-                       
+                        <% } %> 
                     </div>
+
                     <div class="check">
                         <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
                         <input type="checkbox" name="terms" id="terms">
@@ -71,24 +72,21 @@
                             <small class="text-danger"><%= errors.terms.msg %> </small>
                         <% } %>
                     </div>
+
                     <div class="button-container">
                         <span class="error-message">Hubo errores en el envío</span>
                         <button type="submit" class="btn btn-submit">Registrarme</button>
                     </div>
-<<<<<<< HEAD
+
                     <a class="he" href="login">Ya tengo cuenta</a>
-=======
-                    <a class="he" href="/view/login">Ya tengo cuenta</a>
->>>>>>> 6cedff207e0759a5031935b2940b63a9de46d6b3
                 
                 </div>
-            </main>
-
-           <%- include('partials/footer1') %>  
-           
-        </form>
+            </form>
         </div>
     </div>
+</main>
+           <%- include('partials/footer1') %>  
+
 </body>
 
 </html>
