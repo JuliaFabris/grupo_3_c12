@@ -3,8 +3,17 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ('./partials/head', {titulo: "Trimovie - LOGIN"})%>
-
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeMovi - <%= titulo %></title>
+    <style>
+      form {
+        background-color: blue;
+      }
+    </style>
+  </head>
 
 <body>
   <main class="login-container">
@@ -29,12 +38,18 @@
             <small class="text-danger"> <%= errors.pass.msg %>  </small>
         <% } %>
 
-         <h3 id="login-txt">¿haz olvidado tu contraseña?</h3>
-
          <div>
           <input type="checkbox" name="remember" id="check">
           <label for="check">Recordar</label>
        </div>
+
+        <% if (locals.errors && errors.custom) { %>
+          <small class="text-danger"> <%= errors.custom.msg %>  </small>
+        <% } %>
+        <div>
+          <button type="submit"> INICIAR SESION</button>
+        </div>
+
          <h3 id="login-txt">¿Haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
          <h3 id="login-txt">¿No tienes cuenta aún?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
          <a href="" id="login-isesionboton">
@@ -44,16 +59,9 @@
           <span id="i-sesion"></span>
          
       </a>
-      <button type="submit"> INICIAR SESION</button>
 
     </form>
-      <a href="register" id="login-isesionboton">
-        <span id="i-sesion"></span>
-        <span id="i-sesion"></span>
-        <span id="i-sesion"></span>
-        <span id="i-sesion"></span>
-        REGISTRARSE
-    </a>
+      
       <div id="redes-container">
 
           <a href="https://www.facebook.com" id="loginboxredes"><img src="/design/images/icons/logofacebook.png"></a>

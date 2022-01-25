@@ -26,8 +26,6 @@
                         <% if (typeof errors != "undefined" && errors.name) { %>
                             <span class="text-danger"><%= errors.name.msg %> </span>
                         <% } %>
-
-                      
                     </div>
 
                     <div class="input-container">
@@ -35,8 +33,6 @@
                         <% if (typeof errors != "undefined" && errors.lastname) { %>
                             <span class="text-danger"><%= errors.lastname.msg %> </span>
                         <% } %>
-
-
                     </div>
                     
                     <div class="input-container">
@@ -45,25 +41,27 @@
                             <span class="text-danger"><%= errors.email.msg %> </span>
                         <% } %>
                     </div>
+                    
                     <div class="input-container">
-                        <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
+                        <input class="input-style" type="password" name="pass1" placeholder="Ingrese su contraseña">
                         <% if (typeof errors != "undefined" && errors.pass) { %>
                             <span class="text-danger"><%= errors.pass.msg %> </span>
                         <% } %>
                     </div>
+                    
                     <div class="input-container">
-                        <input class="input-style" type="password" name="pass2" placeholder="Repetir contraseña">
-                        <% if (locals.errors && errors.pass2) { %>
-                            <small class="text-danger"><%= errors.pass2.msg %> </small>
+                        <input class="input-style" type="password" name="pass2" placeholder="Vuelve a ingresar tu contraseña">
+                        <% if (typeof errors != "undefined" && errors.pass) { %>
+                            <span class="text-danger"><%= errors.pass.msg %> </span>
                         <% } %>
                     </div>
+                   
                     <div class="input-file">
                         <h1>Agregar Avatar</h1>
                         <input type="file" name="avatarimage">
                         <% if (locals.errors && errors.image) { %>
                             <small class="text-danger"><%= errors.avatarimage.msg %> </small>
-                        <% } %>
-                       
+                        <% } %> 
                     </div>
                    
                     <div class="button-container">
@@ -80,13 +78,12 @@
                             <small class="text-danger"><%= errors.terms.msg %> </small>
                         <% } %>
                 </div>
-            </main>
-
-           <%- include('partials/footer1') %>  
-           
-        </form>
+            </form>
         </div>
     </div>
+</main>
+           <%- include('partials/footer1') %>  
+
 </body>
 
 </html>
