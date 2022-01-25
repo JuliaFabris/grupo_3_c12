@@ -11,7 +11,8 @@ let homeRouter = require('./routes/home')
 let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
 let userRouter = require('./routes/user')
-let faqRouter = require('./routes/faq')
+let faqRouter = require('./routes/faq');
+/*const userController = require('./controllers/userController');*/
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)

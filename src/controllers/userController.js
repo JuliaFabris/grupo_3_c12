@@ -13,12 +13,12 @@ module.exports = {
         let errors = validationResult(req);
        
         if(errors.isEmpty()){
-            let user = users.find(user => user.email === req.body.email);
+            let user = user.find(user => user.email === req.body.email);
            
             req.session.user = {
                 id: user.id,
                 name: user.name,
-                last_name: user.last_name,
+                lastname: user.lastname,
                 email: user.email,
                 avatar: user.avatar,
                 rol: user.rol
@@ -56,12 +56,12 @@ module.exports = {
             title:"Register Trimovie"
         });
     },
-    "processRegister": (req, res) => {
+    processRegister: (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
 
-            const {name, lastname, email, pass} = req.body;
+            const {name, lastname, email, pass, pass2} = req.body;
 
             let lastId = 1;
             users.forEach(user => {
@@ -75,13 +75,13 @@ module.exports = {
                 name: name.trim(),
                 lastname: lastname.trim(),
                 email: email.trim(),
-                pass: bcrypt.hashSync(pass, 12) , 
+                pass: bcrypt.hashSync(pass, 12) ,
                 rol: "ROL_USER",
                 city:"",
                 phone: "",
                 address: "",
                 zipCode: "",
-                avatar: req.file ? req.file.filename : "AvatarChichiro.png",
+                avatar: req.file ? req.file.filename : "avatarChichiro.jpg",
             }
             users.push(user);
 
@@ -99,6 +99,6 @@ module.exports = {
         res.render("carrito",{
             title:"carrito"
         });
-    },
+    }
 
 }

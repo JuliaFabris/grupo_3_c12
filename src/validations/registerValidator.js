@@ -36,6 +36,9 @@ module.exports = [
     })
     .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
 
+    body('pass2').custom((value, {req}) => value !== req.body.pass ? false : true)
+    .withMessage('Las contraseñas no coinciden'),
+    
     check('terms')
     .isString('on')
     .withMessage('Debes aceptar las bases y condiciones')

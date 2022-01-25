@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const users = JSON.parse(fs.readFileSync(path.join(__dirname, "../database/users.json"), "utf-8"));
-const genres = JSON.parse(fs.readFileSync(path.join(__dirname, "../database/generos.json"), "utf-8"));
-const movies = JSON.parse(fs.readFileSync(path.join(__dirname, "../database/peliculas.json"), "utf-8"));
-
+const users = JSON.parse(fs.readFileSync(path.join(__dirname, "/users.json"), "utf-8"));
+const genres = JSON.parse(fs.readFileSync(path.join(__dirname, "/generos.json"), "utf-8"));
+const movies = JSON.parse(fs.readFileSync(path.join(__dirname, "/peliculas.json"), "utf-8"));
+ 
 module.exports = {
     getUsers: users,
     writeUsers: (data) => fs.writeFileSync(path.join(__dirname, "../database/users.json"),JSON.stringify(data),"utf-8"),
