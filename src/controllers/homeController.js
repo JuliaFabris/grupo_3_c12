@@ -1,7 +1,6 @@
 let {
     getMovies,
     getGenres,
-    getFavorites
 } = require('../database'), {
     getListAllUniqueAtributes
 } = require('../middlewares/ourLib')
@@ -13,7 +12,6 @@ module.exports = {
             peliculas: getMovies,
             generos: getGenres,
             anios: getListAllUniqueAtributes(getMovies, 'age'),
-            favorites: getFavorites.getFavoritesByUser(1)
         })
     },
 
