@@ -164,7 +164,15 @@ select.input-select:focus {
 .btn btn-submit {
   position: relative;
   left: 2rem;
+
 }
+
+.btnn-submit{
+  color: rgb(79, 79, 90);
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .register-form .he:active {
   border-radius: 6px;
   transform: scale(0.9);
@@ -200,4 +208,25 @@ select.input-select:focus {
   .form-container {
     width: 75%;
   }
+}
+
+.file-avatar {
+  margin: 10px 0;
+}
+
+ .formulario .file-avatar .input-avatar {
+  display: none; 
+}
+
+.formulario .file-avatar{
+  cursor: pointer;
+  padding: 4px;
+}
+
+.formulario .file-avatar .input-avatar {
+  display: none; 
+}
+
+.avatar{
+  font-size: 18px;
 }

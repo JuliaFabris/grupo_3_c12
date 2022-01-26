@@ -56,9 +56,9 @@
                         <% } %>
                     </div>
                    
-                    <div class="input-file">
-                        <h1>Agregar Avatar</h1>
-                        <input type="file" name="avatarimage">
+                    <div class="file-avatar">
+                        <h1 class="avatar">Ingrese una foto</h1>
+                        <input class="input-avatar" type="file" name="avatarimage">
                         <% if (locals.errors && errors.image) { %>
                             <small class="text-danger"><%= errors.avatarimage.msg %> </small>
                         <% } %> 
@@ -69,7 +69,7 @@
                         <button type="submit" class="btn btn-submit">Registrarme</button>
                     </div>
 
-                    <a class="btn btn-submit" href="login">Ya tengo cuenta</a>
+                    <a class="btnn-submit" href="login">Ya tengo cuenta</a>
                  <div class="check">
                         <label class="terms "for="terms">Acepto los <a href="">términos y condiciones</a></label>
                         <input class="chekk" type="checkbox" name="terms" id="terms">
