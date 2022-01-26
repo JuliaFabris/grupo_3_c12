@@ -5,7 +5,6 @@ const bcrypt = require('bcryptjs');
 module.exports = {
     "loginPage": (req, res) => {
         res.render('login',{
-            session: req.session,
             titulo:"Log In"})
     },
 
