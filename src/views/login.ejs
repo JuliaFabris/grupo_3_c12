@@ -28,7 +28,7 @@
           <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
         </div>
 
-        <form class="" action="/user/login" method="POST">
+        <form class="" action="/user/home" method="POST">
           <span class="icon-user"></span><input class="inp" type="email" name="email" placeholder="USUARIO"><br>
           <% if (locals.errors && errors.email) { %>
             <small class="text-danger"> <%= errors.email.msg %>  </small>
@@ -49,6 +49,7 @@
         <div>
           <button type="submit"> INICIAR SESION</button>
         </div>
+      </form>
 
          <h3 id="login-txt">¿Haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
          <h3 id="login-txt">¿No tienes cuenta aún?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
@@ -60,7 +61,7 @@
          
       </a>
 
-    </form>
+    
       
       <div id="redes-container">
 
