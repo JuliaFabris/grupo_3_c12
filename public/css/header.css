@@ -113,6 +113,25 @@ header .container-icon i {
     font-size: 18px;
 }
 
+.userProfile .avatar{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: blanchedalmond;
+    margin: 1rem auto;
+}
+
+
+.userProfile_box {
+    margin: 1rem 0;
+}
+
+.userProfile_title {
+    border-bottom: 1px solid var(--primary);
+    margin-bottom: 1rem;
+}
+
+
 @media(min-width: 1024px) {
     header .left-container div.container-icon {
         display: none;
