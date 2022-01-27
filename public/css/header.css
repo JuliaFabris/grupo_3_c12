@@ -122,14 +122,7 @@ header .container-icon i {
 }
 
 
-.userProfile_box {
-    margin: 1rem 0;
-}
 
-.userProfile_title {
-    border-bottom: 1px solid var(--primary);
-    margin-bottom: 1rem;
-}
 
 
 @media(min-width: 1024px) {

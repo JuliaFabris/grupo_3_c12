@@ -86,6 +86,21 @@ module.exports = {
             })
         }
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        if(req.cookies.userTrimovie){
+            res.cookie('userTrimovie', "", { maxAge: -1 })
+        }
+        res.redirect('/')
+    }, 
+    profile: (req, res) => {
+        let user = users.find(user => user.id === req.session.user.id)
+
+        res.render('userProfile', {
+            user, 
+            session: req.session
+        })
+    },
 
     "carrito": (req, res) => {
         res.render("carrito",{

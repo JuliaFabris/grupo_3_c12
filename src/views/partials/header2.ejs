@@ -28,7 +28,7 @@
             <% if (typeof session.user != "undefined") { %>
                 <i class="fas fa-user"></i><span class="session"></span>
                 <div>
-                    <img class="userProfile avatar" src="/design/images/products/<%=user.avatar %> ">
+                    <img class="userProfile avatar" src="/design/images/avatar/<%=user.avatar %> ">
                     <a href="/users/logout">Cerrar sesión</a>
                     <% if (session.user.rol === "ADMIN") { %>
                         <a href="/admin/dashboard">ADMIN</a>

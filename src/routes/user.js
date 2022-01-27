@@ -19,7 +19,7 @@ router.get('/register', controller.registerPage);
 router.post('/register', controller.register);*/
 /* GET */
 
-/*router.get('/home', controller.logout) */
+router.get('/', controller.logout) 
 router.get('/carrito', controller.carrito)
 
 

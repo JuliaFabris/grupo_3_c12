@@ -46,3 +46,13 @@ main {
 .text-danger {
     color: tomato;
 }
+
+.user-icons-mobile {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ .user-icons-mobile i{
+    font-size: 24px;
+    margin-left: 10px;
+}
