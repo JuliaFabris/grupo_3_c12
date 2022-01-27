@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-let {login, register} = require('../database')
-=======
 const { getUsers, writeUsers } = require('../database');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
->>>>>>> 5714a1fea4cd4d315460de2437247f40e39555a9
 
 module.exports = {
     "loginPage": (req, res) => {
@@ -13,26 +9,6 @@ module.exports = {
     },
 
     "login": (req, res) => {
-<<<<<<< HEAD
-            res.redirect('/')
-    },
-
-    "registerPage": (req, res) => {
-        res.render('register',{
-            titulo:"Registro"})
-    },
-
-    "register": (req, res) => {
-        let {user, pass, nombre, apellido, email} = req.body
-        let usuario = {
-            nombre: nombre,
-            apellido: apellido,
-            email: email
-        }
-        if(register(user, pass, usuario)){
-            res.redirect('/home')
-        }else res.send("algo paso en el registro")
-=======
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
@@ -109,7 +85,6 @@ module.exports = {
                 errors: errors.mapped(),
             })
         }
->>>>>>> 5714a1fea4cd4d315460de2437247f40e39555a9
     },
 
     "carrito": (req, res) => {
