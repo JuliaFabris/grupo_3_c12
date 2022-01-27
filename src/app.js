@@ -19,7 +19,7 @@ let faqRouter = require('./routes/faq');
 
 
 
-app.use(userLogs); //Middleware que hace un txt para conocer las url donde logea el user
+app.use(userLogs); //Middleware que hace txt para conocer las url donde logea el user
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
