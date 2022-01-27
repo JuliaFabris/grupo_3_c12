@@ -1,188 +1,232 @@
-@import url('footer.css');
+@import url("footer.css");
 
-.capa-fondo{
-    background-attachment: fixed;
-    background-repeat: space;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center
+.form-regis {
+  width: 80%;
+  height: 50%;
+  position: relative;
+  left: 3rem;
+}
+.terms {
+  position: relative;
+  left: 3rem;
+}
+.capa-fondo {
+  background-attachment: fixed;
+  background-repeat: space;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.capa-fondo img{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+.capa-fondo img {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
-
 
 a {
-    color: blue;
-    font-size: 0.8rem;
-    text-decoration: none;
+  color: blue;
+  font-size: 0.8rem;
+  text-decoration: none;
 }
 
-h2 {
-    color: white;
-    text-align: center;
-    margin-bottom: 1rem;
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 30px;
 }
 
 hr {
-    height: 2px;
-    margin-bottom: 3rem;
-    width: 100%;
-    background: linear-gradient(90deg, #71AAFF, red);
-    border: none;
+  height: 2px;
+  margin-bottom: 3rem;
+  width: 100%;
+  background: linear-gradient(90deg, #71aaff, red);
+  border: none;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-container {
-    /*background: linear-gradient(#71aaff, white);*/
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin: 30px auto;
-    height: fit-content;
-    height: -moz-fit-content;
-    width: 75%;
-    padding: 1rem;
+  /*background: linear-gradient(#71aaff, white);*/
+  background-color: rgba(252, 252, 252, 0.3);
+  border-radius: 20px;
+  margin: 30px auto;
+  height: fit-content;
+  height: -moz-fit-content;
+  padding: 1rem;
 }
 /* Form inputs */
 
 .input-container,
 .button-container {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 100%;
 }
 
 .button-container {
-    align-items: center;
+  align-items: center;
+  width: 90%;
+  position: relative;
+  left: 2rem;
 }
 
 span.error-message {
-    color: red;
-    font-size: 10px;
-    margin: 5px auto;
-    display: none;
+  color: red;
+  font-size: 10px;
+  margin: 5px auto;
+  display: none;
 }
 
 input.input-style {
-    border: none;
-    border-radius: 1rem;
-    height: 2.5rem;
-    padding: .5rem;
-    background-color: rgba(100, 100, 100, .6);
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background-color: rgba(100, 100, 100, 0.6);
 }
 
 input.input-style::placeholder {
-    color: lightgray;
+  color: lightgray;
 }
 
 label {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .input-file-container {
-    background-color: white;
-    border-radius: 1rem;
-    height: 2.5rem;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    width: 100%;
+  background-color: white;
+  border-radius: 2rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 select.input-select {
-    border: none;
-    border-radius: 1rem;
-    height: 2.5rem;
-    padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
 }
 
 input.input-style:focus,
 .input-file-container,
 select.input-select:focus {
-    box-shadow: 0 0 6px rgb(255, 255, 255);
-    outline: none;
+  box-shadow: 0 0 6px rgb(255, 255, 255);
+  outline: none;
 }
 
-
+.chekk {
+  position: relative;
+  left: 3rem;
+  margin-top: 2rem;
+}
 
 .check {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 80%;
 }
 
 .check label {
-    margin-right: 10px;
-    position: relative;
-    top: -1px;
+  margin-right: 10px;
+  position: relative;
+  top: -1px;
+  margin-top: 2rem;
 }
 
-.register-form  .he {
-    color: white;
-    background-color: red;
-    font-size: 1rem;
-    padding: 3px;
-  }
+.register-form .he {
+  color: white;
+  background-color: red;
+  font-size: 1rem;
+  padding: 3px;
+}
 
-  .register-form .he:active {
-  border-radius: 5px;
+.btn btn-submit {
+  position: relative;
+  left: 2rem;
+
+}
+
+.btnn-submit{
+  color: rgb(79, 79, 90);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.register-form .he:active {
+  border-radius: 6px;
   transform: scale(0.9);
-  }
+}
 
-   .register-form .he:hover {
-    background-color: blue;
-  }
+.register-form .he:hover {
+  background-color: blue;
+}
 
 /* Media queries*/
 /* Tablet */
 
 @media screen and (min-width: 475px) {
+  .input-container,
+  .button-container,
+  .input-file-container {
+    width: 90%;
+  }
 
-    .input-container,
-    .button-container,
-    .input-file-container {
-        width: 90%;
-    }
-
-    .form-container {
-        width: 75%;
-        max-width:1000px;
-    }
-
+  .form-container {
+    width: 75%;
+    max-width: 1000px;
+  }
 }
 
-
 @media screen and (min-width: 768px) {
+  .input-container,
+  .button-container,
+  .input-file-container {
+    width: 80%;
+  }
 
-    .input-container,
-    .button-container,
-    .input-file-container {
-        width: 80%;
-    }
+  .form-container {
+    width: 75%;
+  }
+}
 
-    .form-container {
-        width: 75%;
-    }
+.file-avatar {
+  margin: 10px 0;
+}
 
+ .formulario .file-avatar .input-avatar {
+  display: none; 
+}
+
+.formulario .file-avatar{
+  cursor: pointer;
+  padding: 4px;
+}
+
+.formulario .file-avatar .input-avatar {
+  display: none; 
+}
+
+.avatar{
+  font-size: 18px;
 }

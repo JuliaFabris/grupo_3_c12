@@ -5,6 +5,8 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
+let userLogs = require('./middlewares/userLogs')  // middleware a nivel de aplicación  nuevo para saber donde ingreso
+let userCheck = require('./middlewares/userCheck')
 
 const PORT = 3000;
 
@@ -12,8 +14,13 @@ const PORT = 3000;
 let homeRouter = require('./routes/home')
 let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
-let userController = require('./routes/user')
-let faqRouter = require('./routes/faq')
+let userRouter = require('./routes/user')
+let faqRouter = require('./routes/faq');
+/*const userController = require('./controllers/userController');*/
+
+
+
+app.use(userLogs); //Middleware que hace txt para conocer las url donde logea el user
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
@@ -42,8 +49,10 @@ app.use(session({
 }))
 
 /* configuracion de cookies */
-app.use(cookieParser())
 app.use(cookieSession)
+app.use(cookieParser())
+app.use(userCheck())
+
 
 /*  */
 app.use('/', homeRouter);
@@ -55,7 +64,7 @@ app.use('/products', productsRouter)
 app.use('/admin', adminRouter)
 
 /* user */
-app.use('/user', userController)
+app.use('/user', userRouter)
 
 /* faq */
 app.use('/faq', faqRouter)
