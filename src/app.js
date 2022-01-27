@@ -6,7 +6,7 @@ const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
 let userLogs = require('./middlewares/userLogs')  // middleware a nivel de aplicación  nuevo para saber donde ingreso
-let userCheck = require('./middlewares/userCheck')
+let userCheck = require('./middlewares/userCheck');
 
 const PORT = 3000;
 
