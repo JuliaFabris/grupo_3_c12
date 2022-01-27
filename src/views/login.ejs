@@ -3,17 +3,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreeMovi - <%= titulo %></title>
-    <style>
-      form {
-        background-color: blue;
-      }
-    </style>
-  </head>
+<%- include("partials/head", {titulo}) %> 
 
 <body>
   <main class="login-container">
@@ -54,10 +44,6 @@
          <h3 id="login-txt">¿Haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
          <h3 id="login-txt">¿No tienes cuenta aún?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
          <a href="" id="login-isesionboton">
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
          
       </a>
 
