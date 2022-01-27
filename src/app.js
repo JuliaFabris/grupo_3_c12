@@ -5,6 +5,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
+let userLogs = require('./middlewares/userLogs')  // middleware a nivel de aplicación  nuevo para saber donde ingreso
 
 const PORT = 3000;
 
@@ -14,6 +15,10 @@ let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
 let userController = require('./routes/user')
 let faqRouter = require('./routes/faq')
+
+
+
+app.use(userLogs); //Middleware que hace un txt para conocer las url donde logea el user
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
