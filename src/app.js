@@ -13,8 +13,9 @@ const PORT = 3000;
 let homeRouter = require('./routes/home')
 let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
-let userController = require('./routes/user')
-let faqRouter = require('./routes/faq')
+let userRouter = require('./routes/user')
+let faqRouter = require('./routes/faq');
+/*const userController = require('./controllers/userController');*/
 
 
 
@@ -60,7 +61,7 @@ app.use('/products', productsRouter)
 app.use('/admin', adminRouter)
 
 /* user */
-app.use('/user', userController)
+app.use('/user', userRouter)
 
 /* faq */
 app.use('/faq', faqRouter)

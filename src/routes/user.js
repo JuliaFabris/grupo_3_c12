@@ -14,6 +14,9 @@ router.get('/register', controller.registerPage)
 router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
 router.post('/login', loginValidator,userAdminCheck,controller.login)
 
+/* POST 
+router.get('/register', controller.registerPage);
+router.post('/register', controller.register);*/
 /* GET */
 router.get('/carrito', controller.carrito)
 

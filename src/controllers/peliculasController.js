@@ -1,4 +1,4 @@
-let { tablePeliculas, generos, aniosEnLista} = require('../database')
+let { tablePeliculas, genres, aniosEnLista} = require('../database')
 
 module.exports = {
     "peliculasPorGenero": (req, res) => {

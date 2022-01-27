@@ -14,12 +14,12 @@
     <main class="register-form">
     <div class="capa-fondo">
         <img src="/design/images/icons/logo.png " alt="">
-        <div class="form-container">
+        <div class="form-container" style="width: 55%;">
             <h1>Registro</h1>
             <hr>
 
             <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-ad" >
-                <div class="form">
+                <div class="form-regis">
 
                     <div class="input-container">
                         <input class="input-style" type="name" name="name" placeholder="Ingrese su nombre" value="<%= locals.old && old.name %>">
@@ -55,31 +55,28 @@
                             <span class="text-danger"><%= errors.pass.msg %> </span>
                         <% } %>
                     </div>
-    
-                    <div class="input-file">
-                        <h1>Agregar Avatar</h1>
-                        <input type="file" name="avatarimage">
+                   
+                    <div class="file-avatar">
+                        <h1 class="avatar">Ingrese una foto</h1>
+                        <input class="input-avatar" type="file" name="avatarimage">
                         <% if (locals.errors && errors.image) { %>
                             <small class="text-danger"><%= errors.avatarimage.msg %> </small>
                         <% } %> 
                     </div>
-
-                    <div class="check">
-                        <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
-                        <input type="checkbox" name="terms" id="terms">
-                        <span class="error-message">Debes aceptar los términos y condiciones</span>
-                        <% if (locals.errors && errors.terms) { %>
-                            <small class="text-danger"><%= errors.terms.msg %> </small>
-                        <% } %>
-                    </div>
-
+                   
                     <div class="button-container">
                         <span class="error-message">Hubo errores en el envío</span>
                         <button type="submit" class="btn btn-submit">Registrarme</button>
                     </div>
 
-                    <a class="he" href="login">Ya tengo cuenta</a>
-                
+                    <a class="btnn-submit" href="login">Ya tengo cuenta</a>
+                 <div class="check">
+                        <label class="terms "for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                        <input class="chekk" type="checkbox" name="terms" id="terms">
+                        <span class="error-message">Debes aceptar los términos y condiciones</span>
+                        <% if (locals.errors && errors.terms) { %>
+                            <small class="text-danger"><%= errors.terms.msg %> </small>
+                        <% } %>
                 </div>
             </form>
         </div>
