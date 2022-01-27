@@ -5,4 +5,4 @@ function userLogs(req, res, next){
     next()
 } 
 
-module.exports = userLogs;
+module.exports = userLogs; //se exporta la funcion
