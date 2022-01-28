@@ -6,7 +6,7 @@ const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
 let userLogs = require('./middlewares/userLogs')  // middleware a nivel de aplicación  nuevo para saber donde ingreso
-let userCheck = require('./middlewares/userCheck')
+
 
 const PORT = 3000;
 
@@ -20,7 +20,7 @@ let faqRouter = require('./routes/faq');
 
 
 
-app.use(userLogs); //Middleware que hace txt para conocer las url donde logea el user
+
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
@@ -41,17 +41,18 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-/* session */
+/* session 
+
 app.use(session({
     secret: 'GrupoTresTriMovie',
     resave: false,
     saveUninitialized: true,
 }))
 
-/* configuracion de cookies */
+ configuracion de cookies 
 app.use(cookieSession)
 app.use(cookieParser())
-app.use(userCheck())
+
 
 
 /*  */
@@ -68,7 +69,28 @@ app.use('/user', userRouter)
 
 /* faq */
 app.use('/faq', faqRouter)
+app.use(userLogs); //Middleware que hace txt para conocer las url donde logea el user
 
+/* session */
+app.use(session({
+    secret: 'GrupoTresTriMovie',
+    resave: false,
+    saveUninitialized: true,
+}))
+
+/* configuracion de cookies */
+app.use(cookieParser())
+app.use(cookieSession)
+
+
+
+/* ERROR 404 */
+app.use((req, res, next) => {
+    res.status(404).render('404',{
+        titulo:404
+    }
+    )
+})
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
