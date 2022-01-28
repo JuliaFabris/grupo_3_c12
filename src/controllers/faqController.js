@@ -8,10 +8,10 @@ module.exports = {
     "sobreNosotros": (req, res) => {
         res.render('FAQ/sobreNosotros')
     },
-     "PerdiMiUsuario": (req, res) => {
+     "perdiMiUsuario": (req, res) => {
         res.render('FAQ/lostPass')
     },
-    "Contacto": (req, res) => {
+    "contacto": (req, res) => {
         res.render('FAQ/Contacto')
     }
 }

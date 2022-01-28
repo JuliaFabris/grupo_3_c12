@@ -22,5 +22,7 @@ router.post('/register', controller.register);*/
 router.get('/', controller.logout) 
 router.get('/carrito', controller.carrito)
 
+router.get('/profile', controller.profile)
+
 
 module.exports = router

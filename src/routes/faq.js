@@ -4,7 +4,7 @@ const router = require('express').Router(),
 router.get('/terminos-y-condiciones', controller.faq);
 router.get('/sobre-nosotros', controller.sobreNosotros);
 router.get('/privacidad', controller.privacidad);
-router.get('/lostPass', controller.privacidad);
-
+router.get('/lostPass', controller.perdiMiUsuario);
+router.post('/contacto', controller.contacto);
 
 module.exports = router;

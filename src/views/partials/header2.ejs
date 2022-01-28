@@ -30,7 +30,7 @@
                 <div>
                     <img class="userProfile avatar" src="/design/images/avatar/<%=user.avatar %> ">
                     <a href="/users/logout">Cerrar sesión</a>
-                    <% if (session.user.rol === "ADMIN") { %>
+                    <% if (session.user.rol === "USER_ADMIN") { %>
                         <a href="/admin/dashboard">ADMIN</a>
                     <% } %>
                 </div>
