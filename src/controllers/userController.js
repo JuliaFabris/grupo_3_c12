@@ -97,6 +97,7 @@ module.exports = {
         let user = users.find(user => user.id === req.session.user.id)
 
         res.render('userProfile', {
+            titulo,
             user, 
             session: req.session
         })

@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ('./partials/head', {titulo: "TRIMOVI - contacto"})%>
+<%- include ('../partials/head',  {titulo}) %>
 
 
 <body>
+  <%- include ('../partials/header1',  {titulo}) %>
   <main class="login-container">
 
 
     <div class="login">
-      <div class="login-bottom-page">
-
-      </div>
+     
+     
       <article class="fondo">
         <div class="aux">
-          <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
+          <h1>Contáctenos</h1>
         </div>
 
-        <form  action="/home" method="POST">
-          <span class="icon-user"></span><input class="inp" type="text" name="username" value="" placeholder="USUARIO"><br>
-          <label for="contacto">Contáctenos
-          <span class="icon-user"><textarea id="contacto" name="contacto"></span></label>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
+        <form class="flexpd" action="/home" method="POST">
+          <label for="email"><h3>Escriba su email</h3></label>
+          <input type="email" name="email">
+          <label for="contacto">
+            <h3>Mensaje</h3></label>
+          <textarea id="contacto" name="contacto">
           
-      </a>
+          
+        </form>
      
       
 
     </div>
   </article>
   
-    <%-include('./partials/footer1')%>
+    <%-include('../partials/footer1')%>
 
   </main>
 

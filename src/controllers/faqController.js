@@ -12,7 +12,9 @@ module.exports = {
         res.render('FAQ/lostPass')
     },
     "contacto": (req, res) => {
-        res.render('FAQ/Contacto')
+        res.render('FAQ/Contacto',{
+            titulo:"Contactanos"
+        })
     }
 }
 
