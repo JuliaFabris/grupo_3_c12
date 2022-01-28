@@ -69,6 +69,12 @@ app.use('/user', userRouter)
 /* faq */
 app.use('/faq', faqRouter)
 
+/* ERROR 404 */
+app.use((req, res, next) => {
+    res.status(404).render('404', {
+        session: req.session
+    })
+})
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));

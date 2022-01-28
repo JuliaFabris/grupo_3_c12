@@ -2,17 +2,24 @@
 <html lang="en">
     <%- include('partials/head')%>
 <body>
-    <%- include('partials/header2')%>
+    <%- include('partials/header1')%>
     <main class="register-form">
     <div class="capa-fondo">
         <img src="/design/images/icons/logo.png " alt="">
-        <div style="width: 55%;">
+        <div class="flexpd" style="width: 55%;">
             <h1>Te damos la benvenida, <% user.name %> </h1>
             <hr>
             <div class="avatar">
                 <img src="design/images/avatars/<%= user.avatar %>" alt="">
             </div>   
-            
+
+          <h1>Datos personales</h1>  
+        <ul>
+          <li><p>Nombre</p> <% user.name %> </li>
+          <li><p>Apellido</p> <% user.lastname %> <input type="button" value="editar"> </li>
+          <li><p>Email</p> <% user.email %> <input type="button" value="editar"> </li>
+          <li><p>Rol</p> <% user.rol %> <input type="button" value="editar"> </li>
+         
         <div >
 
                     
