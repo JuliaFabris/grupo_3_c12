@@ -53,7 +53,7 @@ module.exports = {
 
         if(errors.isEmpty()) {
 
-            const {name, lastname, email, pass, pass2} = req.body;
+            const {name, lastname, email, pass1, pass2} = req.body;
 
             let lastId = 1;
     
@@ -68,7 +68,7 @@ module.exports = {
                 name: name.trim(),
                 lastname: lastname.trim(),
                 email: email.trim(),
-                pass: bcrypt.hashSync(pass, 12) ,
+                pass: bcrypt.hashSync(pass1, 12) ,
                 rol: "ROL_USER",
                 city:"",
                 phone: "",
@@ -97,7 +97,7 @@ module.exports = {
         let user = users.find(user => user.id === req.session.user.id)
 
         res.render('userProfile', {
-            titulo,
+            ,
             user, 
             session: req.session
         })
