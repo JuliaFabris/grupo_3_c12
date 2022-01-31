@@ -69,7 +69,8 @@ app.use('/user', userRouter)
 
 /* faq */
 app.use('/faq', faqRouter)
-app.use(userLogs); //Middleware que hace txt para conocer las url donde logea el user
+// app.use(userLogs); //Middleware que hace txt para conocer las url donde logea el user
+/* comente el metodo userLogs para no sobrecargar las adiciones de lineas en los commits*/
 
 /* session */
 app.use(session({
