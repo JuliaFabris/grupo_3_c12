@@ -2,7 +2,7 @@
 img{
     width: 130px;
     position: relative;
-    bottom: 5px;
+    /* bottom: 5px; */
 }
     header {
     display: flex;
