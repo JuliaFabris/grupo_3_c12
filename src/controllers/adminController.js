@@ -81,17 +81,18 @@ eliminar: (req, res) => {
     },
     agregar: (req, res) => {
         let {name, category, age, price, description, reparto, duration, direction} = req.body
+       console.log(req.body)
+        
        
         let lastId = 1;
-       
         getMovies.forEach(product => {
-       if(product.id > lastId) {
-           lastId = getMovies.id
+        if(product.id > lastId) {
+           lastId = product.id
            }});
        
         
         let newgetMovies = {
-            id: lasId + 1,
+            id: lastId + 1,
             name: name.trim(),
             price: price,
             description: description.trim(),
@@ -100,7 +101,7 @@ eliminar: (req, res) => {
             category: category,
             reparto: reparto,
             direction: direction,
-            duration: duration
+            duration: duration,
         }
         getMovies.push(newgetMovies);
         writeMovies(getMovies);

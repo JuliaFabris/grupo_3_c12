@@ -50,5 +50,18 @@
         "address": "",
         "zipCode": "",
         "avatar": "1643346264192_img_.png"
+    },
+    {
+        "id": 6,
+        "name": "dasdas",
+        "lastname": "asdasda",
+        "email": "ajsdas@gmaks.com",
+        "pass": "$2a$12$iXr2kdywPpCaxFx9Em1/z.wRHtdvjsRv0Tc9e4VFtWzQdUHshR3h.",
+        "rol": "ROL_USER",
+        "city": "",
+        "phone": "",
+        "address": "",
+        "zipCode": "",
+        "avatar": "avatarChichiro.jpg"
     }
 ]

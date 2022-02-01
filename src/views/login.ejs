@@ -13,7 +13,7 @@
         <div class="aux">
           <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
         </div>
-        <form class="aux" action="/user/userProfile" method="POST">
+        <form class="aux" action="/user/login" method="POST">
           <span class="icon-user"></span><input class="inp" type="email" name="email" placeholder="USUARIO"><br>
           <% if (locals.errors && errors.email) { %>
             <small class="text-danger"> <%= errors.email.msg %>  </small>
