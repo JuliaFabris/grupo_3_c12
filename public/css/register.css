@@ -101,7 +101,7 @@ input.input-style {
 }
 
 input.input-style::placeholder {
-  color: lightgray;
+  color: gray;
 }
 
 label {
