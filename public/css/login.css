@@ -26,7 +26,7 @@ main .login-container {
 
 
 .login-container .login-bottom-page {
-  margin: 20px;
+ /* margin: 20px;*/
   height: 2.5rem;
   margin-top: 50px;
 }
@@ -81,7 +81,7 @@ main .login-container {
 
   .fondo {
     padding: 10px 0;
-    margin: 50px;
+    margin: 20px;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
