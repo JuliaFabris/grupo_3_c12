@@ -1,27 +1,22 @@
 /*HTML*/
 
-.login-container {
-  background-image: url('design/images/icons/logo.webp');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
+
+
+
 
 /*HIPERVINCULOS PAGINA DE INICIO Y PAGINA DE REGISTRO*/
 
-main .login-container {
+.login-container {
   width: 100%;
+  height: 100%;
   color: #fff;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, .3)
+  background-color: rgba(0, 0, 0, .3);
 }
 
 
@@ -31,10 +26,10 @@ main .login-container {
   margin-top: 50px;
 }
 
-.login-container .aux {
+/* .login-container .aux {
   width: 210px;
   height: auto;
-}
+} */
 
   .Hipervinculos-vistasContainer h1 {
     margin-left: 650px;
@@ -166,7 +161,7 @@ main .login-container {
 
   @media screen and (min-width: 475px) {
 
-    .fondo {
+    .login-container .fondo {
         width: 90%;
     }
 
@@ -182,7 +177,7 @@ h3#login-txt {
 
 @media screen and (min-width: 768px) {
 
-    .fondo {
+    .login-container .fondo {
         width: 80%;
     }
 
