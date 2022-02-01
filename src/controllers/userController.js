@@ -23,6 +23,8 @@ module.exports = {
                 rol: user.rol
             }
 
+            console.log(req.session.user);
+
            if(req.body.remember){
                const TIME_IN_MILISECONDS = 60000
                res.cookie("userTrimovie", req.session.user, {
@@ -48,7 +50,7 @@ module.exports = {
             title:"Register Trimovie"
         });
     },
-    processRegister: (req, res) => {
+    "processRegister": (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
@@ -93,13 +95,14 @@ module.exports = {
         }
         res.redirect('/')
     }, 
-    profile: (req, res) => {
-        let user = users.find(user => user.id === req.session.user.id)
+    "profile": (req, res) => {
+        console.log(req.session.user)
+        let user = getUsers.find(user => user.id === req.session.user.id)
 
         res.render('userProfile', {
             title: "perfil d ususario",
             user, 
-            session: req.session,
+            session: req.session.user,
             titulo: user.name
         })
     },
