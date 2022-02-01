@@ -37,15 +37,19 @@
           <small class="text-danger"> <%= errors.custom.msg %>  </small>
         <% } %>
         <div>
-          <button type="submit"> INICIAR SESION</button>
+         
+          <input  type="submit"> INICIAR SESION</button>
         </div>
       </form>
 
-         <h3 id="login-txt">¿Haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
-         <h3 id="login-txt">¿No tienes cuenta aún?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
-         <a href="" id="login-isesionboton">
+         <h3 id="login-txt">¿Has olvidado tu contraseña?</h3>
+         <h2><a href="/FAQ/lostPass" class="he">RECUPERAR CONTRASEÑA</a></h2>
+         <h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
+         <h3 id="login-txt">¿No tienes cuenta aún?</h3>
+         <h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
          
-      </a>
+         
+      
 
     
       
@@ -59,10 +63,10 @@
     </div>
   </article>
   
-    <%-include('./partials/footer1')%>
+    
 
   </main>
-
+  <%-include('./partials/footer1')%>
 </body>
 
 </html>

@@ -160,7 +160,7 @@ main .login-container {
 
   /*FOOTER*/
 
-  @import url('footer.css');
+  /*@import url('footer.css');
 
   /*Media Query*/
 
@@ -176,7 +176,9 @@ main .login-container {
     }
 
 }
-
+h3#login-txt {
+  margin: 1px;
+} 
 
 @media screen and (min-width: 768px) {
 
