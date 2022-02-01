@@ -26,7 +26,7 @@
     <div >
         <div class="user">
             <% if (typeof session.user != "undefined") { %>
-                <i class="fas fa-user"></i><span class="session"></span>
+                <i class="fas fa-user"></i><img class="userProfile avatar" src="/design/images/avatar/<%=user.avatar %> "><span class="session"></span>
                 <div>
                     <img class="userProfile avatar" src="/design/images/avatar/<%=user.avatar %> ">
                     <a href="/users/logout">Cerrar sesión</a>
