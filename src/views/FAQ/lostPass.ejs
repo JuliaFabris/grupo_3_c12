@@ -2,48 +2,35 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ('./partials/head', {titulo: "TRIMOVI - Recuperar contraseña?"})%>
+<%- include ('../partials/head', {titulo: "TRIMOVI - Recuperar contraseña?"})%>
 
 
 <body>
   <main class="login-container">
 
 
-    <div class="login">
-      <div class="login-bottom-page">
-
-      </div>
+    <div >
+      
       <article class="fondo">
         <div class="aux">
           <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
         </div>
 
-        <form  action="https://mail.google.com/mail/u/0/#inbox?compose=new" method="POST">
-          <span class="icon-user"></span>
+        <form action="https://mail.google.com/mail/u/0/#inbox?compose=new" method="POST">
           
-          <input class="inp" type="text" name="username" value="" placeholder="USUARIO"><br>
           <label for="lostPass">Ingrese su email</label>
+          <input class="inp" type="email" name="lostPass" required="true" placeholder="Ingrese su E-mail"><br>
           
-          <span class="icon-user"><textarea id="lostPass" name="lostPass"></span>
-
-            <div class="button-container">
               
-              <button type="submit" class="btn btn-submit">Enviar</button>
-          </div>
-        <p>Le enviaremos instrucciones para recuperar su usuario</p>
-         
-          
-      </a>
-     
-      
+            <button type="submit" class="btn btn-submit">Enviar</button>
 
+        <p>Le enviaremos instrucciones para recuperar su usuario</p>
+
+      </form>
     </div>
   </article>
-  
-    <%-include('./partials/footer1')%>
-
   </main>
-
+  <%-include('../partials/footer1')%>
 </body>
 
 </html>
