@@ -1,9 +1,5 @@
 /*HTML*/
 
-
-
-
-
 /*HIPERVINCULOS PAGINA DE INICIO Y PAGINA DE REGISTRO*/
 
 .login-container {
@@ -14,8 +10,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  align-content: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: rgba(0, 0, 0, .3);
   min-height: 100vh;
 }
@@ -27,7 +22,6 @@
 .login-container .login-bottom-page {
  /* margin: 20px;*/
   height: 2.5rem;
-  margin-top: 50px;
 }
 
 /* .login-container .aux {
@@ -67,7 +61,11 @@
     align-items: center;
   }
 
-
+  .login-logo {
+    width: 6rem;
+    height: 6rem;
+  } 
+  
 
   .login-form {
     background-color: rgba(116, 108, 108, 0.9);
@@ -81,16 +79,26 @@
     margin: 60px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-  }
-
-  .fondo img {
-    border-radius: 50%;
-    transform: translate(0px, -150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .fondo form {
     padding: 10px 0;
     width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .login-container .input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .fondo form span {
@@ -111,7 +119,6 @@
 
   .inp {
     background-color: rgba(255, 255, 255, .1);
-    margin-bottom: 15px;
     border: solid 2px rgba(255, 255, 255, .5);
     font-size: 20px;
     color: #fff;
@@ -140,48 +147,4 @@
     border-radius: 5px;
   }
 
-  h3#login-txt {
-    margin: 5px;
-  } 
 
-  /*REDES SOCIALES*/
-
-  #redes-container {
-    display: flex;
-    flex-direction: row;
-    transform: scale(0.2);
-  }
-
-  /*FOOTER*/
-
-  /*@import url('footer.css');
-
-  /*Media Query*/
-
-  @media screen and (min-width: 475px) {
-
-    .login-container .fondo {
-        width: 90%;
-    }
-
-    .form-container {
-        width: 75%;
-        max-width:1000px;
-    }
-
-}
-h3#login-txt {
-  margin: 1px;
-} 
-
-@media screen and (min-width: 768px) {
-
-    .login-container .fondo {
-        width: 80%;
-    }
-
-    .form-container {
-        width: 75%;
-    }
-
-}
