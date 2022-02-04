@@ -1,21 +1,7 @@
-
-
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreeMovi - <%= titulo %></title>
-    <style>
-      form {
-        background-color: blue;
-      }
-    </style>
-  </head>
-
-<body>
+  <%- include ('./partials/head') %> 
+<body class="login-body">
   <main class="login-container">
 
 
@@ -24,58 +10,69 @@
 
       </div>
       <article class="fondo">
-        <div class="aux">
-          <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
-        </div>
-
-        <form class="" action="/user/login" method="POST">
-          <span class="icon-user"></span><input class="inp" type="email" name="email" placeholder="USUARIO"><br>
+    
+          <a href="/"><img src="/design/images/icons/logo.png" alt="User"></a>
+        
+        <form class="aux" action="/user/login" method="POST">
+          <span class="icon-user"></span><input class="inp" type="email" name="email" placeholder="Ingrese su Usuario"><br>
           <% if (locals.errors && errors.email) { %>
             <small class="text-danger"> <%= errors.email.msg %>  </small>
         <% } %>
-          <span class="icon-key"></span><input class="inp" type="password" name="pass" value="" placeholder="CONTRASEÑA"><br>
+        
+          <span class="icon-key"></span>
+          <input class="inp" type="password" name="pass" value="" placeholder="Ingrese su Contraseña"><br>
           <% if (locals.errors && errors.pass) { %>
             <small class="text-danger"> <%= errors.pass.msg %>  </small>
         <% } %>
 
-         <div>
-          <input type="checkbox" name="remember" id="check">
-          <label for="check">Recordar</label>
-       </div>
+       
 
         <% if (locals.errors && errors.custom) { %>
           <small class="text-danger"> <%= errors.custom.msg %>  </small>
         <% } %>
-        <div>
-          <button type="submit"> INICIAR SESION</button>
+      
+
+         <div>
+
+          <input type="checkbox" name="remember" id="check">
+          <label for="check">Recordar</label>
+        <br>
+
+         <div><button class="btn btn-submit" type="submit">INICIAR SESION</button>
         </div>
+        </div>
+      </form>
 
-         <h3 id="login-txt">¿Haz olvidado tu contraseña?</h3><h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
-         <h3 id="login-txt">¿No tienes cuenta aún?</h3><h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
-         <a href="" id="login-isesionboton">
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-         
-      </a>
+         <h3 id="login-txt">¿Has olvidado tu contraseña?</h3>
+         <h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
+         <h3 id="login-txt">¿No tienes cuenta aún?</h3>
+         <h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
 
-    </form>
+
+
+
+      </form>
+
+
       
       <div id="redes-container">
+        
 
+     <!-- <div id="redes-container">
           <a href="https://www.facebook.com" id="loginboxredes"><img src="/design/images/icons/logofacebook.png"></a>
           <a href="https://www.instagram.com" id="loginboxredes"><img src="/design/images/icons/logoinstagram.png"></a>
           <a href="https://www.google.com" id="loginboxredes"><img src="/design/images/icons/logogoogle.png"></a>
       </div>
+      </div>-->
 
     </div>
+
   </article>
-  
-    <%-include('./partials/footer1')%>
+
+
 
   </main>
-
+  <%-include('./partials/footer1')%>
 </body>
 
 </html>

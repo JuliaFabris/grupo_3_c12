@@ -23,6 +23,8 @@ module.exports = {
                 rol: user.rol
             }
 
+            console.log(req.session.user);
+
            if(req.body.remember){
                const TIME_IN_MILISECONDS = 60000
                res.cookie("userTrimovie", req.session.user, {
@@ -48,12 +50,12 @@ module.exports = {
             title:"Register Trimovie"
         });
     },
-    processRegister: (req, res) => {
+    "processRegister": (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
 
-            const {name, lastname, email, pass, pass2} = req.body;
+            const {name, lastname, email, pass1, pass2} = req.body;
 
             let lastId = 1;
     
@@ -68,7 +70,7 @@ module.exports = {
                 name: name.trim(),
                 lastname: lastname.trim(),
                 email: email.trim(),
-                pass: bcrypt.hashSync(pass, 12) ,
+                pass: bcrypt.hashSync(pass1, 12) ,
                 rol: "ROL_USER",
                 city:"",
                 phone: "",
@@ -83,8 +85,27 @@ module.exports = {
         }else{
             res.render("register", {
                 errors: errors.mapped(),
+                old: req.body,
             })
         }
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if(req.cookies.userTrimovie){
+            res.cookie('userTrimovie', "", { maxAge: -1 })
+        }
+        res.redirect('/')
+    }, 
+    "profile": (req, res) => {
+        console.log(req.session.user)
+        let user = getUsers.find(user => user.id === req.session.user.id)
+
+        res.render('userProfile', {
+            title: "perfil d ususario",
+            user, 
+            session: req.session.user,
+            titulo: user.name
+        })
     },
 
     "carrito": (req, res) => {

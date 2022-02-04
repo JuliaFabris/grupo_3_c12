@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('partials/head', {titulo}) %>
+<body>
+    <%- include('partials/header1')%>
+    <main class="register-form">
+    <div class="capa-fondo">
+        <img src="/design/images/icons/logo.png " alt="">
+        <div class="flexpd" style="width: 55%;">
+            <h1>Te damos la benvenida, <%= session.name %> </h1>
+            <hr>
+            <div class="avatar">
+                <img src="design/images/avatars/<%= session.avatar %>" alt="">
+            </div>   
+
+          <h1>Datos personales</h1>  
+        <ul>
+          <li><p>Nombre</p> <%= session.name %> </li>
+          <li><p>Apellido</p> <%= session.lastname %> <input type="button" value="editar"> </li>
+          <li><p>Email</p> <%= session.email %> <input type="button" value="editar"> </li>
+          <li><p>Rol</p> <%= session.rol %> <input type="button" value="editar"> </li>
+
+                    
+                   
+        </div>
+    </div>
+</main>
+           <%- include('partials/footer1') %>  
+
+</body>
+
+</html>

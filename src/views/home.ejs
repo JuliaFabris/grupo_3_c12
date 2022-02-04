@@ -31,10 +31,10 @@
                                 </div>
                                 <div class="data-article flex">
                                     <a href="/products/detail/<%= pelicula.id %>">
-                                        <h4 class="titulo noun">
-                                            <%= pelicula.name %>
-                                        </h4>
-                                        <div class="footer-article flex">
+                                        <div class="titulo">
+                                            <h4 class="noun"><%= pelicula.name %></h4>
+                                        </div>
+                                        <div class="footer-article">
                                             <i class="fas fa-heart"></i>
                                             <span class="precio">$ <%= pelicula.price %> </span>
                                         </div>
@@ -55,7 +55,7 @@
                                 <ul class="list">
                                     <% generos.forEach(genero=> { %>
                                         <li><button id="<%= genero.id %>">
-                                                <%= genero.name %>
+                                              <a href="#"></a> <%= genero.name %></a>
                                             </button></li>
                                         <% }) %>
                                 </ul>
@@ -95,7 +95,7 @@
                                 <h4 class="titulo noun"></h4>
                                 <div class="footer-article flex">
                                     <i class="far fa-heart"></i>
-                                    <span class="precio" </span>
+                                    <span class="precio"></span> 
                                 </div>
                             </a>
                         </div>
@@ -128,7 +128,7 @@
                                 /* variables */
                                 const $template = document.querySelector('#model-card').content,
                                     $fragment = document.createDocumentFragment();
-
+ 
                                 data.forEach(register => {
                                     $template.querySelector('#template-img').setAttribute('src',
                                         `./design/images/products/${register.image}`);

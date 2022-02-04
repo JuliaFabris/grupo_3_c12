@@ -11,46 +11,30 @@
         <div class="search-box">
             <button class="btn-search"><i class="fas fa-search"></i></button>
             <input type="text" class="input-search" placeholder="Buscar...">
-          </div>
-        
-
-
-
-
-
-
-        <!--<div class="searcher-bar">
-            <form action="">
-                <div class="container-search flex">
-                    <label class="container-icon flex" for="buscador"><i class="fa fa-search fa-size"></i></label>
-                    <input id="buscador" type="text" placeholder="Buscar..." name="buscador" onfocus="showPreSearch()" onblur="hidePreSearch()">
-                    <div class="container-button flex">
-                        <button type="submit" class="btn flex" id="buscar"><i class="fa fa-search fa-size"></i></button>
-                    </div>
-                </div>
-            </form>
-            <div class="pre-searcher">
-
-            </div>
-
         </div>
-    -->
     </div>
 
     <div class="container-logo"><a href="/"><img src="/design/images/icons/logo.png" alt="TRIMOVI"></a></div>
 
     <div class="right-container flex">
+
         <div class="container-icon flex" id="car">
-            <a href="user/carrito"><i class="fas fa-shopping-cart"></i></a>
+            <a href="/user/carrito"><i class="fas fa-shopping-cart"></i></a>
         </div>
 
+        <% if (session) { %>
+            <div class="container-icon flex" id="car">
+                <a href="/user/profile"><i class="fas fa-user-astronaut"></i></a>
+            </div>
+        <% } %>
 
-
-     
-       
-       <div class="container-icon flex">
-            <a href="user/login"><i class="fas fa-user"></i></a>
+        <% if (!session) { %>
+        <div class="container-icon flex">
+            <a href="/user/login"><i class="fas fa-user"></i></a>
         </div>
+        <% } %>
+
+
 
 
     </div>

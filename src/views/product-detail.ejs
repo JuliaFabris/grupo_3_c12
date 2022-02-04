@@ -49,11 +49,33 @@
                 </div>
             </section>
         </section>
-
+        
         <section class="extras-flexpd">
-            <section>
-                <h3>RELACIONADOS</h3>
-               <%- include ("./partials/slider")%>
+           <h3>RELACIONADOS</h3>
+        <%- include ("./partials/slider")%>
+        <section class="container-articles flex">
+
+            <% peliculas.forEach(pelicula=> { %>
+                <article class="article flex">
+                    <div class="img-container flex">
+                        <button id="<%= pelicula.id %> ">
+                            <img src="./design/images/icons/play-circle-regular.png" alt="
+                               <%= pelicula.name %>">
+                        </button>
+                        <img src="./design/images/products/<%= pelicula.image %> " alt="articulo">
+                    </div>
+                    <div class="data-article flex">
+                        <a href="/products/detail/<%= pelicula.id %>">
+                            <h4 class="titulo noun">
+                                <%= pelicula.name %>
+                            </h4>
+                            
+                        </a>
+                    </div>
+                </article>
+                <% }) %>
+
+        </section>
 
             </section>
     </main>

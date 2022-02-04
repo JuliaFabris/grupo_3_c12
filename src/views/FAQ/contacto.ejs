@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ('./partials/head', {titulo: "TRIMOVI - contacto"})%>
+<%- include ('../partials/head',  {titulo}) %>
 
 
 <body>
+  <%- include ('../partials/header1',  {titulo}) %>
   <main class="login-container">
 
 
     <div class="login">
-      <div class="login-bottom-page">
-
-      </div>
-      <article class="fondo">
-        <div class="aux">
-          <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
-        </div>
-
-        <form  action="/home" method="POST">
-          <span class="icon-user"></span><input class="inp" type="text" name="username" value="" placeholder="USUARIO"><br>
-          <label for="contacto">Contáctenos
-          <span class="icon-user"><textarea id="contacto" name="contacto"></span></label>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          <span id="i-sesion"></span>
-          
-      </a>
      
-      
+     
+      <article class="fondo">
+        <div class="flexpd aux ">
+          <h1>Contáctenos</h1>
+        
 
-    </div>
+        <form class="form-container flexpd aux" action="/home" method="POST">
+          <label for="email">
+            <h2>Escriba su email</h2>
+          </label>
+          <br>
+          <input type="email" name="email">
+          <label for="contacto">
+            <h2>Mensaje</h2>
+          </label>
+          
+          <textarea id="contacto" name="contacto">
+
+            <input class="input-style" type="button" value="Enviar">
+          
+          
+        </form>
+      </div>
+
   </article>
   
-    <%-include('./partials/footer1')%>
+    <%-include('../partials/footer1')%>
 
   </main>
 

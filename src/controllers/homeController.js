@@ -1,9 +1,5 @@
-let {
-    getMovies,
-    getGenres,
-} = require('../database'), {
-    getListAllUniqueAtributes
-} = require('../middlewares/ourLib')
+let { getMovies, getGenres} = require('../database'),
+    { getListAllUniqueAtributes } = require('../middlewares/ourLib')
 
 module.exports = {
     inicio: (req, res) => {
@@ -12,6 +8,7 @@ module.exports = {
             peliculas: getMovies,
             generos: getGenres,
             anios: getListAllUniqueAtributes(getMovies, 'age'),
+            session: req.session.user
         })
     },
 
@@ -19,14 +16,12 @@ module.exports = {
 
         let list = [],
             id = +req.params.id;
-        let gender = tableGeneros.get(id);
+        let gender = getGenres.filter(gender => gender.id == id);
 
-        tablePeliculas.all.forEach(peli => {
-            let categorias = peli.category 
+        getMovies.forEach(peli => {
+            let categorias = [...peli.category] 
 
-            console.log(gender)
-            console.log(peli.category)
-            console.log(categorias.includes(gender.name))
+            /* errores al completar la solicitud */
             if(categorias.includes(gender.name)) list.push(peli);
         })
         console.log(list.length)

@@ -29,12 +29,9 @@ module.exports = [
 
     check('pass1')
     .notEmpty()
-    .withMessage('Debes escribir tu contraseña')
-    .isLength({
-        min: 6,
-        max: 12
-    })
-    .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+    .withMessage('Debes escribir tu contraseña'),
+
+    
     body('pass2').custom((value, {req}) => value !== req.body.pass1 ? false : true)
     .withMessage('Las contraseñas no coinciden'),
 

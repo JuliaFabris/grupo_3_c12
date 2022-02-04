@@ -9,6 +9,7 @@ module.exports = {
             generos: getGeneros,
             anios: aniosEnLista})
     },
+    
 
     // detalle de pelicula
 
