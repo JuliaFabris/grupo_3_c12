@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <%- include ('./partials/head') %> 
-<body>
+<body class="login-body">
   <main class="login-container">
 
 
@@ -10,9 +10,9 @@
 
       </div>
       <article class="fondo">
-        <div class="aux">
-          <a href="/"><img src="/design/images/icons/icon-user-profile.png" alt="User"></a>
-        </div>
+    
+          <a href="/"><img src="/design/images/icons/logo.png" alt="User"></a>
+        
         <form class="aux" action="/user/login" method="POST">
           <span class="icon-user"></span><input class="inp" type="email" name="email" placeholder="Ingrese su Usuario"><br>
           <% if (locals.errors && errors.email) { %>

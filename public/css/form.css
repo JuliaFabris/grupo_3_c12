@@ -5,7 +5,6 @@
 }
 
 body{
-    height: 100vh;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(90deg, rgb(192, 190, 190) 0%, rgb(116, 164, 179) 100%);
 }
