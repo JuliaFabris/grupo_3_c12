@@ -19,12 +19,8 @@ module.exports = {
     FilterByGender: (req, res) => {
 
         let genero = req.params.id;
-        console.log(genero)
-        console.log(getMovies.length)
         let genre = getGenres.find(genre => genre.id == genero);
-        console.log(genre[0])
         let lista = getMovies.filter(pelicula => pelicula.category.includes(genre.name));
-        console.log(lista.length)
         res.send(lista)
     }
 }
