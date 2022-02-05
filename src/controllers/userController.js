@@ -106,18 +106,7 @@ module.exports = {
             titulo: user.name
         })
     },
-    editProfile: (req, res) => {
-        console.log(req.session.user)
-        let user = getUsers.find(user => user.id === req.session.user.id)
-
-        res.render('userProfile', {
-            title: "perfil de ususario",
-            user, 
-            session: req.session.user,
-            titulo: user.name
-        })
-    },
-
+    
     "carrito": (req, res) => {
         res.render("carrito",{
             title:"carrito"
