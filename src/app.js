@@ -5,8 +5,6 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
-let userLogs = require('./middlewares/userLogs')  // middleware a nivel de aplicación  nuevo para saber donde ingreso
-
 
 const PORT = 3000;
 
@@ -14,13 +12,8 @@ const PORT = 3000;
 let homeRouter = require('./routes/home')
 let productsRouter = require('./routes/products')
 let adminRouter = require('./routes/admin')
-let userRouter = require('./routes/user')
-let faqRouter = require('./routes/faq');
-/*const userController = require('./controllers/userController');*/
-
-
-
-
+let userController = require('./routes/user')
+let faqRouter = require('./routes/faq')
 
 //este metodo se va a borrar
  let pathAbsolute = (rutaRelativa) => path.resolve(__dirname, rutaRelativa)
@@ -41,37 +34,6 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-/* session 
-
-app.use(session({
-    secret: 'GrupoTresTriMovie',
-    resave: false,
-    saveUninitialized: true,
-}))
-
- configuracion de cookies 
-app.use(cookieSession)
-app.use(cookieParser())
-
-
-
-/*  */
-app.use('/', homeRouter);
-
-/* products */
-app.use('/products', productsRouter)
-
-/* admin profile */
-app.use('/admin', adminRouter)
-
-/* user */
-app.use('/user', userRouter)
-
-/* faq */
-app.use('/faq', faqRouter)
-// app.use(userLogs); //Middleware que hace txt para conocer las url donde logea el user
-/* comente el metodo userLogs para no sobrecargar las adiciones de lineas en los commits*/
-
 /* session */
 app.use(session({
     secret: 'GrupoTresTriMovie',
@@ -83,15 +45,21 @@ app.use(session({
 app.use(cookieParser())
 app.use(cookieSession)
 
+/*  */
+app.use('/', homeRouter);
 
+/* products */
+app.use('/products', productsRouter)
 
-/* ERROR 404 */
-app.use((req, res, next) => {
-    res.status(404).render('404',{
-        titulo:404
-    }
-    )
-})
+/* admin profile */
+app.use('/admin', adminRouter)
+
+/* user */
+app.use('/user', userController)
+
+/* faq */
+app.use('/faq', faqRouter)
+
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));

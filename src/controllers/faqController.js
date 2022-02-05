@@ -7,14 +7,6 @@ module.exports = {
     },
     "sobreNosotros": (req, res) => {
         res.render('FAQ/sobreNosotros')
-    },
-     "perdiMiUsuario": (req, res) => {
-        res.render('FAQ/lostPass')
-    },
-    "contacto": (req, res) => {
-        res.render('FAQ/Contacto',{
-            titulo:"Contactanos"
-        })
     }
 }
 

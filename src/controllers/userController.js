@@ -17,7 +17,7 @@ module.exports = {
             req.session.user = {
                 id: user.id,
                 name: user.name,
-                lastname: user.lastname,
+                last_name: user.last_name,
                 email: user.email,
                 avatar: user.avatar,
                 rol: user.rol
@@ -48,12 +48,12 @@ module.exports = {
             title:"Register Trimovie"
         });
     },
-    processRegister: (req, res) => {
+
+    "processRegister": (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
-
-            const {name, lastname, email, pass1, pass2} = req.body;
+            const { name, lastname, email, pass1 } = req.body;
 
             let lastId = 1;
     
@@ -68,13 +68,13 @@ module.exports = {
                 name: name.trim(),
                 lastname: lastname.trim(),
                 email: email.trim(),
-                pass: bcrypt.hashSync(pass1, 12) ,
+                pass: bcrypt.hashSync(pass1, 12) , 
                 rol: "ROL_USER",
                 city:"",
                 phone: "",
                 address: "",
                 zipCode: "",
-                avatar: req.file ? req.file.filename : "avatarChichiro.jpg",
+                avatar: req.file ? req.file.filename : "AvatarChichiro.png",
             }
             
             writeUsers([...getUsers, user]);
@@ -86,28 +86,11 @@ module.exports = {
             })
         }
     },
-    logout: (req, res) => {
-        req.session.destroy();
-        if(req.cookies.userTrimovie){
-            res.cookie('userTrimovie', "", { maxAge: -1 })
-        }
-        res.redirect('/')
-    }, 
-    profile: (req, res) => {
-        let user = users.find(user => user.id === req.session.user.id)
-
-        res.render('userProfile', {
-            title: "perfil d ususario",
-            user, 
-            session: req.session,
-            titulo: user.name
-        })
-    },
 
     "carrito": (req, res) => {
         res.render("carrito",{
             title:"carrito"
         });
-    }
+    },
 
 }

@@ -26,16 +26,16 @@
     <div >
         <div class="user">
             <% if (typeof session.user != "undefined") { %>
-                <i class="fas fa-user"></i><img class="userProfile avatar" src="/design/images/avatar/<%=user.avatar %> "><span class="session"></span>
-                <div>
-                    <img class="userProfile avatar" src="/design/images/avatar/<%=user.avatar %> ">
-                    <a href="/users/logout">Cerrar sesión</a>
+                 <div>
+                    <img src="/design/images/avatar/<%=user.avatar %> ">
+                    <a href="/user/userProfile">Mis datos</a>
+                    <a href="/user/logout">Cerrar sesión</a>
                     <% if (session.user.rol === "USER_ADMIN") { %>
                         <a href="/admin/dashboard">ADMIN</a>
                     <% } %>
                 </div>
             <% } else {%>
-                <a href="/users/login"><i class="fas fa-user"></i></a>
+               <a href="/users/login"><i class="fas fa-user"></i></a>
             <% } %>
         </div>
     </div>
