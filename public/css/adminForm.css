@@ -17,12 +17,11 @@ a{
 
 h1{
     text-align: center;
-    margin-bottom: 1rem;
 }
 
-.form-container{
+.admin-productNew .form{
     padding: 10px 0;
-    margin: 200px;
+    /* margin: 200px; */
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
@@ -31,7 +30,7 @@ h1{
 
 }
 
-.form-1{
+.admin-productNew .form{
     padding: 2rem;
     display: flex;
    flex-direction: column;
@@ -41,6 +40,21 @@ h1{
    
 }
 
+.admin-productNew .check-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.addProductAdmin .box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 /* input*/
 
 .input-container,
@@ -65,7 +79,6 @@ span.error-message {
 input.input-style{
     border-radius: 6px;
     border:none;
-    height: 2.5rem;
     padding: .5rem;
 
 }
