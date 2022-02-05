@@ -71,14 +71,16 @@
 
 .home-container .container-nav .nav-bar .contain-category .list li {
     padding-bottom: 2px;
-    color: rgb(167, 163, 163);
     font-size: 1.1rem;
-
 }
 
 .home-container .container-nav .nav-bar .contain-category li:hover button {
     background-color: rgba(9, 10, 12, .5);
-    color: #8d0000;
+    color: white;
+    filter: drop-shadow(2px 0 5px red);
+    box-shadow: inset 2px 0 5px rgba(255, 0, 0, 0.3),
+    inset -2px 0 5px rgba(255, 0, 0, 0.3);
+    
 }
 
 .home-container .container-nav .nav-bar .contain-category li#anios:hover {
@@ -88,12 +90,11 @@
 .home-container .main-section .contain-category  button {
     background-color: unset;
     border: none;
-
     font-size: 1rem;
     font-weight: bold;
     width: 100%;
-
-
+    color: rgb(167, 163, 163);
+    padding: 3px 0;
 }
 
 .home-container .main-section section.container-articles.loading::after {
@@ -208,10 +209,10 @@
     white-space: pre;
     transform-origin: right;
     /* transform: rotate(3deg); */
-    animation: animate 4s;
+    animation: desplazarTexto 4s;
 }
 
-@keyframes animate {
+@keyframes desplazarTexto {
     0%{
         transform: translate(150px);
     }

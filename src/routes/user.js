@@ -14,18 +14,12 @@ router.get('/register', usercheckLogin, controller.registerPage)
 router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
 router.post('/login', loginValidator ,controller.login)
 
-<<<<<<< HEAD
-=======
+
 /* POST 
 router.get('/register', controller.registerPage);
 router.post('/register', controller.register);*/
-<<<<<<< HEAD
-
-=======
->>>>>>> 5848380fd1154589311d8550c031344b3b817c81
 /* GET */
 router.get('/carrito', controller.carrito)
->>>>>>> bfe7ebea60b66e8f284719f6d5b525f5124c798e
 
 
 module.exports = router
