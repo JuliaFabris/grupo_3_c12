@@ -12,6 +12,7 @@ module.exports = {
             peliculas: getMovies,
             generos: getGenres,
             anios: getListAllUniqueAtributes(getMovies, 'age'),
+            session: req.session.user
         })
     },
 

@@ -1,94 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Ant-man & Wasp",
-        "price": "300",
-        "description": "Scott Lang vuelve a enfundarse el traje de Ant-Man para pelear codo a codo junto con la Avispa. La misión revela a los dos superhéroes un secreto terrible y los enfrenta a su enemigo más poderoso.",
-        "image": "antman-and-wasp.webp",
-        "age": 2018,
-        "category": [
-            "accion",
-            "fantasia",
-            "superheroes"
-        ],
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
-
-    },
-    {
-        "id": 2,
-        "name": "Pantera Negra",
-        "description": "Situada después de los eventos de Capitán América: Civil War, T'Challa, hijo del fallecido rey T'Chaka, asciende al trono de Wakanda y se convierte en Pantera Negra, pero descubre que reinar su nación será un desafío para él, ya que no solo debe gobernar y proteger su país, sino también derrotar a un viejo enemigo del pasado, que amenaza a todo el mundo.",
-        "price": 270,
-        "category": [
-            "accion",
-            "fantasia",
-            "superheroes"
-        ],
-        "image": "black-phanter.webp",
-        "age": 2018,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
-    },
-    {
-        "id": 3,
-        "name": "Capitana Marvel",
-        "description": "La guerrera Vers no recuerda su pasado, el cual vuelve a ella en sueños. A pesar de sus problemas para controlar sus emociones y, con ellas, sus poderes, la Inteligencia Suprema le permite participar en una misión.",
-        "price": 300,
-        "category": [
-            "accion",
-            "fantasia",
-            "superheroes"
-        ],
-        "image": "capitana-marvel.jpg",
-        "age": 2019,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
-    },
-    {
-        "id": 4,
-        "name": "El viaje de Chihiro",
-        "description": "Cuenta la historia de una niña de doce años llamada Chihiro, quien durante una mudanza se ve atrapada en un mundo mágico y sobrenatural, teniendo como misión buscar su libertad y la de sus padres, y así poder regresar a su mundo.",
-        "price": 190,
-        "category": [
-            "animada",
-            "fantasia",
-            "aventura",
-            "drama"
-        ],
-        "image": "Chihiro.png",
-        "age": 2003,
-        "reparto":"",
-        "trailer":"https://www.youtube.com/watch?v=5Fgq4Osh6XQ",
-        "direction":"",
-        "duration":120
-    },
-    {
-        "id": 5,
-        "name": "Doctor Strange",
-        "description": "La vida del famoso neurocirujano Dr. Stephen Strange cambia para siempre cuando un terrible accidente de coche le arrebata el uso de sus manos.",
-        "price": 300,
-        "category": [
-            "accion",
-            "aventura",
-            "ciencia ficción",
-            "fantasia",
-            "superheroes"
-        ],
-        "image": "doctor-stranger.jpg",
-        "age": 2016,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
-    },
-    {
         "id": 6,
         "name": "Guardianes de la galaxia Vol. 1",
         "description": "El temerario aventurero Peter Quill, tras robar una misteriosa esfera codiciada por Ronan, un poderoso villano cuyas ambiciones amenazan a todo el universo, se convierte en la presa más codiciada por todos los cazarrecompensas de la galaxia.",
@@ -102,28 +13,10 @@
         ],
         "image": "guardians-of-galaxy.jpg",
         "age": 2014,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
-    },
-    {
-        "id": 7,
-        "name": "Liga de la justicia oscura: Guerra Apokolips",
-        "description": "Luego de un ataque fallido a Apokolips que dejó muertos a muchos héroes, los miembros restantes de la Liga de la Justicia, la Liga de la Justicia Oscura, los Jóvenes Titanes y el Escuadrón Suicida unen fuerzas contra Darkseid en una batalla final épica para salvar la Tierra.",
-        "price": 250,
-        "category": [
-            "accion",
-            "fantasia",
-            "superheroes",
-            "animada"
-        ],
-        "image": "justice-league-apokolips-war.jpg",
-        "age": 2020,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 8,
@@ -138,10 +31,10 @@
         ],
         "image": "justice-league-dark.jpg",
         "age": 2017,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 9,
@@ -155,10 +48,10 @@
         ],
         "image": "justice-league-fatal-five.webp",
         "age": 2019,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 10,
@@ -173,10 +66,10 @@
         ],
         "image": "spiderman-far-from-home.jpg",
         "age": 2019,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 11,
@@ -191,10 +84,10 @@
         ],
         "image": "spiderman-homecoming.jpg",
         "age": 2017,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 12,
@@ -209,10 +102,10 @@
         ],
         "image": "spiderman-new-universe.jpg",
         "age": 2019,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 13,
@@ -226,10 +119,10 @@
         ],
         "image": "antman-and-wasp.webp",
         "age": 2018,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 14,
@@ -246,10 +139,10 @@
         ],
         "image": "suicide-squad.jpg",
         "age": 2016,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 15,
@@ -264,10 +157,10 @@
         ],
         "image": "superman-red-son.jpg",
         "age": 2020,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 16,
@@ -282,10 +175,10 @@
         ],
         "image": "teen-titans-judas.jpg",
         "age": 2017,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 17,
@@ -301,10 +194,10 @@
         ],
         "image": "vengadores-end-game.jpg",
         "age": 2019,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 18,
@@ -320,10 +213,10 @@
         ],
         "image": "vengadores-infinity-war.jpg",
         "age": 2018,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 19,
@@ -339,10 +232,10 @@
         ],
         "image": "venom-1.jpg",
         "age": 2018,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 20,
@@ -358,10 +251,10 @@
         ],
         "image": "venom-2.jpg",
         "age": 2021,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
     },
     {
         "id": 21,
@@ -375,9 +268,23 @@
         ],
         "image": "x-men-dark-fenix.webp",
         "age": 2019,
-        "reparto":"",
-        "trailer":"",
-        "direction":"",
-        "duration":120
+        "reparto": "",
+        "trailer": "",
+        "direction": "",
+        "duration": 120
+    },
+    {
+        "id": null,
+        "name": "nombre",
+        "price": "500",
+        "description": "assadasdasd",
+        "image": [
+            "default-image.png"
+        ],
+        "age": "5000",
+        "category": "8",
+        "reparto": "asdasd",
+        "direction": "io",
+        "duration": "1234"
     }
 ]

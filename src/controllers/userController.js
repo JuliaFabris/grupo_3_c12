@@ -23,6 +23,8 @@ module.exports = {
                 rol: user.rol
             }
 
+            console.log(req.session.user);
+
            if(req.body.remember){
                const TIME_IN_MILISECONDS = 60000
                res.cookie("userTrimovie", req.session.user, {
@@ -48,7 +50,6 @@ module.exports = {
             title:"Register Trimovie"
         });
     },
-
     "processRegister": (req, res) => {
         let errors = validationResult(req);
 
@@ -83,8 +84,38 @@ module.exports = {
         }else{
             res.render("register", {
                 errors: errors.mapped(),
+                old: req.body,
             })
         }
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if(req.cookies.userTrimovie){
+            res.cookie('userTrimovie', "", { maxAge: -1 })
+        }
+        res.redirect('/')
+    }, 
+    "profile": (req, res) => {
+        console.log(req.session.user)
+        let user = getUsers.find(user => user.id === req.session.user.id)
+
+        res.render('userProfile', {
+            title: "perfil de ususario",
+            user, 
+            session: req.session.user,
+            titulo: user.name
+        })
+    },
+    editProfile: (req, res) => {
+        console.log(req.session.user)
+        let user = getUsers.find(user => user.id === req.session.user.id)
+
+        res.render('userProfile', {
+            title: "perfil de ususario",
+            user, 
+            session: req.session.user,
+            titulo: user.name
+        })
     },
 
     "carrito": (req, res) => {

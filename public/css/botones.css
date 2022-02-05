@@ -15,8 +15,8 @@
 }
 
 .btn-submit {
-    background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(243, 6, 17, 0.719) 50%);
-    color: rgb(75, 75, 75);
+    background: linear-gradient(to left, #F11712, #0099F7) !important;
+    color: rgb(255 254 254);
     transition: all 0.3s ease-in-out;
 }
 

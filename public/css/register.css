@@ -9,6 +9,9 @@
 .terms {
   position: relative;
   left: 3rem;
+  color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
 }
 .capa-fondo {
   background-attachment: fixed;
@@ -106,6 +109,7 @@ input.input-style::placeholder {
 
 label {
   font-size: 12px;
+  margin: 5px;
 }
 
 .input-file-container {
@@ -168,7 +172,7 @@ select.input-select:focus {
 }
 
 .btnn-submit{
-  color: rgb(79, 79, 90);
+  color: rgb(115, 255, 1);
   font-size: 15px;
   font-weight: bold;
 }
@@ -229,4 +233,5 @@ select.input-select:focus {
 
 .avatar{
   font-size: 18px;
+  margin: inherit;
 }
