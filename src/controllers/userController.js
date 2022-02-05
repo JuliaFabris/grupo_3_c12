@@ -17,7 +17,7 @@ module.exports = {
             req.session.user = {
                 id: user.id,
                 name: user.name,
-                lastname: user.lastname,
+                last_name: user.last_name,
                 email: user.email,
                 avatar: user.avatar,
                 rol: user.rol
@@ -54,8 +54,7 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
-
-            const {name, lastname, email, pass1, pass2} = req.body;
+            const { name, lastname, email, pass1 } = req.body;
 
             let lastId = 1;
     
@@ -70,13 +69,13 @@ module.exports = {
                 name: name.trim(),
                 lastname: lastname.trim(),
                 email: email.trim(),
-                pass: bcrypt.hashSync(pass1, 12) ,
+                pass: bcrypt.hashSync(pass1, 12) , 
                 rol: "ROL_USER",
                 city:"",
                 phone: "",
                 address: "",
                 zipCode: "",
-                avatar: req.file ? req.file.filename : "avatarChichiro.jpg",
+                avatar: req.file ? req.file.filename : "AvatarChichiro.png",
             }
             
             writeUsers([...getUsers, user]);
@@ -101,17 +100,17 @@ module.exports = {
         let user = getUsers.find(user => user.id === req.session.user.id)
 
         res.render('userProfile', {
-            title: "perfil d ususario",
+            title: "perfil de ususario",
             user, 
             session: req.session.user,
             titulo: user.name
         })
     },
-
+    
     "carrito": (req, res) => {
         res.render("carrito",{
             title:"carrito"
         });
-    }
+    },
 
 }
