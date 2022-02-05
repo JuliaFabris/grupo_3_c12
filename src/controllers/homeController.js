@@ -18,20 +18,13 @@ module.exports = {
 
     FilterByGender: (req, res) => {
 
-        let list = [],
-            id = +req.params.id;
-        let gender = tableGeneros.get(id);
-
-        tablePeliculas.all.forEach(peli => {
-            let categorias = peli.category 
-
-            console.log(gender)
-            console.log(peli.category)
-            console.log(categorias.includes(gender.name))
-            if(categorias.includes(gender.name)) list.push(peli);
-        })
-        console.log(list.length)
-
-        res.send(list)
+        let genero = req.params.id;
+        console.log(genero)
+        console.log(getMovies.length)
+        let genre = getGenres.find(genre => genre.id == genero);
+        console.log(genre[0])
+        let lista = getMovies.filter(pelicula => pelicula.category.includes(genre.name));
+        console.log(lista.length)
+        res.send(lista)
     }
 }

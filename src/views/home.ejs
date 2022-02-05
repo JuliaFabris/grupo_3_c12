@@ -113,7 +113,7 @@
                         $containerMovies.classList.add('loading')
                         // primero hacer esto
                         /* realiza la peticion aplicando tres parametros. El primero es la ruta que se va a solicitar(tiene que existir en el routes) */
-                        fetch(`/peliculas/${id}`, {
+                        fetch(`/peliculas/genero/${id}`, {
                             /* el segundo parametro es el tipo de peticion que se va a realizar(todavia no lo probe con put y delete) */
                             method: 'GET',
                             /* y el tercero entendi maso que son como configuraciones a la peticion. En este caso dice 
