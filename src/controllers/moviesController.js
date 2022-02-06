@@ -3,14 +3,12 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const {validationResult } = require('express-validator');
-/* const { error } = require('console');
-const res = require('express/lib/response'); */
-
+const {Movies,Genres,Actor} = require('../database/models');
 
 //Aqui tienen una forma de llamar a cada uno de los modelos
 // const {Movies,Genres,Actor} = require('../database/models');
 
-//Aquí tienen otra forma de llamar a los modelos creados
+//llamamos a los modelos 
 const Movies = db.Movie;
 const Genres = db.Genre;
 const Actors = db.Actor;
@@ -67,19 +65,22 @@ const moviesController = {
 
         if(errors.isEmpty()) {
 
-            const { title, rating, awards, release_date, length, genre_id } = req.body
+            const { title, rating,direction,description, awards,actors, duration, genre_id } = req.body
             
             Movies.create({
                 title, 
-                rating, 
+                rating,
+                direction,
+                description, 
                 awards, 
+                actors,
                 release_date, 
-                length, 
+                duration, 
                 genre_id 
             })
 
             .then((movie) => {
-                res.redirect('/movies')
+                res.redirect('/productDetail')
                   //res.redirect(`/movies/detail/${movie.id}`); otro ejemplo, redirección directamente al detalle de la pelicula
                 })
             .catch((error) => console.log(error))
