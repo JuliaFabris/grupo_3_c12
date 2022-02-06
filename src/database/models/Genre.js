@@ -10,28 +10,20 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         
-        name: {
+        category_name: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        ranking: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
-            allowNull: false
-        },
-        active: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false
-        }
+        
     };
-    let config = {
+       let config = {
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        updatedAt: 'updated_at'
     }
-    const Genre = sequelize.define(alias, cols, config);
+    c  onst Genre = sequelize.define(alias, cols, config);
 
-    //Aquí debes realizar lo necesario para crear las relaciones con el modelo (Movie)
+    //relaciones con el modelo Movie
 
     Genre.associate = function(models) {
         Genre.hasMany(models.Movie, {

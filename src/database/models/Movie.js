@@ -1,19 +1,30 @@
-module.exports = (sequelize, dataTypes) => {
-    let alias = 'Movie'; // esto debería estar en singular
-    let cols = {
+module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para exportar el modelo
+    let alias = 'Movie'; 
+    let cols = {//se crean las columnas
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
+       
         title: {
             type: dataTypes.STRING(500),
             allowNull: false
         },
+        description: {
+            type: dataTypes.STRING(500),
+            allowNull: false
+        },
+        direction: {
+            type: dataTypes.STRING(500),
+            allowNull: false
+        },
         rating: {
+            type: dataTypes.DECIMAL(3, 1).UNSIGNED,
+            allowNull: false
+        },
+        price: {
             type: dataTypes.DECIMAL(3, 1).UNSIGNED,
             allowNull: false
         },
@@ -25,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DATEONLY,
             allowNull: false
         },
-        length: dataTypes.BIGINT(10),
+        duration: dataTypes.BIGINT(10),
         genre_id: {
             type: dataTypes.BIGINT(10),
             allowNull: false
@@ -44,11 +55,11 @@ module.exports = (sequelize, dataTypes) => {
     Movie.associate = function(models) {
 
         Movie.belongsTo(models.Genre, {
-            as: "genre", /* genre porque le pertenece a un genero */
+            as: "genre", /* le pertenece a un genero */
             foreignKey: "genre_id"
         })
 
-        Movie.belongsToMany(models.Actor, { /* belongsToMany le pertenece a muchos */
+        Movie.belongsToMany(models.Actor, { 
             as: "actors",
             through: "actor_movie", /* tabla pivot */
             foreignKey: "movie_id",

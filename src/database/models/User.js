@@ -3,6 +3,12 @@ const { DataTypes } = require('sequelize')
 module.exports = (sequelize) => {
 
       const User = sequelize.define('User', {
+            id: {
+            type: dataTypes.BIGINT(10).UNSIGNED,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true
+            },
             first_name: {
                   type: DataTypes.TEXT('tiny'),
                   alowNull: false,
@@ -30,7 +36,7 @@ module.exports = (sequelize) => {
             phone: {
                   type: DataTypes.STRING(20),
             },
-            birth: {
+            birthday: {
                   type: DataTypes.DATE
             },
             

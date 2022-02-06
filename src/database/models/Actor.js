@@ -7,7 +7,9 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
+
         },
         
         first_name: {
@@ -18,10 +20,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        rating: {
-            type: dataTypes.DECIMAL(3,1),
-            allowNull: false
-        },
+        
         favorite_movie_id: dataTypes.BIGINT(10).UNSIGNED
     };
     let config = {
