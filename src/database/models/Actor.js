@@ -19,9 +19,7 @@ module.exports = (sequelize, dataTypes) => {
         last_name: {
             type: dataTypes.STRING(100),
             allowNull: false
-        },
-        
-        favorite_movie_id: dataTypes.BIGINT(10).UNSIGNED
+        }  
     };
     let config = {
         timestamps: true,

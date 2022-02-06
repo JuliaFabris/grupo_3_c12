@@ -43,6 +43,9 @@ module.exports = (sequelize) => {
             address: {
                   type: DataTypes.STRING(100),
             },
+            favorites: {
+                  type: DataTypes.STRING,
+            },
             
       }, {
             sequelize: sequelize,
