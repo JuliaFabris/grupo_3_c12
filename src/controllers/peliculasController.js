@@ -1,4 +1,8 @@
-let { tablePeliculas, generos, aniosEnLista} = require('../database')
+let {
+    getMovies,
+    getGenres
+} = require('../database');
+const { getListAllUniqueAtributes } = require('../middlewares/ourLib');
 
 module.exports = {
     "peliculasPorGenero": (req, res) => {
@@ -7,16 +11,22 @@ module.exports = {
         res.render('user/home', {
             peliculas: lista,
             generos: getGeneros,
-            anios: aniosEnLista})
+            anios: aniosEnLista
+        })
         // res.send(lista);
     },
 
     // detalle de pelicula
 
     "detail": (req, res) => {
-        let genero = req.params.genero
-        let lista = getPeliculas.filter(pelicula => pelicula.genero.includes(genero))
-        let id = +req.params.id
-        res.render('product-detail', {product: tablePeliculas.get(id)})
+        let id = +req.params.id;
+        let movie = getMovies.find(pelicula => pelicula.id == id);
+        res.render('product-detail', {
+            movie,
+            session: req. session.user,
+            genresMovie: getGenres,
+            anios: getListAllUniqueAtributes(getMovies, 'age'),
+            peliculas: getMovies
+        });
     }
 }

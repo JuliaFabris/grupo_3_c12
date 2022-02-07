@@ -15,6 +15,7 @@
         "age": 2014,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -33,6 +34,7 @@
         "age": 2017,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -50,6 +52,7 @@
         "age": 2019,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -68,7 +71,8 @@
         "age": 2019,
         "reparto": "",
         "trailer": "",
-        "direction": "",
+        "director": "",
+        "discount": 10,
         "duration": 120
     },
     {
@@ -86,6 +90,7 @@
         "age": 2017,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -104,6 +109,7 @@
         "age": 2019,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -121,6 +127,7 @@
         "age": 2018,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -141,6 +148,7 @@
         "age": 2016,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -159,6 +167,7 @@
         "age": 2020,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -177,6 +186,7 @@
         "age": 2017,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -196,6 +206,7 @@
         "age": 2019,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -215,6 +226,7 @@
         "age": 2018,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -234,6 +246,7 @@
         "age": 2018,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -253,6 +266,7 @@
         "age": 2021,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
@@ -270,6 +284,7 @@
         "age": 2019,
         "reparto": "",
         "trailer": "",
+        "director": "",
         "direction": "",
         "duration": 120
     },
