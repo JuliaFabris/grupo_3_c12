@@ -104,19 +104,31 @@ CREATE TABLE IF NOT EXISTS `movie_genre` (
 
 -- La exportación de datos fue deseleccionada.
 
+-- Volcando estructura para tabla trimovie.role
+CREATE TABLE IF NOT EXISTS `role` (
+  `id` int(10) unsigned NOT NULL,
+  `admin` int(10) unsigned NOT NULL,
+  `user` int(10) unsigned NOT NULL,
+  `guest` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
+
 -- Volcando estructura para tabla trimovie.shop_cart
 CREATE TABLE IF NOT EXISTS `shop_cart` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `movie_id` int(10) unsigned NOT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
   `movie_tltle` varchar(50) NOT NULL,
   `total` int(11) unsigned NOT NULL,
-  `movie_id` int(10) unsigned NOT NULL,
   `price` int(10) unsigned NOT NULL,
-  `user_id` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_shop_cart_user` (`user_id`),
   KEY `FK_shop_cart_movie_cart` (`movie_id`),
+  KEY `FK_shop_cart_movie_cart_2` (`user_id`),
   CONSTRAINT `FK_shop_cart_movie_cart` FOREIGN KEY (`movie_id`) REFERENCES `movie_cart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_shop_cart_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_shop_cart_movie_cart_2` FOREIGN KEY (`user_id`) REFERENCES `movie_cart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- La exportación de datos fue deseleccionada.
@@ -131,9 +143,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `address` varchar(50) NOT NULL,
   `favorite_movie` varchar(50) NOT NULL,
   `shop_cart_id` int(10) unsigned DEFAULT NULL,
+  `role` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `Email` (`email`) USING BTREE,
   KEY `FK_user_shop_cart` (`shop_cart_id`),
+  KEY `FK_user_role` (`role`),
+  CONSTRAINT `FK_user_role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_user_shop_cart` FOREIGN KEY (`shop_cart_id`) REFERENCES `shop_cart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

@@ -1,7 +1,6 @@
 
-
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Genre';
+    let alias = 'Rol';
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
@@ -10,14 +9,22 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         
-        category_name: {
-            type: dataTypes.STRING(100),
+        guest: {
+            type: dataTypes.INT(2),
             allowNull: false
         },
+        user: {
+            type: dataTypes.INT(2),
+            allowNull: false
+        },
+        admin: {
+            type: dataTypes.INT(2),
+            allowNull: false
+        }
         
     };
        let config = {
-        timestamps: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at'
     }
@@ -25,12 +32,12 @@ module.exports = (sequelize, dataTypes) => {
 
     //relaciones con el modelo Movie
 
-    Genre.associate = function(models) {
-        Genre.hasMany(models.Movie, {
-            as: "movies",
-            foreignKey: "genre_id"
+    Rol.associate = function(models) {
+        Role.hasMany(models.User, {
+            as: "users",
+            foreignKey: "role_id"
         })
     }
 
-    return Genre
+    return Role
 };
