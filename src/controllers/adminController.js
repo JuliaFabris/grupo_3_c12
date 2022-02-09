@@ -8,7 +8,8 @@ let controller = {
 inicio : (req, res) => {
     res.render('admin/dashboard', {
         session: req.session.user,
-        peliculas: getMovies
+        peliculas: getMovies,
+        user: req.session.user
     })
 },
 productos: (req, res) => {
@@ -24,6 +25,7 @@ console.log(product);
 res.render("admin/editProduct", {
     generos: getGenres,
     producto: getMovies,
+    user: req.session.user
 })
 },
 actualizar: (req, res) => {
@@ -53,6 +55,7 @@ getMovies.forEach(product => {
 crear: (req, res) => {
  res.render("admin/addProduct", {
      generos: getGenres,
+     user: req.session.user
  })
  
 },
