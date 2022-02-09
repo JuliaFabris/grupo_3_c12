@@ -40,6 +40,7 @@ let productsRouter = require('./routes/products');
 let adminRouter = require('./routes/admin');
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
+const { carrito } = require('./controllers/userController');
 /*const userController = require('./controllers/userController');*/
 
 /*  */
@@ -64,6 +65,9 @@ app.use((req, res, next) => {
     res.status(404).render('404')
 })
 
+app.use((req, res, next) => {
+    res.status(carro).render('404')
+})
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));
