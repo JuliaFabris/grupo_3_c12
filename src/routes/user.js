@@ -9,12 +9,12 @@ let usercheckLogin = require('../middlewares/usercheckLogin');
 /* GET - formulario de inicio de sesion */
 router.get('/login', controller.loginPage)
 router.get('/register', controller.registerPage)
-router.get('/carrito', controller.carrito)
+router.get('/carrousel', controller.registerPage)
  /*POST */
 router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
 router.post('/login', loginValidator ,controller.login)
 
-
+router.get('/carrito', controller.carrito)
 /* POST 
 router.get('/register', controller.registerPage);
 router.post('/register', controller.register);*/
