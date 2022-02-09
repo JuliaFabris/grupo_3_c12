@@ -27,7 +27,7 @@
                                         <img src="./design/images/icons/play-circle-regular.png" alt=""
                                             onclick="alert('mirate este trailer de <%= pelicula.name %>')">
                                     </button>
-                                    <img src="./design/images/products/<%= pelicula.image %> " alt="articulo">
+                                    <img src="./design/images/products/<%= pelicula.image %>" alt="articulo">
                                 </div>
                                 <div class="data-article flex">
                                     <a href="/products/detail/<%= pelicula.id %>">
@@ -92,8 +92,10 @@
                         </div>
                         <div class="data-article flex">
                             <a>
-                                <h4 class="titulo noun"></h4>
-                                <div class="footer-article flex">
+                                <div class="titulo">
+                                    <h4 class="noun"></h4>
+                                </div>
+                                <div class="footer-article">
                                     <i class="far fa-heart"></i>
                                     <span class="precio"></span> 
                                 </div>
@@ -113,7 +115,7 @@
                         $containerMovies.classList.add('loading')
                         // primero hacer esto
                         /* realiza la peticion aplicando tres parametros. El primero es la ruta que se va a solicitar(tiene que existir en el routes) */
-                        fetch(`/peliculas/${id}`, {
+                        fetch(`/peliculas/genero/${id}`, {
                             /* el segundo parametro es el tipo de peticion que se va a realizar(todavia no lo probe con put y delete) */
                             method: 'GET',
                             /* y el tercero entendi maso que son como configuraciones a la peticion. En este caso dice 
@@ -134,7 +136,7 @@
                                         `./design/images/products/${register.image}`);
                                     $template.querySelector('.data-article a').setAttribute(
                                         'href', `/products/detail/${register.id}`);
-                                    $template.querySelector('.data-article a .titulo')
+                                    $template.querySelector('.data-article a .noun')
                                         .textContent = register.name;
                                     $template.querySelector('.data-article a .precio')
                                         .textContent = `$ ${register.price}`
@@ -201,6 +203,8 @@
                     // $inputSearch.addEventListener('onchange', showPreSearch)
 
                 </script>
+
+                <%- include('partials/carrusel')  %> 
     </body>
 
 </html>

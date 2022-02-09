@@ -5,8 +5,6 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
-let userLogs = require('./middlewares/userLogs')  // middleware a nivel de aplicación  nuevo para saber donde ingreso
-
 
 const PORT = 3000;
 
@@ -66,13 +64,6 @@ app.use((req, res, next) => {
     res.status(404).render('404')
 })
 
-/* ERROR 404 */
-app.use((req, res, next) => {
-    res.status(404).render('404',{
-        titulo:404
-    }
-    )
-})
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));

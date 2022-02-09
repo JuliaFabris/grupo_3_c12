@@ -14,11 +14,12 @@ router.get('/carrito', controller.carrito)
 router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
 router.post('/login', loginValidator ,controller.login)
 
+
 /* POST 
 router.get('/register', controller.registerPage);
 router.post('/register', controller.register);*/
-
-router.get('/profile', controller.profile)
+/* GET */
+router.get('/carrito', controller.carrito)
 
 
 module.exports = router

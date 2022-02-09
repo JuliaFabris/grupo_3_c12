@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
-   
-   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/error.css">
-    <title>Error 404</title>
-</head>
-<body>
-    <section class="section-404"> 
 
-        <div class="container-404">
-            <a href=""><button class="buttom-rosa">Ir al Home!</button></a>
-            <div class="header-404"></div>
-            <div class="center-404">
-                <img src="/design/images/icons/astro.png" alt="" >
-            
-            </div>
-            
+<%- include('partials/head', {titulo: "Error"})  %>
+
+<body class="error-page">
+
+    <div class="sky"></div>
+
+    <section class="section-404">
+        <div class="image-404">
+            <img src="/design/images/icons/astro.png" alt="">
+        </div>
+        <div class="redirect buttom-rosa">
+            <a href="/">Ir al Home!</a>
+        </div>        
     </section>
+
+    <script>        
+        paintSky(document, window, 150);
+
+        window.onresize = () => {
+            let $stars = document.querySelectorAll('i');
+
+            $stars.forEach(star => {
+                setStarAtributes(star, window)
+            });
+        };
+
+        function setStarAtributes(star, win) {
+            /* MAth.ramdom()
+                    siempre da como resultado un nuemero entre 0 y 1
+                */
+            let size = Math.random() * 5,
+                posX = Math.floor(Math.random() * win.innerWidth),
+                posY = Math.floor(Math.random() * win.innerHeight),
+                delay = Math.random() * -20,
+                duracion = Math.random() * 5;
+
+            // seteo propiedades del elemento estrella
+            star.setAttribute('style', `
+                width:${3+size}px;
+                height:${3+size}px;
+                left:${posX}px;
+                top:${posY}px;
+                animation-delay: ${delay}s;
+                animation-duration: ${4+duracion}s`)
+            // $gota.setAttribute('style', `width=${.2+size}px`)
+
+        }
+
+        function paintSky(doc, win, cantidad) {
+            let $sky = doc.querySelector('.sky') //referencia al elemento body del html
+            let i = 0, //variable auxiliar para usar en ciclo while
+                $fragment = doc.createDocumentFragment(); //fragmento para en el cual se insertaran las 'i'
+
+            while (i < cantidad) {
+                let $star = doc.createElement('i'); //creacion de elemento i
+
+                // aplico estilos a la estrella
+                setStarAtributes($star, win);
+
+                //agrego dentro del fragmento cada estrella creada
+                $fragment.appendChild($star);
+                i++;
+            }
+            // para no realizar muchas inserciones dentro del DOM realizo una sola que tenga todo
+            $sky.appendChild($fragment);
+        }
+    </script>
 </body>
+
 </html>
-
-
-
- 

@@ -1,91 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%-include('./partials/head', {titulo: product.name})%>
+<%-include('./partials/head', {titulo: movie.name})%>
 
-<body class="pd">
+<body class="product-detail">
+
     <%- include('./partials/header1')%>
+
     <main>
-        <section class="flexpd-row">
-            <section class="detalle-izq">
-                <article class="pd">
-                    <%- include('./partials/categories')%>
-
-
-                   
-                </article>
-            </section>
-            <section class="pd-container flexpd ">
-
+        <section class="container flex pd-row">
+            <article class="pd-container flex">
+                <!-- <article class="pd"> -->
+                <div class="detail">
+                    <div class="title-movie">
+                        <h2><%= movie.name %> </h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="info">
+                        <div class="image-movie">
+                            <img src="/design/images/products/<%= movie.image %>" alt="">
+                        </div>
+                        <div class="feature">
+                            <div class="data-movie">
+                                <div class="data separated">
+                                    <span class=""><%= movie.age %> </span>
+                                </div>
+                                <div class="data separated">
+                                    <span class=""><%= movie.duration %> min.</span>
+                                </div>
+                                <% genresMovie.forEach((genre, index) => { %>
+                                <a class="data <%= index+1!=genresMovie.length?"separated":"" %>"><%= genre.name %></a>
+                                <% }) %>
+                            </div>
+                            <div class="data casting">
+                                Direccion:
+                                <%= movie.director %>
+                            </div>
+                            <div class="data casting">
+                                Reparto:
+                                <%= movie.director %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-sell">
+                        <div class="wish"><i class="far fa-heart"></i></div>
+                        <div class="buy">
+                            <a href="/user/carrito">COMPRAR</a>
+                        </div>
+                        <div class="data">
+                            <% if (movie.discount) { %>
+                            <small>$<%= movie.price-(movie.price*movie.discount/100) %></small>
+                            <% } %>
+                            <span class="<%= movie.discount?"in-sale":"" %> ">$<%= movie.price %> </span>
+                        </div>
+                    </div>
+                    <i class="line"> </i>
+            </article>
+            <article class="pd-container flexpd ">
+                <div class="sinopsis">
+                    <p class="pd"><%= movie.description %> <p>
+                </div>
                 <div class="flexpd-row">
-                    
-                    <iframe class="imgpd" src="https://www.youtube.com/embed/5Fgq4Osh6XQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe src="/design/images/products/<%= product.trailer %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    
-                     <!--<img class="imgpd" src="/design/images/products/<%= product.image %> ">-->
+
+                    <iframe class="imgpd" src="https://www.youtube.com/embed/5Fgq4Osh6XQ" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <!-- <iframe src="https://www.youtube.com/embed/5Fgq4Osh6XQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+                    <!--<img class="imgpd" src="/design/images/products/ ">-->
                 </div>
 
-            </section>
-            <section class="pd-container flexpd">
-                <div class="flexpd-item-pd-container">
-                    <article class="pd">
-                        <h3><%= product.name %> </h3>
-                        <hr>
-                        <h3>Sinopsis</h3>
-                        <p class="pd"><%= product.description %> <p>
-
-                       <!-- <div class="infoprod">-->
-                            <h4>Reparto</h4>
-                            <p><%= product.reparto %></p>
-                             <h4>Direccion</h4>
-                            <p><%= product.direction %></p>
-
-                        </div>
-                        <div class="data-articulopd flexpd">
-                        <span><h5>Agregar al carrito</h5></span>
-                        <a href="carrito.ejs"><i class="fas fa-shopping-cart"                                            style="width: 30%;height: 30%;"></i></a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </section>
-        
-        <section class="extras-flexpd">
-           <h3>RELACIONADOS</h3>
-        <%- include ("./partials/slider")%>
-        <section class="container-articles flex">
-
-            <% peliculas.forEach(pelicula=> { %>
-                <article class="article flex">
-                    <div class="img-container flex">
-                        <button id="<%= pelicula.id %> ">
-                            <img src="./design/images/icons/play-circle-regular.png" alt="
-                               <%= pelicula.name %>">
-                        </button>
-                        <img src="./design/images/products/<%= pelicula.image %> " alt="articulo">
-                    </div>
-                    <div class="data-article flex">
-                        <a href="/products/detail/<%= pelicula.id %>">
-                            <h4 class="titulo noun">
-                                <%= pelicula.name %>
-                            </h4>
-                            
-                        </a>
-                    </div>
-                </article>
-                <% }) %>
-
+            </article>
         </section>
 
-            </section>
     </main>
+
     <%- include ("./partials/footer1")%>
 
 
-<script src="/js/productDetail.js"></script>
+    <script src="/js/productDetail.js"></script>
     <script src="/js/product-slider.js"></script>
     <!-- JavaScript -->
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
 
 </html>
