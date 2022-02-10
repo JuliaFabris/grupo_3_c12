@@ -109,7 +109,8 @@ module.exports = {
     
     "carrito": (req, res) => {
         res.render("carrito",{
-            title:"carrito"
+            title:"carrito",
+            session: req.session.user
         });
     },
 
