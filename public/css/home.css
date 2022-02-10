@@ -54,7 +54,7 @@
 .home-container .container-nav .nav-bar .contain-category {
     overflow: hidden;
     position: relative;
-    background-color: #0e1546;
+    background-color: #57545c9e;
     width: 100%;
     padding-bottom: 5px;
 }
@@ -324,7 +324,7 @@ box-shadow: 0px 0px 5px rgb(64 16 16);
     }
 
     .home-container .container-nav .nav-bar .contain-category .title {
-        background: linear-gradient(to top, #0e1546, rgba(94, 2, 2, 0.85));
+        /* background: linear-gradient(to top, #0e1546, rgba(94, 2, 2, 0.85)); */
         border-radius: 10px 10px 0 0;
         text-transform: uppercase;
         text-decoration: double;
