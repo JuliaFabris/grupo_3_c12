@@ -1,52 +1,46 @@
-<header>
+<header class="flex posicioned">
 
-    <div class="container-izquierda">
-    
-    
-    
-    <nav class="nave">
-        <ul class="menu">
-        <li><a href=""><i class="fa fa-bars"></i></a>
-        <ul class="submenu">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/register">Registro</a></li>
-            <li><a href="/FAQ/contacto">Contacto</a></li>
-        </ul></li>
-       
-    </ul> 
-    
-    </nav>
-      </div>
-    </div>
-    <div class="header_logo">
-        
-        <a href="home.html" ref="volver"><img src="/design/images/icons/logo.png" style="width: 40%;"></a>
-    </div>
+    <!--  -->
+    <div class="left-container flex">
+        <div class="container-icon flex ">
+            <button class="flex sub-menu" id="">
+                <i class="fas fa-bars fa-size"></i>
+            </button>
+        </div>
 
-    <div >
-        <div class="user">
-            <% if (typeof session.user != "undefined") { %>
-                 <div>
-                    <img src="/design/images/avatar/<%=user.avatar %> ">
-                    <a href="/user/userProfile">Mis datos</a>
-                    <a href="/user/logout">Cerrar sesión</a>
-                    <% if (session.user.rol === "USER_ADMIN") { %>
-                        <a href="/admin/dashboard">ADMIN</a>
-                    <% } %>
-                </div>
-            <% } else {%>
-               <a href="/users/login"><i class="fas fa-user"></i></a>
-            <% } %>
+        <div class="search-box">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" placeholder="Buscar...">
         </div>
     </div>
 
-    
-    <div class="container-derecha">
-    
-                    
-        <div class="icono2"><a href="#"><i class="far fa-heart" style="color: cyan;"></i></a></div>
-        <div class="icono3"><a href="#"><i class="fas fa-user" style="color: cyan;"></i></div></a>
+    <div class="container-logo"><a href="/"><img src="/design/images/icons/logo.png" alt="TRIMOVI"></a></div>
+
+    <div class="right-container flex">
+
+        <div class="container-icon flex" id="car">
+            <a href="/user/carrito"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <div class="container-icon flex" id="car">
+            <a href="/user/register">Registrarse</a>
+        </div>
+
+        <% if (session) { %>
+            <div class="container-icon flex" id="car">
+                <a href="/user/userProfile">
+                    <img src="./design/images/avatars/<%= user.avatar %>"></a>
+                <a href="/user/userProfile">Mis datos</a>
+                <a href="/user/logout">Cerrar sesión</a>
+                <% if (session.user.rol==="USER_ADMIN" ) { %>
+                    <a href="/admin/dashboard">ADMIN</a>
+                    <% } %>
+
             </div>
-    
-            <h2 style="color: white;"><%= session.name %> </h2>
-        </header>
+            <% } else {%>
+                    <div class="container-icon flex">
+                        <a href="/user/login">Entrar</a>
+                    </div>
+                    <% } %>
+
+    </div>
+</header>

@@ -42,14 +42,14 @@
           </li>
         </ul>
       </div>
-      <% if (session) { %>
+      
         <div class="container-icon flex" id="car">
-            <a href="/user/profile"><i class="fas fa-user-astronaut"></i></a>
+            <a href="/user/profile">
+              <img src="./design/images/avatars/<%= user.avatar %>">
+            </a>
             
         </div>
-    <% } %>
-
-    <% if (!session) { %>
+      <% if (!session) { %>
     <div class="container-icon flex">
         <a href="/user/login"><i class="fas fa-user"></i></a>
     </div>
