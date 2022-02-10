@@ -1,4 +1,6 @@
-let {
+
+
+ let {
     getMovies,
     getGenres
 } = require('../database');
@@ -29,4 +31,5 @@ module.exports = {
             peliculas: getMovies
         });
     }
-}
+} 
+
