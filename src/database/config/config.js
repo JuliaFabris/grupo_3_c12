@@ -1,4 +1,4 @@
-module.exports = [{
+module.exports = {
   "development": {
     "username": "root",
     "password": null,
@@ -21,4 +21,4 @@ module.exports = [{
     "dialect": "mysql"
   }
 }
-]
+
