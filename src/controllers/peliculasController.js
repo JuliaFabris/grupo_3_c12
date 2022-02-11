@@ -1,4 +1,4 @@
-let db = require('..database/models');
+let db = require('../database/models');
 
 let peliculasController = {
 crear: function (req,res) {
@@ -71,9 +71,11 @@ borrar: function(req,res) {
         }
     })
     res.redirect("/peliculas");
+},
+peliculasPorGenero: (req, res) => {
+    
 }
 }
-
 module.exports = peliculasController;
 
 

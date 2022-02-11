@@ -2,54 +2,43 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
     let alias = 'Movie'; 
     let cols = {//se crean las columnas
         id: {
-            type: dataTypes.INT(11).UNSIGNED,
+            type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
        
         title: {
-            type: dataTypes.VARCHAR(500),
+            type: dataTypes.STRING(500),
             allowNull: false
         },
-        description: {
-            type: dataTypes.VARCHAR(500),
+        director_id: {
+            type: dataTypes.STRING(50),
             allowNull: false
         },
-        direction: {
-            type: dataTypes.VARCHAR(50),
+        year: {
+            type: dataTypes.INTEGER,
             allowNull: false
         },
-        actors: {
-            type: dataTypes.VARCHAR(50),
-            allowNull: false
-        },
-        rating: {
-            type: dataTypes.INT(11).UNSIGNED,
+        image: {
+            type: dataTypes.INTEGER(11).UNSIGNED,
             allowNull: false
         },
         price: {
-            type: dataTypes.INT(10).UNSIGNED,
-            allowNull: false
-        },
-        awards: {
-            type: dataTypes.INT(11).UNSIGNED,
-            allowNull: false
-        },
-        release_date: {
-            type: dataTypes.DATEONLY,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         },
         duration: {
-            type: dataTypes.DATEONLY,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
-        genre: {
-            type: dataTypes.VARCHAR(50),
+        sinopsis: {
+            type: dataTypes.STRING(500),
             allowNull: false
-        }
+        },
     };
     let config = {
+        tableName: "movie",
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -61,28 +50,22 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
 
     Movie.associate = function(models) {
 
-        Movie.HasMany(models.Genre, {
+        Movie.belongsToMany(models.Genre, {
             as: "genres", /* le pertenece a uno o más generos */
-            foreignKey: "genre_id"
+            through: "genre",
+            foreignKey: "movie_id",
+            otherKey: "genre_id", 
         })
 
-        Movie.HasMany(models.Actor, { 
+        Movie.belongsToMany(models.Actor, { 
             as: "actors",
-            through: "actor_movie", /* tabla pivot */
+            through: "actor_has_movie", /* tabla pivot */
             foreignKey: "movie_id",
             otherKey: "actor_id", /* es la otra llave */
             timestamps: false /* si queremos que se guarde el timestamps tenemos que configurar el createdAt y el updatedAt */
         })
 
-        Movie.BelongsToMany(models.Shop-Cart, { 
-            as: "shop-carts",
-            through: "movie_cart", /* tabla pivot */
-            foreignKey: "shop_cart_id",
-            otherKey: "user_id", /* es la otra llave */
-            timestamps: false /* si queremos que se guarde el timestamps tenemos que configurar el createdAt y el updatedAt */
-        })
-        
     }
 
-    return Movie
+    return Movie;
 };

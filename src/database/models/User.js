@@ -1,72 +1,64 @@
-const { DataTypes } = require('sequelize')
-
-module.exports = (sequelize, Datatypes) => {
+module.exports = (sequelize, dataTypes) => {
       let alias = "User";
-      let cols={
+      let cols = {
             id: {
-            type: dataTypes.INT(11).UNSIGNED,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
+                  type: dataTypes.INTEGER(11).UNSIGNED,
+                  primaryKey: true,
+                  allowNull: false,
+                  autoIncrement: true
             },
             name: {
-                  type: DataTypes.TINITEXT,
-                  alowNull: false,
-                },
-            last_name: {
-                  type: DataTypes.TINITEXT,
+                  type: dataTypes.STRING(50),
                   alowNull: false,
             },
-            
+            last_name: {
+                  type: dataTypes.STRING(50),
+                  alowNull: false,
+            },
+
             email: {
-                  type: DataTypes.VARCHAR(50),
+                  type: dataTypes.STRING(50),
                   alowNull: false,
                   unique: true
             },
             pass: {
-                  type: DataTypes.VARCHAR(60),
+                  type: dataTypes.STRING(60),
                   alowNull: false
             },
             avatar: {
-                  type: DataTypes.STRING(100),
+                  type: dataTypes.STRING(100),
             },
-            
+
             birthday: {
-                  type: DataTypes.DATETIME
+                  type: dataTypes.DATE,
             },
-            
+
             address: {
-                  type: DataTypes.VARCHAR(50),
+                  type: dataTypes.STRING(50),
             },
             favorite_movie: {
-                  type: DataTypes.VARCHAR(50),
+                  type: dataTypes.STRING(50),
             },
-            
+
       };
       let config = {
+            tableName: "user",
             timestamps: true,
             createdAt: 'created_at',
             updatedAt: 'updated_at'
-        }
+      }
 
-       const User = sequelize.define(alias,cols,config);
+      const User = sequelize.define(alias, cols, config);
 
-       User.associate = function(models) {
+      User.associate = function (models) {
 
-        User.belongsTo(models.User, {
-            as: "user", /* le pertenece a un user*/
-            foreignKey: "user_id"
-        })
+            User.belongsTo(models.User, {
+                  as: "user",
+                  /* le pertenece a un user*/
+                  foreignKey: "user_id"
+            })
 
-        User.HasOne(models.Shop-Cart, { 
-            as: "movie",
-            through: "shopcart_movie", /* tabla pivot */
-            foreignKey: "movie_id",
-            otherKey: "user_id", /* es la otra llave */
-            timestamps: false 
-        })
-        
-    }
+      }
 
-    return Movie
+      return User;
 };

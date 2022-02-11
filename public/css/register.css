@@ -1,18 +1,20 @@
 @import url("footer.css");
 
 .register-form .form-regis {
-  width: 80%;
-  height: 50%;
   position: relative;
-  left: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
+
 .register-form .terms {
   position: relative;
-  left: 3rem;
   color: white;
-    font-size: 0.9rem;
-    text-decoration: none;
+  font-size: 0.9rem;
+  text-decoration: none;
 }
+
 .register-form .capa-fondo {
   background-attachment: fixed;
   background-repeat: space;
@@ -71,13 +73,16 @@
   height: -moz-fit-content;
   padding: 1rem;
 }
+
 /* Form inputs */
+.register-form .file-avatar {
+  overflow: hidden;
+}
 
 .register-form .input-container,
 .register-form .button-container {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
   width: 100%;
 }
 
@@ -85,7 +90,6 @@
   align-items: center;
   width: 90%;
   position: relative;
-  left: 2rem;
 }
 
 .register-form span.error-message {
@@ -139,7 +143,6 @@
 
 .register-form .chekk {
   position: relative;
-  left: 3rem;
   margin-top: 2rem;
 }
 
@@ -154,7 +157,6 @@
 .register-form .check label {
   margin-right: 10px;
   position: relative;
-  top: -1px;
   margin-top: 2rem;
 }
 
@@ -171,7 +173,7 @@
 
 }
 
-.register-form .btnn-submit{
+.register-form .btnn-submit {
   color: rgb(115, 255, 1);
   font-size: 15px;
   font-weight: bold;
@@ -190,6 +192,7 @@
 /* Tablet */
 
 @media screen and (min-width: 475px) {
+
   .register-form .input-container,
   .register-form .button-container,
   .register-form .input-file-container {
@@ -203,6 +206,7 @@
 }
 
 @media screen and (min-width: 768px) {
+
   .register-form .input-container,
   .register-form .button-container,
   .register-form .input-file-container {
@@ -219,19 +223,19 @@
 }
 
 .register-form .formulario .file-avatar .input-avatar {
-  display: none; 
+  display: none;
 }
 
-.register-form .formulario .file-avatar{
+.register-form .formulario .file-avatar {
   cursor: pointer;
   padding: 4px;
 }
 
 .register-form .formulario .file-avatar .input-avatar {
-  display: none; 
+  display: none;
 }
 
-.register-form .avatar{
+.register-form .avatar {
   font-size: 18px;
   margin: inherit;
 }

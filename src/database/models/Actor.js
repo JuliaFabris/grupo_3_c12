@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         
         id: {
-            type: dataTypes.INT(11).UNSIGNED,
+            type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -13,15 +13,16 @@ module.exports = (sequelize, dataTypes) => {
         },
         
         name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         last_name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         }  
     };
     let config = {
+        tableName: "actor",
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -41,5 +42,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return Actor
+    return Actor;
 };

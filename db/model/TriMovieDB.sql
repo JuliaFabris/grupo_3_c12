@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`movie` (
   `length` INT NOT NULL,
   `rating` INT NOT NULL,
   `sinopsis` TEXT NULL,
+  `price` DECIMAL NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   INDEX `fk_movie_director1_idx` (`director_id` ASC) VISIBLE,
@@ -104,24 +105,6 @@ CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`actor` (
   `lastname` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `trimovie-grupo3`.`shop_cart`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`shop_cart` (
-  `id` INT NOT NULL,
-  `user_id` INT NOT NULL,
-  `items_list_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `items_list_id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-  INDEX `fk_carrito_user1_idx` (`user_id` ASC) VISIBLE,
-  CONSTRAINT `fk_carrito_user1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `trimovie-grupo3`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -162,50 +145,6 @@ CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`actor_has_movie` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_actor_has_movie_movie1`
-    FOREIGN KEY (`movie_id`)
-    REFERENCES `trimovie-grupo3`.`movie` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `trimovie-grupo3`.`favorites`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`favorites` (
-  `user_id` INT NOT NULL,
-  `movie_id` INT NOT NULL,
-  PRIMARY KEY (`user_id`, `movie_id`),
-  INDEX `fk_user_has_movie_movie1_idx` (`movie_id` ASC) VISIBLE,
-  INDEX `fk_user_has_movie_user1_idx` (`user_id` ASC) VISIBLE,
-  CONSTRAINT `fk_user_has_movie_user1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `trimovie-grupo3`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_movie_movie1`
-    FOREIGN KEY (`movie_id`)
-    REFERENCES `trimovie-grupo3`.`movie` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `trimovie-grupo3`.`item_list`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`item_list` (
-  `shop_cart_id` INT NOT NULL,
-  `movie_id` INT NOT NULL,
-  PRIMARY KEY (`shop_cart_id`, `movie_id`),
-  INDEX `fk_shop_cart_has_movie_movie1_idx` (`movie_id` ASC) VISIBLE,
-  INDEX `fk_shop_cart_has_movie_shop_cart1_idx` (`shop_cart_id` ASC) VISIBLE,
-  CONSTRAINT `fk_shop_cart_has_movie_shop_cart1`
-    FOREIGN KEY (`shop_cart_id`)
-    REFERENCES `trimovie-grupo3`.`shop_cart` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_shop_cart_has_movie_movie1`
     FOREIGN KEY (`movie_id`)
     REFERENCES `trimovie-grupo3`.`movie` (`id`)
     ON DELETE NO ACTION

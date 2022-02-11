@@ -10,8 +10,7 @@ let productsRouter = require('./routes/products');
 let adminRouter = require('./routes/admin');
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
-const { carrito } = require('./controllers/userController');
-let peliculasRouter = require('/router/peliculas');
+let peliculasRouter = require('./routes/peliculas');
 const PORT = 3000;
 
 

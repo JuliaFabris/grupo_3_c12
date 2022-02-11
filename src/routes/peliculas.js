@@ -1,5 +1,5 @@
 let express = require ('express');
-let router = express.router();
+let router = express.Router();
 let peliculasController = require('../controllers/peliculasController');
 /*crear*/
 
