@@ -2,23 +2,23 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
     let alias = 'ShopCart'; 
     let cols = {//se crean las columnas
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
        
-        title: {
-            type: dataTypes.STRING(500),
+        movie_title: {
+            type: dataTypes.VARCHAR(50),
             allowNull: false
         },
         
         price: {
-            type: dataTypes.DECIMAL(3, 1).UNSIGNED,
+            type: dataTypes.INT(10).UNSIGNED,
             allowNull: false
         },
         total: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             allowNull: false
         },
        
@@ -31,17 +31,17 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
     }
     const ShopCart = sequelize.define(alias,cols,config);
 
-    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
+    //relaciones con los otros modelos (Genre - Actor)
 
     ShopCart.associate = function(models) {
 
         ShopCart.belongsTo(models.User, {
-            as: "user", /* le pertenece a un genero */
+            as: "user", /* le pertenece a un user*/
             foreignKey: "user_id"
         })
 
-        ShopCart.belongsToMany(models.Movie, { 
-            as: "actors",
+        ShopCart.HasMany(models.Movie, { 
+            as: "movies",
             through: "shopcart_movie", /* tabla pivot */
             foreignKey: "movie_id",
             otherKey: "user_id", /* es la otra llave */

@@ -4,14 +4,14 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Genre';
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         
         category_name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.VARCHAR(50),
             allowNull: false
         },
         
@@ -23,12 +23,12 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Genre = sequelize.define(alias, cols, config);
 
-    //relaciones con el modelo Movie
+    //relaciones 
 
     Genre.associate = function(models) {
-        Genre.hasMany(models.Movie, {
+        Genre.BelongsToMany(models.Movie, {
             as: "movies",
-            foreignKey: "genre_id"
+            foreignKey: "movie_id"
         })
     }
 
