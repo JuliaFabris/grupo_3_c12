@@ -99,7 +99,6 @@ h1 {
   margin: 20px;
   width: 95%;
   position: relative;
-
   background-image: linear-gradient(to left, #f11712, #0099f7) !important;
   height: 1px;
 }
@@ -448,7 +447,7 @@ footer div.redes-flex ul li {
   
  
 
- @media (max-width: 1124px){
+ @media (max-width: 1120px){
    .containertarjeta{
    font-size: 15px;
    }
