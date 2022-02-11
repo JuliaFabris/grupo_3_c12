@@ -5,19 +5,19 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
 
         },
         
-        first_name: {
-            type: dataTypes.STRING(100),
+        name: {
+            type: dataTypes.VARCHAR(50),
             allowNull: false
         },
         last_name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.VARCHAR(50),
             allowNull: false
         }  
     };
@@ -29,15 +29,14 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Actor = sequelize.define(alias, cols, config); 
 
-    //Relaciones con el modelo Movie
- 
+    //Relaciones
     Actor.associate = function(models) {
 
         Actor.belongsToMany(models.Movie, {
              as: "movies",
              through: "actor_movie",
-             foreignKey: "actor_id",
-             otherKey: "movie_id",
+             foreignKey: "movie_id",
+             otherKey: "actor_id",
              timestamps: false
         })
     }

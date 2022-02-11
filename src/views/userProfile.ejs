@@ -15,14 +15,18 @@
 
           <h1>Datos personales</h1>  
         <ul>
-          <li><p>Nombre</p> <%= session.name %> </li>
-          <li><p>Apellido</p> <%= session.lastname %> <input type="button" value="editar"> </li>
-          <li><p>Email</p> <%= session.email %> <input type="button" value="editar"> </li>
-          <li><p>Rol</p> <%= session.rol %> <input type="button" value="editar"> </li>
-        
+          <li><p id="name">Nombre:</p> <%= session.name %> <input type="button" value="editar">  </li>
+          <li><p>Apellido:</p> <%= session.lastname %> <input type="button" value="editar"> </li>
+          <li><p>Email:</p> <%= session.email %> <input type="button" value="editar"> </li>
+          <li><p>Rol:</p> <%= session.rol %> <input type="button" value="editar"> </li>
+          <li><p>Contraseña:</p> <p>***********</p> <input type="button" value="Cambiar contraseña"> </li>
+        </ul>
         </div>
+
+        
        
     </div>
+    <script src="js/editUser.js"></script>
 </main>
            <%- include('partials/footer1') %>  
 

@@ -1,7 +1,5 @@
-
-
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Genre';
+    let alias = 'movies';
     let cols = {
         id: {
             type: dataTypes.INT(11).UNSIGNED,
@@ -10,8 +8,12 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         
-        category_name: {
-            type: dataTypes.VARCHAR(50),
+        shop_cart_id: {
+            type: dataTypes.INT(11).UNSIGNED,
+            allowNull: false
+        },
+        movie_id: {
+            type: dataTypes.INT(11).UNSIGNED,
             allowNull: false
         },
         
@@ -25,12 +27,11 @@ module.exports = (sequelize, dataTypes) => {
 
     //relaciones 
 
-    Genre.associate = function(models) {
-        Genre.BelongsToMany(models.Movie, {
-            as: "movies",
-            foreignKey: "movie_id"
-        })
-    }
-
-    return Genre
+   // tengo    que ver qué va acà en la pivot, corregir
+  //  Genre.associate = function(models) {
+     //   Genre.BelongsToMany(models.Movie, {
+       //     as: "movies",
+      //      foreignKey: "movie_id"
+      //  })
+  //  }
 };

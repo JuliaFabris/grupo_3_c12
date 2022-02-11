@@ -45,6 +45,11 @@ header .left-container .searcher-bar.active .pre-searcher {
     left: 0;
 }
 
+#car{
+    position: relative;
+    left: 15rem;
+}
+
 header .left-container .searcher-bar {
     position: relative;
 }
@@ -86,6 +91,7 @@ header .container-logo {
     height: 100%;
     position: relative;
     right: 1rem;
+    left: 17rem;
 }
 
 header .container-logo img {
@@ -191,3 +197,19 @@ header .container-icon i {
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
   
+
+  .raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  
+}
+.raiss{
+    position: relative;
+    left: 30rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:-apple-system,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
