@@ -11,6 +11,7 @@ let adminRouter = require('./routes/admin');
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
 const { carrito } = require('./controllers/userController');
+let peliculasRouter = require('/router/peliculas');
 const PORT = 3000;
 
 
@@ -35,7 +36,7 @@ app.use('/products', productsRouter);
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
 app.use('/faq', faqRouter);
-
+app.use('/peliculas', peliculasRouter);
 
 
 app.use((req, res, next) => {

@@ -1,0 +1,48 @@
+<%- include('header') -%>
+<h1>MOVIE CREATE</h1>
+<form action="/peliculas/crear" method="post">
+    <div>
+        <label for="">TITTLE</label>
+        <input type="text" name="title">
+    </div>
+    <div>
+        <label for="">DIRECTOR</label>
+        <input type="text" name="director">
+    </div>
+    <div>
+        <label for="">RATING</label>
+        <input type="text" name="rating">
+    </div>
+    <div>
+        <label for="">DURATION</label>
+        <input type="text" name="duration">
+    </div>
+    <div>
+        <label for="">YEAR</label>
+        <input type="date" name="year">
+    </div>
+    <div>
+    <label for="">TRAILER</label>
+    <input type="text" name="trailer">
+    </div>
+    <div>
+    <label for="">SINOPSIS</label>
+    <input type="text" name="sinopsis">
+    </div>
+    <div>
+    <label for="">IMAGE</label>
+    <input type="image" name="image">
+    </div>
+    <div>
+        <label for="">GENRES</label>
+        <select name="genres">
+            <% for (let i = 0; i < genres.lenght; i++) { %>
+            <option value="<%=genres[i].id%>">
+            <%=genres[i].name%>
+            </option>
+            <% } %>
+        </select>
+    </div>
+    <button type="submit">CREAR PELICULA</button>
+</form>
+<%- include('footer') -%>
