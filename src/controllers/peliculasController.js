@@ -30,9 +30,7 @@ listar: function (req,res) {
     res.render("listadoPeliculas", {movies:movies})
 },
 detalle: function(req,res) {
-    db.movie.findByPK(req.params.id, {
-        include: [{association: "genres"}, {association: "actors"}]
-    })
+    db.Movie.findByPk(req.params.id)
     .then(function(movie){
         res.render("detallePelicula", {movie:movie});
     })
@@ -73,7 +71,7 @@ borrar: function(req,res) {
     res.redirect("/peliculas");
 },
 peliculasPorGenero: (req, res) => {
-    
+
 }
 }
 module.exports = peliculasController;

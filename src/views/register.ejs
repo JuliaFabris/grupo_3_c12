@@ -12,75 +12,79 @@
 
 <body>
     <main class="register-form">
-    <div class="capa-fondo">
-        <img src="/design/images/icons/logo.png " alt="">
-        <div class="form-container" style="width: 55%;">
-            <h1>Registro</h1>
-            <hr>
+        <div class="capa-fondo">
+            <img src="/design/images/icons/logo.png " alt="">
+            <div class="form-container" style="width: 55%;">
+                <h1>Registro</h1>
+                <hr>
 
-            <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-ad" >
-                <div class="form-regis">
+                <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-ad">
+                    <div class="form-regis">
 
-                    <div class="input-container">
-                        <input class="input-style" type="name" name="name" placeholder="Ingrese su Nombre" value="<%= locals.old && old.name %>">
-                        <% if (typeof errors != "undefined" && errors.name) { %>
+                        <div class="input-container">
+                            <input class="input-style" type="name" name="name" placeholder="Ingrese su Nombre"
+                                value="<%= locals.old && old.name %>">
+                            <% if (typeof errors != "undefined" && errors.name) { %>
                             <span class="text-danger"><%= errors.name.msg %> </span>
-                        <% } %>
-                    </div>
+                            <% } %>
+                        </div>
 
-                    <div class="input-container">
-                        <input class="input-style" type="surname" name="lastname" placeholder="Ingrese su Apellido" value="<%= locals.old && old.lastname %>">
-                        <% if (typeof errors != "undefined" && errors.lastname) { %>
+                        <div class="input-container">
+                            <input class="input-style" type="surname" name="lastname" placeholder="Ingrese su Apellido"
+                                value="<%= locals.old && old.lastname %>">
+                            <% if (typeof errors != "undefined" && errors.lastname) { %>
                             <span class="text-danger"><%= errors.lastname.msg %> </span>
-                        <% } %>
-                    </div>
-                    
-                    <div class="input-container">
-                        <input class="input-style" type="email" name="email" placeholder="Ingrese su Email" value="<%= locals.old && old.email %>">
-                        <% if (typeof errors != "undefined" && errors.email) { %>
-                            <span class="text-danger"><%= errors.email.msg %> </span>
-                        <% } %>
-                    </div>
-             
-                    <div class="input-container">
-                        <input class="input-style" type="password" name="pass1" placeholder="Ingrese su Contraseña">
-                        <% if (typeof errors != "undefined" && errors.pass1) { %>
-                            <span class="text-danger"><%= errors.pass1.msg %> </span>
-                        <% } %>
-                    </div>
-                    
-                    <div class="input-container">
-                        <input class="input-style" type="password" name="pass2" placeholder="Reingrese su Contraseña">
-                        <% if (typeof errors != "undefined" && errors.pass2) { %>
-                            <span class="text-danger"><%= errors.pass2.msg %> </span>
-                        <% } %>
-                    </div>
-                   
-                    <div class="file-avatar">
-                        <h1 class="avatar">Ingrese una foto</h1>
-                        <input class="input-avatar" type="file" name="avatarimage">
-                        <% if (locals.errors && errors.image) { %>
-                            <small class="text-danger"><%= errors.avatarimage.msg %> </small>
-                        <% } %> 
-                    </div>
-                   
-                    <div class="button-container">
-                        <span class="error-message">Hubo errores en el envío</span>
-                        <button id="btnregistro"type="submit" class="btn btn-submit">Registrarme</button>
-                    </div>
+                            <% } %>
+                        </div>
 
-                    <a class="btnn-submit" href="/user/login">Ya tengo cuenta</a>
-                 <div class="check">
-                        <label class="terms "for="terms">Acepto los <a href="">términos y condiciones</a></label>
-                        <input class="chekk" type="checkbox" name="terms" id="terms">
-                        <span class="error-message">Debes aceptar los términos y condiciones</span>
-                  
-                </div>
-            </form>
+                        <div class="input-container">
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su Email"
+                                value="<%= locals.old && old.email %>">
+                            <% if (typeof errors != "undefined" && errors.email) { %>
+                            <span class="text-danger"><%= errors.email.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="input-container">
+                            <input class="input-style" type="password" name="pass1" placeholder="Ingrese su Contraseña">
+                            <% if (typeof errors != "undefined" && errors.pass1) { %>
+                            <span class="text-danger"><%= errors.pass1.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="input-container">
+                            <input class="input-style" type="password" name="pass2"
+                                placeholder="Reingrese su Contraseña">
+                            <% if (typeof errors != "undefined" && errors.pass2) { %>
+                            <span class="text-danger"><%= errors.pass2.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="file-avatar">
+                            <h1 class="avatar">Ingrese una foto</h1>
+                            <input class="input-avatar" type="file" name="avatarimage">
+                            <% if (locals.errors && errors.image) { %>
+                            <small class="text-danger"><%= errors.avatarimage.msg %> </small>
+                            <% } %>
+                        </div>
+                        <div class="check">
+                            <label class="terms " for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                            <input class="chekk" type="checkbox" name="terms" id="terms">
+                            <span class="error-message">Debes aceptar los términos y condiciones</span>
+
+                        </div>
+                        <div class="button-container">
+                            <span class="error-message">Hubo errores en el envío</span>
+                            <button id="btnregistro" type="submit" class="btn btn-submit">Registrarme</button>
+                        </div>
+
+                        <a class="btnn-submit" href="/user/login">Ya tengo cuenta</a>
+
+                </form>
+            </div>
         </div>
-    </div>
-</main>
-           <%- include('partials/footer1') %>  
+    </main>
+    <%- include('partials/footer1') %>
 
 </body>
 
