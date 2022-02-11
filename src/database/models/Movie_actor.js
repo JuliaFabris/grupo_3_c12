@@ -1,5 +1,3 @@
-
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Genre';
     let cols = {
@@ -10,8 +8,12 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         
-        category_name: {
-            type: dataTypes.VARCHAR(50),
+        actor_id: {
+            type: dataTypes.INT(11).UNSIGNED,
+            allowNull: false
+        },
+        movie_id: {
+            type: dataTypes.INT(11).UNSIGNED,
             allowNull: false
         },
         
@@ -23,14 +25,14 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Genre = sequelize.define(alias, cols, config);
 
-    //relaciones 
+    //relaciones corregir para la pivot
 
-    Genre.associate = function(models) {
-        Genre.BelongsToMany(models.Movie, {
-            as: "movies",
-            foreignKey: "movie_id"
-        })
-    }
+    //Genre.associate = function(models) {
+      //  Genre.BelongsToMany(models.Movie, {
+     //       as: "movies",
+        //    foreignKey: "movie_id"
+      //  })
+  //  }
 
     return Genre
 };

@@ -46,8 +46,7 @@
                 id="category"
                 class="input-style"
                 placeholder="Género"
-                value="<%= category.id %>"
-              />
+                value="<%= category.id %>"/>
               <%= category.name %>
             </label>
             <% }) %>
@@ -60,8 +59,7 @@
               type="year"
               name="age"
               placeholder="Año"
-              value="<%= producto.age %>"
-            />
+              value="<%= producto.age %>"/>
             <span class="error-message">Debes ingresar un año</span>
           </div>
           <div class="input-container">
@@ -71,8 +69,7 @@
               type="number"
               name="price"
               placeholder="Precio"
-              value="<%= producto.precio %>"
-            />
+              value="<%= producto.precio %>"/>
             <span class="error-message">Debes ingresar un precio</span>
 
             <div class="input-container">
@@ -81,9 +78,8 @@
                 type="text"
                 name="description"
                 style="position: relative; right: 1rem; top: 1rem"
-                placeholder="Descripción"
-              >
-<%= producto.descripcion %></textarea>
+                placeholder="Descripción">
+             <%= producto.descripcion %></textarea>
               <span class="error-message">Debes ingresar una descripción</span>
             </div>
 
@@ -94,8 +90,7 @@
                   name="reparto"
                   style="position: relative; right: 1rem; top: 1rem"
                   ;
-                  placeholder="Reparto"
-                />
+                  placeholder="Reparto"/>
                 <span class="error-message">Debes ingresar el reparto</span>
               </div>
               <div class="input-container">
@@ -105,8 +100,7 @@
                   name="direction"
                   style="position: relative; right: 1rem; top: 1rem"
                   ;
-                  placeholder="Ingresa quien dirige la película"
-                />
+                  placeholder="Ingresa quien dirige la película"/>
                 <span class="error-message">Debes ingresar un nombre</span>
               </div>
               <div class="input-container">
@@ -116,8 +110,7 @@
                   name="duration"
                   style="position: relative; right: 1rem; top: 1rem"
                   ;
-                  placeholder="Duración"
-                />
+                  placeholder="Duración"/>
                 <span class="error-message">Debes ingresar una cantidad de minutos</span>
               </div>
               <div class="input-container">
@@ -127,8 +120,7 @@
                   name="trailer"
                   style="position: relative; right: 1rem; top: 1rem"
                   ;
-                  placeholder="Url del trailer"
-                />
+                  placeholder="Url del trailer"/>
                 <span class="error-message">Debes ingresar una url</span>
               </div>
 
@@ -137,25 +129,20 @@
                 class="input-style"
                 type="file"
                 name="file"
-                placeholder="Archivo"
-              />
+                placeholder="Archivo"/>
               <figure>
                 <img
-                  src="/design/images/products/<%= producto.image %>"
-                  alt=""
-                />
+                  src="/design/images/products/<%= producto.image %>"/>
               </figure>
             </div>
 
             <span class="error-message">Hubo errores en el formulario</span>
             <center>
-              <buttom class="btn-cont" type="submit" value="Guardar"
-                >Guardar</buttom
-              >
+              <buttom class="btn-cont" type="submit" value="Guardar">Guardar</buttom>
             </center>
           </div>
         </div>
-        <input type="submit" />
+        <input type="submit">/>
       </form>
     </div>
   </body>

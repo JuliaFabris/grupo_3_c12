@@ -1,160 +1,218 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Versión del servidor:         10.1.38-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win32
--- HeidiSQL Versión:             11.3.0.6295
--- --------------------------------------------------------
+-- MySQL Workbench Forward Engineering
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema trimovie-grupo3
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema trimovie-grupo3
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `trimovie-grupo3` DEFAULT CHARACTER SET utf8 ;
+USE `trimovie-grupo3` ;
+
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`role`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`role` (
+  `id` INT NOT NULL,
+  `tipo` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
 
--- Volcando estructura de base de datos para trimovie
-CREATE DATABASE IF NOT EXISTS `trimovie` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `trimovie`;
-
--- Volcando estructura para tabla trimovie.actor
-CREATE TABLE IF NOT EXISTS `actor` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '',
-  `last_name` varchar(50) NOT NULL DEFAULT '',
-  `movie_id` int(11) NOT NULL,
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`user` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(70) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `avatar` VARCHAR(45) NOT NULL,
+  `role_id` INT NOT NULL,
+  `date` DATE NOT NULL,
+  `phone` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_actor_actor_movie` (`movie_id`),
-  CONSTRAINT `FK_actor_actor_movie` FOREIGN KEY (`movie_id`) REFERENCES `actor_movie` (`actor_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_user_role_idx` (`role_id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_role`
+    FOREIGN KEY (`role_id`)
+    REFERENCES `trimovie-grupo3`.`role` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
--- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla trimovie.actor_movie
-CREATE TABLE IF NOT EXISTS `actor_movie` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `movie_id` int(11) NOT NULL,
-  `actor_id` int(11) NOT NULL,
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`director`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`director` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id` (`id`),
-  KEY `actor_id` (`actor_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
 
--- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla trimovie.genre
-CREATE TABLE IF NOT EXISTS `genre` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(50) NOT NULL DEFAULT '',
-  `movie_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `movie_id` (`movie_id`),
-  CONSTRAINT `movie_id` FOREIGN KEY (`movie_id`) REFERENCES `movie_genre` (`movie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla trimovie.movie
-CREATE TABLE IF NOT EXISTS `movie` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) NOT NULL,
-  `description` longtext NOT NULL,
-  `actor` varchar(50) NOT NULL,
-  `actor_id` int(11) NOT NULL,
-  `genre` varchar(50) NOT NULL,
-  `direction` varchar(50) NOT NULL,
-  `duration` int(11) NOT NULL DEFAULT '0',
-  `genre_id` int(11) NOT NULL,
-  `awards` int(11) DEFAULT NULL,
-  `rating` int(11) DEFAULT NULL,
-  `release_date` date NOT NULL,
-  `price` int(10) unsigned NOT NULL,
-  `shop_cart_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `FK_movie_movie_genre` (`genre_id`),
-  KEY `FK_movie_actor_movie` (`actor_id`),
-  KEY `FK_movie_movie_cart` (`shop_cart_id`),
-  CONSTRAINT `FK_movie_actor_movie` FOREIGN KEY (`actor_id`) REFERENCES `actor_movie` (`actor_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_movie_movie_cart` FOREIGN KEY (`shop_cart_id`) REFERENCES `movie_cart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_movie_movie_genre` FOREIGN KEY (`genre_id`) REFERENCES `movie_genre` (`genre_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla trimovie.movie_cart
-CREATE TABLE IF NOT EXISTS `movie_cart` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `movie_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`movie`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`movie` (
+  `id` INT NOT NULL,
+  `title` VARCHAR(45) NOT NULL,
+  `director_id` INT NOT NULL,
+  `year` INT NOT NULL,
+  `image` VARCHAR(80) NULL,
+  `trailer` VARCHAR(80) NULL,
+  `length` INT NOT NULL,
+  `rating` INT NOT NULL,
+  `sinopsis` TEXT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK__user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_movie_director1_idx` (`director_id` ASC) VISIBLE,
+  CONSTRAINT `fk_movie_director1`
+    FOREIGN KEY (`director_id`)
+    REFERENCES `trimovie-grupo3`.`director` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
--- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla trimovie.movie_genre
-CREATE TABLE IF NOT EXISTS `movie_genre` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_id` int(11) NOT NULL,
-  `genre_id` int(11) NOT NULL,
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`genre`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`genre` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `movie_id` (`movie_id`),
-  KEY `genre_id` (`genre_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
 
--- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla trimovie.role
-CREATE TABLE IF NOT EXISTS `role` (
-  `id` int(10) unsigned NOT NULL,
-  `admin` int(10) unsigned NOT NULL,
-  `user` int(10) unsigned NOT NULL,
-  `guest` int(10) unsigned NOT NULL,
-  `user_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla trimovie.shop_cart
-CREATE TABLE IF NOT EXISTS `shop_cart` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `movie_id` int(10) unsigned NOT NULL,
-  `user_id` int(11) unsigned DEFAULT NULL,
-  `movie_tltle` varchar(50) NOT NULL,
-  `total` int(11) unsigned NOT NULL,
-  `price` int(10) unsigned NOT NULL,
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`actor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`actor` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_shop_cart_movie_cart` (`movie_id`),
-  KEY `FK_shop_cart_movie_cart_2` (`user_id`),
-  CONSTRAINT `FK_shop_cart_movie_cart` FOREIGN KEY (`movie_id`) REFERENCES `movie_cart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_shop_cart_movie_cart_2` FOREIGN KEY (`user_id`) REFERENCES `movie_cart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
 
--- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla trimovie.user
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` tinytext NOT NULL,
-  `last_name` tinytext NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `avatar` varchar(50) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `favorite_movie` varchar(50) NOT NULL,
-  `shop_cart_id` int(10) unsigned DEFAULT NULL,
-  `role` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE KEY `Email` (`email`) USING BTREE,
-  KEY `FK_user_shop_cart` (`shop_cart_id`),
-  KEY `FK_user_role` (`role`),
-  CONSTRAINT `FK_user_role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_user_shop_cart` FOREIGN KEY (`shop_cart_id`) REFERENCES `shop_cart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`shop_cart`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`shop_cart` (
+  `id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `items_list_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `items_list_id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_carrito_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_carrito_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `trimovie-grupo3`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
--- La exportación de datos fue deseleccionada.
 
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`movie_has_genre`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`movie_has_genre` (
+  `movie_id` INT NOT NULL,
+  `genre_id` INT NOT NULL,
+  PRIMARY KEY (`movie_id`, `genre_id`),
+  INDEX `fk_movie_has_genre_genre1_idx` (`genre_id` ASC) VISIBLE,
+  INDEX `fk_movie_has_genre_movie1_idx` (`movie_id` ASC) VISIBLE,
+  CONSTRAINT `fk_movie_has_genre_movie1`
+    FOREIGN KEY (`movie_id`)
+    REFERENCES `trimovie-grupo3`.`movie` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_movie_has_genre_genre1`
+    FOREIGN KEY (`genre_id`)
+    REFERENCES `trimovie-grupo3`.`genre` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`actor_has_movie`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`actor_has_movie` (
+  `actor_id` INT NOT NULL,
+  `movie_id` INT NOT NULL,
+  PRIMARY KEY (`actor_id`, `movie_id`),
+  INDEX `fk_actor_has_movie_movie1_idx` (`movie_id` ASC) VISIBLE,
+  INDEX `fk_actor_has_movie_actor1_idx` (`actor_id` ASC) VISIBLE,
+  CONSTRAINT `fk_actor_has_movie_actor1`
+    FOREIGN KEY (`actor_id`)
+    REFERENCES `trimovie-grupo3`.`actor` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_actor_has_movie_movie1`
+    FOREIGN KEY (`movie_id`)
+    REFERENCES `trimovie-grupo3`.`movie` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`favorites`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`favorites` (
+  `user_id` INT NOT NULL,
+  `movie_id` INT NOT NULL,
+  PRIMARY KEY (`user_id`, `movie_id`),
+  INDEX `fk_user_has_movie_movie1_idx` (`movie_id` ASC) VISIBLE,
+  INDEX `fk_user_has_movie_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_has_movie_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `trimovie-grupo3`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_has_movie_movie1`
+    FOREIGN KEY (`movie_id`)
+    REFERENCES `trimovie-grupo3`.`movie` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `trimovie-grupo3`.`item_list`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trimovie-grupo3`.`item_list` (
+  `shop_cart_id` INT NOT NULL,
+  `movie_id` INT NOT NULL,
+  PRIMARY KEY (`shop_cart_id`, `movie_id`),
+  INDEX `fk_shop_cart_has_movie_movie1_idx` (`movie_id` ASC) VISIBLE,
+  INDEX `fk_shop_cart_has_movie_shop_cart1_idx` (`shop_cart_id` ASC) VISIBLE,
+  CONSTRAINT `fk_shop_cart_has_movie_shop_cart1`
+    FOREIGN KEY (`shop_cart_id`)
+    REFERENCES `trimovie-grupo3`.`shop_cart` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_shop_cart_has_movie_movie1`
+    FOREIGN KEY (`movie_id`)
+    REFERENCES `trimovie-grupo3`.`movie` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

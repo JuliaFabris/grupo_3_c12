@@ -1,0 +1,56 @@
+<%- include('header') -%>
+<h1>MOVIE EDIT</h1>
+<form action="/peliculas/editar<%=movie.id%>" method="post">
+    <div>
+        <label for="">TITTLE</label>
+        <input type="text" name="title" value="<%=movie.title%>">
+    </div>
+    <div>
+        <label for="">DIRECTOR</label>
+        <input type="text" name="director" value="<%=movie.director%">
+    </div>
+    <div>
+        <label for="">RAiTING</label>
+        <input type="text" name="raiting" value="<%=movie.raiting%">
+    </div>
+    <div>
+        <label for="">DURATION</label>
+        <input type="text" name="duration>
+    </div>
+    <div>
+        <label for="">YEAR</label>
+        <input type="date" name="year">
+    </div>
+    <div>
+    <label for="">TRAILER</label>
+    <input type="text" name="trailer" value="<%=movie.trailer%">
+    </div>
+    <div>
+    <label for="">SINOPSIS</label>
+    <input type="text" name="sinopsis" value="<%=movie.sinopsis%">
+    </div>
+    <div>
+    <label for="">IMAGE</label>
+    <input type="image" name="image" value="<%=movie.image%">
+    </div>
+    <div>
+        <label for="">GENRES</label>
+        <select name="genres">
+            <% for (let i = 0; i < genres.lenght; i++) { %>
+                <% if (genres[i].id == movie.genre_id) { %>
+                    <option value="<%=genres[i].id%>" selected>
+                        <%=genres[i].name%> 
+                        </option>
+                    <% } else { %>
+                        <option value="<%=genres[i].id%>">
+                            <%=genres[i].name%>
+                            </option>
+
+                        <% } %>
+           
+            <% } %>
+        </select>
+    </div>
+    <button type="submit">Edit Movie</button>
+</form>
+<%- include('footer') -%>

@@ -1,5 +1,3 @@
-
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Genre';
     let cols = {
@@ -10,8 +8,12 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         
-        category_name: {
-            type: dataTypes.VARCHAR(50),
+        genre_id: {
+            type: dataTypes.INT(11).UNSIGNED,
+            allowNull: false
+        },
+        movie_id: {
+            type: dataTypes.INT(11).UNSIGNED,
             allowNull: false
         },
         
@@ -31,6 +33,3 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "movie_id"
         })
     }
-
-    return Genre
-};

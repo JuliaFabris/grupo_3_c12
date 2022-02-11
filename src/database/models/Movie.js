@@ -2,43 +2,50 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
     let alias = 'Movie'; 
     let cols = {//se crean las columnas
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
        
         title: {
-            type: dataTypes.STRING(500),
+            type: dataTypes.VARCHAR(500),
             allowNull: false
         },
         description: {
-            type: dataTypes.STRING(500),
+            type: dataTypes.VARCHAR(500),
             allowNull: false
         },
         direction: {
-            type: dataTypes.STRING(500),
+            type: dataTypes.VARCHAR(50),
+            allowNull: false
+        },
+        actors: {
+            type: dataTypes.VARCHAR(50),
             allowNull: false
         },
         rating: {
-            type: dataTypes.DECIMAL(3, 1).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             allowNull: false
         },
         price: {
-            type: dataTypes.DECIMAL(3, 1).UNSIGNED,
+            type: dataTypes.INT(10).UNSIGNED,
             allowNull: false
         },
         awards: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             allowNull: false
         },
         release_date: {
             type: dataTypes.DATEONLY,
             allowNull: false
         },
-        duration: dataTypes.BIGINT(10),
-        genre_id: {
-            type: dataTypes.BIGINT(10),
+        duration: {
+            type: dataTypes.DATEONLY,
+            allowNull: false
+        },
+        genre: {
+            type: dataTypes.VARCHAR(50),
             allowNull: false
         }
     };
@@ -54,16 +61,24 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
 
     Movie.associate = function(models) {
 
-        Movie.belongsTo(models.Genre, {
-            as: "genre", /* le pertenece a un genero */
+        Movie.HasMany(models.Genre, {
+            as: "genres", /* le pertenece a uno o más generos */
             foreignKey: "genre_id"
         })
 
-        Movie.belongsToMany(models.Actor, { 
+        Movie.HasMany(models.Actor, { 
             as: "actors",
             through: "actor_movie", /* tabla pivot */
             foreignKey: "movie_id",
             otherKey: "actor_id", /* es la otra llave */
+            timestamps: false /* si queremos que se guarde el timestamps tenemos que configurar el createdAt y el updatedAt */
+        })
+
+        Movie.BelongsToMany(models.Shop-Cart, { 
+            as: "shop-carts",
+            through: "movie_cart", /* tabla pivot */
+            foreignKey: "shop_cart_id",
+            otherKey: "user_id", /* es la otra llave */
             timestamps: false /* si queremos que se guarde el timestamps tenemos que configurar el createdAt y el updatedAt */
         })
         

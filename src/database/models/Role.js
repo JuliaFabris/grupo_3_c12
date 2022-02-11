@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Rol';
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
@@ -33,9 +33,9 @@ module.exports = (sequelize, dataTypes) => {
     //relaciones con el modelo Movie
 
     Rol.associate = function(models) {
-        Role.hasMany(models.User, {
+        Role.belongsToMany(models.User, {
             as: "users",
-            foreignKey: "role_id"
+            foreignKey: "user_id"
         })
     }
 
