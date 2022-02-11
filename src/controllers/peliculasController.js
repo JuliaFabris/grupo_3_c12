@@ -1,3 +1,12 @@
+let {
+    getMovies,
+    getGenres,
+} = require('../database'), {
+    getListAllUniqueAtributes
+} = require('../middlewares/ourLib')
+
+// momentaneo
+
 let db = require('../database/models');
 
 let peliculasController = {
@@ -30,9 +39,16 @@ listar: function (req,res) {
     res.render("listadoPeliculas", {movies:movies})
 },
 detalle: function(req,res) {
-    db.Movie.findByPk(req.params.id)
+    /* db.Movie.findByPk(req.params.id)
     .then(function(movie){
         res.render("detallePelicula", {movie:movie});
+    }) */getMovies.forEach(element => {
+        if(element.id == req.params.id) movie = element;
+    });
+    res.render("product-detail",{
+        movie,
+        session: req.session,
+        genresMovie: getGenres,
     })
 },
 editar: function(req,res) {
