@@ -58,12 +58,12 @@ CREATE TABLE IF NOT EXISTS `genre` (
 CREATE TABLE IF NOT EXISTS `movie` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
-  `description` longtext NOT NULL,
+  `description` varchar(500) NOT NULL,
   `actor` varchar(50) NOT NULL,
   `actor_id` int(11) NOT NULL,
   `genre` varchar(50) NOT NULL,
   `direction` varchar(50) NOT NULL,
-  `duration` int(11) NOT NULL DEFAULT '0',
+  `duration` date NOT NULL,
   `genre_id` int(11) NOT NULL,
   `awards` int(11) DEFAULT NULL,
   `rating` int(11) DEFAULT NULL,
@@ -107,10 +107,10 @@ CREATE TABLE IF NOT EXISTS `movie_genre` (
 -- Volcando estructura para tabla trimovie.role
 CREATE TABLE IF NOT EXISTS `role` (
   `id` int(10) unsigned NOT NULL,
-  `admin` int(10) unsigned NOT NULL,
-  `user` int(10) unsigned NOT NULL,
-  `guest` int(10) unsigned NOT NULL,
-  `user_id` int(10) unsigned NOT NULL,
+  `admin` int(2) unsigned NOT NULL,
+  `user` int(2) unsigned NOT NULL,
+  `guest` int(2) unsigned NOT NULL,
+  `user_id` int(2) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -142,8 +142,10 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(50) NOT NULL,
   `address` varchar(50) NOT NULL,
   `favorite_movie` varchar(50) NOT NULL,
-  `shop_cart_id` int(10) unsigned DEFAULT NULL,
+  `shop_cart_id` int(10) unsigned NOT NULL,
   `role` int(10) unsigned NOT NULL,
+  `pass` bigint(20) unsigned NOT NULL,
+  `bithdate` datetime NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `Email` (`email`) USING BTREE,
   KEY `FK_user_shop_cart` (`shop_cart_id`),
