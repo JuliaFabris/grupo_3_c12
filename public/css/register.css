@@ -1,5 +1,7 @@
 @import url("footer.css");
 
+
+
 .register-form .form-regis {
   position: relative;
   display: flex;
@@ -85,11 +87,18 @@
   flex-direction: column;
   width: 100%;
 }
-
+.button-container{
+position: relative;
+right: 3rem;
+}
 .register-form .button-container {
   align-items: center;
   width: 90%;
   position: relative;
+}
+#btnregistro{
+  position: relative;
+  right: 2rem;
 }
 
 .register-form span.error-message {
@@ -105,10 +114,11 @@
   height: 2.5rem;
   padding: 0.5rem;
   background-color: rgba(100, 100, 100, 0.6);
+  color: aliceblue;
 }
 
 .register-form input.input-style::placeholder {
-  color: gray;
+  color: rgb(228, 228, 228);
 }
 
 .register-form label {
@@ -169,7 +179,7 @@
 
 .register-form .btn btn-submit {
   position: relative;
-  left: 2rem;
+  left: 1rem;
 
 }
 
@@ -177,6 +187,8 @@
   color: rgb(115, 255, 1);
   font-size: 15px;
   font-weight: bold;
+  position: relative;
+  right: 2rem;
 }
 
 .register-form .he:active {
@@ -218,6 +230,8 @@
   }
 }
 
+
+
 .register-form .file-avatar {
   margin: 10px 0;
 }
@@ -239,3 +253,11 @@
   font-size: 18px;
   margin: inherit;
 }
+
+/* @media (max-width: 490px){
+  .form-regis{
+    width: 4rem;
+    position: relative;
+    right: 4rem;
+  }
+} */

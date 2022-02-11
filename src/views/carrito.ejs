@@ -76,7 +76,7 @@
                             <h6 class="text-truncate">Precio</h6>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" id="deletecar">
                         <div class="shopping-cart-header">
                             <h6>Eliminar</h6>
                     
@@ -107,11 +107,13 @@
                         
                         
                  
-                    <button class="btn-delete" type="button"><i class="fas fa-trash"></i></button>
+                    <button Onclick="delette()" class="btn-delete" type="button"><i id ="btndelete"class="fas fa-trash"></i></button>
                     
                     <div class="imgcontainer">
                         <section class="portafolio-item">
-                            <img src="/design/images/products/justice-league-dark.jpg" alt="" class="portafolio-img2">
+                            <img src="/design/images/products/justice-league-dark.jpg" alt="" class="portafolio-img2" style="height: 60px; -webkit-box-shadow: 15px 19px 13px 4px rgba(0,0,0,0.75);
+                            -moz-box-shadow: 15px 19px 13px 4px rgba(0,0,0,0.75);
+                            box-shadow: 15px 19px 13px 4px rgba(0,0,0,0.75);">
                             <section class="portafolio-text">
                                 <h2>Liga de la justicia oscura</h2>
                                 <p>Acción, aventura</p>
@@ -136,7 +138,7 @@
                     </div>
                     
                     
-                    <button class="btn-delete1" type="button"><i class="fas fa-trash"></i></button>
+                    <button Onclick="delette()"class="btn-delete1" type="button" style="width: 0px;"><i id="btndelete" class="fas fa-trash"></i></button>
                     
                     <hr class="gradient2">
 
@@ -146,7 +148,7 @@
             
                     <p class="valor">$780</i></p>
                     <div class="container-verde">
-                    <buttom class="btn-verdecart"><span>Terminar</span></buttom>
+                    <buttom Onclick="clic()" class="btn-verdecart"><span>Terminar</span></buttom>
 
                     
                     </div>
@@ -156,9 +158,15 @@
                             <input class="cuppon"type="text" placeholder="Cupón"/>
                         </div>
                    </div>
+                   <div class="containerback">
+                   <div class="containertarjeta">
+                       <h1 style="color: rgb(235, 235, 235); font-size: 30px; ">Aceptamos todas las tarjetas </h1>
+                       <i id="tarjet"class="fas fa-credit-card"></i>
                    
+                   </div>
+                   </div>
                 </div> 
-                <img class="imgtarjet" src="/design/images/icons/tarjetas.jpg"alt="metodosdepago">
+               
 
                 </div>
                 </div>
@@ -187,7 +195,16 @@
         </footer> -->
 
 
-    
+    <script > 
+    function clic(){
+        alert("¡Pelicula comprada!");
+    }
+    function delette(){
+        alert("Producto eliminado");
+    }
+
+
+    </script>
 
 <%-include('partials/footer1')%>
 

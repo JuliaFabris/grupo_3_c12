@@ -6,6 +6,10 @@
   justify-content: center;
   margin-left: 37px;
 }
+#tarjet{
+  color: #ffff;
+  font-size: 3rem;
+}
 
 header .menu_icono,
 .icono-btn {
@@ -129,6 +133,7 @@ h1 {
   position: relative;
   bottom: 35px;
   color: rgb(245, 245, 245);
+  left: 2rem;
 
 }
 
@@ -140,6 +145,7 @@ h1 {
 .imgcontainer {
   position: relative;
   margin-top: 1rem;
+  
 }
 .portafolio-item {
   width: 20%;
@@ -148,16 +154,19 @@ h1 {
   left: 2rem;
   overflow: hidden;
 }
-.portafolioimg1 {
+.portafolioimg2 {
   position: relative;
   bottom: 4rem;
-}
+ }
 
 .portafolio-img {
   width: 50px;
   height: 70px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .portafolio-text {
@@ -235,10 +244,10 @@ h1 {
   position: relative;
   bottom: 18rem;
   left: 8rem;
-  background-color: none;
   cursor: pointer;
   font-size: 1.5rem;
   text-decoration: none;
+  width: 0px;
 }
 
 .btn-delete {
@@ -248,6 +257,8 @@ h1 {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
+  width: 0px;
+  
 
 }
 
@@ -304,6 +315,11 @@ h1 {
   left: 0;
   transition: 0.3s ease-in-out all;
 }
+.containertarjeta{
+  margin-bottom: 2rem;
+  position: relative;
+  bottom: 3rem;
+}
 
 .container-verde:hover::after {
   top: 0;
@@ -320,6 +336,11 @@ h1 {
   
   right: 7px;
   background-color: rgb(126, 185, 233);
+}
+
+#btndelete{
+  color: #fff;
+
 }
 
 /*Footer*/
@@ -381,4 +402,54 @@ footer div.redes-flex ul li {
   height: 2rem;
 
  }
+
+
  
+ @media (max-width: 768px){
+
+   .containertarjeta{
+    display: none;
+   }
+
+   .container-flex{
+     width: 0px;
+   }
+ }
+
+ 
+ @media (max-width: 1125px){
+
+  .containertarjeta{
+   display: none;
+  }
+
+ @media (max-width: 480px){
+   .shopping-cart{
+      padding: 1rem;
+      flex-direction: column; 
+    
+   }
+   .shopping-cart-header{
+     font-size: 18px;
+     flex-direction: column;
+     
+    
+   }
+
+   .number{
+     font-size: 15px;
+   }
+
+   .pre-cant{
+     font-size: 15px;
+   }
+ }
+  
+  
+ 
+
+ @media (max-width: 1124px){
+   .containertarjeta{
+   font-size: 15px;
+   }
+ }
