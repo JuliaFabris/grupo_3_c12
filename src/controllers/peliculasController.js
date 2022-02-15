@@ -21,7 +21,6 @@ guardar: function (req,res) {
     db.movie.create({
         title: req.body.title,
         director: req.body.director,
-       rating: req.body.rating,
        duration: req.body.duration,
        year: req.body.year,
        director: req.body.director,
