@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "1995",
+    "password": null,
     "database": "trimovie-grupo3",
     "host": "127.0.0.1",
     "dialect": "mysql"
