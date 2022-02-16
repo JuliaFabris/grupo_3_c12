@@ -1,49 +1,52 @@
 <header class="flex posicioned">
 
-    <!--  -->
+    <!-- seccion izquierda -->
     <div class="left-container flex">
+        <!-- menu hamburguesa -->
         <div class="container-icon flex ">
             <button class="flex sub-menu" id="">
                 <i class="fas fa-bars fa-size"></i>
             </button>
         </div>
-
-        <div class="search-box">
+        <!-- buscador -->
+        <div class="container-icon search-box flex">
             <button class="btn-search"><i class="fas fa-search"></i></button>
-            <input type="text" class="input-search" placeholder="Buscar...">
+            <form action="">
+                <input type="text" class="input-search" placeholder="Buscar...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
         </div>
     </div>
 
+    <!-- logo trimovi -->
     <div class="container-logo"><a href="/"><img src="/design/images/icons/logo.png" alt="TRIMOVI"></a></div>
 
+    <!-- contenedor derecho -->
     <div class="right-container flex">
-
-        <div class="buttons">
-            
-            <button class="raise"><a class="raiss" href="/user/register">Registrarse</a></button>
-            
-          </div>
-        </div>
-
+        <!-- carrito -->
         <div class="container-icon flex" id="car">
             <a href="/user/carrito"><i class="fas fa-shopping-cart"></i></a>
         </div>
-      
-       
 
-      <!--  <% if (session) { %>
-            <div class="container-icon flex" id="car">
-                <a href="/user/profile"><i class="fas fa-user-astronaut"></i></a>
-                
-            </div>
-        <% } %> -->
-
+        <!-- icono de ususario/login -->
         <% if (!session) { %>
-        <div class="container-icon flex">
+        <div class="buttons">
+            <div class="buttons">
+                <button class="raise"><a class="raiss" href="/user/login">iniciar sesion</a></button>
+            </div>
+        </div>
+        <% } else { %>
+        <div class="container-icon flex" id="car" style="flex-direction: column; color: white;">
             <a href="/user/login"><i class="fas fa-user"></i></a>
+            <span><%= session.name %></span>
         </div>
         <% } %>
-       
+    </div>  
 
-    </div>
+    <!-- js -->
+    <script defer src="js/searchBox.js"></script>
 </header>
+
+<!-- https://drive.google.com/drive/folders/1afW9XuiiMC1_SoIGm2VPs34Vv9HHaTvq
+ -->

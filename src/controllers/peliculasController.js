@@ -39,6 +39,7 @@ listar: function (req,res) {
     res.render("listadoPeliculas", {movies:movies})
 },
 detalle: function(req,res) {
+    // res.send(req.session)
     /* db.Movie.findByPk(req.params.id)
     .then(function(movie){
         res.render("detallePelicula", {movie:movie});
@@ -47,7 +48,7 @@ detalle: function(req,res) {
     });
     res.render("product-detail",{
         movie,
-        session: req.session,
+        session: req.session.user,
         genresMovie: getGenres,
     })
 },
