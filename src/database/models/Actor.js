@@ -5,7 +5,10 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         
         id: {
+
             type: dataTypes.INTEGER(15).UNSIGNED,
+
+
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
