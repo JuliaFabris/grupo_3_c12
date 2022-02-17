@@ -13,15 +13,16 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
             allowNull: false
         },
         director_id: {
-            type: dataTypes.STRING(50),
+            type: dataTypes.INTEGER(50).UNSIGNED,
             allowNull: false
         },
+
         year: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
         image: {
-            type: dataTypes.INTEGER(11).UNSIGNED,
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         price: {
@@ -29,11 +30,11 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
             allowNull: false
         },
         duration: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER(50).UNSIGNED,
             allowNull: false
         },
         sinopsis: {
-            type: dataTypes.STRING(500),
+            type: dataTypes.TEXT,
             allowNull: false
         },
     };
@@ -49,6 +50,11 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
 
     Movie.associate = function(models) {
+
+        Movie.belongsTo(models.Director,{
+            as: "director",
+            foreignKey:"director_id",
+        })
 
         Movie.belongsToMany(models.Genre, {
             as: "genres", /* le pertenece a uno o más generos */
