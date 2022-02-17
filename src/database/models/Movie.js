@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
             type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             allowNull: false,
-            autoIncrement: true
+            autoIncrement: true,
         },
        
         title: {
@@ -54,7 +54,7 @@ module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para
         Movie.belongsTo(models.Director,{
             as: "director",
             foreignKey:"director_id",
-        })
+        }) 
 
         Movie.belongsToMany(models.Genre, {
             as: "genres", /* le pertenece a uno o más generos */
