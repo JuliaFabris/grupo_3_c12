@@ -21,7 +21,7 @@ guardar: function (req,res) {
     db.movie.create({
         title: req.body.title,
        director: req.body.director,
-       duration: req.body.duration,
+       length: req.body.duration,
        year: req.body.year,
        director: req.body.director,
        trailer: req.body.trailer,
@@ -30,8 +30,8 @@ guardar: function (req,res) {
        genres: req.body.genres
     });
 
-    res.redirect("/peliculas");
-},
+    res.redirect("/admin/dashboard");
+}, 
 listar: function (req,res) {
     db.movie.findAll()
     .then (function(movies) {})
@@ -76,7 +76,7 @@ actualizar: function(req,res) {
         id:req.params.id
      }
     });
-    res.redirect("/peliculas/" + req.params.id)
+    res.redirect("/admin/dashboard" + req.params.id)
 },
 borrar: function(req,res) {
     db.movie.destroy({
@@ -84,7 +84,7 @@ borrar: function(req,res) {
             id: req.params.id
         }
     })
-    res.redirect("/peliculas");
+    res.redirect("");
 },
 peliculasPorGenero: (req, res) => {
 

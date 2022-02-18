@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Directors';
+    let alias = 'Director';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
