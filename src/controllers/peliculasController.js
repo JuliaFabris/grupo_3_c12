@@ -20,7 +20,7 @@ crear: function (req,res) {
 guardar: function (req,res) {
     db.movie.create({
         title: req.body.title,
-        director: req.body.director,
+       director: req.body.director,
        duration: req.body.duration,
        year: req.body.year,
        director: req.body.director,
