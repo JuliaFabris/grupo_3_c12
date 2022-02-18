@@ -6,11 +6,10 @@ const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
 let homeRouter = require('./routes/home');
-let productsRouter = require('./routes/products');
+let adminrouter = require('./routes/administrator');
 
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
-let peliculasRouter = require('./routes/peliculas');
 const PORT = 3000;
 
 
@@ -31,10 +30,10 @@ app.use(session({
 app.use(cookieSession);
 
 app.use('/', homeRouter);
-app.use('/admin', productsRouter);
+app.use('/admin', adminrouter);
 app.use('/user', userRouter);
 app.use('/faq', faqRouter);
-app.use('/peliculas', peliculasRouter);
+
 
 
 app.use((req, res, next) => {
