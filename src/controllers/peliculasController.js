@@ -11,19 +11,18 @@ let db = require('../database/models');
 
 let peliculasController = {
 crear: function (req,res) {
- db.genre.findAll()
+ db.Genre.findAll()
  .then(function(genres) {
-     return res.render('creacionPeliculas', {genres:genres});
+     return res.render('/admin/addProduct', {genres:genres});
      
  })   
 },
 guardar: function (req,res) {
-    db.movie.create({
+    db.Movie.create({
         title: req.body.title,
        director: req.body.director,
-       length: req.body.duration,
+       length: req.body.length,
        year: req.body.year,
-       director: req.body.director,
        trailer: req.body.trailer,
        sinopsis: req.body.sinopsis,
        image: req.body.image,
@@ -33,16 +32,16 @@ guardar: function (req,res) {
     res.redirect("/admin/dashboard");
 }, 
 listar: function (req,res) {
-    db.movie.findAll()
+    db.Movie.findAll()
     .then (function(movies) {})
-    res.render("listadoPeliculas", {movies:movies})
+    res.render("/admin/dashboard", {movies:movies})
 },
 detalle: function(req,res) {
-    // res.send(req.session)
-    /* db.Movie.findByPk(req.params.id)
+    res.send(req.session)
+     db.Movie.findByPk(req.params.id)
     .then(function(movie){
         res.render("detallePelicula", {movie:movie});
-    }) */getMovies.forEach(element => {
+    }), getMovies.forEach(element => {
         if(element.id == req.params.id) movie = element;
     });
     res.render("product-detail",{
@@ -56,7 +55,7 @@ editar: function(req,res) {
     let genresRequest = db.movie.findAll();
     promise.all([movieRequest,genresRequest])
     .then(function([movie, genres]){
-        res.render("editarPelicula", {movie:movie, genres:genres});
+        res.render("/admin/editarPelicula", {movie:movie, genres:genres});
     })    
 },
 actualizar: function(req,res) {
