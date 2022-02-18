@@ -21,8 +21,12 @@ module.exports = (sequelize, dataTypes) => {
                   alowNull: false,
                   unique: true
             },
+            role_id: {
+                  type: dataTypes.INTEGER(11).UNSIGNED,
+                  alowNull: false,
+            },
             pass: {
-                  type: dataTypes.STRING(60),
+                  type: dataTypes.STRING(100),
                   alowNull: false
             },
             avatar: {
@@ -39,7 +43,6 @@ module.exports = (sequelize, dataTypes) => {
             favorite_movie: {
                   type: dataTypes.STRING(50),
             },
-
       };
       let config = {
             tableName: "user",
@@ -51,11 +54,10 @@ module.exports = (sequelize, dataTypes) => {
       const User = sequelize.define(alias, cols, config);
 
       User.associate = function (models) {
-
-            User.belongsTo(models.User, {
-                  as: "user",
-                  /* le pertenece a un user*/
-                  foreignKey: "user_id"
+             
+            User.belongsTo(models.Role, {
+                  as: "role",
+                  foreignKey: "role_id"
             })
 
       }

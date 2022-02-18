@@ -1,4 +1,4 @@
-header.flex{
+header.flex {
     background-color: black;
     position: relative;
     width: 100%;
@@ -6,97 +6,10 @@ header.flex{
     justify-content: space-between;
     padding: 0 10px 0;
     border-bottom: 2px ridge rgba(139, 0, 0, 0.692);
-}
-
-.header-box {
-    width: 33.3%;
-}
-
-header .left-container .container-icon button,
-header .right-container .container-icon#fav {
-    position: relative;
-    top: 1px;
-    
-}
-
-header .right-container .container-icon#car {
-    position: relative;
-    bottom: 1px;
+    overflow: hidden;
 }
 
 
-header  .left-container .container-search input,
-header  .left-container .container-search .container-button {
-    display: none;
-    
-}
-
-header .left-container .searcher-bar {
-    position: relative;
-}
-
-header .left-container .searcher-bar.active .pre-searcher {
-    min-height: 90px;
-    width: 100%;
-    position: absolute;
-    background: white;
-    z-index: 10;
-    top: 24px;
-    left: 0;
-}
-
-#car{
-    position: relative;
-    left: 15rem;
-}
-
-header .left-container .searcher-bar {
-    position: relative;
-}
-
-header .left-container .searcher-bar.active .pre-searcher {
-    min-height: 90px;
-    width: 100%;
-    position: absolute;
-    background: white;
-    z-index: 10;
-    top: 24px;
-    left: 0;
-}
-
-/* logo*/
-/* header .container-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: 95%;
-/* logo*/
-/* header .container-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: 95%;
-    width: 85px;
-    order: 1;
-} */
-
-header .container-logo {
-    width: 100px;
-    height: 100%;
-    position: relative;
-    right: 1rem;
-    left: 17rem;
-}
-
-header .container-logo img {
-    width: 100%;
-}
 
 header button {
     background-color: unset;
@@ -106,11 +19,9 @@ header button {
 header .container-icon {
     width: 30px;
     height: 30px;
-    border: none;
-    
 }
 
-header .container-icon:active {
+header .container-icon i:active {
     transform: scale(.9);
 }
 
@@ -119,7 +30,77 @@ header .container-icon i {
     font-size: 18px;
 }
 
-.userProfile .avatar{
+header .left-container .search-box form {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 0px;
+    /* transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2); */
+    transition: all 5s ease-in-out;
+
+}
+
+header .left-container .search-box form.active {
+    display: flex;
+    transition: all 5s ease-in-out;
+}
+
+header .search-box.active {
+    width: 100%;
+}
+
+.input-search {
+    width: 200px;
+    border-style: none;
+    padding: 10px;
+    /* font-size: 18px; */
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #0102020c;
+    /* padding-right: 40px; */
+    color: #fff;
+}
+
+.input-search::placeholder {
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.btn-search {
+    cursor: pointer;
+    border-radius: 50%;
+    /* position: absolute; */
+    right: 0px;
+    color: #ffffff;
+    pointer-events: painted;
+}
+
+/* .btn-search:focus~.input-search {
+    width: 100%;
+    border-radius: 0px;
+    background-color: red;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+} */
+
+.input-search:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+header .container-logo {
+    height: 100%;
+    position: relative;
+}
+
+
+
+
+
+.userProfile .avatar {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
@@ -127,11 +108,17 @@ header .container-icon i {
     margin: 1rem auto;
 }
 
+@media(min-width: 768px) {
+    header .left-container .search-box .btn-search  {
+        display: none;
+    }
 
+    header .left-container .search-box form {
+        display: flex;
+    }
+}
 
-
-
-@media(min-width: 1024px) {
+/* @media(min-width: 1024px) {
     header .left-container div.container-icon {
         display: none;
     }
@@ -140,76 +127,25 @@ header .container-icon i {
         display: inline-block;
         width: 250px;
     }
+} */
+
+.search-box {
+    /* width: fit-content;
+    height: fit-content;
+    position: relative; */
 }
 
-.search-box{
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-  }
-  .input-search{
-    height: 50px;
-    width: 50px;
-    border-style: none;
-    padding: 10px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    outline: none;
-    border-radius: 25px;
-    transition: all .5s ease-in-out;
-    background-color: #0102020c;
-    padding-right: 40px;
-    color:#fff;
-  }
-  .input-search::placeholder{
-    color:rgba(255,255,255,.5);
-    font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: 100;
-  }
-  .btn-search{
-    width: 50px;
-    height: 50px;
-    border-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    outline: none;
-    cursor: pointer;
-    border-radius: 50%;
-    position: absolute;
-    right: 0px;
-    color:#ffffff ;
-    background-color:transparent;
-    pointer-events: painted;  
-  }
-  .btn-search:focus ~ .input-search{
-    width: 300px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom:1px solid rgba(255,255,255,.5);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-  }
-  .input-search:focus{
-    width: 300px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom:1px solid rgba(255,255,255,.5);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-  }
-  
 
-  .raise:hover,
+/* .raise:hover,
 .raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
-  
-}
-.raiss{
+   */
+/* } */
+.raiss {
     position: relative;
-    left: 30rem;
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
-    font-family:-apple-system,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
-

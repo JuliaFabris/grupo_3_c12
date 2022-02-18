@@ -8,20 +8,12 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        
-        guest: {
-            type: dataTypes.INTEGER(2),
-            allowNull: false
-        },
-        user: {
-            type: dataTypes.INTEGER(2),
-            allowNull: false
-        },
-        admin: {
-            type: dataTypes.INTEGER(2),
-            allowNull: false
-        }
-        
+    
+        name: {
+            type: dataTypes.STRING(70),
+            alowNull: false,
+      },
+      
     };
        let config = {
         tableName: "role",
@@ -36,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
     Role.associate = function(models) {
         Role.hasMany(models.User, {
             as: "users",
-            foreignKey: "user_id"
+            foreignKey: "role_id"
         })
     }
 

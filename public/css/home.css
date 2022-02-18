@@ -126,7 +126,8 @@
     flex-direction: column;
     width: 170px;
     height: 340px;
-    background-color: #0C9FCD;
+    /* background-color: #0C9FCD; */
+    background-color: #0c0d0eaf;
     position: relative;
 }
 
