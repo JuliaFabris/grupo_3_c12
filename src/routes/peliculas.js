@@ -8,7 +8,7 @@ router.post("/agregar",peliculasController.agregar);
 
 /*Lectura*/
 
-router.get("/", peliculasController.listar);
+router.get("/", peliculasController.inicio);
 
 /*Detalle*/
 

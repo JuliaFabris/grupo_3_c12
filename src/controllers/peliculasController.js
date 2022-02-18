@@ -34,6 +34,7 @@ let peliculasController = {
     listar: function (req, res) {
         db.Movie.findAll()
             .then(function (movies) { res.render("/admin/dashboard", { movies: movies })})
+            .catch(error => console.log({error}))
        
     },
     detalle: function (req, res) {
@@ -87,7 +88,7 @@ let peliculasController = {
         res.redirect("/admin");
     },
     inicio: (req, res) => {
-        db.Movie.findAll()
+        db.Peli.findAll()
             .then(function (movies) {
                 res.render('admin/dashboard', {
                     session: req.session.user,
@@ -95,6 +96,7 @@ let peliculasController = {
                     user: req.session.user
                 })
             })
+            .catch(error => console.log(error))
     },
     /*peliculasPorGenero: (req, res) => {
     

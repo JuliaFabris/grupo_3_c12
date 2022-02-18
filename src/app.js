@@ -5,9 +5,9 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
-let homeRouter = require('./routes/home');
-let productsRouter = require('./routes/products');
 
+let homeRouter = require('./routes/home');
+let productsRouter = require('./routes/peliculas');
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
 let peliculasRouter = require('./routes/peliculas');
