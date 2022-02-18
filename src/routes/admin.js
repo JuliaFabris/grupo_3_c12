@@ -2,7 +2,8 @@ let router = require('express').Router(),
 upload = require('../middlewares/uploadProductFile');
 
 /* controlador */
-let controller = require('../controllers/admincontroller')
+let controller = require('../controllers/peliculasController')
+let controller = require('../controllers/admin')
 
 
 /* rutas */
@@ -18,9 +19,14 @@ router.put('/products/edit/:id', upload.single('file'), controller.actualizar)
 // get - formulario de nuevo producto
 router.get('/products/new', controller.crear)
 router.post('/products/new',upload.single('file'), controller.agregar)
+// get - formulario de listar y detalle
+router.get('/products/listar', controller.listar)
+router.get('/products/detalle/:id', controller.detalle)
 
-//
+
+/*Delete product*/
 router.delete('/products/:id/dlt', controller.eliminar)
+
 
 
 

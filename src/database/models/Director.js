@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
         createdAt: 'created_at',
         updatedAt: 'updated_at'
     }
-    const Role = sequelize.define(alias, cols, config);
+    const Director = sequelize.define(alias, cols, config);
 
     //relaciones con el modelo Movie
 
