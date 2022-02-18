@@ -8,6 +8,8 @@ let cookieSession = require('./middlewares/cookieSession');
 let homeRouter = require('./routes/home');
 let adminrouter = require('./routes/administrator');
 
+
+
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
 const PORT = 3000;
