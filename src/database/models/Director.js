@@ -29,12 +29,12 @@ module.exports = (sequelize, dataTypes) => {
 
     //relaciones con el modelo Movie
 
-    Role.associate = function(models) {
-        Role.hasMany(models.User, {
+    Director.associate = function(models) {
+        Director.hasMany(models.Movie, {
             as: "director",
             foreignKey: "movie_id"
         })
     }
 
-    return Role;
+    return Director;
 };
