@@ -4,7 +4,7 @@ let peliculasController = require('../controllers/peliculasController');
 /*crear*/
 
 router.get("/crear",peliculasController.crear);
-router.post("/crear",peliculasController.guardar);
+router.post("/agregar",peliculasController.agregar);
 
 /*Lectura*/
 
@@ -20,6 +20,6 @@ router.get("/editar/:id", peliculasController.editar);
 router.post("/editar/:id", peliculasController.actualizar);
 
 /*Borrar*/
-router.post("/borrar/:id", peliculasController.borrar);
+router.post("/delete/:id", peliculasController.delete);
 
 module.exports = router;

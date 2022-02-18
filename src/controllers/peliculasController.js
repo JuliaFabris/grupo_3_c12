@@ -17,7 +17,7 @@ let peliculasController = {
 
             })
     },
-    guardar: function (req, res) {
+    agregar: function (req, res) {
         db.Movie.create({
             title: req.body.title,
             director: req.body.director,
@@ -29,12 +29,12 @@ let peliculasController = {
             genres: req.body.genres
         });
 
-        res.redirect("/admin/dashboard");
+        res.redirect("/admin");
     },
     listar: function (req, res) {
         db.Movie.findAll()
-            .then(function (movies) { })
-        res.render("/admin/dashboard", { movies: movies })
+            .then(function (movies) { res.render("/admin/dashboard", { movies: movies })})
+       
     },
     detalle: function (req, res) {
         res.send(req.session)
@@ -76,7 +76,7 @@ let peliculasController = {
                 id: req.params.id
             }
         });
-        res.redirect("/admin/dashboard" + req.params.id)
+        res.redirect("/admin" + req.params.id)
     },
     delete: function (req, res) {
         db.movie.destroy({
@@ -84,7 +84,7 @@ let peliculasController = {
                 id: req.params.id
             }
         })
-        res.redirect("");
+        res.redirect("/admin");
     },
     inicio: (req, res) => {
         db.Movie.findAll()

@@ -32,7 +32,8 @@ module.exports = (sequelize, dataTypes) => {
     Director.associate = function(models) {
         Director.hasMany(models.Movie, {
             as: "director",
-            foreignKey: "movie_id"
+            foreignKey: "movie_id",
+            timestamps: false
         })
     }
 
