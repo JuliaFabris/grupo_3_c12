@@ -1,38 +1,29 @@
-
-
-module.exports = (sequelize, dataTypes) => {
-    let alias = 'Genre';
-    let cols = {
-        id: {
-            type: dataTypes.INTEGER(11).UNSIGNED,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-        
-        category_name: {
-            type: dataTypes.STRING(50),
-            allowNull: false
-        },
-        
-    };
-       let config = {
-        tableName: "genre",
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at'
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Genre extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      Genre.belongsToMany(models.Movie,{
+        as : 'movies',
+        otherKey : 'movieId',
+        foreignKey : 'genreId',
+        through : 'Movies_has_Genre'
+      })
     }
-    const Genre = sequelize.define(alias, cols, config);
-
-    //relaciones 
-
-    Genre.associate = function(models) {
-        Genre.belongsToMany(models.Movie, {
-            as: "movies",
-            through: "movie",
-            foreignKey: "movie_id"
-        })
-    }
-
-    return Genre;
+  };
+  Genre.init({
+    name: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Genre',
+  });
+  return Genre;
 };

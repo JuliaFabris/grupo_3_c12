@@ -1,7 +1,8 @@
+require('dotenv').config()
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": process.env.DB_USERNAME,
+    "password": process.env.DB_PASSWORD,
     "database": "trimovie-grupo3",
     "host": "localhost",
     "dialect": "mysql"
