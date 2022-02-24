@@ -20,6 +20,9 @@ module.exports = {
           key : 'id'
         }
       },
+      price : {
+        type : Sequelize.INTEGER
+      },
       year: {
         type: Sequelize.INTEGER
       },
@@ -32,11 +35,8 @@ module.exports = {
       length: {
         type: Sequelize.INTEGER
       },
-      rating: {
-        type: Sequelize.INTEGER
-      },
       sinopsis: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

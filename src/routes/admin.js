@@ -26,7 +26,7 @@ router.get('/products/detalle/:id', controller.detalle)
 
 
 /*Delete product*/
-router.delete('/products/:id/dlt', controller.delete)
+router.delete('/products/:id/dlt', controller.eliminar)
 
 
 
