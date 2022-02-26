@@ -15,10 +15,10 @@ router.get('/', controller.inicio)
 
 // get - formulario de edicion de producto
 router.get('/products/edit/:id', controller.editar)
-router.put('/products/edit/:id', upload.single('file'), controller.actualizar)
+router.put('/products/edit/:id', upload.single('image'), controller.actualizar)
 // get - formulario de nuevo producto
 router.get('/products/new', controller.crear)
-router.post('/products/new',upload.single('file'), controller.agregar)
+router.post('/products/new',upload.single('image'), controller.agregar)
 
 // get - formulario de listar y detalle
 router.get('/products/listar', controller.listar)

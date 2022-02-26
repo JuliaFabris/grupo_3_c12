@@ -62,8 +62,15 @@
           <% peliculas.forEach(peli => { %>
           <tr class="table-active">
             <th scope="row"><%= peli.id %> </th>
-            <td><%= peli.name %> </td>
-            <td><%= peli.category %> </td>
+            <td><%= peli.title %> </td>
+            <td>
+              <ul>
+                <% peli.genres.forEach(genre => { %>
+                  <li><%= genre.name %></li>
+                  <% }) %>
+              </ul>
+            
+            </td>
             <td>$ <%= peli.price %> </td>
             <td>
               <a href="/admin/products/edit/<%= peli.id %>"><button type="button" class="btn btn-success"><i

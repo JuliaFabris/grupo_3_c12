@@ -11,25 +11,49 @@ let db = require('../database/models');
 
 let peliculasController = {
     crear: function (req, res) {
-        db.Genre.findAll()
-            .then(function (genres) {
-                return res.render('/admin/addProduct', { genres: genres });
+        let genres = db.Genre.findAll();
+        let directors = db.Director.findAll();
+        Promise.all(([genres,directors]))
+            .then(function ([genres,directors]) {
+                return res.render('./admin/creacionPeliculas', { 
+                    genres,
+                    directors
+                });
 
-            })
+            }).catch(error => console.log(error))
     },
     agregar: function (req, res) {
-        db.Movie.create({
-            title: req.body.title,
-            director: req.body.director,
-            length: req.body.length,
-            year: req.body.year,
-            trailer: req.body.trailer,
-            sinopsis: req.body.sinopsis,
-            image: req.body.image,
-            genres: req.body.genres
-        });
 
-        res.redirect("/admin");
+        const {title, directorId, length, year, trailer, price, sinopsis, genres} = req.body;
+
+        db.Movie.create({
+            title: title.trim(),
+            directorId: +directorId,
+            length: +length,
+            year: +year,
+            price : +price,
+            trailer: trailer.trim(),
+            sinopsis: sinopsis.trim(),
+            image: req.file ? req.file.filename : 'notImage.png',
+        }).then(movie => {
+            
+            if(typeof genres === "string"){
+                genres = genres.split()
+            }
+            if(genres){
+                genres.forEach( async genre => {
+                    await db.Movie_has_Genre.create({
+                        movieId : movie.id,
+                        genreId : +genre
+                    })
+                });
+            }
+           
+
+            res.redirect("/admin");
+
+        }).catch(error => console.log(error))
+
     },
     listar: function (req, res) {
         db.Movie.findAll()
@@ -54,7 +78,9 @@ let peliculasController = {
         })
     },
     editar: function (req, res) {
-        let movie = db.Movie.findByPk(req.params.id);
+        let movie = db.Movie.findByPk(req.params.id,{
+            include : [{all : true}]
+        });
         let genres = db.Genre.findAll();
         let directors = db.Director.findAll();
         let actors = db.Actor.findAll()
@@ -66,17 +92,18 @@ let peliculasController = {
                     directors,
                     actors
                 });
-            })
+            }).catch(error => console.log(error))
     },
     actualizar: function (req, res) {
 
-        let {title, directorId, length, year, trailer, sinopsis,genres} = req.body
+        let {title, directorId, length, year, trailer, price, sinopsis,genres} = req.body
 
         db.Movie.update({
             title: title.trim(),
             directorId: +directorId,
             length: +length,
             year: +year,
+            price : +price,
             trailer: trailer.trim(),
             sinopsis: sinopsis.trim(),
         }, {
@@ -115,7 +142,9 @@ let peliculasController = {
         res.redirect("/admin");
     },
     inicio: (req, res) => {
-        db.Movie.findAll()
+        db.Movie.findAll({
+            include : [{all : true}]
+        })
             .then(function (movies) {
                 res.render('admin/dashboard', {
                     session: req.session.user,

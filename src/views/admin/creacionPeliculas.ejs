@@ -1,48 +1,89 @@
-<%- include('header') -%>
-<h1>MOVIE CREATE</h1>
-<form action="/peliculas/crear" method="post">
-    <div>
-        <label for="">TITTLE</label>
-        <input type="text" name="title">
-    </div>
-    <div>
-        <label for="">DIRECTOR</label>
-        <input type="text" name="director">
-    </div>
-    <div>
-        <label for="">RATING</label>
-        <input type="text" name="rating">
-    </div>
-    <div>
-        <label for="">DURATION</label>
-        <input type="text" name="duration">
-    </div>
-    <div>
-        <label for="">YEAR</label>
-        <input type="date" name="year">
-    </div>
-    <div>
-    <label for="">TRAILER</label>
-    <input type="text" name="trailer">
-    </div>
-    <div>
-    <label for="">SINOPSIS</label>
-    <input type="text" name="sinopsis">
-    </div>
-    <div>
-    <label for="">IMAGE</label>
-    <input type="image" name="image">
-    </div>
-    <div>
-        <label for="">GENRES</label>
-        <select name="genres">
-            <% for (let i = 0; i < genres.lenght; i++) { %>
-            <option value="<%=genres[i].id%>">
-            <%=genres[i].name%>
-            </option>
-            <% } %>
-        </select>
-    </div>
-    <button type="submit">CREAR PELICULA</button>
-</form>
-<%- include('footer') -%>
+<%- include('adminPartials/head') %>
+
+    <%- include('adminPartials/adminHeader') %>
+        <h1>MOVIE CREATE</h1>
+        <div class="container">
+            <form class="row" action="" method="POST" enctype="multipart/form-data" >
+                <div class="col-12 col-md-7">
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="">TITTLE</label>
+                            <input class="form-control" type="text" name="title">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="">DIRECTOR</label>
+                            <select class="form-select" name="directorId">
+                                <% directors.forEach(director=> { %>
+                                    <option value="<%=
+                                            director.id %>"><%= director.name %>
+                                                <%= director.lastname %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">DURATION</label>
+                            <input class="form-control" type="number" name="length" >
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">YEAR</label>
+                            <input class="form-control" type="number" name="year">
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">TRAILER</label>
+                            <input class="form-control" type="text" name="trailer">
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">PRECIO</label>
+                            <input class="form-control" type="number" name="price">
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="col-12 mb-3">
+                                    <label for="">IMAGE</label>
+                                    <input class="form-control" type="file" name="image">
+                                </div>
+                                <div class="col-12  mb-3">
+                                    <label for="">SINOPSIS</label>
+                                    <textarea class="form-control" name="sinopsis" id="" cols="30" rows="5"
+                                        style="resize: none;"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6"></div>
+                        </div>
+                     
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-5 mb-3">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <label for="">GENRES</label>
+                            <div class="row">
+                                <% genres.forEach(genre=> { %>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="<%= genre.id %>"
+                                                id="<%= genre.name %>" name="genres">
+                                            <label class="form-check-label" for="<%= genre.name %>">
+                                                <%= genre.name %>
+                                            </label>
+                                        </div>
+                                    </div>
+                                   
+                                    <% }) %>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary" type="submit">Save Movie</button>
+
+                </div>
+
+            </form>
+        </div>
