@@ -7,7 +7,7 @@ const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
 let homeRouter = require('./routes/home');
-let adminrouter = require('./routes/administrator');
+let adminrouter = require('./routes/admin');
 
 
 
@@ -37,6 +37,7 @@ app.use('/admin', adminrouter);
 app.use('/user', userRouter);
 app.use('/faq', faqRouter);
 
+app.use('/peliculas',require('./routes/peliculas'))
 
 
 app.use((req, res, next) => {
