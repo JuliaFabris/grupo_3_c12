@@ -5,6 +5,9 @@ const {getMovies, writeMovies, getGenres} = require("../database/index");
 
 let controller = {
 
+
+
+
 inicio : (req, res) => {
     res.render('admin/dashboard', {
         session: req.session.user,

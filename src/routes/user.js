@@ -6,6 +6,8 @@ let loginValidator = require ('../validations/loginValidator')
 let userAdminCheck= require ('../middlewares/userAdminCheck')
 let usercheckLogin = require('../middlewares/usercheckLogin');
 
+
+
 router.get('/login', controller.loginPage)
 router.get('/register', controller.registerPage)
 router.get('/carrousel', controller.registerPage)
@@ -13,5 +15,5 @@ router.get('/carrito', controller.carrito)
 
 router.post('/register', uploadFile.single('avatarimage'),registerValidator, controller.processRegister)
 router.post('/login', loginValidator ,controller.login)
-
+/*router.post('/creacionPeliculas', uploadFile.single('imageCreate'),registerValidator, controller.processCreate)*/
 module.exports = router

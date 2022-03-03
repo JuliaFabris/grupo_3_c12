@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 let {
     getMovies,
     getGenres,
@@ -23,36 +24,57 @@ let peliculasController = {
             }).catch(error => console.log(error))
     },
     agregar: function (req, res) {
+        let errors = validationResult(req);
 
-        const {title, directorId, length, year, trailer, price, sinopsis, genres} = req.body;
+        if(errors.isEmpty()) {
+            const {title, directorId, length, year, trailer, price, sinopsis, genres} = req.body;
 
-        db.Movie.create({
-            title: title.trim(),
-            directorId: +directorId,
-            length: +length,
-            year: +year,
-            price : +price,
-            trailer: trailer.trim(),
-            sinopsis: sinopsis.trim(),
-            image: req.file ? req.file.filename : 'notImage.png',
-        }).then(movie => {
+
+
+            db.Movie.create({
+                title: title.trim(),
+                directorId: +directorId,
+                length: +length,
+                year: +year,
+                price : +price,
+                trailer: trailer.trim(),
+                sinopsis: sinopsis.trim(),
+                image: req.file ? req.file.filename : 'notImage.png',
+            }).then(movie => {
+                
+                if(typeof genres === "string"){
+                    genres = genres.split()
+                }
+                if(genres){
+                    genres.forEach( async genre => {
+                        await db.Movie_has_Genre.create({
+                            movieId : movie.id,
+                            genreId : +genre
+                        })
+                    });
+                }
+               
+    
+                res.redirect("/admin");
+    
+            }).catch(error => console.log(error))
             
-            if(typeof genres === "string"){
-                genres = genres.split()
-            }
-            if(genres){
-                genres.forEach( async genre => {
-                    await db.Movie_has_Genre.create({
-                        movieId : movie.id,
-                        genreId : +genre
-                    })
-                });
-            }
-           
+        } else {
+            let genres = db.Genre.findAll();
+            let directors = db.Director.findAll();
+            Promise.all(([genres,directors]))
+                .then(function ([genres,directors]) {
+                    return res.render('./admin/creacionPeliculas', { 
+                        genres,
+                        directors,
+                        errors: errors.mapped(),
+                        old: req.body,
 
-            res.redirect("/admin");
-
-        }).catch(error => console.log(error))
+                    });
+    
+                }).catch(error => console.log(error))
+        }
+        
 
     },
     listar: function (req, res) {
