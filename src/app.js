@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -6,11 +7,12 @@ const session = require('express-session');
 let cookieParser = require('cookie-parser');
 let cookieSession = require('./middlewares/cookieSession');
 let homeRouter = require('./routes/home');
-let productsRouter = require('./routes/products');
-let adminRouter = require('./routes/admin');
+let adminrouter = require('./routes/admin');
+
+
+
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
-let peliculasRouter = require('./routes/peliculas');
 const PORT = 3000;
 
 
@@ -31,11 +33,11 @@ app.use(session({
 app.use(cookieSession);
 
 app.use('/', homeRouter);
-app.use('/products', productsRouter);
-app.use('/admin', adminRouter);
+app.use('/admin', adminrouter);
 app.use('/user', userRouter);
 app.use('/faq', faqRouter);
-app.use('/peliculas', peliculasRouter);
+
+app.use('/peliculas',require('./routes/peliculas'))
 
 
 app.use((req, res, next) => {

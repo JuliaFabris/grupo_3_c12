@@ -1,66 +1,42 @@
-module.exports = (sequelize, dataTypes) => {
-      let alias = "User";
-      let cols = {
-            id: {
-                  type: dataTypes.INTEGER(11).UNSIGNED,
-                  primaryKey: true,
-                  allowNull: false,
-                  autoIncrement: true
-            },
-            name: {
-                  type: dataTypes.STRING(50),
-                  alowNull: false,
-            },
-            last_name: {
-                  type: dataTypes.STRING(50),
-                  alowNull: false,
-            },
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      User.belongsTo(models.Rol,{
+        as: 'rol',
+        foreignKey : 'rolId'
+      })
 
-            email: {
-                  type: dataTypes.STRING(50),
-                  alowNull: false,
-                  unique: true
-            },
-            role_id: {
-                  type: dataTypes.INTEGER(11).UNSIGNED,
-                  alowNull: false,
-            },
-            pass: {
-                  type: dataTypes.STRING(100),
-                  alowNull: false
-            },
-            avatar: {
-                  type: dataTypes.STRING(100),
-            },
-
-            birthday: {
-                  type: dataTypes.DATE,
-            },
-
-            address: {
-                  type: dataTypes.STRING(50),
-            },
-            favorite_movie: {
-                  type: dataTypes.STRING(50),
-            },
-      };
-      let config = {
-            tableName: "user",
-            timestamps: true,
-            createdAt: 'created_at',
-            updatedAt: 'updated_at'
-      }
-
-      const User = sequelize.define(alias, cols, config);
-
-      User.associate = function (models) {
-             
-            User.belongsTo(models.Role, {
-                  as: "role",
-                  foreignKey: "role_id"
-            })
-
-      }
-
-      return User;
+          
+      User.belongsToMany(models.Movie,{
+        as : 'movies',
+        otherKey : 'movieId',
+        foreignKey : 'userId',
+        through : 'Favorites'
+      })
+    }
+  };
+  User.init({
+    name: DataTypes.STRING,
+    lastname: DataTypes.STRING,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    avatar: DataTypes.STRING,
+    date: DataTypes.DATE,
+    phone: DataTypes.STRING,
+    rolId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'User',
+  });
+  return User;
 };

@@ -1,25 +1,15 @@
-let express = require ('express');
-let router = express.Router();
-let peliculasController = require('../controllers/peliculasController');
-/*crear*/
+let router = require('express').Router()
+let {crear, agregar, listar, detalle, editar, actualizar, eliminar} = require('../controllers/peliculasController')
 
-router.get("/crear",peliculasController.crear);
-router.post("/crear",peliculasController.guardar);
 
-/*Lectura*/
+router
+    .get('/crear', crear)
+    .post('/agregar', agregar)
+    .get('/listar',listar)
+    .get('/detalle/:id', detalle)
+    .get('/editar/:id',editar)
+    .put('/actualizar/:id',actualizar)
+    .delete('/eliminar/:id',eliminar)
 
-router.get("/", peliculasController.listar);
 
-/*Detalle*/
-
-router.get("/:id", peliculasController.detalle);
-
-/*Actualizar*/
-
-router.get("/editar/:id", peliculasController.editar);
-router.post("/editar/:id", peliculasController.actualizar);
-
-/*Borrar*/
-router.post("/borrar/:id", peliculasController.borrar);
-
-module.exports = router;
+module.exports = router

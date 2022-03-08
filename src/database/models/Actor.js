@@ -1,49 +1,30 @@
-module.exports = (sequelize, dataTypes) => {
-
-    let alias = 'Actor';
-
-    let cols = {
-        
-        id: {
-
-            type: dataTypes.INTEGER(15).UNSIGNED,
-
-
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false
-
-        },
-        
-        name: {
-            type: dataTypes.STRING(50),
-            allowNull: false
-        },
-        last_name: {
-            type: dataTypes.STRING(50),
-            allowNull: false
-        }  
-    };
-    let config = {
-        tableName: "actor",
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Actor extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      Actor.belongsToMany(models.Movie,{
+        as : 'actors',
+        otherKey : 'movieId',
+        foreignKey : 'actorId',
+        through : 'Actor_has_Movies'
+      })
     }
-    const Actor = sequelize.define(alias, cols, config); 
-
-    //Relaciones
-    Actor.associate = function(models) {
-
-        Actor.belongsToMany(models.Movie, {
-             as: "movies",
-             through: "actor_movie",
-             foreignKey: "movie_id",
-             otherKey: "actor_id",
-             timestamps: false
-        })
-    }
-
-    return Actor;
+  };
+  Actor.init({
+    name: DataTypes.STRING,
+    lastname: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Actor',
+  });
+  return Actor;
 };

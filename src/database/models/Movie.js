@@ -1,77 +1,55 @@
-module.exports = (sequelize, dataTypes) => {//se empieza con module.exports para exportar el modelo
-    let alias = 'Movie'; 
-    let cols = {//se crean las columnas
-        id: {
-            type: dataTypes.INTEGER(11).UNSIGNED,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-       
-        title: {
-            type: dataTypes.STRING(500),
-            allowNull: false
-        },
-        director_id: {
-            type: dataTypes.INTEGER(50).UNSIGNED,
-            allowNull: false
-        },
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Movie extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      Movie.belongsTo(models.Director,{
+        as: 'director',
+        foreignKey : 'directorId'
+      })
 
-        year: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
-        image: {
-            type: dataTypes.STRING(50),
-            allowNull: false
-        },
-        price: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
-            allowNull: false
-        },
-        duration: {
-            type: dataTypes.INTEGER(50).UNSIGNED,
-            allowNull: false
-        },
-        sinopsis: {
-            type: dataTypes.TEXT,
-            allowNull: false
-        },
-    };
-    let config = {
-        tableName: "movie",
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+      Movie.belongsToMany(models.Actor,{
+        as : 'movies',
+        foreignKey : 'movieId',
+        otherKey : 'actorId',
+        through : 'Actor_has_Movies'
+      })
+
+      Movie.belongsToMany(models.User,{
+        as : 'users',
+        foreignKey : 'userId',
+        otherKey : 'movieId',
+        through : 'Favorite'
+      })
+
+      Movie.belongsToMany(models.Genre,{
+        as : 'genres',
+        foreignKey : 'movieId',
+        otherKey : 'genreId',
+        through : 'Movie_has_Genres'
+      })
     }
-    const Movie = sequelize.define(alias,cols,config);
-
-    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
-
-    Movie.associate = function(models) {
-
-        Movie.belongsTo(models.Director,{
-            as: "director",
-            foreignKey:"director_id",
-        })
-
-        Movie.belongsToMany(models.Genre, {
-            as: "genres", /* le pertenece a uno o más generos */
-            through: "genre",
-            foreignKey: "movie_id",
-            otherKey: "genre_id", 
-        })
-
-        Movie.belongsToMany(models.Actor, { 
-            as: "actors",
-            through: "actor_has_movie", /* tabla pivot */
-            foreignKey: "movie_id",
-            otherKey: "actor_id", /* es la otra llave */
-            timestamps: false /* si queremos que se guarde el timestamps tenemos que configurar el createdAt y el updatedAt */
-        })
-
-    }
-
-    return Movie;
+  };
+  Movie.init({
+    title: DataTypes.STRING,
+    directorId: DataTypes.INTEGER,
+    year: DataTypes.INTEGER,
+    price : DataTypes.INTEGER,
+    image: DataTypes.STRING,
+    trailer: DataTypes.STRING,
+    length: DataTypes.INTEGER,
+    sinopsis: DataTypes.TEXT
+  }, {
+    sequelize,
+    modelName: 'Movie',
+  });
+  return Movie;
 };
