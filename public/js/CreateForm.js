@@ -14,23 +14,27 @@ window.onload = () => {
     console.log($inputTitle),
       $inputDirection = qs("#inputDirection"),
       $errorDirection = qs("#error-Direction"),
-      $inputDuration = qs("#inputDuration"),
+      $inputDuration = qs("#input-duration"),
       $errorDuration = qs("#error-Duration"),
       $inputYear = qs("#input-year"),
       $errorYear = qs("#error-year"),
-      $inputTriler = qs("#imput-triler"),
+      $inputTriler = qs("#input-triler"),
       $errorTriler = qs("#error-triler"),
       $inputPrice = qs("#input-price"),
       $errorPrice = qs("#error-price"),
       $inputImage = qs("#input-image"),
       $imageErrors = qs("#error-image"),
-      $inputSinopsis = qs("#imput-sinopsis"),
+      $inputSinopsis = qs("#input-sinopsis"),
       $sinopsisErrors = qs("#error-sinopsis"),
       $inputGenres = qs("#input-genres"),
       $errorGenres = qs("#error-genres"),
       $genreName = qs("#genre.name"),
       $form = qs("#form-front");
     $errorform = qs("#errorform");
+    /*$file = qs*/
+    let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
+    
+
 
     let validationsErrors = false;
 
@@ -59,12 +63,12 @@ window.onload = () => {
     $inputDirection.addEventListener("blur", function () {
       switch (true) {
         case !$inputDirection.value.trim():
-          $errorDirection.innerHTML = "El campo direccion es obligatorio";
+          $errorDirection.innerHTML = "El campo direction es obligatorio";
           $inputDirection.classList.add("is-invalid");
           validationsErrors = true;
           break;
         case !regExAlpha.test($inputDirection.value):
-          $errorDirection.innerHTML = "Ingresa un apellido válido";
+          $errorDirection.innerHTML = "Ingresa un director válido";
           $inputDirection.classList.add("is-invalid");
           validationsErrors = true;
           break;
@@ -77,84 +81,86 @@ window.onload = () => {
       }
     });
 
-    $imputDuration.addEventListener("blur", function () {
+    $inputDuration.addEventListener("blur", function (e) {
+       
       switch (true) {
-        case !$imputDuration.value.trim():
+        case !$inputDuration.value.trim():
           $errorDuration.innerHTML = "El campo duración es obligatorio";
           $inputDuration.classList.add("is-invalid");
           validationsErrors = true;
           break;
         case !regExIMPUTDURATION.test($dni.value):
           $errorDuration.innerHTML = "Debe ingresar una duración";
-          $imputDuration.classList.add("is-invalid");
+          $inputDuration.classList.add("is-invalid");
           validationsErrors = true;
           break;
         default:
-          $imputDuration.classList.remove("is-invalid");
-          $imputDuration.classList.add("is-valid");
+          $inputDuration.classList.remove("is-invalid");
+          $inputDuration.classList.add("is-valid");
           $errorDuration.innerHTML = "";
           validationsErrors = false;
           break;
       }
     });
 
-    $imputYear.addEventListener("blur", function () {
+    $inputYear.addEventListener("blur", function () {
       switch (true) {
-        case !$imputYear.value.trim():
+        case !$inputYear.value.trim():
           $errorYear.innerHTML = "El campo year es obligatorio";
-          $imputYear.classList.add("is-invalid");
+          $inputYear.classList.add("is-invalid");
           validationsErrors = true;
           break;
         case !regExIMPUTYEAR.test($email.value):
           $errorYear.innerHTML = "Debe ingresar un año válido";
-          $imputYear.classList.add("is-invalid");
+          $inputYear.classList.add("is-invalid");
           validationsErrors = true;
           break;
         default:
-          $imputYear.classList.remove("is-invalid");
-          $imputYear.classList.add("is-valid");
+          $inputYear.classList.remove("is-invalid");
+          $inputYear.classList.add("is-valid");
           $errorYear.innerHTML = "";
           validationsErrors = false;
           break;
       }
     });
 
-    $imputTriler.addEventListener("blur", function () {
+    $inputTriler.addEventListener("blur", function (e) {
+        console.log(e.target.value);
       switch (true) {
         case !$inputTriler.value.trim():
           $errorTriler.innerHTML = "El campo triler es obligatorio";
-          $imputTriler.classList.add("is-invalid");
+          $inputTriler.classList.add("is-invalid");
           validationsErrors = true;
           break;
-        case !regEximputTriler.test($imputTriler.value):
+        case !regEximputTriler.test($inputTriler.value):
           $errorTriler.innerHTML = "Debe ingresar un triler";
-          $imputTriler.classList.add("is-invalid");
+          $inputTriler.classList.add("is-invalid");
           validationsErrors = true;
           break;
         default:
-          $$imputTriler.classList.remove("is-invalid");
-          $imputTriler.classList.add("is-valid");
+          $$inputTriler.classList.remove("is-invalid");
+          $inputTriler.classList.add("is-valid");
           $errorTriler.innerHTML = "";
           validationsErrors = false;
           break;
       }
     });
 
-    $imputPrice.addEventListener("blur", function () {
+    $inputPrice.addEventListener("blur", function () {
       switch (true) {
-        case !$imputPrice.value.trim():
+        case !$inputPrice.value.trim():
           $errorPrice.innerHTML = "El campo precio es obligatorio";
-          $imputPrice.classList.add("is-invalid");
+          $inputPrice.classList.add("is-invalid");
           validationsErrors = true;
           break;
-        case $imputPrice.value !== $imputPrice.value:
+        case $inputPrice.value !== $imputPrice.value:
           $errorPrice.innerHTML = "Debe ingresar un precio";
-          $imputPrice.classList.add("is-invalid");
+          $inputPrice.classList.add("is-invalid");
           validationsErrors = true;
           break;
         default:
-          $imputPrice.classList.remove("is-invalid");
-          $imputPrice.classList.add("is-valid");
+          $inputPrice.classList.remove("is-invalid");
+          $inputPrice.classList.add("is-valid");
           $errorPrice.innerHTML = "";
           validationsErrors = false;
           break;
@@ -167,7 +173,7 @@ window.onload = () => {
       if (!allowefExtensions.exec(filePath)) {
         //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
         $imageErrors.innerHTML = `${icono}Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)`;
-        $imputImage.value = "";
+        $inputImage.value = "";
         $imgPreview.innerHTML = "";
         return false;
       } else {
@@ -185,22 +191,22 @@ window.onload = () => {
       }
     });
 
-    $imputSinopsis.addEventListener("blur", function () {
+    $inputSinopsis.addEventListener("blur", function () {
       switch (true) {
-        case !$imputSinopsis.value.trim():
+        case !$inputSinopsis.value.trim():
           $sinopsisErrors.innerHTML = "Debes ingresar una sinopsis";
-          $imputSinopsis.classList.add("is-invalid");
+          $inputSinopsis.classList.add("is-invalid");
           validationsErrors = true;
           break;
 
         case moment().diff(moment($fecha.value), "years") < 18:
           $sinopsisErrors.innerHTML = "Debes tener más de 18 años";
-          $imputSinopsis.classList.add("is-invalid");
+          $inputSinopsis.classList.add("is-invalid");
           validationsErrors = true;
           break;
         default:
-          $imputSinopsis.classList.remove("is-invalid");
-          $imputSinopsis.classList.add("is-valid");
+          $inputSinopsis.classList.remove("is-invalid");
+          $inputSinopsis.classList.add("is-valid");
           $sinopsisErrors.innerHTML = "";
           validationsErrors = false;
           break;
@@ -219,12 +225,12 @@ window.onload = () => {
 
     console.log($inputTitle);
 
-    $terms.addEventListener("click", function () {
+   /* $terms.addEventListener("click", function () {
       $terms.value = "on";
       $terms.classList.toggle("is-valid");
       $terms.classList.remove("is-invalid");
       $termsErrors.innerHTML = "";
-    });
+    });*/
 
     $form.addEventListener("submit", function (event) {
       event.preventDefault();
