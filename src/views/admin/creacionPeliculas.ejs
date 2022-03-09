@@ -37,7 +37,7 @@
                             <label for="">DURATION</label>
                             <input id="input-duration" class="form-control" type="number" placeholder="Ingresá duración" name="length" value="<%= locals.old && old.length %>">
                             <% if (locals.errors && errors.length) { %>
-                                <small class="text-danger"><%= errors.length.msg %> </small>
+                                <small id="error-Duration" class="text-danger"><%= errors.length.msg %> </small>
                             <% } %>
                             <span class="error" id="error-Duration"></span>
                         </div>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-12 col-md-6  mb-3">
                             <label for="">PRECIO</label>
-                            <input id="input-price" type="number" class="form-control" id="inputPrice" placeholder="Precio" name="price" value="<%= locals.old && old.price %>">
+                            <input id="input-price" type="number" class="form-control" placeholder="Precio" name="price" value="<%= locals.old && old.price %>">
                             <% if (locals.errors && errors.price) { %>
                                 <small class="text-danger"><%= errors.price.msg %> </small>
                             <% } %>
@@ -68,15 +68,24 @@
                         </div>
 
                         
+                     
+                      <!-- <div class="img-container" id="img-preview">
+                        
+                        </div>
+                        <input class="form-control mt-3" type="file" id="formFile">
+                        <span id="fileErrors"></span>--> 
+
+
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <div class="col-12 mb-3">
+                               <!-- <div class="col-12 mb-3">--> 
+                                <div class="img-container" id="img-preview">
                                     <label for="">IMAGE</label>
-                                    <input id="input-image" type="file" name="imageCreate" class="form-control" aria-label="file example" id="inputImage" multiple>
+                                    <input  type="file" name="imageCreate" class="form-control" aria-label="file example" id="formFile" multiple>
                     <% if (locals.errors && errors.image) { %>
                         <small class="text-danger"><%= errors.image.msg %> </small>
                     <% } %>
-                    <span class="error" id="error-image"></span>       
+                    <span class="error" id="fileErrors"></span>       
                                 </div>
                                 <div class="col-12  mb-3">
                                     <label for="">SINOPSIS</label>
@@ -108,7 +117,7 @@
                                                 id="<%= genre.name %>" name="genres">
                                             <label class="form-check-label" for="<%= genre.name %>">
                                                 <%= genre.name %>
-                                                <span class="error" id="error-genres"></span>
+                                                <span class="error" id="errorgenres"></span>
                                             </label>
                                         </div>
                                     </div>
