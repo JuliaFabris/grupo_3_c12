@@ -12,6 +12,7 @@ let adminrouter = require('./routes/admin');
 
 
 
+
 let userRouter = require('./routes/user');
 let faqRouter = require('./routes/faq');
 const { link } = require('fs');
@@ -46,9 +47,8 @@ app.use((req, res, next) => {
     res.status(404).render('404')
 })
 
-app.use((req, res, next) => {
-    res.status(carro).render('404')
-})
+const handleError = require('./middlewares/handleErrors')
+app.use(handleError);
 
 app.listen(PORT, ()=>console.log(`Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`));

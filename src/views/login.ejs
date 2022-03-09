@@ -14,12 +14,16 @@
           <a href="/"><img src="/design/images/icons/logo.png" alt="User"></a>
         
         <form class="aux" action="/user/login" method="POST">
+          
+
           <span class="icon-user"></span><input class="inp" type="email" name="email" placeholder="Ingrese su Usuario"><br>
-          <% if (locals.errors && errors.email) { %>
-            <small class="text-danger"> <%= errors.email.msg %>  </small>
-        <% } %>
+            
+            <% if (locals.errors && errors.email) { %>
+              <small class="text-danger"> <%= errors.email.msg %>  </small>
+            <% } %>
+          
         
-          <span class="icon-key"></span>
+            <span class="icon-key"></span>
           <input class="inp" type="password" name="pass" value="" placeholder="Ingrese su Contraseña"><br>
           <% if (locals.errors && errors.pass) { %>
             <small class="text-danger"> <%= errors.pass.msg %>  </small>

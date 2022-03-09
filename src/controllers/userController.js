@@ -29,7 +29,7 @@ module.exports = {
                         email
                     }
                 });
-                console.log(user)
+                // console.log(user)
                 req.session.user = {
                     // id: user.id,
                     name: user.name,
@@ -118,7 +118,6 @@ module.exports = {
         return res.render('userProfile', {
             title: "perfil de ususario",
             session: req.session.user,
-            titulo: user.name
         })
     },
 

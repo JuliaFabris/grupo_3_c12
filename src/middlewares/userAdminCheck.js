@@ -1,18 +1,18 @@
-
+const createError = require("http-errors");
+/* 
+1 => admin
+2 => user
+ */
 function userAdminCheck (req,res,next) {
-    if  (req.session.user !==  undefined ){
+    if  (req.session.user.rolId !== 1){
         console.log(req.session.user)
-        if  (!(req.session.user.rol==="admin")) 
-            res.redirect('/')
+        
+        return next(createError(403));
 
-        next();
-
-    }else {
-        res.send("error")
     }
-    
-}
 
+    return next();
+}
 
 module.exports = userAdminCheck; 
 
