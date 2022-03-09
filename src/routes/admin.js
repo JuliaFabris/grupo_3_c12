@@ -36,8 +36,4 @@ router.get('/products/detalle/:id', userAdminCheck, controller.detalle)
 /*Delete product*/
 router.delete('/products/:id/dlt', controller.eliminar)
 
-
-
-
-
 module.exports = router
