@@ -1,115 +1,130 @@
-const { getUsers, writeUsers } = require('../database');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const db = require('../database/models');
 
 module.exports = {
     "loginPage": (req, res) => {
-        res.render('login',{
-            titulo:"Log In"})
+        res.render('login', {
+            titulo: "login"
+        })
     },
 
-    "login": (req, res) => {
-        let errors = validationResult(req);
+    "login": async (req, res) => {
+        try {
 
-        if(errors.isEmpty()){
-            let user = getUsers.find(user => user.email === req.body.email);
-           
-            req.session.user = {
-                id: user.id,
-                name: user.name,
-                last_name: user.last_name,
-                email: user.email,
-                avatar: user.avatar,
-                rol: user.rol
+            let errors = validationResult(req);
+            if (errors.isEmpty()) {
+
+                let { email, remember } = req.body;
+                const user = await db.User.findOne({
+                    attributes: [
+                        'name',
+                        'lastname',
+                        'email',
+                        'avatar',
+                        'avatar',
+                        'rolId',
+                    ],
+                    where: {
+                        email
+                    }
+                });
+                console.log(user)
+                req.session.user = {
+                    // id: user.id,
+                    name: user.name,
+                    lastname: user.lastname,
+                    email: user.email,
+                    avatar: user.avatar,
+                    rol: user.rolId
+                }
+
+                if (remember) {
+                    const TIME_IN_MILISECONDS = 60000
+                    res.cookie("userTrimovie", req.session.user, {
+                        expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                        httpOnly: true,
+                        secure: true
+                    })
+                }
+
+                res.locals.user = req.session.user;
+
+                return res.redirect('/');
             }
-
-            console.log(req.session.user);
-
-           if(req.body.remember){
-               const TIME_IN_MILISECONDS = 60000
-               res.cookie("userTrimovie", req.session.user, {
-                   expires: new Date(Date.now() + TIME_IN_MILISECONDS),
-                   httpOnly: true,
-                   secure: true
-               })
-           }
-
-            res.locals.user = req.session.user;
-            res.redirect('/')
-
-        }else{
-            res.render('login', {
+            
+            return res.render('login', {
                 errors: errors.mapped(),
                 titulo: "login",
             })
+
+        } catch (error) {
+            console.log(error);
         }
     },
 
     "registerPage": (req, res) => {
-        res.render("register",{
-            title:"Register Trimovie"
+        res.render("register", {
+            title: "Register Trimovie"
         });
     },
-    "processRegister": (req, res) => {
-        let errors = validationResult(req);
 
-        if(errors.isEmpty()) {
-            const { name, lastname, email, pass1 } = req.body;
-
-            let lastId = 1;
-    
-            getUsers.forEach(user => {
-                if(user.id > lastId) {
-                    lastId = user.id
-                }
-            });
-    
-            let user = {
-                id: lastId + 1,
-                name: name.trim(),
-                lastname: lastname.trim(),
-                email: email.trim(),
-                pass: bcrypt.hashSync(pass1, 12) , 
-                rol: "ROL_USER",
-                city:"",
-                phone: "",
-                address: "",
-                zipCode: "",
-                avatar: req.file ? req.file.filename : "AvatarChichiro.png",
-            }
+    "processRegister": async (req, res) => {
+        try {
+            // res.send(req.body)
+            let errors = validationResult(req);
+            if(errors.isEmpty()) {
+                let {name, lastname, email, avatar, date, phone, pass1} = req.body;
             
-            writeUsers([...getUsers, user]);
-            res.redirect("/user/login")
-                        
-        }else{
-            res.render("register", {
-                errors: errors.mapped(),
-                old: req.body,
-            })
+                let user = {
+                    name,
+                    lastname,
+                    email,
+                    password: bcrypt.hashSync(pass1, 12),
+                    avatar: req.file ? req.file.filename : "AvatarChichiro.png",
+                    // date
+                    // phone
+                    rolId: 2,
+                }
+
+                let creado = await db.User.create(user)
+
+                if(creado){
+                    return res.redirect('/user/login');
+                }
+            }
+
+            return res.render("register", {
+                        errors: errors.mapped(),
+                        old: req.body,
+                    })
+
+        } catch (error) {
+            console.log(error);
         }
     },
-    logout: (req, res) => {
+    
+    "logout": (req, res) => {
         req.session.destroy();
-        if(req.cookies.userTrimovie){
-            res.cookie('userTrimovie', "", { maxAge: -1 })
+        if (req.cookies.userTrimovie) {
+            res.cookie('userTrimovie', "", {
+                maxAge: -1
+            })
         }
         res.redirect('/')
-    }, 
-    "profile": (req, res) => {
-        console.log(req.session.user)
-        let user = getUsers.find(user => user.id === req.session.user.id)
+    },
 
-        res.render('userProfile', {
+    "profile": async (req, res) => {
+        return res.render('userProfile', {
             title: "perfil de ususario",
-            user, 
             session: req.session.user,
             titulo: user.name
         })
     },
-    
+
     "carrito": (req, res) => {
-        res.render("carrito",{
-            title:"carrito",
+        res.render("carrito", {
+            title: "carrito",
             session: req.session.user
         });
     },
